@@ -1,12 +1,45 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div>
+      <Navbar />
     </div>
-    <router-view/>
+    <div id="principal">
+      <router-view />
+    </div>
   </div>
 </template>
+
+<script>
+import { mapActions } from "vuex";
+import axios from "axios";
+import Navbar from "@/components/navbar/Navbar";
+export default {
+  name: "App",
+  components: { Navbar },
+  data() {
+    return {};
+  },
+  methods: {
+    ...mapActions(["fetch_Adp"]),
+    fetchAdp() {
+      axios
+        .get(
+          "https://script.google.com/macros/s/AKfycbxOVp8dMaTZYznfrzAvO4g8Lj_Fo3k6MUGRv806R2VVljJAjnZj9_pbtisUce3OV-PUhA/exec"
+        )
+        .then((response) => {
+          this.fetch_Adp(response.data.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+  created() {
+    this.fetchAdp();
+  },
+};
+</script>
+
 
 <style lang="scss">
 #app {

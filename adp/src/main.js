@@ -10,6 +10,23 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
+//MomentJS
+import moment from "moment";
+Vue.filter("formatDate", (value) => {
+  moment.locale("es-mx");
+  if (value) {
+    return moment(String(value)).format("LL");
+  }
+});
+Vue.filter("relativeTime", (value) => {
+  moment.locale("es-mx");
+  if (value) {
+    return moment(String(value))
+      .startOf("day")
+      .fromNow();
+  }
+});
+
 Vue.config.productionTip = false;
 
 new Vue({
