@@ -1,7 +1,13 @@
 <template>
   <b-container>
     <!-- Buscador -->
-    <b-row cols="1" cols-sm="1" cols-md="2" cols-lg="2">
+    <b-row
+      cols="1"
+      cols-sm="1"
+      cols-md="2"
+      cols-lg="2"
+      class="mb-4 pb-4 pt-3 px-2 bg-primary text-white shadow rounded"
+    >
       <b-col>
         <b-form-group label="Buscar por número de concurso:">
           <b-form-input
@@ -20,67 +26,149 @@
         </b-form-group>
       </b-col>
     </b-row>
-    <!-- Contenido -->
+
+    <!-- Cards -->
     <b-card
       no-body
-      class="overflow-hidden"
+      class="overflow-hidden shadow mb-4"
       v-for="(adp, i) in filtrarADPs"
       :key="i"
     >
       <b-row no-gutters>
+        <div class="py-3 bg-light">
+          <h1 class="fs-4">
+            {{ adp.concurso }} · {{ adp.nombre_corregido }}
+            {{ adp.apellido_corregido }}
+          </h1>
+        </div>
         <b-col md="6" class="text-start">
-          <b-card-body title="Identificación">
-            <ul>
-              <li>
-                Nombre: {{ adp.nombre_corregido }}
-                {{ adp.apellido_corregido }}
-              </li>
-              <li>{{ i + 1 }} {{ adp.concurso }}</li>
-              <li>
-                Fecha de nombramiento:
-                {{ adp.fecha_nombramiento_renovacion | formatDate }}
-              </li>
-              <li>Estado en el sistema: {{ adp.estado_adp }}</li>
-              <li>Estado de convenio: {{ adp.estado_cd }}</li>
-              <li>Nivel y cargo: {{ adp.nivel }} {{ adp.cargo }}</li>
-              <li>{{ adp.servicio }}</li>
-              <li>{{ adp.ministerio }}</li>
-              <li>{{ adp.region }}</li>
-              <li>{{ adp.mail }}</li>
-              <li>{{ adp.mail_contraparte_cd }}</li>
-              <li>{{ adp.mail_contraparte_eval }}</li>
-            </ul>
+          <b-card-body>
+            <b-list-group>
+              <b-list-group-item
+                ><b>Cargo:</b> {{ adp.cargo }}</b-list-group-item
+              >
+              <b-list-group-item
+                ><b>Nivel:</b> {{ adp.nivel }} nivel</b-list-group-item
+              >
+              <b-list-group-item
+                ><b>Servicio:</b> {{ adp.servicio }}</b-list-group-item
+              >
+              <b-list-group-item
+                ><b>Ministerio:</b> {{ adp.ministerio }}</b-list-group-item
+              >
+              <b-list-group-item
+                ><b>Correo laboral:</b> {{ adp.mail }}</b-list-group-item
+              >
+            </b-list-group>
           </b-card-body>
         </b-col>
-        <b-col md="6">
-          <b-card-body title="Fechas">
-            <ul>
-              <li>
-                Fecha de nombramiento:
+        <b-col md="6" class="text-start">
+          <b-card-body>
+            <b-list-group>
+              <b-list-group-item>
+                <b>Fecha nombramiento o renovación:</b>
                 {{ adp.fecha_nombramiento_renovacion | formatDate }}
-              </li>
-              <li>30 días: {{ adp.fecha_propuesta | formatDate }}</li>
-              <li>60 días: {{ adp.fecha_suscripcion | formatDate }}</li>
-              <li>90 días: {{ adp.fecha_comunicacion | formatDate }}</li>
-              <hr />
-              <li>{{ adp.eval_semestral_inicio | formatDate }}</li>
-              <li>{{ adp.eval_semestral_auto | formatDate }}</li>
-              <li>{{ adp.eval_semestral_retro | formatDate }}</li>
-              <hr />
-              <li>{{ adp.eval_anual_inicio | formatDate }}</li>
-              <li>{{ adp.eval_anual_auto | formatDate }}</li>
-              <li>{{ adp.eval_anual_retro | formatDate }}</li>
-              <li>{{ adp.eval_anual_rex | formatDate }}</li>
-            </ul>
+              </b-list-group-item>
+              <b-list-group-item
+                ><b>Estado en el sistema:</b>
+                {{ adp.estado_adp }}</b-list-group-item
+              >
+              <b-list-group-item
+                ><b>Estado de convenio:</b>
+                {{ adp.estado_cd }}</b-list-group-item
+              >
+              <b-list-group-item>
+                <b>Contraparte convenio:</b> {{ adp.mail_contraparte_cd }}
+              </b-list-group-item>
+              <b-list-group-item>
+                <b>Contraparte evaluación:</b> {{ adp.mail_contraparte_eval }}
+              </b-list-group-item>
+            </b-list-group>
           </b-card-body>
         </b-col>
+        <!-- Fechas -->
+        <b-row class="text-start">
+          <b-col md="4">
+            <b-card-body title="Propuesta de convenio">
+              <b-list-group>
+                <b-list-group-item
+                  ><b>Propuesta:</b>
+                  {{ adp.fecha_propuesta | formatDate }}</b-list-group-item
+                >
+                <b-list-group-item
+                  ><b>Suscripción:</b>
+                  {{ adp.fecha_suscripcion | formatDate }}</b-list-group-item
+                >
+                <b-list-group-item
+                  ><b>Comunicación:</b>
+                  {{ adp.fecha_comunicacion | formatDate }}</b-list-group-item
+                >
+              </b-list-group>
+            </b-card-body>
+          </b-col>
+          <b-col md="4">
+            <b-card-body title="Evaluaciones semestrales">
+              <b-list-group>
+                <b-list-group-item
+                  ><b>Inicio:</b>
+                  {{
+                    adp.eval_semestral_inicio | formatDate
+                  }}</b-list-group-item
+                >
+                <b-list-group-item
+                  ><b>Autoevaluación:</b>
+                  {{ adp.eval_semestral_auto | formatDate }}</b-list-group-item
+                >
+                <b-list-group-item
+                  ><b>Retroalimentación:</b>
+                  {{ adp.eval_semestral_retro | formatDate }}</b-list-group-item
+                >
+              </b-list-group>
+            </b-card-body>
+          </b-col>
+          <b-col md="4">
+            <b-card-body title="Evaluaciones anuales">
+              <b-list-group>
+                <b-list-group-item
+                  ><b>Inicio:</b>
+                  {{ adp.eval_anual_inicio | formatDate }}</b-list-group-item
+                >
+                <b-list-group-item
+                  ><b>Autoevaluación:</b>
+                  {{ adp.eval_anual_auto | formatDate }}</b-list-group-item
+                >
+                <b-list-group-item
+                  ><b>Retroalimentación:</b>
+                  {{ adp.eval_anual_retro | formatDate }}</b-list-group-item
+                >
+                <b-list-group-item
+                  ><b>Resolución:</b>
+                  {{ adp.eval_anual_rex | formatDate }}</b-list-group-item
+                >
+              </b-list-group>
+            </b-card-body>
+          </b-col>
+        </b-row>
+        <div class="bg-light py-4">
+          <h4>Enviar alertas</h4>
+          <b-button-group>
+            <b-button variant="outline-primary" @click="sendEmail(adp.indice)"
+              >Alerta 0</b-button
+            >
+            <b-button variant="outline-primary">Alerta 30</b-button>
+            <b-button variant="outline-primary">Alerta 60</b-button>
+            <b-button variant="outline-primary">Alerta 90</b-button>
+            <b-button variant="outline-primary">Próxima evaluación</b-button>
+          </b-button-group>
+        </div>
       </b-row>
     </b-card>
   </b-container>
 </template>
 
 <script>
-import { mapState } from "vuex";
+// import { mapState } from "vuex";
+import axios from "axios";
 
 export default {
   name: "Perfiles",
@@ -88,8 +176,17 @@ export default {
     return {
       servicio: "",
       concurso: "",
+      mail: {
+        senderName: "",
+        senderEmail: "",
+        to: "",
+        subject: "",
+        template: "",
+        deliveryTime: "",
+        name: "",
+      },
       servicios: [
-        { value: "", text: "Seleccione una opción" },
+        { value: "", text: "Selecciona un servicio" },
         {
           value: "Servicio Local de Educación Andalién Sur",
           text: "Servicio Local de Educación Andalién Sur",
@@ -115,6 +212,349 @@ export default {
           text: "Dirección de Educación Pública",
         },
       ],
+      // Provisorio
+      adps: [
+        {
+          concurso: "4299",
+          ministerio: "Ministerio de Educación",
+          servicio: "Superintendencia de Educación",
+          region: "Región Metropolitana de Santiago",
+          nombre: "PEDRO",
+          apellido: "CASTILLO RIFFO",
+          mail: "yolivares@serviciocivil.cl",
+          cargo: "Director/a Regional Metropolitano/a",
+          nivel: "II",
+          fecha_nombramiento: "2018-12-17T00:00:00.000Z",
+          estado_adp: "Nombrado (primer periodo)",
+          sexo: "M",
+          estado_cd: "Suscrito",
+          rut: "7818274-1",
+          alerta0: "19 dic 2018",
+          nombre_corregido: "Pedro",
+          apellido_corregido: "Castillo Riffo",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yolivares@serviciocivil.cl",
+          mail_contraparte_eval: "yolivares@serviciocivil.cl",
+          fecha_nombramiento_renovacion: "2018-12-17T00:00:00.000Z",
+          fecha_propuesta: "2019-01-16T00:00:00.000Z",
+          fecha_suscripcion: "2019-02-15T00:00:00.000Z",
+          fecha_comunicacion: "2019-04-22T00:00:00.000Z",
+          eval_semestral_inicio: "2019-06-17T00:00:00.000Z",
+          eval_semestral_auto: "2019-07-17T00:00:00.000Z",
+          eval_semestral_retro: "2019-08-16T00:00:00.000Z",
+          eval_anual_inicio: "2019-12-17T00:00:00.000Z",
+          eval_anual_auto: "2020-01-17T00:00:00.000Z",
+          eval_anual_retro: "2020-02-16T00:00:00.000Z",
+          eval_anual_rex: "2020-02-21T00:00:00.000Z",
+          indice: 0,
+        },
+        {
+          concurso: "4269",
+          ministerio: "Ministerio de Educación",
+          servicio: "Junta Nacional de Jardines Infantiles",
+          region: "Región Metropolitana de Santiago",
+          nombre: "ANDRÉS RICARDO",
+          apellido: "CARVAJAL RATH",
+          mail: "yolivares@serviciocivil.cl",
+          cargo: "Director/a Departamento Recursos Financieros",
+          nivel: "II",
+          fecha_nombramiento: "2019-01-01T00:00:00.000Z",
+          estado_adp: "Nombrado (primer periodo)",
+          sexo: "M",
+          estado_cd: "Suscrito",
+          rut: "8366458-4",
+          alerta0: "19 dic 2018",
+          nombre_corregido: "Andrés Ricardo",
+          apellido_corregido: "Carvajal Rath",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yolivares@serviciocivil.cl",
+          mail_contraparte_eval: "yolivares@serviciocivil.cl",
+          fecha_nombramiento_renovacion: "2019-01-01T00:00:00.000Z",
+          fecha_propuesta: "2019-01-31T00:00:00.000Z",
+          fecha_suscripcion: "2019-03-02T00:00:00.000Z",
+          fecha_comunicacion: "2019-05-07T00:00:00.000Z",
+          eval_semestral_inicio: "2019-07-01T00:00:00.000Z",
+          eval_semestral_auto: "2019-08-01T00:00:00.000Z",
+          eval_semestral_retro: "2019-08-31T00:00:00.000Z",
+          eval_anual_inicio: "2020-01-01T00:00:00.000Z",
+          eval_anual_auto: "2020-02-01T00:00:00.000Z",
+          eval_anual_retro: "2020-03-02T00:00:00.000Z",
+          eval_anual_rex: "2020-03-09T00:00:00.000Z",
+          indice: 1,
+        },
+        {
+          concurso: "4188",
+          ministerio: "Ministerio de Educación",
+          servicio: "Superintendencia de Educación",
+          region: "Región de Magallanes y Antártica Chilena",
+          nombre: "SAFIRA MAGDALENA",
+          apellido: "IVELICH GALLARDO",
+          mail: "yolivares@serviciocivil.cl",
+          cargo: "Director/a Regional Magallanes",
+          nivel: "II",
+          fecha_nombramiento: "2019-01-03T00:00:00.000Z",
+          estado_adp: "Nombrado (primer periodo)",
+          sexo: "F",
+          estado_cd: "Suscrito",
+          rut: "8905787-6",
+          alerta0: "8 ene 2019",
+          nombre_corregido: "Safira Magdalena",
+          apellido_corregido: "Ivelich Gallardo",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yolivares@serviciocivil.cl",
+          mail_contraparte_eval: "yolivares@serviciocivil.cl",
+          fecha_nombramiento_renovacion: "2019-01-03T00:00:00.000Z",
+          fecha_propuesta: "2019-02-02T00:00:00.000Z",
+          fecha_suscripcion: "2019-03-04T00:00:00.000Z",
+          fecha_comunicacion: "2019-05-09T00:00:00.000Z",
+          eval_semestral_inicio: "2019-07-03T00:00:00.000Z",
+          eval_semestral_auto: "2019-08-03T00:00:00.000Z",
+          eval_semestral_retro: "2019-09-02T00:00:00.000Z",
+          eval_anual_inicio: "2020-01-03T00:00:00.000Z",
+          eval_anual_auto: "2020-02-03T00:00:00.000Z",
+          eval_anual_retro: "2020-03-04T00:00:00.000Z",
+          eval_anual_rex: "2020-03-11T00:00:00.000Z",
+          indice: 2,
+        },
+        {
+          concurso: "4143",
+          ministerio: "Ministerio de Educación",
+          servicio: "Superintendencia de Educación",
+          region: "Region de Tarapacá",
+          nombre: "RICARDO SERVANDO",
+          apellido: "VILLALBA PEDREROS",
+          mail: "yolivares@serviciocivil.cl",
+          cargo: "Director/a Regional Tarapacá",
+          nivel: "II",
+          fecha_nombramiento: "2019-01-06T00:00:00.000Z",
+          estado_adp: "Nombrado (primer periodo)",
+          sexo: "M",
+          estado_cd: "Suscrito",
+          rut: "10567024-9",
+          alerta0: "8 ene 2019",
+          nombre_corregido: "Ricardo Servando",
+          apellido_corregido: "Villalba Pedreros",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yolivares@serviciocivil.cl",
+          mail_contraparte_eval: "yolivares@serviciocivil.cl",
+          fecha_nombramiento_renovacion: "2019-01-06T00:00:00.000Z",
+          fecha_propuesta: "2019-02-05T00:00:00.000Z",
+          fecha_suscripcion: "2019-03-07T00:00:00.000Z",
+          fecha_comunicacion: "2019-05-10T00:00:00.000Z",
+          eval_semestral_inicio: "2019-07-06T00:00:00.000Z",
+          eval_semestral_auto: "2019-08-06T00:00:00.000Z",
+          eval_semestral_retro: "2019-09-05T00:00:00.000Z",
+          eval_anual_inicio: "2020-01-06T00:00:00.000Z",
+          eval_anual_auto: "2020-02-06T00:00:00.000Z",
+          eval_anual_retro: "2020-03-07T00:00:00.000Z",
+          eval_anual_rex: "2020-03-13T00:00:00.000Z",
+          indice: 3,
+        },
+        {
+          concurso: "4127",
+          ministerio: "Ministerio de Educación",
+          servicio: "Superintendencia de Educación",
+          region: "Región de Coquimbo",
+          nombre: "JULIÁN MANUEL",
+          apellido: "GONZÁLEZ MALLEA",
+          mail: "yolivares@serviciocivil.cl",
+          cargo: "Director/a Regional Coquimbo",
+          nivel: "II",
+          fecha_nombramiento: "2019-01-07T00:00:00.000Z",
+          estado_adp: "Nombrado (primer periodo)",
+          sexo: "M",
+          estado_cd: "Suscrito",
+          rut: "5573961-7",
+          alerta0: "8 ene 2019",
+          nombre_corregido: "Julián Manuel",
+          apellido_corregido: "González Mallea",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yolivares@serviciocivil.cl",
+          mail_contraparte_eval: "yolivares@serviciocivil.cl",
+          fecha_nombramiento_renovacion: "2019-01-07T00:00:00.000Z",
+          fecha_propuesta: "2019-02-06T00:00:00.000Z",
+          fecha_suscripcion: "2019-03-08T00:00:00.000Z",
+          fecha_comunicacion: "2019-05-13T00:00:00.000Z",
+          eval_semestral_inicio: "2019-07-07T00:00:00.000Z",
+          eval_semestral_auto: "2019-08-07T00:00:00.000Z",
+          eval_semestral_retro: "2019-09-06T00:00:00.000Z",
+          eval_anual_inicio: "2020-01-07T00:00:00.000Z",
+          eval_anual_auto: "2020-02-07T00:00:00.000Z",
+          eval_anual_retro: "2020-03-08T00:00:00.000Z",
+          eval_anual_rex: "2020-03-13T00:00:00.000Z",
+          indice: 4,
+        },
+        {
+          concurso: "4094",
+          ministerio: "Ministerio de Educación",
+          servicio: "Superintendencia de Educación",
+          region: "Región Metropolitana de Santiago",
+          nombre: "MARÍA LUISA",
+          apellido: "ORELLANA CAMPBELL",
+          mail: "yolivares@serviciocivil.cl",
+          cargo: "Intendente de Educación Parvularia",
+          nivel: "II",
+          fecha_nombramiento: "2019-01-11T00:00:00.000Z",
+          estado_adp: "Nombrado (primer periodo)",
+          sexo: "F",
+          estado_cd: "Suscrito",
+          rut: "12455085-8",
+          alerta0: "14 ene 2019",
+          nombre_corregido: "María Luisa",
+          apellido_corregido: "Orellana Campbell",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yolivares@serviciocivil.cl",
+          mail_contraparte_eval: "yolivares@serviciocivil.cl",
+          fecha_nombramiento_renovacion: "2019-01-11T00:00:00.000Z",
+          fecha_propuesta: "2019-02-10T00:00:00.000Z",
+          fecha_suscripcion: "2019-03-12T00:00:00.000Z",
+          fecha_comunicacion: "2019-05-17T00:00:00.000Z",
+          eval_semestral_inicio: "2019-07-11T00:00:00.000Z",
+          eval_semestral_auto: "2019-08-11T00:00:00.000Z",
+          eval_semestral_retro: "2019-09-10T00:00:00.000Z",
+          eval_anual_inicio: "2020-01-11T00:00:00.000Z",
+          eval_anual_auto: "2020-02-11T00:00:00.000Z",
+          eval_anual_retro: "2020-03-12T00:00:00.000Z",
+          eval_anual_rex: "2020-03-19T00:00:00.000Z",
+          indice: 5,
+        },
+        {
+          concurso: "4278",
+          ministerio: "Ministerio de Educación",
+          servicio: "Junta Nacional de Jardines Infantiles",
+          region: "Región de Los Lagos",
+          nombre: "EDUARDO ANTONIO",
+          apellido: "HERNÁNDEZ AGURTO",
+          mail: "yolivares@serviciocivil.cl",
+          cargo: "Director/a Regional, Región de Los Lagos",
+          nivel: "II",
+          fecha_nombramiento: "2019-01-18T00:00:00.000Z",
+          estado_adp: "Nombrado (primer periodo)",
+          sexo: "M",
+          estado_cd: "Suscrito",
+          rut: "12922056-2",
+          alerta0: "8 ene 2019",
+          nombre_corregido: "Eduardo Antonio",
+          apellido_corregido: "Hernández Agurto",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yolivares@serviciocivil.cl",
+          mail_contraparte_eval: "yolivares@serviciocivil.cl",
+          fecha_nombramiento_renovacion: "2019-01-18T00:00:00.000Z",
+          fecha_propuesta: "2019-02-17T00:00:00.000Z",
+          fecha_suscripcion: "2019-03-19T00:00:00.000Z",
+          fecha_comunicacion: "2019-05-24T00:00:00.000Z",
+          eval_semestral_inicio: "2019-07-18T00:00:00.000Z",
+          eval_semestral_auto: "2019-08-18T00:00:00.000Z",
+          eval_semestral_retro: "2019-09-17T00:00:00.000Z",
+          eval_anual_inicio: "2020-01-18T00:00:00.000Z",
+          eval_anual_auto: "2020-02-18T00:00:00.000Z",
+          eval_anual_retro: "2020-03-19T00:00:00.000Z",
+          eval_anual_rex: "2020-03-26T00:00:00.000Z",
+          indice: 6,
+        },
+        {
+          concurso: "4267",
+          ministerio: "Ministerio de Educación",
+          servicio: "Junta Nacional de Jardines Infantiles",
+          region: "Región del Bio Bio",
+          nombre: "ALEJANDRA PATRICIA",
+          apellido: "NAVARRETE VILLA",
+          mail: "yolivares@serviciocivil.cl",
+          cargo: "Director/a Regional, Región del Bío-Bío",
+          nivel: "II",
+          fecha_nombramiento: "2019-01-28T00:00:00.000Z",
+          estado_adp: "Nombrado (primer periodo)",
+          sexo: "F",
+          estado_cd: "Suscrito",
+          rut: "12969848-9",
+          alerta0: "22 ene 2019",
+          nombre_corregido: "Alejandra Patricia",
+          apellido_corregido: "Navarrete Villa",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yolivares@serviciocivil.cl",
+          mail_contraparte_eval: "yolivares@serviciocivil.cl",
+          fecha_nombramiento_renovacion: "2019-01-28T00:00:00.000Z",
+          fecha_propuesta: "2019-02-27T00:00:00.000Z",
+          fecha_suscripcion: "2019-03-29T00:00:00.000Z",
+          fecha_comunicacion: "2019-06-03T00:00:00.000Z",
+          eval_semestral_inicio: "2019-07-28T00:00:00.000Z",
+          eval_semestral_auto: "2019-08-28T00:00:00.000Z",
+          eval_semestral_retro: "2019-09-27T00:00:00.000Z",
+          eval_anual_inicio: "2020-01-28T00:00:00.000Z",
+          eval_anual_auto: "2020-02-28T00:00:00.000Z",
+          eval_anual_retro: "2020-03-29T00:00:00.000Z",
+          eval_anual_rex: "2020-04-03T00:00:00.000Z",
+          indice: 7,
+        },
+        {
+          concurso: "4347",
+          ministerio: "Ministerio de Educación",
+          servicio: "Superintendencia de Educación",
+          region: "Región Metropolitana de Santiago",
+          nombre: "SANDRA XIMENA",
+          apellido: "PÉREZ VERGARA",
+          mail: "yolivares@serviciocivil.cl",
+          cargo: "Jefe/a de División Función Fiscalización",
+          nivel: "II",
+          fecha_nombramiento: "2019-02-01T00:00:00.000Z",
+          estado_adp: "Nombrado (primer periodo)",
+          sexo: "F",
+          estado_cd: "Suscrito",
+          rut: "12722227-4",
+          alerta0: "22 ene 2019",
+          nombre_corregido: "Sandra Ximena",
+          apellido_corregido: "Pérez Vergara",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yolivares@serviciocivil.cl",
+          mail_contraparte_eval: "yolivares@serviciocivil.cl",
+          fecha_nombramiento_renovacion: "2019-02-01T00:00:00.000Z",
+          fecha_propuesta: "2019-03-03T00:00:00.000Z",
+          fecha_suscripcion: "2019-04-02T00:00:00.000Z",
+          fecha_comunicacion: "2019-06-07T00:00:00.000Z",
+          eval_semestral_inicio: "2019-08-01T00:00:00.000Z",
+          eval_semestral_auto: "2019-09-01T00:00:00.000Z",
+          eval_semestral_retro: "2019-10-01T00:00:00.000Z",
+          eval_anual_inicio: "2020-02-01T00:00:00.000Z",
+          eval_anual_auto: "2020-03-01T00:00:00.000Z",
+          eval_anual_retro: "2020-03-31T00:00:00.000Z",
+          eval_anual_rex: "2020-04-07T00:00:00.000Z",
+          indice: 8,
+        },
+        {
+          concurso: "4008",
+          ministerio: "Ministerio de Educación",
+          servicio: "Junta Nacional de Auxilio Escolar y Becas",
+          region: "Región de Coquimbo",
+          nombre: "WILLIAM RODRIGO",
+          apellido: "GUTIÉRREZ YÁÑEZ",
+          mail: "yolivares@serviciocivil.cl",
+          cargo: "Director/a Regional Coquimbo",
+          nivel: "II",
+          fecha_nombramiento: "2019-02-04T00:00:00.000Z",
+          estado_adp: "Nombrado (primer periodo)",
+          sexo: "M",
+          estado_cd: "Suscrito",
+          rut: "12220767-6",
+          alerta0: "29 ene 2019",
+          nombre_corregido: "William Rodrigo",
+          apellido_corregido: "Gutiérrez Yáñez",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yolivares@serviciocivil.cl",
+          mail_contraparte_eval: "yolivares@serviciocivil.cl",
+          fecha_nombramiento_renovacion: "2019-02-04T00:00:00.000Z",
+          fecha_propuesta: "2019-03-06T00:00:00.000Z",
+          fecha_suscripcion: "2019-04-05T00:00:00.000Z",
+          fecha_comunicacion: "2019-06-10T00:00:00.000Z",
+          eval_semestral_inicio: "2019-08-04T00:00:00.000Z",
+          eval_semestral_auto: "2019-09-04T00:00:00.000Z",
+          eval_semestral_retro: "2019-10-04T00:00:00.000Z",
+          eval_anual_inicio: "2020-02-04T00:00:00.000Z",
+          eval_anual_auto: "2020-03-04T00:00:00.000Z",
+          eval_anual_retro: "2020-04-03T00:00:00.000Z",
+          eval_anual_rex: "2020-04-10T00:00:00.000Z",
+          indice: 9,
+        },
+      ],
     };
   },
   methods: {
@@ -123,6 +563,26 @@ export default {
     },
     filtroPorConcurso(adps) {
       return adps.filter((adp) => !adp.concurso.indexOf(this.concurso));
+    },
+
+    sendEmail(i) {
+      axios({
+        method: "post",
+        url: "https://v1.nocodeapi.com/yerigagarin/mailgun/MWpAmzASqYMhVxwW/send",
+        params: {
+          senderName: "Yerson",
+          senderEmail: "yolivares@serviciocivil.cl",
+          to: this.adps[i].mail,
+          subject: "Hola" + this.adps[i].nombre_corregido,
+          template: "prueba",
+        },
+      })
+        .then(function (response) {
+          console.log(response.data);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     },
   },
   computed: {
@@ -138,7 +598,7 @@ export default {
         })
       );
     },
-    ...mapState(["adps"]),
+    // ...mapState(["adps"]),
   },
   created() {
     this.concurso = this.concursoMasActual;
@@ -147,4 +607,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+ul {
+  list-style-type: none;
+}
 </style>

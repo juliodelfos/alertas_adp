@@ -1,7 +1,7 @@
 
   [
     {
-      "concurso": 2113,
+      "concurso": "2113",
       "ministerio": "Ministerio de Educación",
       "servicio": "Agencia de Calidad de la Educación",
       "region": "Región Metropolitana de Santiago",
@@ -34,7 +34,7 @@
       "eval_anual_rex": "2020-12-11T00:00:00.000Z"
     },
     {
-      "concurso": 2040,
+      "concurso": "2040",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región de Atacama",
@@ -67,7 +67,7 @@
       "eval_anual_rex": "2020-12-11T00:00:00.000Z"
     },
     {
-      "concurso": 3682,
+      "concurso": "3682",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región Metropolitana de Santiago",
@@ -100,7 +100,7 @@
       "eval_anual_rex": "2022-03-11T00:00:00.000Z"
     },
     {
-      "concurso": 3682,
+      "concurso": "3682",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región Metropolitana de Santiago",
@@ -133,7 +133,7 @@
       "eval_anual_rex": "2022-03-11T00:00:00.000Z"
     },
     {
-      "concurso": 3947,
+      "concurso": "3947",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región de la Araucanía",
@@ -166,7 +166,7 @@
       "eval_anual_rex": "2022-09-08T00:00:00.000Z"
     },
     {
-      "concurso": 3901,
+      "concurso": "3901",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región de la Araucanía",
@@ -199,7 +199,7 @@
       "eval_anual_rex": "2022-10-21T00:00:00.000Z"
     },
     {
-      "concurso": 4019,
+      "concurso": "4019",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región Metropolitana de Santiago",
@@ -232,7 +232,7 @@
       "eval_anual_rex": "2022-10-21T00:00:00.000Z"
     },
     {
-      "concurso": 3951,
+      "concurso": "3951",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región del Bio Bio",
@@ -265,7 +265,7 @@
       "eval_anual_rex": "2019-12-30T00:00:00.000Z"
     },
     {
-      "concurso": 4214,
+      "concurso": "4214",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región de la Araucanía",
@@ -298,7 +298,7 @@
       "eval_anual_rex": "2020-01-02T00:00:00.000Z"
     },
     {
-      "concurso": 4131,
+      "concurso": "4131",
       "ministerio": "Ministerio de Educación",
       "servicio": "Consejo de Rectores",
       "region": "Región Metropolitana de Santiago",
@@ -331,7 +331,7 @@
       "eval_anual_rex": "2020-01-14T00:00:00.000Z"
     },
     {
-      "concurso": 4064,
+      "concurso": "4064",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región de Valparaiso",
@@ -364,7 +364,7 @@
       "eval_anual_rex": "2020-01-31T00:00:00.000Z"
     },
     {
-      "concurso": 4126,
+      "concurso": "4126",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región de Antofagasta",
@@ -397,7 +397,7 @@
       "eval_anual_rex": "2020-02-03T00:00:00.000Z"
     },
     {
-      "concurso": 4128,
+      "concurso": "4128",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región Gral. Libertador Bernardo O'Higgins",
@@ -430,7 +430,7 @@
       "eval_anual_rex": "2020-02-04T00:00:00.000Z"
     },
     {
-      "concurso": 4270,
+      "concurso": "4270",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región Metropolitana de Santiago",
@@ -463,7 +463,7 @@
       "eval_anual_rex": "2020-02-07T00:00:00.000Z"
     },
     {
-      "concurso": 4234,
+      "concurso": "4234",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región de Arica y Parinacota",
@@ -496,7 +496,7 @@
       "eval_anual_rex": "2020-02-13T00:00:00.000Z"
     },
     {
-      "concurso": 4343,
+      "concurso": "4343",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región Metropolitana de Santiago",
@@ -529,7 +529,7 @@
       "eval_anual_rex": "2020-02-21T00:00:00.000Z"
     },
     {
-      "concurso": 4299,
+      "concurso": "4299",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región Metropolitana de Santiago",
@@ -562,7 +562,7 @@
       "eval_anual_rex": "2020-02-21T00:00:00.000Z"
     },
     {
-      "concurso": 4269,
+      "concurso": "4269",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región Metropolitana de Santiago",
@@ -595,7 +595,7 @@
       "eval_anual_rex": "2020-03-09T00:00:00.000Z"
     },
     {
-      "concurso": 4188,
+      "concurso": "4188",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región de Magallanes y Antártica Chilena",
@@ -628,7 +628,7 @@
       "eval_anual_rex": "2020-03-11T00:00:00.000Z"
     },
     {
-      "concurso": 4143,
+      "concurso": "4143",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Region de Tarapacá",
@@ -661,7 +661,7 @@
       "eval_anual_rex": "2020-03-13T00:00:00.000Z"
     },
     {
-      "concurso": 4127,
+      "concurso": "4127",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región de Coquimbo",
@@ -694,7 +694,7 @@
       "eval_anual_rex": "2020-03-13T00:00:00.000Z"
     },
     {
-      "concurso": 4094,
+      "concurso": "4094",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región Metropolitana de Santiago",
@@ -727,7 +727,7 @@
       "eval_anual_rex": "2020-03-19T00:00:00.000Z"
     },
     {
-      "concurso": 4278,
+      "concurso": "4278",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región de Los Lagos",
@@ -760,7 +760,7 @@
       "eval_anual_rex": "2020-03-26T00:00:00.000Z"
     },
     {
-      "concurso": 4267,
+      "concurso": "4267",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región del Bio Bio",
@@ -793,7 +793,7 @@
       "eval_anual_rex": "2020-04-03T00:00:00.000Z"
     },
     {
-      "concurso": 4347,
+      "concurso": "4347",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región Metropolitana de Santiago",
@@ -826,7 +826,7 @@
       "eval_anual_rex": "2020-04-07T00:00:00.000Z"
     },
     {
-      "concurso": 4008,
+      "concurso": "4008",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región de Coquimbo",
@@ -859,7 +859,7 @@
       "eval_anual_rex": "2020-04-10T00:00:00.000Z"
     },
     {
-      "concurso": 4280,
+      "concurso": "4280",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región de los Ríos",
@@ -892,7 +892,7 @@
       "eval_anual_rex": "2020-04-17T00:00:00.000Z"
     },
     {
-      "concurso": 4460,
+      "concurso": "4460",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región de Los Lagos",
@@ -925,7 +925,7 @@
       "eval_anual_rex": "2020-04-21T00:00:00.000Z"
     },
     {
-      "concurso": 4377,
+      "concurso": "4377",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región de Ñuble",
@@ -958,7 +958,7 @@
       "eval_anual_rex": "2020-04-24T00:00:00.000Z"
     },
     {
-      "concurso": 4465,
+      "concurso": "4465",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región Aysén",
@@ -991,7 +991,7 @@
       "eval_anual_rex": "2020-04-27T00:00:00.000Z"
     },
     {
-      "concurso": 4354,
+      "concurso": "4354",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región del Maule",
@@ -1024,7 +1024,7 @@
       "eval_anual_rex": "2020-04-28T00:00:00.000Z"
     },
     {
-      "concurso": 4303,
+      "concurso": "4303",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región de Ñuble",
@@ -1057,7 +1057,7 @@
       "eval_anual_rex": "2020-05-11T00:00:00.000Z"
     },
     {
-      "concurso": 4268,
+      "concurso": "4268",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región Gral. Libertador Bernardo O'Higgins",
@@ -1090,7 +1090,7 @@
       "eval_anual_rex": "2020-05-18T00:00:00.000Z"
     },
     {
-      "concurso": 4408,
+      "concurso": "4408",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región Metropolitana de Santiago",
@@ -1123,7 +1123,7 @@
       "eval_anual_rex": "2020-06-05T00:00:00.000Z"
     },
     {
-      "concurso": 4533,
+      "concurso": "4533",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región Metropolitana de Santiago",
@@ -1156,7 +1156,7 @@
       "eval_anual_rex": "2020-06-05T00:00:00.000Z"
     },
     {
-      "concurso": 4026,
+      "concurso": "4026",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región de Valparaiso",
@@ -1189,7 +1189,7 @@
       "eval_anual_rex": "2020-06-19T00:00:00.000Z"
     },
     {
-      "concurso": 4251,
+      "concurso": "4251",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Barrancas",
       "region": "Región Metropolitana de Santiago",
@@ -1222,7 +1222,7 @@
       "eval_anual_rex": "5 días posterior a la retroalimentación"
     },
     {
-      "concurso": 4253,
+      "concurso": "4253",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Huasco",
       "region": "Región de Atacama",
@@ -1255,7 +1255,7 @@
       "eval_anual_rex": "2020-06-29T00:00:00.000Z"
     },
     {
-      "concurso": 4384,
+      "concurso": "4384",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región de Atacama",
@@ -1288,7 +1288,7 @@
       "eval_anual_rex": "2020-07-08T00:00:00.000Z"
     },
     {
-      "concurso": 4383,
+      "concurso": "4383",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región de los Ríos",
@@ -1321,7 +1321,7 @@
       "eval_anual_rex": "2020-07-08T00:00:00.000Z"
     },
     {
-      "concurso": 4252,
+      "concurso": "4252",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Costa Araucania",
       "region": "Región de la Araucanía",
@@ -1354,7 +1354,7 @@
       "eval_anual_rex": "5 días posterior a la retroalimentación"
     },
     {
-      "concurso": 4254,
+      "concurso": "4254",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Puerto Cordillera",
       "region": "Región de Coquimbo",
@@ -1387,7 +1387,7 @@
       "eval_anual_rex": "2020-08-07T00:00:00.000Z"
     },
     {
-      "concurso": 4558,
+      "concurso": "4558",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región de Coquimbo",
@@ -1420,7 +1420,7 @@
       "eval_anual_rex": "2020-08-12T00:00:00.000Z"
     },
     {
-      "concurso": 4580,
+      "concurso": "4580",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región de Arica y Parinacota",
@@ -1453,7 +1453,7 @@
       "eval_anual_rex": "2020-08-14T00:00:00.000Z"
     },
     {
-      "concurso": 4650,
+      "concurso": "4650",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Nacional de Educación Pública",
       "region": "Región Metropolitana de Santiago",
@@ -1486,7 +1486,7 @@
       "eval_anual_rex": "2020-09-07T00:00:00.000Z"
     },
     {
-      "concurso": 4585,
+      "concurso": "4585",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región Metropolitana de Santiago",
@@ -1519,7 +1519,7 @@
       "eval_anual_rex": "2020-09-29T00:00:00.000Z"
     },
     {
-      "concurso": 4659,
+      "concurso": "4659",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región de los Ríos",
@@ -1552,7 +1552,7 @@
       "eval_anual_rex": "2020-10-19T00:00:00.000Z"
     },
     {
-      "concurso": 4658,
+      "concurso": "4658",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región del Maule",
@@ -1585,7 +1585,7 @@
       "eval_anual_rex": "2020-10-20T00:00:00.000Z"
     },
     {
-      "concurso": 4655,
+      "concurso": "4655",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Region de Tarapacá",
@@ -1618,7 +1618,7 @@
       "eval_anual_rex": "2020-10-29T00:00:00.000Z"
     },
     {
-      "concurso": 4782,
+      "concurso": "4782",
       "ministerio": "Ministerio de Educación",
       "servicio": "Agencia de Calidad de la Educación",
       "region": "Región Metropolitana de Santiago",
@@ -1651,7 +1651,7 @@
       "eval_anual_rex": "5 días posterior a la retroalimentación"
     },
     {
-      "concurso": 4765,
+      "concurso": "4765",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Huasco",
       "region": "Región de Atacama",
@@ -1684,7 +1684,7 @@
       "eval_anual_rex": "2020-11-06T00:00:00.000Z"
     },
     {
-      "concurso": 4756,
+      "concurso": "4756",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Costa Araucania",
       "region": "Región de la Araucanía",
@@ -1717,7 +1717,7 @@
       "eval_anual_rex": "2020-11-13T00:00:00.000Z"
     },
     {
-      "concurso": 4762,
+      "concurso": "4762",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Puerto Cordillera",
       "region": "Región de Coquimbo",
@@ -1750,7 +1750,7 @@
       "eval_anual_rex": "2020-11-17T00:00:00.000Z"
     },
     {
-      "concurso": 4758,
+      "concurso": "4758",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Puerto Cordillera",
       "region": "Región de Coquimbo",
@@ -1783,7 +1783,7 @@
       "eval_anual_rex": "2020-11-17T00:00:00.000Z"
     },
     {
-      "concurso": 4757,
+      "concurso": "4757",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Barrancas",
       "region": "Región Metropolitana de Santiago",
@@ -1816,7 +1816,7 @@
       "eval_anual_rex": "2020-12-04T00:00:00.000Z"
     },
     {
-      "concurso": 4692,
+      "concurso": "4692",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región de Ñuble",
@@ -1849,7 +1849,7 @@
       "eval_anual_rex": "2020-12-08T00:00:00.000Z"
     },
     {
-      "concurso": 4843,
+      "concurso": "4843",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región de Antofagasta",
@@ -1882,7 +1882,7 @@
       "eval_anual_rex": "2020-12-10T00:00:00.000Z"
     },
     {
-      "concurso": 4859,
+      "concurso": "4859",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región de Atacama",
@@ -1915,7 +1915,7 @@
       "eval_anual_rex": "2020-12-15T00:00:00.000Z"
     },
     {
-      "concurso": 4764,
+      "concurso": "4764",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Barrancas",
       "region": "Región Metropolitana de Santiago",
@@ -1948,7 +1948,7 @@
       "eval_anual_rex": "2020-12-21T00:00:00.000Z"
     },
     {
-      "concurso": 4576,
+      "concurso": "4576",
       "ministerio": "Ministerio de Educación",
       "servicio": "Agencia de Calidad de la Educación",
       "region": "Región Metropolitana de Santiago",
@@ -1981,7 +1981,7 @@
       "eval_anual_rex": "2020-12-21T00:00:00.000Z"
     },
     {
-      "concurso": 4712,
+      "concurso": "4712",
       "ministerio": "Ministerio de Educación",
       "servicio": "Agencia de Calidad de la Educación",
       "region": "Región Metropolitana de Santiago",
@@ -2014,7 +2014,7 @@
       "eval_anual_rex": "2020-12-28T00:00:00.000Z"
     },
     {
-      "concurso": 4733,
+      "concurso": "4733",
       "ministerio": "Ministerio de Educación",
       "servicio": "Agencia de Calidad de la Educación",
       "region": "Región Metropolitana de Santiago",
@@ -2047,7 +2047,7 @@
       "eval_anual_rex": "2021-01-04T00:00:00.000Z"
     },
     {
-      "concurso": 4912,
+      "concurso": "4912",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región Metropolitana de Santiago",
@@ -2080,7 +2080,7 @@
       "eval_anual_rex": "2021-01-25T00:00:00.000Z"
     },
     {
-      "concurso": 4970,
+      "concurso": "4970",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región Metropolitana de Santiago",
@@ -2113,7 +2113,7 @@
       "eval_anual_rex": "2021-02-25T00:00:00.000Z"
     },
     {
-      "concurso": 4920,
+      "concurso": "4920",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región de Magallanes y Antártica Chilena",
@@ -2146,7 +2146,7 @@
       "eval_anual_rex": "2021-03-10T00:00:00.000Z"
     },
     {
-      "concurso": 4918,
+      "concurso": "4918",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región del Maule",
@@ -2179,7 +2179,7 @@
       "eval_anual_rex": "2021-03-10T00:00:00.000Z"
     },
     {
-      "concurso": 4817,
+      "concurso": "4817",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Llanquihue",
       "region": "Región de Los Lagos",
@@ -2212,7 +2212,7 @@
       "eval_anual_rex": "5 días posterior a la retroalimentación"
     },
     {
-      "concurso": 4835,
+      "concurso": "4835",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Colchagua",
       "region": "Región Gral. Libertador Bernardo O'Higgins",
@@ -2245,7 +2245,7 @@
       "eval_anual_rex": "2021-03-22T00:00:00.000Z"
     },
     {
-      "concurso": 4919,
+      "concurso": "4919",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región de Los Lagos",
@@ -2278,7 +2278,7 @@
       "eval_anual_rex": "2021-04-07T00:00:00.000Z"
     },
     {
-      "concurso": 5008,
+      "concurso": "5008",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación Superior",
       "region": "Región Metropolitana de Santiago",
@@ -2311,7 +2311,7 @@
       "eval_anual_rex": "2021-04-13T00:00:00.000Z"
     },
     {
-      "concurso": 5060,
+      "concurso": "5060",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Colchagua",
       "region": "Región Gral. Libertador Bernardo O'Higgins",
@@ -2344,7 +2344,7 @@
       "eval_anual_rex": "2021-05-07T00:00:00.000Z"
     },
     {
-      "concurso": 5003,
+      "concurso": "5003",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Gabriela Mistral",
       "region": "Región Metropolitana de Santiago",
@@ -2377,7 +2377,7 @@
       "eval_anual_rex": "5 días posterior a la retroalimentación"
     },
     {
-      "concurso": 5062,
+      "concurso": "5062",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Colchagua",
       "region": "Región Gral. Libertador Bernardo O'Higgins",
@@ -2410,7 +2410,7 @@
       "eval_anual_rex": "2021-05-21T00:00:00.000Z"
     },
     {
-      "concurso": 4947,
+      "concurso": "4947",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Valparaíso",
       "region": "Región de Valparaiso",
@@ -2443,7 +2443,7 @@
       "eval_anual_rex": "5 días posterior a la retroalimentación"
     },
     {
-      "concurso": 4948,
+      "concurso": "4948",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Atacama",
       "region": "Región de Atacama",
@@ -2476,7 +2476,7 @@
       "eval_anual_rex": "5 días posterior a la retroalimentación"
     },
     {
-      "concurso": 5001,
+      "concurso": "5001",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Chinchorro",
       "region": "Región de Arica y Parinacota",
@@ -2509,7 +2509,7 @@
       "eval_anual_rex": "5 días posterior a la retroalimentación"
     },
     {
-      "concurso": 5002,
+      "concurso": "5002",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Andalién Sur",
       "region": "Región del Bio Bio",
@@ -2542,7 +2542,7 @@
       "eval_anual_rex": "5 días posterior a la retroalimentación"
     },
     {
-      "concurso": 5057,
+      "concurso": "5057",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Llanquihue",
       "region": "Región de Los Lagos",
@@ -2575,7 +2575,7 @@
       "eval_anual_rex": "2021-06-22T00:00:00.000Z"
     },
     {
-      "concurso": 5059,
+      "concurso": "5059",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Llanquihue",
       "region": "Región de Los Lagos",
@@ -2608,7 +2608,7 @@
       "eval_anual_rex": "2021-06-25T00:00:00.000Z"
     },
     {
-      "concurso": 5201,
+      "concurso": "5201",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Valparaíso",
       "region": "Región de Valparaiso",
@@ -2641,7 +2641,7 @@
       "eval_anual_rex": "2021-06-28T00:00:00.000Z"
     },
     {
-      "concurso": 5203,
+      "concurso": "5203",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Atacama",
       "region": "Región de Atacama",
@@ -2674,7 +2674,7 @@
       "eval_anual_rex": "2021-07-23T00:00:00.000Z"
     },
     {
-      "concurso": 5092,
+      "concurso": "5092",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Atacama",
       "region": "Región de Atacama",
@@ -2707,7 +2707,7 @@
       "eval_anual_rex": "2021-07-30T00:00:00.000Z"
     },
     {
-      "concurso": 5152,
+      "concurso": "5152",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región de Antofagasta",
@@ -2740,7 +2740,7 @@
       "eval_anual_rex": "2021-08-06T00:00:00.000Z"
     },
     {
-      "concurso": 5089,
+      "concurso": "5089",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Valparaíso",
       "region": "Región de Valparaiso",
@@ -2773,7 +2773,7 @@
       "eval_anual_rex": "2021-08-06T00:00:00.000Z"
     },
     {
-      "concurso": 5140,
+      "concurso": "5140",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Colchagua",
       "region": "Región Gral. Libertador Bernardo O'Higgins",
@@ -2806,7 +2806,7 @@
       "eval_anual_rex": "2021-09-07T00:00:00.000Z"
     },
     {
-      "concurso": 5151,
+      "concurso": "5151",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Costa Araucania",
       "region": "Región de la Araucanía",
@@ -2839,7 +2839,7 @@
       "eval_anual_rex": "2021-09-07T00:00:00.000Z"
     },
     {
-      "concurso": 5140,
+      "concurso": "5140",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Colchagua",
       "region": "Región Gral. Libertador Bernardo O'Higgins",
@@ -2872,7 +2872,7 @@
       "eval_anual_rex": "2021-09-07T00:00:00.000Z"
     },
     {
-      "concurso": 5034,
+      "concurso": "5034",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Costa Araucania",
       "region": "Región de la Araucanía",
@@ -2905,7 +2905,7 @@
       "eval_anual_rex": "2021-09-07T00:00:00.000Z"
     },
     {
-      "concurso": 5139,
+      "concurso": "5139",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Llanquihue",
       "region": "Región de Los Lagos",
@@ -2938,7 +2938,7 @@
       "eval_anual_rex": "2021-09-07T00:00:00.000Z"
     },
     {
-      "concurso": 5202,
+      "concurso": "5202",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Valparaíso",
       "region": "Región de Valparaiso",
@@ -2971,7 +2971,7 @@
       "eval_anual_rex": "2021-09-07T00:00:00.000Z"
     },
     {
-      "concurso": 5033,
+      "concurso": "5033",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Huasco",
       "region": "Región de Atacama",
@@ -3004,7 +3004,7 @@
       "eval_anual_rex": "2021-10-08T00:00:00.000Z"
     },
     {
-      "concurso": 5187,
+      "concurso": "5187",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Chinchorro",
       "region": "Región de Arica y Parinacota",
@@ -3037,7 +3037,7 @@
       "eval_anual_rex": "2021-10-18T00:00:00.000Z"
     },
     {
-      "concurso": 5087,
+      "concurso": "5087",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Valparaíso",
       "region": "Región de Valparaiso",
@@ -3070,7 +3070,7 @@
       "eval_anual_rex": "2021-10-22T00:00:00.000Z"
     },
     {
-      "concurso": 5367,
+      "concurso": "5367",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación Superior",
       "region": "Región Metropolitana de Santiago",
@@ -3103,7 +3103,7 @@
       "eval_anual_rex": "2021-10-27T00:00:00.000Z"
     },
     {
-      "concurso": 5193,
+      "concurso": "5193",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Andalién Sur",
       "region": "Región del Bio Bio",
@@ -3136,7 +3136,7 @@
       "eval_anual_rex": "2021-11-05T00:00:00.000Z"
     },
     {
-      "concurso": 5058,
+      "concurso": "5058",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Llanquihue",
       "region": "Región de Los Lagos",
@@ -3169,7 +3169,7 @@
       "eval_anual_rex": "2021-11-05T00:00:00.000Z"
     },
     {
-      "concurso": 5196,
+      "concurso": "5196",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Gabriela Mistral",
       "region": "Región Metropolitana de Santiago",
@@ -3202,7 +3202,7 @@
       "eval_anual_rex": "2021-11-12T00:00:00.000Z"
     },
     {
-      "concurso": 5275,
+      "concurso": "5275",
       "ministerio": "Ministerio de Educación",
       "servicio": "Agencia de Calidad de la Educación",
       "region": "Región Metropolitana de Santiago",
@@ -3235,7 +3235,7 @@
       "eval_anual_rex": "2021-11-12T00:00:00.000Z"
     },
     {
-      "concurso": 5197,
+      "concurso": "5197",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Gabriela Mistral",
       "region": "Región Metropolitana de Santiago",
@@ -3268,7 +3268,7 @@
       "eval_anual_rex": "2021-11-16T00:00:00.000Z"
     },
     {
-      "concurso": 5198,
+      "concurso": "5198",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Gabriela Mistral",
       "region": "Región Metropolitana de Santiago",
@@ -3301,7 +3301,7 @@
       "eval_anual_rex": "2021-11-26T00:00:00.000Z"
     },
     {
-      "concurso": 5268,
+      "concurso": "5268",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región Metropolitana de Santiago",
@@ -3334,7 +3334,7 @@
       "eval_anual_rex": "2021-12-08T00:00:00.000Z"
     },
     {
-      "concurso": 5192,
+      "concurso": "5192",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Andalién Sur",
       "region": "Región del Bio Bio",
@@ -3367,7 +3367,7 @@
       "eval_anual_rex": "2021-12-08T00:00:00.000Z"
     },
     {
-      "concurso": 5061,
+      "concurso": "5061",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Colchagua",
       "region": "Región Gral. Libertador Bernardo O'Higgins",
@@ -3400,7 +3400,7 @@
       "eval_anual_rex": "2021-12-08T00:00:00.000Z"
     },
     {
-      "concurso": 5191,
+      "concurso": "5191",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Andalién Sur",
       "region": "Región del Bio Bio",
@@ -3433,7 +3433,7 @@
       "eval_anual_rex": "2021-12-08T00:00:00.000Z"
     },
     {
-      "concurso": 5185,
+      "concurso": "5185",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Chinchorro",
       "region": "Región de Arica y Parinacota",
@@ -3466,7 +3466,7 @@
       "eval_anual_rex": "2022-01-04T00:00:00.000Z"
     },
     {
-      "concurso": 5326,
+      "concurso": "5326",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región de Arica y Parinacota",
@@ -3499,7 +3499,7 @@
       "eval_anual_rex": "2022-01-07T00:00:00.000Z"
     },
     {
-      "concurso": 5412,
+      "concurso": "5412",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Llanquihue",
       "region": "Región de Los Lagos",
@@ -3532,7 +3532,7 @@
       "eval_anual_rex": "2022-01-25T00:00:00.000Z"
     },
     {
-      "concurso": 5194,
+      "concurso": "5194",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Andalién Sur",
       "region": "Región del Bio Bio",
@@ -3565,7 +3565,7 @@
       "eval_anual_rex": "2022-02-07T00:00:00.000Z"
     },
     {
-      "concurso": 5632,
+      "concurso": "5632",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación Superior",
       "region": "Región Metropolitana de Santiago",
@@ -3598,7 +3598,7 @@
       "eval_anual_rex": "2022-02-28T00:00:00.000Z"
     },
     {
-      "concurso": 5413,
+      "concurso": "5413",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Atacama",
       "region": "Región de Atacama",
@@ -3631,7 +3631,7 @@
       "eval_anual_rex": "2022-03-11T00:00:00.000Z"
     },
     {
-      "concurso": 5427,
+      "concurso": "5427",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Atacama",
       "region": "Región de Atacama",
@@ -3664,7 +3664,7 @@
       "eval_anual_rex": "2022-03-11T00:00:00.000Z"
     },
     {
-      "concurso": 5585,
+      "concurso": "5585",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Chinchorro",
       "region": "Región de Arica y Parinacota",
@@ -3697,7 +3697,7 @@
       "eval_anual_rex": "2022-04-14T00:00:00.000Z"
     },
     {
-      "concurso": 5586,
+      "concurso": "5586",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Colchagua",
       "region": "Región Gral. Libertador Bernardo O'Higgins",
@@ -3730,7 +3730,7 @@
       "eval_anual_rex": "2022-05-06T00:00:00.000Z"
     },
     {
-      "concurso": 6133,
+      "concurso": "6133",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región Aysén",
@@ -3763,7 +3763,7 @@
       "eval_anual_rex": "2022-05-13T00:00:00.000Z"
     },
     {
-      "concurso": 6274,
+      "concurso": "6274",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Andalién Sur",
       "region": "Región del Bio Bio",
@@ -3796,7 +3796,7 @@
       "eval_anual_rex": "2022-06-03T00:00:00.000Z"
     },
     {
-      "concurso": 5998,
+      "concurso": "5998",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región Aysén",
@@ -3829,7 +3829,7 @@
       "eval_anual_rex": "2022-06-17T00:00:00.000Z"
     },
     {
-      "concurso": 6280,
+      "concurso": "6280",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Gabriela Mistral",
       "region": "Región Metropolitana de Santiago",
@@ -3862,7 +3862,7 @@
       "eval_anual_rex": "2022-06-17T00:00:00.000Z"
     },
     {
-      "concurso": 6277,
+      "concurso": "6277",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región Gral. Libertador Bernardo O'Higgins",
@@ -3895,7 +3895,7 @@
       "eval_anual_rex": "2022-07-22T00:00:00.000Z"
     },
     {
-      "concurso": 6136,
+      "concurso": "6136",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Chinchorro",
       "region": "Región de Arica y Parinacota",
@@ -3928,7 +3928,7 @@
       "eval_anual_rex": "2022-08-30T00:00:00.000Z"
     },
     {
-      "concurso": 7629,
+      "concurso": "7629",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Jardines Infantiles",
       "region": "Región de Valparaiso",
@@ -3961,7 +3961,7 @@
       "eval_anual_rex": "2022-09-02T00:00:00.000Z"
     },
     {
-      "concurso": 7238,
+      "concurso": "7238",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Valparaíso",
       "region": "Región de Valparaiso",
@@ -3994,7 +3994,7 @@
       "eval_anual_rex": "2022-09-21T00:00:00.000Z"
     },
     {
-      "concurso": 5007,
+      "concurso": "5007",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación Superior",
       "region": "Región Metropolitana de Santiago",
@@ -4027,7 +4027,7 @@
       "eval_anual_rex": "5 días posterior a la retroalimentación"
     },
     {
-      "concurso": 6535,
+      "concurso": "6535",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Chinchorro",
       "region": "Región de Arica y Parinacota",
@@ -4060,7 +4060,7 @@
       "eval_anual_rex": "2022-09-30T00:00:00.000Z"
     },
     {
-      "concurso": 7733,
+      "concurso": "7733",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Puerto Cordillera",
       "region": "Región de Coquimbo",
@@ -4093,7 +4093,7 @@
       "eval_anual_rex": "2022-09-30T00:00:00.000Z"
     },
     {
-      "concurso": 6527,
+      "concurso": "6527",
       "ministerio": "Ministerio de Educación",
       "servicio": "Servicio Local de Educación Huasco",
       "region": "Región de Atacama",
@@ -4126,7 +4126,7 @@
       "eval_anual_rex": "2022-10-07T00:00:00.000Z"
     },
     {
-      "concurso": 7388,
+      "concurso": "7388",
       "ministerio": "Ministerio de Educación",
       "servicio": "Superintendencia de Educación",
       "region": "Región Metropolitana de Santiago",
@@ -4159,7 +4159,7 @@
       "eval_anual_rex": "2022-10-19T00:00:00.000Z"
     },
     {
-      "concurso": 7896,
+      "concurso": "7896",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Región Metropolitana de Santiago",
@@ -4192,7 +4192,7 @@
       "eval_anual_rex": "2022-10-21T00:00:00.000Z"
     },
     {
-      "concurso": 7897,
+      "concurso": "7897",
       "ministerio": "Ministerio de Educación",
       "servicio": "Junta Nacional de Auxilio Escolar y Becas",
       "region": "Region de Tarapacá",
