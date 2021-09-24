@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Inicio from "../views/Home.vue";
-import Perfil from "../views/Perfil.vue";
+import Inicio from "@/views/Home.vue";
+import PerfilADP from "@/views/PerfilADP.vue";
 
 Vue.use(VueRouter);
 
@@ -13,8 +13,8 @@ const routes = [
   },
   {
     path: "/perfil",
-    name: "Perfil",
-    component: Perfil,
+    name: "PerfilADP",
+    component: PerfilADP,
   },
 ];
 

@@ -4,12 +4,12 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item
-          ><router-link :to="{ name: 'Inicio' }"
+          ><router-link to="/"
             >Inicio</router-link
           ></b-nav-item
         >
         <b-nav-item
-          ><router-link :to="{ name: 'Perfil' }"
+          ><router-link to="/perfil"
             >Perfil</router-link
           ></b-nav-item
         >
