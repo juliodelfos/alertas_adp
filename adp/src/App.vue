@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Nav/>
     <div id="principal">
       <router-view />
     </div>
@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import Navbar from "./components/barra/Navbar.vue";
+import Nav from "@/components/Nav.vue";
 import { mapActions } from "vuex";
 import axios from "axios";
 export default {
   name: "App",
   components: {
-    Navbar,
+    Nav
   },
   data() {
     return {};

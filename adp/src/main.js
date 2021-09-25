@@ -15,7 +15,9 @@ import moment from "moment";
 Vue.filter("formatDate", (value) => {
   moment.locale("es-mx");
   if (value) {
-    return moment(String(value)).format("LL");
+    return moment(String(value))
+      .add(1, "days")
+      .format("LL");
   }
 });
 

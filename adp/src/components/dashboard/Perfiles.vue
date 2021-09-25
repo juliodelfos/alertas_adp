@@ -35,135 +35,307 @@
       :key="i"
     >
       <b-row no-gutters>
-        <div class="py-3 bg-light">
+        <div class="bg-primary text-white pt-3 pb-2">
           <h1 class="fs-4">
-            {{ adp.concurso }} · {{ adp.nombre_corregido }}
-            {{ adp.apellido_corregido }}
+            <b-icon icon="person-circle"></b-icon>
+            {{ adp.nombre_corregido.split(" ")[0] }}
+            {{ adp.apellido_corregido.split(" ")[0] }}
+            ·
+            {{ adp.concurso }}
           </h1>
         </div>
-        <b-col md="6" class="text-start">
+        <b-col md="12" class="py-3">
           <b-card-body>
-            <b-list-group>
-              <b-list-group-item
-                ><b>Cargo:</b> {{ adp.cargo }}</b-list-group-item
-              >
-              <b-list-group-item
-                ><b>Nivel:</b> {{ adp.nivel }} nivel</b-list-group-item
-              >
-              <b-list-group-item
-                ><b>Servicio:</b> {{ adp.servicio }}</b-list-group-item
-              >
-              <b-list-group-item
-                ><b>Ministerio:</b> {{ adp.ministerio }}</b-list-group-item
-              >
-              <b-list-group-item
-                ><b>Correo laboral:</b> {{ adp.mail }}</b-list-group-item
-              >
-            </b-list-group>
+            <img
+              :src="adp.img"
+              alt="Foto de perfil"
+              class="fotoPerfil rounded-circle"
+            />
           </b-card-body>
+
+          <table class="table table-borderless mb-4">
+            <tbody>
+              <tr>
+                <td>
+                  <b-icon icon="bag-fill"></b-icon><b> Cargo:</b>
+                  {{ adp.cargo }} ({{adp.nivel}} nivel)
+                </td>
+                <td>
+                  <b-icon icon="door-closed-fill"></b-icon><b> Servicio:</b>
+                  {{ adp.servicio }}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b-icon icon="calendar2-event-fill"></b-icon
+                  ><b> Fecha nombramiento o renovación:</b>
+                  {{ adp.fecha_nombramiento_renovacion | formatDate }}
+                </td>
+                <td>
+                  <b-icon icon="envelope-fill"></b-icon>
+                  <b> Correo:</b>
+                  <a
+                    :href="
+                      enviarMailAADP +
+                      adp.mail +
+                      cuerpoMail +
+                      `Estimada/o ` +
+                      adp.nombre_corregido
+                    "
+                    target="_blank"
+                  >
+                    {{ adp.mail }}</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b-icon icon="info-square-fill"></b-icon
+                  ><b> Estado en el sistema:</b> {{ adp.estado_adp }}
+                </td>
+                <td>
+                  <b-icon icon="question-octagon-fill"></b-icon
+                  ><b> Estado de convenio:</b> {{ adp.estado_cd }}
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b-icon icon="person-badge-fill"></b-icon>
+                  <b> Contraparte convenio:</b> {{ adp.mail_contraparte_cd }}
+                </td>
+                <td>
+                  <b-icon icon="person-lines-fill"></b-icon>
+                  <b> Contraparte evaluación:</b>
+                  {{ adp.mail_contraparte_eval }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </b-col>
-        <b-col md="6" class="text-start">
-          <b-card-body>
-            <b-list-group>
-              <b-list-group-item>
-                <b>Fecha nombramiento o renovación:</b>
-                {{ adp.fecha_nombramiento_renovacion | formatDate }}
-              </b-list-group-item>
-              <b-list-group-item
-                ><b>Estado en el sistema:</b>
-                {{ adp.estado_adp }}</b-list-group-item
-              >
-              <b-list-group-item
-                ><b>Estado de convenio:</b>
-                {{ adp.estado_cd }}</b-list-group-item
-              >
-              <b-list-group-item>
-                <b>Contraparte convenio:</b> {{ adp.mail_contraparte_cd }}
-              </b-list-group-item>
-              <b-list-group-item>
-                <b>Contraparte evaluación:</b> {{ adp.mail_contraparte_eval }}
-              </b-list-group-item>
-            </b-list-group>
-          </b-card-body>
-        </b-col>
-        <!-- Fechas -->
-        <b-row class="text-start">
-          <b-col md="4">
-            <b-card-body title="Propuesta de convenio">
-              <b-list-group>
-                <b-list-group-item
-                  ><b>Propuesta:</b>
-                  {{ adp.fecha_propuesta | formatDate }}</b-list-group-item
-                >
-                <b-list-group-item
-                  ><b>Suscripción:</b>
-                  {{ adp.fecha_suscripcion | formatDate }}</b-list-group-item
-                >
-                <b-list-group-item
-                  ><b>Comunicación:</b>
-                  {{ adp.fecha_comunicacion | formatDate }}
-                  <b-icon
-                    icon="calendar" class="cursor"
-                    @click="addToCalendar(adp.indice)"
-                  ></b-icon>
-                </b-list-group-item>
-              </b-list-group>
-            </b-card-body>
-          </b-col>
-          <b-col md="4">
-            <b-card-body title="Evaluaciones semestrales">
-              <b-list-group>
-                <b-list-group-item
-                  ><b>Inicio:</b>
-                  {{
-                    adp.eval_semestral_inicio | formatDate
-                  }}</b-list-group-item
-                >
-                <b-list-group-item
-                  ><b>Autoevaluación:</b>
-                  {{ adp.eval_semestral_auto | formatDate }}</b-list-group-item
-                >
-                <b-list-group-item
-                  ><b>Retroalimentación:</b>
-                  {{ adp.eval_semestral_retro | formatDate }}</b-list-group-item
-                >
-              </b-list-group>
-            </b-card-body>
-          </b-col>
-          <b-col md="4">
-            <b-card-body title="Evaluaciones anuales">
-              <b-list-group>
-                <b-list-group-item
-                  ><b>Inicio:</b>
-                  {{ adp.eval_anual_inicio | formatDate }}</b-list-group-item
-                >
-                <b-list-group-item
-                  ><b>Autoevaluación:</b>
-                  {{ adp.eval_anual_auto | formatDate }}</b-list-group-item
-                >
-                <b-list-group-item
-                  ><b>Retroalimentación:</b>
-                  {{ adp.eval_anual_retro | formatDate }}</b-list-group-item
-                >
-                <b-list-group-item
-                  ><b>Resolución:</b>
-                  {{ adp.eval_anual_rex | formatDate }}</b-list-group-item
-                >
-              </b-list-group>
-            </b-card-body>
-          </b-col>
-        </b-row>
-        <div class="bg-light py-4">
-          <h4>Enviar alertas</h4>
-          <b-button-group>
-            <b-button variant="outline-primary" @click="sendEmail(adp.indice)"
-              >Alerta 0</b-button
-            >
-            <b-button variant="outline-primary">Alerta 30</b-button>
-            <b-button variant="outline-primary">Alerta 60</b-button>
-            <b-button variant="outline-primary">Alerta 90</b-button>
-            <b-button variant="outline-primary">Próxima evaluación</b-button>
-          </b-button-group>
+
+        <div>
+          <b-tabs content-class="mt-3" align="center">
+            <b-tab title="Convenio de desempeño" active>
+              <div class="px-4">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Propuesta</th>
+                      <th scope="col">Suscripción</th>
+                      <th scope="col">Comunicación</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        {{ adp.fecha_propuesta | formatDate }}
+                      </td>
+                      <td>
+                        {{ adp.fecha_suscripcion | formatDate }}
+                      </td>
+                      <td>{{ adp.fecha_comunicacion | formatDate }}</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span
+                          class="badge rounded-pill bg-warning text-dark"
+                          @click="sendEmail(adp.indice)"
+                          ><b-icon icon="envelope-fill"></b-icon> Enviar
+                          alerta</span
+                        >
+                      </td>
+                      <td>
+                        <span class="badge rounded-pill bg-warning text-dark"
+                          ><b-icon icon="envelope-fill"></b-icon> Enviar
+                          alerta</span
+                        >
+                      </td>
+                      <td>
+                        <span class="badge rounded-pill bg-warning text-dark"
+                          ><b-icon icon="envelope-fill"></b-icon> Enviar
+                          alerta</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="badge rounded-pill bg-primary text-white"
+                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
+                        </span>
+                      </td>
+                      <td>
+                        <span class="badge rounded-pill bg-primary text-white"
+                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
+                        </span>
+                      </td>
+                      <td>
+                        <span
+                          class="
+                            badge
+                            rounded-pill
+                            bg-primary
+                            text-white
+                            cursor
+                          "
+                          @click="addToCalendar(adp.indice)"
+                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </b-tab>
+            <b-tab title="Evaluaciones semestrales">
+              <div class="px-4">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Inicio</th>
+                      <th scope="col">Autoevaluación</th>
+                      <th scope="col">Retroalimentación</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ adp.eval_semestral_inicio | formatDate }}</td>
+                      <td>
+                        {{ adp.eval_semestral_auto | formatDate }}
+                      </td>
+                      <td>{{ adp.eval_semestral_retro | formatDate }}</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="badge rounded-pill bg-warning text-dark"
+                          ><b-icon icon="envelope-fill"></b-icon> Enviar
+                          alerta</span
+                        >
+                      </td>
+                      <td>
+                        <span class="badge rounded-pill bg-warning text-dark"
+                          ><b-icon icon="envelope-fill"></b-icon> Enviar
+                          alerta</span
+                        >
+                      </td>
+                      <td>
+                        <span class="badge rounded-pill bg-warning text-dark"
+                          ><b-icon icon="envelope-fill"></b-icon> Enviar
+                          alerta</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="badge rounded-pill bg-primary text-white"
+                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
+                        </span>
+                      </td>
+                      <td>
+                        <span class="badge rounded-pill bg-primary text-white"
+                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
+                        </span>
+                      </td>
+                      <td>
+                        <span class="badge rounded-pill bg-primary text-white"
+                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </b-tab>
+            <b-tab title="Evaluaciones anuales">
+              <div class="px-4">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Inicio</th>
+                      <th scope="col">Autoevaluación</th>
+                      <th scope="col">Retroalimentación</th>
+                      <th scope="col">Resolución</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        {{ adp.eval_anual_inicio | formatDate }}
+                      </td>
+                      <td>
+                        {{ adp.eval_anual_auto | formatDate }}
+                      </td>
+                      <td>{{ adp.eval_anual_retro | formatDate }}</td>
+                      <td>{{ adp.eval_anual_rex | formatDate }}</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="badge rounded-pill bg-warning text-dark"
+                          ><b-icon icon="envelope-fill"></b-icon> Enviar
+                          alerta</span
+                        >
+                      </td>
+                      <td>
+                        <span class="badge rounded-pill bg-warning text-dark"
+                          ><b-icon icon="envelope-fill"></b-icon> Enviar
+                          alerta</span
+                        >
+                      </td>
+                      <td>
+                        <span class="badge rounded-pill bg-warning text-dark"
+                          ><b-icon icon="envelope-fill"></b-icon> Enviar
+                          alerta</span
+                        >
+                      </td>
+                      <td>
+                        <span class="badge rounded-pill bg-warning text-dark"
+                          ><b-icon icon="envelope-fill"></b-icon> Enviar
+                          alerta</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="badge rounded-pill bg-primary text-white"
+                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
+                        </span>
+                      </td>
+                      <td>
+                        <span class="badge rounded-pill bg-primary text-white"
+                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
+                        </span>
+                      </td>
+                      <td>
+                        <span
+                          class="
+                            badge
+                            rounded-pill
+                            bg-primary
+                            text-white
+                            cursor
+                          "
+                          @click="addToCalendar(adp.indice)"
+                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
+                        </span>
+                      </td>
+                      <td>
+                        <span
+                          class="
+                            badge
+                            rounded-pill
+                            bg-primary
+                            text-white
+                            cursor
+                          "
+                          @click="addToCalendar(adp.indice)"
+                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </b-tab>
+          </b-tabs>
         </div>
       </b-row>
     </b-card>
@@ -180,6 +352,8 @@ export default {
     return {
       servicio: "",
       concurso: "",
+      enviarMailAADP: "https://mail.google.com/mail/?view=cm&source=mailto&to=",
+      cuerpoMail: "&body=",
       mail: {
         senderName: "",
         senderEmail: "",
@@ -251,6 +425,7 @@ export default {
           eval_anual_retro: "2020-02-16T00:00:00.000Z",
           eval_anual_rex: "2020-02-21T00:00:00.000Z",
           indice: 0,
+          img: "https://images.unsplash.com/photo-1584413544514-68a49c9b59e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80",
         },
         {
           concurso: "4269",
@@ -285,6 +460,7 @@ export default {
           eval_anual_retro: "2020-03-02T00:00:00.000Z",
           eval_anual_rex: "2020-03-09T00:00:00.000Z",
           indice: 1,
+          img: "https://images.unsplash.com/photo-1584413544514-68a49c9b59e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80",
         },
         {
           concurso: "4188",
@@ -319,6 +495,7 @@ export default {
           eval_anual_retro: "2020-03-04T00:00:00.000Z",
           eval_anual_rex: "2020-03-11T00:00:00.000Z",
           indice: 2,
+          img: "https://images.unsplash.com/photo-1584413544514-68a49c9b59e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80",
         },
         {
           concurso: "4143",
@@ -353,6 +530,7 @@ export default {
           eval_anual_retro: "2020-03-07T00:00:00.000Z",
           eval_anual_rex: "2020-03-13T00:00:00.000Z",
           indice: 3,
+          img: "https://images.unsplash.com/photo-1584413544514-68a49c9b59e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80",
         },
         {
           concurso: "4127",
@@ -387,6 +565,7 @@ export default {
           eval_anual_retro: "2020-03-08T00:00:00.000Z",
           eval_anual_rex: "2020-03-13T00:00:00.000Z",
           indice: 4,
+          img: "https://images.unsplash.com/photo-1584413544514-68a49c9b59e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80",
         },
         {
           concurso: "4094",
@@ -421,6 +600,7 @@ export default {
           eval_anual_retro: "2020-03-12T00:00:00.000Z",
           eval_anual_rex: "2020-03-19T00:00:00.000Z",
           indice: 5,
+          img: "https://images.unsplash.com/photo-1584413544514-68a49c9b59e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80",
         },
         {
           concurso: "4278",
@@ -455,6 +635,7 @@ export default {
           eval_anual_retro: "2020-03-19T00:00:00.000Z",
           eval_anual_rex: "2020-03-26T00:00:00.000Z",
           indice: 6,
+          img: "https://images.unsplash.com/photo-1584413544514-68a49c9b59e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80",
         },
         {
           concurso: "4267",
@@ -489,6 +670,7 @@ export default {
           eval_anual_retro: "2020-03-29T00:00:00.000Z",
           eval_anual_rex: "2020-04-03T00:00:00.000Z",
           indice: 7,
+          img: "https://images.unsplash.com/photo-1584413544514-68a49c9b59e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80",
         },
         {
           concurso: "4347",
@@ -523,6 +705,7 @@ export default {
           eval_anual_retro: "2020-03-31T00:00:00.000Z",
           eval_anual_rex: "2020-04-07T00:00:00.000Z",
           indice: 8,
+          img: "https://images.unsplash.com/photo-1584413544514-68a49c9b59e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80",
         },
         {
           concurso: "4008",
@@ -557,6 +740,7 @@ export default {
           eval_anual_retro: "2020-04-03T00:00:00.000Z",
           eval_anual_rex: "2020-04-10T00:00:00.000Z",
           indice: 9,
+          img: "https://images.unsplash.com/photo-1584413544514-68a49c9b59e8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80",
         },
       ],
     };
@@ -654,5 +838,10 @@ ul {
 
 .cursor {
   cursor: copy;
+}
+
+.fotoPerfil {
+  height: 7rem;
+  width: 7rem;
 }
 </style>
