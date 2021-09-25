@@ -101,8 +101,12 @@
                 >
                 <b-list-group-item
                   ><b>Comunicación:</b>
-                  {{ adp.fecha_comunicacion | formatDate }}</b-list-group-item
-                >
+                  {{ adp.fecha_comunicacion | formatDate }}
+                  <b-icon
+                    icon="calendar" class="cursor"
+                    @click="addToCalendar(adp.indice)"
+                  ></b-icon>
+                </b-list-group-item>
               </b-list-group>
             </b-card-body>
           </b-col>
@@ -584,6 +588,43 @@ export default {
           console.log(error);
         });
     },
+    addToCalendar(i) {
+      axios({
+        method: "post",
+        url: "https://v1.nocodeapi.com/yerigagarin/calendar/kPSHlVqrfCmjOchV/event?maxAttendees=1&sendNotifications=true&sendUpdates=none",
+        params: {},
+        data: {
+          summary: `Noventa días de ${this.adps[i].nombre_corregido} ${this.adps[i].apellido_corregido} [${this.adps[i].concurso}]`,
+          description: `El concurso ${this.adps[i].concurso} se encuentra próximo al cumplimiento de los 90 días.`,
+          start: {
+            dateTime: `${
+              this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+            }T8:00:00-03:00`,
+            timeZone: "GMT",
+          },
+          end: {
+            dateTime: `${
+              this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+            }T8:00:00-03:00`,
+            timeZone: "GMT",
+          },
+          sendNotifications: true,
+          attendees: [
+            {
+              email: "yolivares@serviciocivil.cl",
+            },
+          ],
+        },
+      })
+        .then(function (response) {
+          // handle success
+          console.log(response.data);
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        });
+    },
   },
   computed: {
     filtrarADPs() {
@@ -609,5 +650,9 @@ export default {
 <style scoped lang="scss">
 ul {
   list-style-type: none;
+}
+
+.cursor {
+  cursor: copy;
 }
 </style>
