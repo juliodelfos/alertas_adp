@@ -4,8 +4,8 @@
     <b-row
       cols="1"
       cols-sm="1"
-      cols-md="2"
-      cols-lg="2"
+      cols-md="4"
+      cols-lg="4"
       class="mb-4 pb-4 pt-3 px-2 bg-primary text-white shadow rounded"
     >
       <b-col>
@@ -25,6 +25,23 @@
           </b-form-select>
         </b-form-group>
       </b-col>
+      <b-col>
+        <b-form-group label="Buscar por estado de convenio">
+          <b-form-select
+            :options="estadosConvenios"
+            v-model="estadoConvenio"
+            class="form-select"
+          >
+          </b-form-select>
+        </b-form-group>
+      </b-col>
+      <b-col>
+        <b-form-group label="Buscar por nombre:">
+          <b-form-input
+            placeholder="Nombre ADP"
+            v-model="nombreADP"
+          ></b-form-input> </b-form-group
+      ></b-col>
     </b-row>
 
     <!-- Cards -->
@@ -58,7 +75,7 @@
               <tr>
                 <td>
                   <b-icon icon="bag-fill"></b-icon><b> Cargo:</b>
-                  {{ adp.cargo }} ({{adp.nivel}} nivel)
+                  {{ adp.cargo }} ({{ adp.nivel }} nivel)
                 </td>
                 <td>
                   <b-icon icon="door-closed-fill"></b-icon><b> Servicio:</b>
@@ -93,7 +110,15 @@
                   <b-icon icon="info-square-fill"></b-icon
                   ><b> Estado en el sistema:</b> {{ adp.estado_adp }}
                 </td>
-                <td>
+                <td v-if="adp.estado_cd == 'Suscrito'">
+                  <b-icon icon="question-octagon-fill"></b-icon
+                  ><b> Estado de convenio:</b> {{ adp.estado_cd }}
+                  <b-icon
+                    icon="check-circle-fill"
+                    id="convenioSuscrito"
+                  ></b-icon>
+                </td>
+                <td v-else>
                   <b-icon icon="question-octagon-fill"></b-icon
                   ><b> Estado de convenio:</b> {{ adp.estado_cd }}
                 </td>
@@ -101,12 +126,23 @@
               <tr>
                 <td>
                   <b-icon icon="person-badge-fill"></b-icon>
-                  <b> Contraparte convenio:</b> {{ adp.mail_contraparte_cd }}
+                  <b> Contraparte convenio:</b>
+                  <a
+                    :href="enviarMailAADP + adp.mail_contraparte_cd"
+                    target="_blank"
+                  >
+                    {{ adp.mail_contraparte_cd }}</a
+                  >
                 </td>
                 <td>
                   <b-icon icon="person-lines-fill"></b-icon>
-                  <b> Contraparte evaluación:</b>
-                  {{ adp.mail_contraparte_eval }}
+                  <b> Contraparte evaluación:</b
+                  ><a
+                    :href="enviarMailAADP + adp.mail_contraparte_eval"
+                    target="_blank"
+                  >
+                    {{ adp.mail_contraparte_eval }}</a
+                  >
                 </td>
               </tr>
             </tbody>
@@ -351,7 +387,9 @@ export default {
   data() {
     return {
       servicio: "",
+      estadoConvenio: "",
       concurso: "",
+      nombreADP: "",
       enviarMailAADP: "https://mail.google.com/mail/?view=cm&source=mailto&to=",
       cuerpoMail: "&body=",
       mail: {
@@ -363,31 +401,100 @@ export default {
         deliveryTime: "",
         name: "",
       },
+      estadosConvenios: [
+        { value: "", text: "Selecciona un estado" },
+        { value: "Suscrito", text: "Suscrito" },
+        { value: "Elaboración Servicio", text: "Elaboración Servicio" },
+        { value: "Servicio Firma", text: "Servicio Firma" },
+        { value: "Esperando Firma", text: "Esperando Firma" },
+        { value: "DNSC Revisión", text: "DNSC Revisión" },
+        { value: "Elaboración Ministerio", text: "Elaboración Ministerio" },
+        {
+          value: "Servicio Revisión de Observaciones",
+          text: "Servicio Revisión de Observaciones",
+        },
+        {
+          value: "Ministerio Revisión de Observaciones",
+          text: "Ministerio Revisión de Observaciones",
+        },
+        {
+          value: "Ministerio Resolución",
+          text: "Ministerio Revisión de Observaciones",
+        },
+      ],
       servicios: [
         { value: "", text: "Selecciona un servicio" },
         {
-          value: "Servicio Local de Educación Andalién Sur",
-          text: "Servicio Local de Educación Andalién Sur",
-        },
-        {
-          value: "Superintendencia de Educación Superior",
-          text: "Superintendencia de Educación Superior",
-        },
-        {
-          value: "Servicio Local de Educación Barrancas",
-          text: "Servicio Local de Educación Barrancas",
-        },
-        {
-          value: "Servicio Local de Educación Colchagua",
-          text: "Servicio Local de Educación Colchagua",
+          value: "Agencia de Calidad de la Educación",
+          text: "Agencia de Calidad de la Educación",
         },
         {
           value: "Consejo de Rectores",
           text: "Consejo de Rectores",
         },
         {
+          value: "Junta Nacional de Auxilio Escolar y Becas",
+          text: "Junta Nacional de Auxilio Escolar y Becas",
+        },
+        {
+          value: "Junta Nacional de Jardines Infantiles",
+          text: "Junta Nacional de Jardines Infantiles",
+        },
+        {
+          value: "Servicio Local de Educación Andalién Sur",
+          text: "Servicio Local de Educación Andalién Sur",
+        },
+        {
+          value: "Servicio Local de Educación Atacama",
+          text: "Servicio Local de Educación Atacama",
+        },
+        {
+          value: "Servicio Local de Educación Barrancas",
+          text: "Servicio Local de Educación Barrancas",
+        },
+        {
+          value: "Servicio Local de Educación Chinchorro",
+          text: "Servicio Local de Educación Chinchorro",
+        },
+        {
+          value: "Servicio Local de Educación Colchagua",
+          text: "Servicio Local de Educación Colchagua",
+        },
+        {
+          value: "Servicio Local de Educación Costa Araucanía",
+          text: "Servicio Local de Educación Costa Araucanía",
+        },
+        {
+          value: "Servicio Local de Educación Gabriela Mistral",
+          text: "Servicio Local de Educación Gabriela Mistral",
+        },
+        {
+          value: "Servicio Local de Educación Huasco",
+          text: "Servicio Local de Educación Huasco",
+        },
+        {
+          value: "Servicio Local de Educación Llanquihue",
+          text: "Servicio Local de Educación Llanquihue",
+        },
+        {
+          value: "Servicio Local de Educación Puerto Cordillera",
+          text: "Servicio Local de Educación Puerto Cordillera",
+        },
+        {
+          value: "Servicio Local de Educación Valparaíso",
+          text: "Servicio Local de Educación Valparaíso",
+        },
+        {
           value: "Servicio Nacional de Educación Pública",
           text: "Dirección de Educación Pública",
+        },
+        {
+          value: "Superintendencia de Educación",
+          text: "Superintendencia de Educación",
+        },
+        {
+          value: "Superintendencia de Educación Superior",
+          text: "Superintendencia de Educación Superior",
         },
       ],
       // Provisorio
@@ -405,7 +512,7 @@ export default {
           fecha_nombramiento: "2018-12-17T00:00:00.000Z",
           estado_adp: "Nombrado (primer periodo)",
           sexo: "M",
-          estado_cd: "Suscrito",
+          estado_cd: "Elaboración",
           rut: "7818274-1",
           alerta0: "19 dic 2018",
           nombre_corregido: "Pedro",
@@ -746,13 +853,25 @@ export default {
     };
   },
   methods: {
+    // Filtros
     filtroPorNombreDeServicio(adps) {
       return adps.filter((adp) => !adp.servicio.indexOf(this.servicio));
+    },
+    filtroPorEstadoConvenio(adps) {
+      return adps.filter((adp) => !adp.estado_cd.indexOf(this.estadoConvenio));
     },
     filtroPorConcurso(adps) {
       return adps.filter((adp) => !adp.concurso.indexOf(this.concurso));
     },
-
+    filtroPorNombreADP(adps) {
+      return adps.filter(
+        (adp) =>
+          !adp.nombre_corregido
+            .toLowerCase()
+            .indexOf(this.nombreADP.toLowerCase())
+      );
+    },
+    // APIs
     sendEmail(i) {
       axios({
         method: "post",
@@ -812,7 +931,11 @@ export default {
   },
   computed: {
     filtrarADPs() {
-      return this.filtroPorConcurso(this.filtroPorNombreDeServicio(this.adps));
+      return this.filtroPorConcurso(
+        this.filtroPorNombreDeServicio(
+          this.filtroPorNombreADP(this.filtroPorEstadoConvenio(this.adps))
+        )
+      );
     },
     concursoMasActual() {
       const arregloConcursos = this.adps;
@@ -843,5 +966,9 @@ ul {
 .fotoPerfil {
   height: 7rem;
   width: 7rem;
+}
+
+#convenioSuscrito {
+  color: green;
 }
 </style>
