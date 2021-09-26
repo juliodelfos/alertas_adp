@@ -1,22 +1,21 @@
 <template>
-  <b-container>
-    <!-- Buscador -->
+  <div>
     <b-row
       cols="1"
       cols-sm="1"
       cols-md="4"
       cols-lg="4"
-      class="mb-4 pb-4 pt-3 px-2 bg-primary text-white shadow rounded"
+      class="mb-4 pb-4 pt-3 px-3 bg-primary text-white shadow rounded"
     >
       <b-col>
-        <b-form-group label="Buscar por número de concurso:">
+        <b-form-group>
           <b-form-input
             placeholder="Número de concurso"
             v-model="concurso"
           ></b-form-input> </b-form-group
       ></b-col>
       <b-col>
-        <b-form-group label="Buscar por servicio">
+        <b-form-group>
           <b-form-select
             :options="servicios"
             v-model="servicio"
@@ -26,7 +25,7 @@
         </b-form-group>
       </b-col>
       <b-col>
-        <b-form-group label="Buscar por estado de convenio">
+        <b-form-group>
           <b-form-select
             :options="estadosConvenios"
             v-model="estadoConvenio"
@@ -36,346 +35,359 @@
         </b-form-group>
       </b-col>
       <b-col>
-        <b-form-group label="Buscar por nombre:">
+        <b-form-group>
           <b-form-input
             placeholder="Nombre ADP"
             v-model="nombreADP"
           ></b-form-input> </b-form-group
       ></b-col>
     </b-row>
+    <b-container>
+      <!-- Buscador -->
 
-    <!-- Cards -->
-    <b-card
-      no-body
-      class="overflow-hidden shadow mb-4"
-      v-for="(adp, i) in filtrarADPs"
-      :key="i"
-    >
-      <b-row no-gutters>
-        <div class="bg-primary text-white pt-3 pb-2">
-          <h1 class="fs-4">
-            <b-icon icon="person-circle"></b-icon>
-            {{ adp.nombre_corregido.split(" ")[0] }}
-            {{ adp.apellido_corregido.split(" ")[0] }}
-            ·
-            {{ adp.concurso }}
-          </h1>
-        </div>
-        <b-col md="12" class="py-3">
-          <b-card-body>
-            <img
-              :src="adp.img"
-              alt="Foto de perfil"
-              class="fotoPerfil rounded-circle"
-            />
-          </b-card-body>
+      <!-- Cards -->
+      <b-card
+        no-body
+        class="overflow-hidden shadow mb-4"
+        v-for="(adp, i) in filtrarADPs"
+        :key="i"
+      >
+        <b-row no-gutters>
+          <div class="bg-primary text-white pt-3 pb-2">
+            <h1 class="fs-4">
+              <b-icon icon="person-circle"></b-icon>
+              {{ adp.nombre_corregido.split(" ")[0] }}
+              {{ adp.apellido_corregido.split(" ")[0] }}
+              ·
+              {{ adp.concurso }}
+            </h1>
+          </div>
+          <b-col md="12" class="py-3">
+            <b-card-body>
+              <img
+                :src="adp.img"
+                alt="Foto de perfil"
+                class="fotoPerfil rounded-circle"
+              />
+            </b-card-body>
 
-          <table class="table table-borderless mb-4">
-            <tbody>
-              <tr>
-                <td>
-                  <b-icon icon="bag-fill"></b-icon><b> Cargo:</b>
-                  {{ adp.cargo }} ({{ adp.nivel }} nivel)
-                </td>
-                <td>
-                  <b-icon icon="door-closed-fill"></b-icon><b> Servicio:</b>
-                  {{ adp.servicio }}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <b-icon icon="calendar2-event-fill"></b-icon
-                  ><b> Fecha nombramiento o renovación:</b>
-                  {{ adp.fecha_nombramiento_renovacion | formatDate }}
-                </td>
-                <td>
-                  <b-icon icon="envelope-fill"></b-icon>
-                  <b> Correo:</b>
-                  <a
-                    :href="
-                      enviarMailAADP +
-                      adp.mail +
-                      cuerpoMail +
-                      `Estimada/o ` +
-                      adp.nombre_corregido
-                    "
-                    target="_blank"
-                  >
-                    {{ adp.mail }}</a
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <b-icon icon="info-square-fill"></b-icon
-                  ><b> Estado en el sistema:</b> {{ adp.estado_adp }}
-                </td>
-                <td v-if="adp.estado_cd == 'Suscrito'">
-                  <b-icon icon="question-octagon-fill"></b-icon
-                  ><b> Estado de convenio:</b> {{ adp.estado_cd }}
-                  <b-icon
-                    icon="check-circle-fill"
-                    id="convenioSuscrito"
-                  ></b-icon>
-                </td>
-                <td v-else>
-                  <b-icon icon="question-octagon-fill"></b-icon
-                  ><b> Estado de convenio:</b> {{ adp.estado_cd }}
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <b-icon icon="person-badge-fill"></b-icon>
-                  <b> Contraparte convenio:</b>
-                  <a
-                    :href="enviarMailAADP + adp.mail_contraparte_cd"
-                    target="_blank"
-                  >
-                    {{ adp.mail_contraparte_cd }}</a
-                  >
-                </td>
-                <td>
-                  <b-icon icon="person-lines-fill"></b-icon>
-                  <b> Contraparte evaluación:</b
-                  ><a
-                    :href="enviarMailAADP + adp.mail_contraparte_eval"
-                    target="_blank"
-                  >
-                    {{ adp.mail_contraparte_eval }}</a
-                  >
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </b-col>
+            <table class="table table-borderless mb-4">
+              <tbody>
+                <tr>
+                  <td>
+                    <b-icon icon="bag-fill"></b-icon><b> Cargo:</b>
+                    {{ adp.cargo }} ({{ adp.nivel }} nivel)
+                  </td>
+                  <td>
+                    <b-icon icon="door-closed-fill"></b-icon><b> Servicio:</b>
+                    {{ adp.servicio }}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b-icon icon="calendar2-event-fill"></b-icon
+                    ><b> Fecha nombramiento o renovación:</b>
+                    {{ adp.fecha_nombramiento_renovacion | formatDate }}
+                  </td>
+                  <td>
+                    <b-icon icon="envelope-fill"></b-icon>
+                    <b> Correo:</b>
+                    <a
+                      :href="
+                        enviarMailAADP +
+                        adp.mail +
+                        cuerpoMail +
+                        `Estimada/o ` +
+                        adp.nombre_corregido
+                      "
+                      target="_blank"
+                    >
+                      {{ adp.mail }}</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b-icon icon="info-square-fill"></b-icon
+                    ><b> Estado en el sistema:</b> {{ adp.estado_adp }}
+                  </td>
+                  <td v-if="adp.estado_cd == 'Suscrito'">
+                    <b-icon icon="question-octagon-fill"></b-icon
+                    ><b> Estado de convenio:</b> {{ adp.estado_cd }}
+                    <b-icon
+                      icon="check-circle-fill"
+                      id="convenioSuscrito"
+                    ></b-icon>
+                  </td>
+                  <td v-else>
+                    <b-icon icon="question-octagon-fill"></b-icon
+                    ><b> Estado de convenio:</b> {{ adp.estado_cd }}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <b-icon icon="person-badge-fill"></b-icon>
+                    <b> Contraparte convenio:</b>
+                    <a
+                      :href="enviarMailAADP + adp.mail_contraparte_cd"
+                      target="_blank"
+                    >
+                      {{ adp.mail_contraparte_cd }}</a
+                    >
+                  </td>
+                  <td>
+                    <b-icon icon="person-lines-fill"></b-icon>
+                    <b> Contraparte evaluación:</b
+                    ><a
+                      :href="enviarMailAADP + adp.mail_contraparte_eval"
+                      target="_blank"
+                    >
+                      {{ adp.mail_contraparte_eval }}</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </b-col>
 
-        <div>
-          <b-tabs content-class="mt-3" align="center">
-            <b-tab title="Convenio de desempeño" active>
-              <div class="px-4">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th scope="col">Propuesta</th>
-                      <th scope="col">Suscripción</th>
-                      <th scope="col">Comunicación</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        {{ adp.fecha_propuesta | formatDate }}
-                      </td>
-                      <td>
-                        {{ adp.fecha_suscripcion | formatDate }}
-                      </td>
-                      <td>{{ adp.fecha_comunicacion | formatDate }}</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span
-                          class="badge rounded-pill bg-warning text-dark"
-                          @click="sendEmail(adp.indice)"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span
-                          class="
-                            badge
-                            rounded-pill
-                            bg-primary
-                            text-white
-                            cursor
-                          "
-                          @click="addToCalendar(adp.indice)"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </b-tab>
-            <b-tab title="Evaluaciones semestrales">
-              <div class="px-4">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th scope="col">Inicio</th>
-                      <th scope="col">Autoevaluación</th>
-                      <th scope="col">Retroalimentación</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>{{ adp.eval_semestral_inicio | formatDate }}</td>
-                      <td>
-                        {{ adp.eval_semestral_auto | formatDate }}
-                      </td>
-                      <td>{{ adp.eval_semestral_retro | formatDate }}</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </b-tab>
-            <b-tab title="Evaluaciones anuales">
-              <div class="px-4">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th scope="col">Inicio</th>
-                      <th scope="col">Autoevaluación</th>
-                      <th scope="col">Retroalimentación</th>
-                      <th scope="col">Resolución</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        {{ adp.eval_anual_inicio | formatDate }}
-                      </td>
-                      <td>
-                        {{ adp.eval_anual_auto | formatDate }}
-                      </td>
-                      <td>{{ adp.eval_anual_retro | formatDate }}</td>
-                      <td>{{ adp.eval_anual_rex | formatDate }}</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span
-                          class="
-                            badge
-                            rounded-pill
-                            bg-primary
-                            text-white
-                            cursor
-                          "
-                          @click="addToCalendar(adp.indice)"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span
-                          class="
-                            badge
-                            rounded-pill
-                            bg-primary
-                            text-white
-                            cursor
-                          "
-                          @click="addToCalendar(adp.indice)"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </b-tab>
-          </b-tabs>
-        </div>
-      </b-row>
-    </b-card>
-  </b-container>
+          <div>
+            <b-tabs content-class="mt-3" align="center">
+              <b-tab title="Convenio de desempeño" active>
+                <div class="px-4">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Propuesta</th>
+                        <th scope="col">Suscripción</th>
+                        <th scope="col">Comunicación</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          {{ adp.fecha_propuesta | formatDate }}
+                        </td>
+                        <td>
+                          {{ adp.fecha_suscripcion | formatDate }}
+                        </td>
+                        <td>{{ adp.fecha_comunicacion | formatDate }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span
+                            class="badge rounded-pill bg-warning text-dark"
+                            @click="sendEmail(adp.indice)"
+                            ><b-icon icon="envelope-fill"></b-icon> Enviar
+                            alerta</span
+                          >
+                        </td>
+                        <td>
+                          <span class="badge rounded-pill bg-warning text-dark"
+                            ><b-icon icon="envelope-fill"></b-icon> Enviar
+                            alerta</span
+                          >
+                        </td>
+                        <td>
+                          <span class="badge rounded-pill bg-warning text-dark"
+                            ><b-icon icon="envelope-fill"></b-icon> Enviar
+                            alerta</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="badge rounded-pill bg-primary text-white"
+                            ><b-icon icon="calendar"></b-icon> Añadir a
+                            calendario
+                          </span>
+                        </td>
+                        <td>
+                          <span class="badge rounded-pill bg-primary text-white"
+                            ><b-icon icon="calendar"></b-icon> Añadir a
+                            calendario
+                          </span>
+                        </td>
+                        <td>
+                          <span
+                            class="
+                              badge
+                              rounded-pill
+                              bg-primary
+                              text-white
+                              cursor
+                            "
+                            @click="addToCalendar(adp.indice)"
+                            ><b-icon icon="calendar"></b-icon> Añadir a
+                            calendario
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </b-tab>
+              <b-tab title="Evaluaciones semestrales">
+                <div class="px-4">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Inicio</th>
+                        <th scope="col">Autoevaluación</th>
+                        <th scope="col">Retroalimentación</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{ adp.eval_semestral_inicio | formatDate }}</td>
+                        <td>
+                          {{ adp.eval_semestral_auto | formatDate }}
+                        </td>
+                        <td>{{ adp.eval_semestral_retro | formatDate }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="badge rounded-pill bg-warning text-dark"
+                            ><b-icon icon="envelope-fill"></b-icon> Enviar
+                            alerta</span
+                          >
+                        </td>
+                        <td>
+                          <span class="badge rounded-pill bg-warning text-dark"
+                            ><b-icon icon="envelope-fill"></b-icon> Enviar
+                            alerta</span
+                          >
+                        </td>
+                        <td>
+                          <span class="badge rounded-pill bg-warning text-dark"
+                            ><b-icon icon="envelope-fill"></b-icon> Enviar
+                            alerta</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="badge rounded-pill bg-primary text-white"
+                            ><b-icon icon="calendar"></b-icon> Añadir a
+                            calendario
+                          </span>
+                        </td>
+                        <td>
+                          <span class="badge rounded-pill bg-primary text-white"
+                            ><b-icon icon="calendar"></b-icon> Añadir a
+                            calendario
+                          </span>
+                        </td>
+                        <td>
+                          <span class="badge rounded-pill bg-primary text-white"
+                            ><b-icon icon="calendar"></b-icon> Añadir a
+                            calendario
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </b-tab>
+              <b-tab title="Evaluaciones anuales">
+                <div class="px-4">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Inicio</th>
+                        <th scope="col">Autoevaluación</th>
+                        <th scope="col">Retroalimentación</th>
+                        <th scope="col">Resolución</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          {{ adp.eval_anual_inicio | formatDate }}
+                        </td>
+                        <td>
+                          {{ adp.eval_anual_auto | formatDate }}
+                        </td>
+                        <td>{{ adp.eval_anual_retro | formatDate }}</td>
+                        <td>{{ adp.eval_anual_rex | formatDate }}</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="badge rounded-pill bg-warning text-dark"
+                            ><b-icon icon="envelope-fill"></b-icon> Enviar
+                            alerta</span
+                          >
+                        </td>
+                        <td>
+                          <span class="badge rounded-pill bg-warning text-dark"
+                            ><b-icon icon="envelope-fill"></b-icon> Enviar
+                            alerta</span
+                          >
+                        </td>
+                        <td>
+                          <span class="badge rounded-pill bg-warning text-dark"
+                            ><b-icon icon="envelope-fill"></b-icon> Enviar
+                            alerta</span
+                          >
+                        </td>
+                        <td>
+                          <span class="badge rounded-pill bg-warning text-dark"
+                            ><b-icon icon="envelope-fill"></b-icon> Enviar
+                            alerta</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="badge rounded-pill bg-primary text-white"
+                            ><b-icon icon="calendar"></b-icon> Añadir a
+                            calendario
+                          </span>
+                        </td>
+                        <td>
+                          <span class="badge rounded-pill bg-primary text-white"
+                            ><b-icon icon="calendar"></b-icon> Añadir a
+                            calendario
+                          </span>
+                        </td>
+                        <td>
+                          <span
+                            class="
+                              badge
+                              rounded-pill
+                              bg-primary
+                              text-white
+                              cursor
+                            "
+                            @click="addToCalendar(adp.indice)"
+                            ><b-icon icon="calendar"></b-icon> Añadir a
+                            calendario
+                          </span>
+                        </td>
+                        <td>
+                          <span
+                            class="
+                              badge
+                              rounded-pill
+                              bg-primary
+                              text-white
+                              cursor
+                            "
+                            @click="addToCalendar(adp.indice)"
+                            ><b-icon icon="calendar"></b-icon> Añadir a
+                            calendario
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </b-tab>
+            </b-tabs>
+          </div>
+        </b-row>
+      </b-card>
+    </b-container>
+  </div>
 </template>
 
 <script>

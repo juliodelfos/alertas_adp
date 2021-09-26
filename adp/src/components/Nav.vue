@@ -1,5 +1,10 @@
 <template>
-  <b-navbar class="mb-3 px-3" toggleable="lg" type="light" variant="light">
+  <b-navbar
+    class="px-3"
+    toggleable="lg"
+    type="dark"
+    variant="primary"
+  >
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
@@ -9,11 +14,11 @@
         >
       </b-navbar-nav>
       <b-navbar-nav class="ms-auto">
-        <span to="/perfil" v-if="estado"
+        <span class="badge bg-light text-dark" v-if="estado"
           ><b>Estado SICDE:</b> Operativo
           <b-icon icon="check-circle-fill" id="sicdeOperativo"></b-icon
         ></span>
-        <span to="/perfil" v-else
+        <span class="badge bg-light text-dark" v-else
           ><b>Estado SICDE:</b> Caído
           <b-icon icon="exclamation-circle-fill" id="sicdeCaido"></b-icon
         ></span>
@@ -59,5 +64,10 @@ export default {
 
 #sicdeCaido {
   color: red;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 </style>
