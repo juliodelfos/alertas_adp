@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <Nav/>
     <div id="principal">
       <router-view />
@@ -8,16 +8,13 @@
 </template>
 
 <script>
-import Nav from "@/components/Nav.vue";
+import Nav from "@/components/nav/Nav.vue";
 import { mapActions } from "vuex";
 import axios from "axios";
 export default {
   name: "App",
   components: {
     Nav
-  },
-  data() {
-    return {};
   },
   methods: {
     ...mapActions(["fetch_Adp"]),
@@ -42,24 +39,7 @@ export default {
 
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#fotoPerfil {
+  text-align: center !important;
 }
 </style>
