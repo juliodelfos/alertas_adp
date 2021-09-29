@@ -202,7 +202,8 @@
           </b-row>
 
           <!-- Pestañas -->
-          <b-tabs content-class="mt-3" align="center">
+          <Tabs />
+          <!-- <b-tabs content-class="mt-3" align="center">
             <b-tab title="Convenio de desempeño" active>
               <div class="px-4">
                 <table class="table table-bordered">
@@ -515,7 +516,7 @@
                 </table>
               </div>
             </b-tab>
-          </b-tabs>
+          </b-tabs> -->
         </b-row>
       </b-card>
     </b-container>
@@ -525,9 +526,10 @@
 <script>
 import { mapState } from "vuex";
 import axios from "axios";
-
+import Tabs from "@/components/dashboard/pestanas/Tabs.vue";
 export default {
   name: "Perfiles",
+  components: { Tabs },
   data() {
     return {
       animate: true,
