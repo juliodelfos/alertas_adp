@@ -15,6 +15,7 @@ const routes = [
     path: "/perfil",
     name: "PerfilADP",
     component: PerfilADP,
+    props: true,
   },
 ];
 

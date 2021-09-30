@@ -1,6 +1,6 @@
 <template>
   <div class="px-4">
-    <table class="table table-bordered">
+    <!-- <table class="table table-bordered">
       <thead>
         <tr>
           <th scope="col">Inicio</th>
@@ -69,7 +69,7 @@
           </td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
   </div>
 </template>
 

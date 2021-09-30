@@ -11,39 +11,51 @@
       <tbody>
         <tr>
           <td>
-            <!-- {{ adp.fecha_propuesta | formatDate }} -->
-            <span class="badge rounded-pill bg-primary text-white"
-              ><b-icon icon="calendar"></b-icon> Añadir a calendario
-            </span>
+            {{ fecha_propuesta | formatDate }}
+            <div>
+              <span
+                class="badge rounded-pill bg-primary text-white"
+                @click="$emit('addToCalendar')"
+                ><b-icon icon="calendar"></b-icon> Añadir a calendario
+              </span>
+            </div>
           </td>
           <td>
-            <!-- {{ adp.fecha_suscripcion | formatDate }} -->
-            <span class="badge rounded-pill bg-primary text-white"
-              ><b-icon icon="calendar"></b-icon> Añadir a calendario
-            </span>
+            {{ fecha_suscripcion | formatDate }}
+            <div>
+              <span class="badge rounded-pill bg-primary text-white"
+                ><b-icon icon="calendar"></b-icon> Añadir a calendario
+              </span>
+            </div>
           </td>
           <td>
-            <!-- {{ adp.fecha_comunicacion | formatDate }} -->
-            <span
-              class="badge rounded-pill bg-primary text-white cursor"
-              ><b-icon icon="calendar"></b-icon> Añadir a calendario
-            </span>
+            {{ fecha_comunicacion | formatDate }}
+            <div>
+              <span class="badge rounded-pill bg-primary text-white cursor"
+                ><b-icon icon="calendar"></b-icon> Añadir a calendario
+              </span>
+            </div>
           </td>
         </tr>
         <tr>
           <td>
             <span
               class="badge rounded-pill bg-warning text-dark"
+              @click="$emit('alertaCero')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >
           </td>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark"
+            <span
+              class="badge rounded-pill bg-warning text-dark"
+              @click="$emit('alertaSesenta')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >
           </td>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark"
+            <span
+              class="badge rounded-pill bg-warning text-dark"
+              @click="$emit('alertaNoventa')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >
           </td>
@@ -54,8 +66,48 @@
 </template>
 
 <script>
+// import emailjs from "emailjs-com";
 export default {
   name: "Convenio",
+  props: {
+    fecha_propuesta: { type: String, required: true },
+    fecha_suscripcion: { type: String, required: true },
+    fecha_comunicacion: { type: String, required: true },
+  },
+  // data() {
+  //   return {
+  //     nombreADP: "Yerson",
+  //     apellidoADP: "Olivares",
+  //     email: "yersonob@gmail.com",
+  //     cargoADP: "El Mejor, básiscamente",
+  //     nombramientoADP: "Fecha1",
+  //     suscripciónADP: "Fecha2",
+  //     comunicacionADP: "Fecha3",
+  //   };
+  // },
+  methods: {
+    // alertaCero() {
+    //   try {
+    //     emailjs.sendForm(
+    //       "gmail",
+    //       "alerta0_nombrado",
+    //       e.target,
+    //       "user_j03eIIBx2tfg0roipyWbX",
+    //       {
+    //         nombreADP: this.nombreADP,
+    //         apellidoADP: this.apellidoADP,
+    //         email: this.email,
+    //         cargoADP: this.cargoADP,
+    //         nombramientoADP: this.nombramientoADP,
+    //         suscripciónADP: this.suscripciónADP,
+    //         comunicacionADP: this.comunicacionADP,
+    //       }
+    //     );
+    //   } catch (error) {
+    //     console.log({ error });
+    //   }
+    // },
+  },
 };
 </script>
 

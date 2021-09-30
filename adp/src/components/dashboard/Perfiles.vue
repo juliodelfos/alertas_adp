@@ -202,321 +202,28 @@
           </b-row>
 
           <!-- Pestañas -->
-          <Tabs />
-          <!-- <b-tabs content-class="mt-3" align="center">
+          <b-tabs content-class="mt-3" align="center">
             <b-tab title="Convenio de desempeño" active>
-              <div class="px-4">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th scope="col">Propuesta</th>
-                      <th scope="col">Suscripción</th>
-                      <th scope="col">Comunicación</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        {{ adp.fecha_propuesta | formatDate }}
-                      </td>
-                      <td>
-                        {{ adp.fecha_suscripcion | formatDate }}
-                      </td>
-                      <td>{{ adp.fecha_comunicacion | formatDate }}</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span
-                          class="badge rounded-pill bg-warning text-dark"
-                          @click="sendEmail(adp.indice)"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span
-                          class="
-                            badge
-                            rounded-pill
-                            bg-primary
-                            text-white
-                            cursor
-                          "
-                          @click="addToCalendar(adp.indice)"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <Convenio
+                :fecha_comunicacion="adp.fecha_comunicacion"
+                :fecha_propuesta="adp.fecha_propuesta"
+                :fecha_suscripcion="adp.fecha_suscripcion"
+                @alertaCero="alertaCero(adp.indice)"
+                @alertaSesenta="alertaSesenta(adp.indice)"
+                @alertaNoventa="alertaNoventa(adp.indice)"
+                @addToCalendar="addToCalendar(adp.indice)"
+              />
             </b-tab>
             <b-tab title="Evaluaciones semestrales">
-              <div class="px-4">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th scope="col">Inicio</th>
-                      <th scope="col">Autoevaluación</th>
-                      <th scope="col">Retroalimentación</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>{{ adp.eval_semestral_inicio | formatDate }}</td>
-                      <td>
-                        {{ adp.eval_semestral_auto | formatDate }}
-                      </td>
-                      <td>{{ adp.eval_semestral_retro | formatDate }}</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <Semestrales />
             </b-tab>
             <b-tab title="Evaluaciones anuales">
-              <div class="px-4">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th scope="col">Inicio</th>
-                      <th scope="col">Autoevaluación</th>
-                      <th scope="col">Retroalimentación</th>
-                      <th scope="col">Resolución</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        {{ adp.eval_anual_inicio | formatDate }}
-                      </td>
-                      <td>
-                        {{ adp.eval_anual_auto | formatDate }}
-                      </td>
-                      <td>{{ adp.eval_anual_retro | formatDate }}</td>
-                      <td>{{ adp.eval_anual_rex | formatDate }}</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span
-                          class="
-                            badge
-                            rounded-pill
-                            bg-primary
-                            text-white
-                            cursor
-                          "
-                          @click="addToCalendar(adp.indice)"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span
-                          class="
-                            badge
-                            rounded-pill
-                            bg-primary
-                            text-white
-                            cursor
-                          "
-                          @click="addToCalendar(adp.indice)"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <Anuales />
             </b-tab>
             <b-tab title="Otras comunicaciones">
-              <div class="px-4">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th scope="col">Clave SICDE</th>
-                      <th scope="col">Clave APP</th>
-                      <th scope="col">Bienvenida</th>
-                      <th scope="col">Bienvenida Renovado</th>
-                      <th scope="col">Encuesta de cierre</th>
-                      <th scope="col">Encuesta percepción</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        {{ adp.eval_anual_inicio | formatDate }}
-                      </td>
-                      <td>
-                        {{ adp.eval_anual_auto | formatDate }}
-                      </td>
-                      <td>{{ adp.eval_anual_retro | formatDate }}</td>
-                      <td>{{ adp.eval_anual_rex | formatDate }}</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-warning text-dark"
-                          ><b-icon icon="envelope-fill"></b-icon> Enviar
-                          alerta</span
-                        >
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span class="badge rounded-pill bg-primary text-white"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span
-                          class="
-                            badge
-                            rounded-pill
-                            bg-primary
-                            text-white
-                            cursor
-                          "
-                          @click="addToCalendar(adp.indice)"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                      <td>
-                        <span
-                          class="
-                            badge
-                            rounded-pill
-                            bg-primary
-                            text-white
-                            cursor
-                          "
-                          @click="addToCalendar(adp.indice)"
-                          ><b-icon icon="calendar"></b-icon> Añadir a calendario
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <Otras />
             </b-tab>
-          </b-tabs> -->
+          </b-tabs>
         </b-row>
       </b-card>
     </b-container>
@@ -525,13 +232,24 @@
 
 <script>
 import { mapState } from "vuex";
+import emailjs from "emailjs-com";
 import axios from "axios";
-import Tabs from "@/components/dashboard/pestanas/Tabs.vue";
+import Convenio from "@/components/dashboard/pestanas/Convenio.vue";
+import Semestrales from "@/components/dashboard/pestanas/Semestrales.vue";
+import Anuales from "@/components/dashboard/pestanas/Anuales.vue";
+import Otras from "@/components/dashboard/pestanas/Otras.vue";
 export default {
   name: "Perfiles",
-  components: { Tabs },
+  components: { Convenio, Semestrales, Anuales, Otras },
   data() {
     return {
+      nombreADP: "Yerson",
+      apellidoADP: "Olivares",
+      email: "yersonob@gmail.com",
+      cargoADP: "El Mejor, básiscamente",
+      nombramientoADP: "Fecha1",
+      suscripciónADP: "Fecha2",
+      comunicacionADP: "Fecha3",
       animate: true,
       servicio: "",
       estadoConvenio: "",
@@ -668,26 +386,27 @@ export default {
       );
     },
     // APIs
-    sendEmail(i) {
-      axios({
-        method: "post",
-        url: "https://v1.nocodeapi.com/yerigagarin/mailgun/MWpAmzASqYMhVxwW/send",
-        params: {
-          senderName: "Yerson",
-          senderEmail: "yolivares@serviciocivil.cl",
-          to: this.adps[i].mail,
-          subject: "Hola" + this.adps[i].nombre_corregido,
-          template: "prueba",
-        },
-      })
-        .then(function (response) {
-          console.log(response.data);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+    alertaCero() {
+      try {
+        emailjs.sendForm(
+          "gmail",
+          "alerta0_nombrado",
+          "user_j03eIIBx2tfg0roipyWbX",
+          {
+            nombreADP: this.nombreADP,
+            apellidoADP: this.apellidoADP,
+            email: this.email,
+            cargoADP: this.cargoADP,
+            nombramientoADP: this.nombramientoADP,
+            suscripciónADP: this.suscripciónADP,
+            comunicacionADP: this.comunicacionADP,
+          }
+        );
+      } catch (error) {
+        console.log({ error });
+      }
     },
-    addToCalendar(i) {
+        addToCalendar(i) {
       axios({
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/calendar/kPSHlVqrfCmjOchV/event?maxAttendees=1&sendNotifications=true&sendUpdates=none",
@@ -718,6 +437,7 @@ export default {
         .then((response) => console.log(response.data))
         .catch((error) => console.log(error));
     },
+
   },
   computed: {
     filtrarADPs() {
