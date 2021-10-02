@@ -161,7 +161,7 @@ export default {
       cargo_ADP: "El Mejor, básicamente",
       email: "yersonob@gmail.com",
       nombramiento_ADP: "Fecha1",
-      suscripción_ADP: "Fecha2",
+      suscripcion_ADP: "Prueba de fecha",
       comunicacion_ADP: "Fecha3",
       //
       // Fin EmailJS
@@ -303,7 +303,7 @@ export default {
         cargo_ADP: this.cargo_ADP,
         email: this.email,
         nombramiento_ADP: this.nombramiento_ADP,
-        suscripción_ADP: this.suscripción_ADP,
+        suscripcion_ADP: this.suscripcion_ADP,
         comunicacion_ADP: this.comunicacion_ADP,
       };
       const userID = "user_j03eIIBx2tfg0roipyWbX";
