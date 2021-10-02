@@ -160,7 +160,8 @@ export default {
       apellido_ADP: "Olivares",
       cargo_ADP: "El Mejor, básicamente",
       email: "yersonob@gmail.com",
-      nombramiento_ADP: "Fecha1",
+      nombramiento_ADP: "2021-10-01T00:00:00.000Z",
+      nombramiento_ADP_formateado: "",
       suscripcion_ADP: "Prueba de fecha",
       comunicacion_ADP: "Fecha3",
       //
@@ -302,20 +303,21 @@ export default {
         apellido_ADP: this.apellido_ADP,
         cargo_ADP: this.cargo_ADP,
         email: this.email,
-        nombramiento_ADP: this.nombramiento_ADP,
+        nombramiento_ADP: this.nombramiento_ADP_formateado,
         suscripcion_ADP: this.suscripcion_ADP,
         comunicacion_ADP: this.comunicacion_ADP,
+        anadir_nombramiento: `<a href="https://calndr.link/d/event/?service=google&start=${
+          this.nombramiento_ADP.split("T00:00:00.000Z")[0]
+        } 08:00&title=Inicio elaboración convenio ${this.nombre_ADP} ${
+          this.apellido_ADP
+        }&timezone=America/Santiago">Añadir al Calendario</a>`,
       };
       const userID = "user_j03eIIBx2tfg0roipyWbX";
       const templateID = "alerta0_nombrado";
       const serviceID = "gmail_dnsc";
       emailjs.send(serviceID, templateID, templateParams, userID).then(
-        (result) => {
-          console.log("SUCCESS!", result.text);
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
+        (result) => console.log(result.text),
+        (error) => console.log(error.text)
       );
     },
     addToCalendar(i) {
@@ -367,11 +369,19 @@ export default {
         })
       );
     },
+    formateaNombramiento() {
+      const date = this.nombramiento_ADP;
+      const shortDate = date.split("T00:00:00.000Z")[0];
+      const arregloFecha = shortDate.split("-");
+      const fechaFinal = `${arregloFecha[2]}/${arregloFecha[1]}/${arregloFecha[0]}`;
+      return fechaFinal;
+    },
     ...mapState(["adps"]),
   },
-  // created() {
-  //   this.concurso = this.concursoMasActual;
-  // },
+  created() {
+    // this.concurso = this.concursoMasActual;
+    this.nombramiento_ADP_formateado = this.formateaNombramiento;
+  },
 };
 </script>
 
