@@ -39,7 +39,8 @@ export default {
 
 
 <style lang="scss">
-#fotoPerfil {
-  text-align: center !important;
+
+#convenioSuscrito {
+  color: green;
 }
 </style>

@@ -1,6 +1,12 @@
 <template>
   <div>
     <!-- Buscador -->
+    <!-- <Filtros
+      :servicio="servicio"
+      :estadoConvenio="estadoConvenio"
+      :concurso="concurso"
+      :nombreADP="nombreADP"
+    /> -->
     <b-row
       cols="1"
       cols-sm="1"
@@ -78,128 +84,24 @@
             </b-col>
             <b-col md="10">
               <!-- Gráfico -->
-              <b-container
-                class="pt-4"
-                v-show="adp.porcentaje_dias_cargo !== 'Fecha futura'"
-              >
-                <h3 class="fs-6 text-start">
-                  Porcentaje avance año de gestión
-                </h3>
-                <b-progress
-                  :value="adp.porcentaje_dias_anogestion"
-                  class="mb-3"
-                  height="20px"
-                  variant="primary"
-                  show-progress
-                ></b-progress>
-
-                <h3 class="fs-6 text-start">Porcentaje avance periodo</h3>
-                <b-progress
-                  :value="adp.porcentaje_dias_cargo"
-                  height="20px"
-                  show-progress
-                  variant="success"
-                ></b-progress>
-              </b-container>
+              <Grafico
+                :porcentaje_dias_cargo="adp.porcentaje_dias_cargo"
+                :porcentaje_dias_anogestion="adp.porcentaje_dias_anogestion"
+              />
             </b-col>
           </b-row>
 
           <!-- Datos básicos -->
-          <b-row class="py-4 ps-5">
-            <b-col md="6">
-              <table class="table table-borderless mb-4">
-                <tbody>
-                  <tr>
-                    <td>
-                      <b-icon icon="bag-fill"></b-icon><b> Cargo:</b>
-                      {{ adp.cargo }}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <b-icon icon="calendar2-event-fill"></b-icon
-                      ><b> Fecha nombramiento o renovación:</b>
-                      {{ adp.fecha_nombramiento_renovacion | formatDate }}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <b-icon icon="info-square-fill"></b-icon
-                      ><b> Estado en el sistema:</b> {{ adp.estado_adp }}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <b-icon icon="person-badge-fill"></b-icon>
-                      <b> Contraparte convenio:</b>
-                      <a
-                        :href="enviarMailAADP + adp.mail_contraparte_cd"
-                        target="_blank"
-                      >
-                        {{ adp.mail_contraparte_cd }}</a
-                      >
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </b-col>
-            <b-col md="6">
-              <table class="table table-borderless mb-4">
-                <tbody>
-                  <tr>
-                    <td>
-                      <b-icon icon="door-closed-fill"></b-icon><b> Servicio:</b>
-                      {{ adp.servicio }}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <b-icon icon="envelope-fill"></b-icon>
-                      <b> Correo:</b>
-                      <a
-                        :href="
-                          enviarMailAADP +
-                          adp.mail +
-                          cuerpoMail +
-                          `Estimada/o ` +
-                          adp.nombre_corregido
-                        "
-                        target="_blank"
-                      >
-                        {{ adp.mail }}</a
-                      >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td v-if="adp.estado_cd == 'Suscrito'">
-                      <b-icon icon="question-octagon-fill"></b-icon
-                      ><b> Estado de convenio:</b> {{ adp.estado_cd }}
-                      <b-icon
-                        icon="check-circle-fill"
-                        id="convenioSuscrito"
-                      ></b-icon>
-                    </td>
-                    <td v-else>
-                      <b-icon icon="question-octagon-fill"></b-icon
-                      ><b> Estado de convenio:</b> {{ adp.estado_cd }}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <b-icon icon="person-lines-fill"></b-icon>
-                      <b> Contraparte evaluación:</b
-                      ><a
-                        :href="enviarMailAADP + adp.mail_contraparte_eval"
-                        target="_blank"
-                      >
-                        {{ adp.mail_contraparte_eval }}</a
-                      >
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </b-col>
-          </b-row>
+          <Datos
+            :cargo="adp.cargo"
+            :fecha_nombramiento_renovacion="adp.fecha_nombramiento_renovacion"
+            :estado_adp="adp.estado_adp"
+            :mail="adp.mail"
+            :mail_contraparte_cd="adp.mail_contraparte_cd"
+            :mail_contraparte_eval="adp.mail_contraparte_eval"
+            :estado_cd="adp.estado_cd"
+            :servicio="adp.servicio"
+          />
 
           <!-- Pestañas -->
           <b-tabs content-class="mt-3" align="center">
@@ -238,12 +140,24 @@ import Convenio from "@/components/dashboard/pestanas/Convenio.vue";
 import Semestrales from "@/components/dashboard/pestanas/Semestrales.vue";
 import Anuales from "@/components/dashboard/pestanas/Anuales.vue";
 import Otras from "@/components/dashboard/pestanas/Otras.vue";
+import Datos from "@/components/dashboard/datos_personales/Datos.vue";
+import Grafico from "@/components/dashboard/datos_personales/Grafico.vue";
+import Filtros from "@/components/dashboard/buscador/Filtros.vue";
 export default {
   name: "Perfiles",
-  components: { Convenio, Semestrales, Anuales, Otras },
+  components: {
+    Convenio,
+    Semestrales,
+    Anuales,
+    Otras,
+    Datos,
+    Grafico,
+    Filtros,
+  },
+  // props: ["servicio", "estadoConvenio", "concurso", "nombreADP"],
   data() {
     return {
-      nombreADP: "Yerson",
+      // nombreADP: "Yerson",
       apellidoADP: "Olivares",
       email: "yersonob@gmail.com",
       cargoADP: "El Mejor, básiscamente",
@@ -406,7 +320,7 @@ export default {
         console.log({ error });
       }
     },
-        addToCalendar(i) {
+    addToCalendar(i) {
       axios({
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/calendar/kPSHlVqrfCmjOchV/event?maxAttendees=1&sendNotifications=true&sendUpdates=none",
@@ -437,7 +351,6 @@ export default {
         .then((response) => console.log(response.data))
         .catch((error) => console.log(error));
     },
-
   },
   computed: {
     filtrarADPs() {
