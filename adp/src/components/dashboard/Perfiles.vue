@@ -6,8 +6,13 @@
       :estadoConvenio="estadoConvenio"
       :concurso="concurso"
       :nombreADP="nombreADP"
+      @alertaCero="alertaCero(adp.indice)"
+      @alertaSesenta="alertaSesenta(adp.indice)"
+      @alertaNoventa="alertaNoventa(adp.indice)"
+      @addToCalendar="addToCalendar(adp.indice)"
     /> -->
     <b-row
+      id="filtros"
       cols="1"
       cols-sm="1"
       cols-md="4"
@@ -72,18 +77,10 @@
 
           <!-- Foto y gráfico -->
           <b-row class="pb-4">
-            <!-- Foto de perfil -->
             <b-col md="2" class="text-center my-auto pt-4">
-              <!-- :style="{ backgroundImage: 'url(' + adp.img + ')' }" -->
-              <img
-                :src="adp.img"
-                alt="Foto de perfil"
-                class="fotoPerfil rounded-circle"
-                v-show="adp.img"
-              />
+              <FotoPerfil :img="adp.img" />
             </b-col>
             <b-col md="10">
-              <!-- Gráfico -->
               <Grafico
                 :porcentaje_dias_cargo="adp.porcentaje_dias_cargo"
                 :porcentaje_dias_anogestion="adp.porcentaje_dias_anogestion"
@@ -142,6 +139,7 @@ import Anuales from "@/components/dashboard/pestanas/Anuales.vue";
 import Otras from "@/components/dashboard/pestanas/Otras.vue";
 import Datos from "@/components/dashboard/datos_personales/Datos.vue";
 import Grafico from "@/components/dashboard/datos_personales/Grafico.vue";
+import FotoPerfil from "@/components/dashboard/datos_personales/FotoPerfil.vue";
 import Filtros from "@/components/dashboard/buscador/Filtros.vue";
 export default {
   name: "Perfiles",
@@ -153,6 +151,7 @@ export default {
     Datos,
     Grafico,
     Filtros,
+    FotoPerfil,
   },
   // props: ["servicio", "estadoConvenio", "concurso", "nombreADP"],
   data() {
@@ -384,18 +383,6 @@ ul {
 
 .cursor {
   cursor: copy;
-}
-
-.fotoPerfil {
-  height: 7rem;
-  width: 7rem;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
-#convenioSuscrito {
-  color: green;
 }
 
 .row {
