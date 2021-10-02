@@ -107,7 +107,7 @@
                 :fecha_comunicacion="adp.fecha_comunicacion"
                 :fecha_propuesta="adp.fecha_propuesta"
                 :fecha_suscripcion="adp.fecha_suscripcion"
-                @alertaCero="alertaCero(adp.indice)"
+                @alertaCero="alertaCero()"
                 @alertaSesenta="alertaSesenta(adp.indice)"
                 @alertaNoventa="alertaNoventa(adp.indice)"
                 @addToCalendar="addToCalendar(adp.indice)"
@@ -153,32 +153,25 @@ export default {
     Filtros,
     FotoPerfil,
   },
-  // props: ["servicio", "estadoConvenio", "concurso", "nombreADP"],
   data() {
     return {
-      // nombreADP: "Yerson",
-      apellidoADP: "Olivares",
+      // Inicio EmailJS
+      nombre_ADP: "Yerson",
+      apellido_ADP: "Olivares",
+      cargo_ADP: "El Mejor, básicamente",
       email: "yersonob@gmail.com",
-      cargoADP: "El Mejor, básiscamente",
-      nombramientoADP: "Fecha1",
-      suscripciónADP: "Fecha2",
-      comunicacionADP: "Fecha3",
-      animate: true,
+      nombramiento_ADP: "Fecha1",
+      suscripción_ADP: "Fecha2",
+      comunicacion_ADP: "Fecha3",
+      //
+      // Fin EmailJS
+      //
       servicio: "",
       estadoConvenio: "",
       concurso: "2113",
       nombreADP: "",
       enviarMailAADP: "https://mail.google.com/mail/?view=cm&source=mailto&to=",
       cuerpoMail: "&body=",
-      mail: {
-        senderName: "",
-        senderEmail: "",
-        to: "",
-        subject: "",
-        template: "",
-        deliveryTime: "",
-        name: "",
-      },
       estadosConvenios: [
         { value: "", text: "Selecciona un estado" },
         { value: "Suscrito", text: "Suscrito" },
@@ -278,7 +271,7 @@ export default {
     };
   },
   methods: {
-    // Filtros
+    // Inicio Filtros
     filtroPorNombreDeServicio(adps) {
       return adps.filter((adp) => !adp.servicio.indexOf(this.servicio));
     },
@@ -298,26 +291,32 @@ export default {
             .indexOf(this.nombreADP.toLowerCase())
       );
     },
-    // APIs
+    //
+    //Fin Filtros
+    //
+
+    // Inicio APIs
     alertaCero() {
-      try {
-        emailjs.sendForm(
-          "gmail",
-          "alerta0_nombrado",
-          "user_j03eIIBx2tfg0roipyWbX",
-          {
-            nombreADP: this.nombreADP,
-            apellidoADP: this.apellidoADP,
-            email: this.email,
-            cargoADP: this.cargoADP,
-            nombramientoADP: this.nombramientoADP,
-            suscripciónADP: this.suscripciónADP,
-            comunicacionADP: this.comunicacionADP,
-          }
-        );
-      } catch (error) {
-        console.log({ error });
-      }
+      const templateParams = {
+        nombre_ADP: this.nombre_ADP,
+        apellido_ADP: this.apellido_ADP,
+        cargo_ADP: this.cargo_ADP,
+        email: this.email,
+        nombramiento_ADP: this.nombramiento_ADP,
+        suscripción_ADP: this.suscripción_ADP,
+        comunicacion_ADP: this.comunicacion_ADP,
+      };
+      const userID = "user_j03eIIBx2tfg0roipyWbX";
+      const templateID = "alerta0_nombrado";
+      const serviceID = "gmail_dnsc";
+      emailjs.send(serviceID, templateID, templateParams, userID).then(
+        (result) => {
+          console.log("SUCCESS!", result.text);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
     },
     addToCalendar(i) {
       axios({

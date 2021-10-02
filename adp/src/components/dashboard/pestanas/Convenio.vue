@@ -74,40 +74,6 @@ export default {
     fecha_suscripcion: { type: String, required: true },
     fecha_comunicacion: { type: String, required: true },
   },
-  // data() {
-  //   return {
-  //     nombreADP: "Yerson",
-  //     apellidoADP: "Olivares",
-  //     email: "yersonob@gmail.com",
-  //     cargoADP: "El Mejor, básiscamente",
-  //     nombramientoADP: "Fecha1",
-  //     suscripciónADP: "Fecha2",
-  //     comunicacionADP: "Fecha3",
-  //   };
-  // },
-  methods: {
-    // alertaCero() {
-    //   try {
-    //     emailjs.sendForm(
-    //       "gmail",
-    //       "alerta0_nombrado",
-    //       e.target,
-    //       "user_j03eIIBx2tfg0roipyWbX",
-    //       {
-    //         nombreADP: this.nombreADP,
-    //         apellidoADP: this.apellidoADP,
-    //         email: this.email,
-    //         cargoADP: this.cargoADP,
-    //         nombramientoADP: this.nombramientoADP,
-    //         suscripciónADP: this.suscripciónADP,
-    //         comunicacionADP: this.comunicacionADP,
-    //       }
-    //     );
-    //   } catch (error) {
-    //     console.log({ error });
-    //   }
-    // },
-  },
 };
 </script>
 
