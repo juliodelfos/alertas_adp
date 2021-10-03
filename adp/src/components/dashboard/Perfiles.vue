@@ -108,6 +108,7 @@
                 :fecha_comunicacion="adp.fecha_comunicacion"
                 :fecha_propuesta="adp.fecha_propuesta"
                 :fecha_suscripcion="adp.fecha_suscripcion"
+                @registrarCorreo="registrarCorreo()"
                 @alertaCero="alertaCero(adp.indice)"
                 @alertaSesenta="alertaSesenta(adp.indice)"
                 @alertaNoventa="alertaNoventa(adp.indice)"
@@ -172,8 +173,6 @@ export default {
       estadoConvenio: "",
       concurso: "3947",
       nombreADP: "",
-      enviarMailAADP: "https://mail.google.com/mail/?view=cm&source=mailto&to=",
-      cuerpoMail: "&body=",
       estadosConvenios: [
         { value: "", text: "Selecciona un estado" },
         { value: "Suscrito", text: "Suscrito" },
@@ -441,10 +440,14 @@ export default {
       const userID = "user_j03eIIBx2tfg0roipyWbX";
       const templateID = "alerta0_nombrado";
       const serviceID = "gmail_dnsc";
-      emailjs.send(serviceID, templateID, templateParams, userID).then(
-        (result) => console.log(result.text),
-        (error) => console.log(error.text)
-      );
+
+      const emailSaliente = emailjs
+        .send(serviceID, templateID, templateParams, userID)
+        .then(
+          (result) => console.log(result.text),
+          (error) => console.log(error.text)
+        );
+      this.registrarCorreo();
     },
     addToCalendar(i) {
       axios({
@@ -473,6 +476,16 @@ export default {
             },
           ],
         },
+      })
+        .then((response) => console.log(response.data))
+        .catch((error) => console.log(error));
+    },
+    registrarCorreo() {
+      const fecha = new Date();
+      axios({
+        method: "post",
+        url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+        data: [["Hola", fecha]],
       })
         .then((response) => console.log(response.data))
         .catch((error) => console.log(error));

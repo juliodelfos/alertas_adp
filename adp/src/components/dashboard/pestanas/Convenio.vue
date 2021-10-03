@@ -41,7 +41,7 @@
           <td>
             <span
               class="badge rounded-pill bg-warning text-dark cursor"
-              @click="$emit('alertaCero')"
+              @click="$emit('alertaCero', 'registrarCorreo')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >
           </td>
