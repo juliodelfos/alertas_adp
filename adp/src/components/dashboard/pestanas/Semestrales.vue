@@ -1,6 +1,6 @@
 <template>
   <div class="px-4">
-    <!-- <table class="table table-bordered">
+    <table class="table table-bordered text-center">
       <thead>
         <tr>
           <th scope="col">Inicio</th>
@@ -10,54 +10,73 @@
       </thead>
       <tbody>
         <tr>
-          <td>{{ adp.eval_semestral_inicio | formatDate }}</td>
           <td>
-            {{ adp.eval_semestral_auto | formatDate }}
+            {{ eval_semestral_inicio | formatDate }}
+            <div>
+              <span
+                class="badge rounded-pill bg-primary text-white cursor"
+                @click="$emit('anadirCalendario')"
+                ><b-icon icon="calendar"></b-icon> Añadir a calendario
+              </span>
+            </div>
           </td>
-          <td>{{ adp.eval_semestral_retro | formatDate }}</td>
+          <td>
+            {{ eval_semestral_auto | formatDate }}
+            <div>
+              <span
+                class="badge rounded-pill bg-primary text-white cursor"
+                @click="$emit('anadirCalendario')"
+                ><b-icon icon="calendar"></b-icon> Añadir a calendario
+              </span>
+            </div>
+          </td>
+          <td>
+            {{ eval_semestral_retro | formatDate }}
+            <div>
+              <span
+                class="badge rounded-pill bg-primary text-white cursor"
+                @click="$emit('anadirCalendario')"
+                ><b-icon icon="calendar"></b-icon> Añadir a calendario
+              </span>
+            </div>
+          </td>
         </tr>
         <tr>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark"
+            <span
+              class="badge rounded-pill bg-warning text-dark cursor"
+              @click="$emit('inicioEvalSemestral')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >
           </td>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark"
+            <span
+              class="badge rounded-pill bg-warning text-dark cursor"
+              @click="$emit('autoEvalSemestral')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >
           </td>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark"
+            <span
+              class="badge rounded-pill bg-warning text-dark cursor"
+              @click="$emit('retroEvalSemestral')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span class="badge rounded-pill bg-primary text-white"
-              ><b-icon icon="calendar"></b-icon> Añadir a calendario
-            </span>
-          </td>
-          <td>
-            <span class="badge rounded-pill bg-primary text-white"
-              ><b-icon icon="calendar"></b-icon> Añadir a calendario
-            </span>
-          </td>
-          <td>
-            <span class="badge rounded-pill bg-primary text-white"
-              ><b-icon icon="calendar"></b-icon> Añadir a calendario
-            </span>
           </td>
         </tr>
       </tbody>
-    </table> -->
+    </table>
   </div>
 </template>
 
 <script>
 export default {
   name: "Semestrales",
+  props: {
+    eval_semestral_inicio: { type: String, required: true },
+    eval_semestral_auto: { type: String, required: true },
+    eval_semestral_retro: { type: String, required: true },
+  },
 };
 </script>
 

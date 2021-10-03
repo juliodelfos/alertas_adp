@@ -1,6 +1,6 @@
 <template>
   <div class="px-4">
-    <!-- <table class="table table-bordered">
+    <table class="table table-bordered text-center">
       <thead>
         <tr>
           <th scope="col">Clave SICDE</th>
@@ -14,64 +14,38 @@
       <tbody>
         <tr>
           <td>
-            {{ adp.eval_anual_inicio | formatDate }}
-          </td>
-          <td>
-            {{ adp.eval_anual_auto | formatDate }}
-          </td>
-          <td>{{ adp.eval_anual_retro | formatDate }}</td>
-          <td>{{ adp.eval_anual_rex | formatDate }}</td>
-        </tr>
-        <tr>
-          <td>
             <span class="badge rounded-pill bg-warning text-dark"
-              ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
+              ><b-icon icon="envelope-fill"></b-icon> Enviar clave</span
             >
           </td>
           <td>
             <span class="badge rounded-pill bg-warning text-dark"
-              ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
+              ><b-icon icon="envelope-fill"></b-icon> Enviar clave</span
             >
           </td>
           <td>
             <span class="badge rounded-pill bg-warning text-dark"
-              ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
+              ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
           </td>
           <td>
             <span class="badge rounded-pill bg-warning text-dark"
-              ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
+              ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
           </td>
-        </tr>
-        <tr>
           <td>
-            <span class="badge rounded-pill bg-primary text-white"
-              ><b-icon icon="calendar"></b-icon> Añadir a calendario
-            </span>
+            <span class="badge rounded-pill bg-warning text-dark"
+              ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
+            >
           </td>
           <td>
-            <span class="badge rounded-pill bg-primary text-white"
-              ><b-icon icon="calendar"></b-icon> Añadir a calendario
-            </span>
-          </td>
-          <td>
-            <span
-              class="badge rounded-pill bg-primary text-white cursor"
-              @click="addToCalendar(adp.indice)"
-              ><b-icon icon="calendar"></b-icon> Añadir a calendario
-            </span>
-          </td>
-          <td>
-            <span
-              class="badge rounded-pill bg-primary text-white cursor"
-              @click="addToCalendar(adp.indice)"
-              ><b-icon icon="calendar"></b-icon> Añadir a calendario
-            </span>
+            <span class="badge rounded-pill bg-warning text-dark"
+              ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
+            >
           </td>
         </tr>
       </tbody>
-    </table> -->
+    </table>
   </div>
 </template>
 

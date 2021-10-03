@@ -104,17 +104,30 @@
           <b-tabs content-class="mt-3" align="center">
             <b-tab title="Convenio de desempeño" active>
               <Convenio
+                v-if="adp.estado_cd !== 'Suscrito'"
                 :fecha_comunicacion="adp.fecha_comunicacion"
                 :fecha_propuesta="adp.fecha_propuesta"
                 :fecha_suscripcion="adp.fecha_suscripcion"
-                @alertaCero="alertaCero()"
+                @alertaCero="alertaCero(adp.indice)"
                 @alertaSesenta="alertaSesenta(adp.indice)"
                 @alertaNoventa="alertaNoventa(adp.indice)"
                 @addToCalendar="addToCalendar(adp.indice)"
               />
+              <div class="text-center pt-3 pb-4 fs-5 fw-bold" v-else>
+                Convenio suscrito
+                <b-icon icon="check-circle-fill" id="convenioSuscrito"></b-icon>
+              </div>
             </b-tab>
             <b-tab title="Evaluaciones semestrales">
-              <Semestrales />
+              <Semestrales
+                :eval_semestral_inicio="adp.eval_semestral_inicio"
+                :eval_semestral_auto="adp.eval_semestral_auto"
+                :eval_semestral_retro="adp.eval_semestral_retro"
+                @inicioEvalSemestral="inicioEvalSemestral(adp.indice)"
+                @autoEvalSemestral="autoEvalSemestral(adp.indice)"
+                @retroEvalSemestral="retroEvalSemestral(adp.indice)"
+                @anadirCalendario="anadirCalendario(adp.indice)"
+              />
             </b-tab>
             <b-tab title="Evaluaciones anuales">
               <Anuales />
@@ -130,7 +143,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+// import { mapState } from "vuex";
 import emailjs from "emailjs-com";
 import axios from "axios";
 import Convenio from "@/components/dashboard/pestanas/Convenio.vue";
@@ -155,21 +168,9 @@ export default {
   },
   data() {
     return {
-      // Inicio EmailJS
-      nombre_ADP: "Yerson",
-      apellido_ADP: "Olivares",
-      cargo_ADP: "El Mejor, básicamente",
-      email: "yersonob@gmail.com",
-      nombramiento_ADP: "2021-10-01T00:00:00.000Z",
-      nombramiento_ADP_formateado: "",
-      suscripcion_ADP: "Prueba de fecha",
-      comunicacion_ADP: "Fecha3",
-      //
-      // Fin EmailJS
-      //
       servicio: "",
       estadoConvenio: "",
-      concurso: "2113",
+      concurso: "3947",
       nombreADP: "",
       enviarMailAADP: "https://mail.google.com/mail/?view=cm&source=mailto&to=",
       cuerpoMail: "&body=",
@@ -269,6 +270,119 @@ export default {
           text: "Superintendencia de Educación Superior",
         },
       ],
+      adps: [
+        {
+          concurso: "3947",
+          ministerio: "Ministerio de Educación",
+          servicio: "Junta Nacional de Auxilio Escolar y Becas",
+          region: "Región de la Araucanía",
+          nombre: "JORGE ALEJANDRO",
+          apellido: "ARIAS HORN",
+          mail: "yersonob@gmail.com",
+          cargo: "Director/a Regional Araucanía",
+          nivel: "II",
+          fecha_nombramiento: "2018-07-01T00:00:00.000Z",
+          estado_adp: "Renovado (segundo periodo)",
+          sexo: "M",
+          estado_cd: "Servicio Firma",
+          rut: "8277408-4",
+          alerta0: "4 jul 2018",
+          img: "https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Fotos%20ADP%2F3947%20-%20Alejandro%20Arias.jpg?alt=media&token=704c41cc-6dcb-461a-b71e-5816e4d51bc1",
+          indice: 0,
+          nombre_corregido: "Jorge Alejandro",
+          apellido_corregido: "Arias Horn",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yerson.o.b@gmail.com",
+          mail_contraparte_eval: "yerson.o.b@gmail.com",
+          fecha_nombramiento_renovacion: "2021-07-02T00:00:00.000Z",
+          fecha_propuesta: "2021-08-01T00:00:00.000Z",
+          fecha_suscripcion: "2021-08-31T00:00:00.000Z",
+          fecha_comunicacion: "2021-11-11T00:00:00.000Z",
+          eval_semestral_inicio: "2022-01-02T00:00:00.000Z",
+          eval_semestral_auto: "2022-02-02T00:00:00.000Z",
+          eval_semestral_retro: "2022-03-04T00:00:00.000Z",
+          eval_anual_inicio: "2022-07-02T00:00:00.000Z",
+          eval_anual_auto: "2022-08-02T00:00:00.000Z",
+          eval_anual_retro: "2022-09-01T00:00:00.000Z",
+          eval_anual_rex: "2022-09-08T00:00:00.000Z",
+          porcentaje_dias_cargo: 8.394160583941606,
+          porcentaje_dias_anogestion: 25.205479452054796,
+        },
+        {
+          concurso: "3901",
+          ministerio: "Ministerio de Educación",
+          servicio: "Junta Nacional de Jardines Infantiles",
+          region: "Región de la Araucanía",
+          nombre: "JUAN PABLO GONZALO",
+          apellido: "ORLANDINI RETAMAL",
+          mail: "yersonob@gmail.com",
+          cargo: "Director/a Regional, Región de la Araucanía",
+          nivel: "II",
+          fecha_nombramiento: "2018-08-13T00:00:00.000Z",
+          estado_adp: "Renovado (segundo periodo)",
+          sexo: "M",
+          estado_cd: "Elaboración Servicio",
+          rut: "8338250-3",
+          alerta0: "8 ago 2018",
+          img: "https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Fotos%20ADP%2F3901%20-%20Juan%20Pablo%20Orlandini.jpg?alt=media&token=72d8c907-398f-4870-b828-ceddfe9daba4",
+          indice: 1,
+          nombre_corregido: "Juan Pablo Gonzalo",
+          apellido_corregido: "Orlandini Retamal",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yerson.o.b@gmail.com",
+          mail_contraparte_eval: "yerson.o.b@gmail.com",
+          fecha_nombramiento_renovacion: "2021-08-14T00:00:00.000Z",
+          fecha_propuesta: "2021-09-13T00:00:00.000Z",
+          fecha_suscripcion: "2021-10-13T00:00:00.000Z",
+          fecha_comunicacion: "2021-12-23T00:00:00.000Z",
+          eval_semestral_inicio: "2022-02-14T00:00:00.000Z",
+          eval_semestral_auto: "2022-03-14T00:00:00.000Z",
+          eval_semestral_retro: "2022-04-13T00:00:00.000Z",
+          eval_anual_inicio: "2022-08-14T00:00:00.000Z",
+          eval_anual_auto: "2022-09-14T00:00:00.000Z",
+          eval_anual_retro: "2022-10-14T00:00:00.000Z",
+          eval_anual_rex: "2022-10-21T00:00:00.000Z",
+          porcentaje_dias_cargo: 4.470802919708029,
+          porcentaje_dias_anogestion: 13.424657534246576,
+        },
+        {
+          concurso: "4019",
+          ministerio: "Ministerio de Educación",
+          servicio: "Junta Nacional de Jardines Infantiles",
+          region: "Región Metropolitana de Santiago",
+          nombre: "ADRIANA AMELIA",
+          apellido: "GAETE SOMARRIVA",
+          mail: "yersonob@gmail.com",
+          cargo: "Vicepresidente/a Ejecutivo/a",
+          nivel: "I",
+          fecha_nombramiento: "2018-08-13T00:00:00.000Z",
+          estado_adp: "Renovado (segundo periodo)",
+          sexo: "F",
+          estado_cd: "Suscrito",
+          rut: "7018718-3",
+          alerta0: "2018-09-03T00:00:00.000Z",
+          img: "https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Fotos%20ADP%2F4019%20-%20Adriana%20Gaete.jpg?alt=media&token=bc0fba0e-800a-4967-a00a-819bdd0b9e07",
+          indice: 2,
+          nombre_corregido: "Adriana Amelia",
+          apellido_corregido: "Gaete Somarriva",
+          alerta_cero: "Sí",
+          mail_contraparte_cd: "yerson.o.b@gmail.com",
+          mail_contraparte_eval: "yerson.o.b@gmail.com",
+          fecha_nombramiento_renovacion: "2021-08-14T00:00:00.000Z",
+          fecha_propuesta: "2021-09-13T00:00:00.000Z",
+          fecha_suscripcion: "2021-10-13T00:00:00.000Z",
+          fecha_comunicacion: "2021-12-23T00:00:00.000Z",
+          eval_semestral_inicio: "No aplica",
+          eval_semestral_auto: "No aplica",
+          eval_semestral_retro: "No aplica",
+          eval_anual_inicio: "2022-08-14T00:00:00.000Z",
+          eval_anual_auto: "2022-09-14T00:00:00.000Z",
+          eval_anual_retro: "2022-10-14T00:00:00.000Z",
+          eval_anual_rex: "2022-10-21T00:00:00.000Z",
+          porcentaje_dias_cargo: 4.470802919708029,
+          porcentaje_dias_anogestion: 13.424657534246576,
+        },
+      ],
     };
   },
   methods: {
@@ -297,21 +411,33 @@ export default {
     //
 
     // Inicio APIs
-    alertaCero() {
+    alertaCero(i) {
+      const fechaNombramiento = this.adps[i].fecha_nombramiento_renovacion
+        .split("T00:00:00.000Z")[0]
+        .split("-");
+      const fechaSuscripcion = this.adps[i].fecha_suscripcion
+        .split("T00:00:00.000Z")[0]
+        .split("-");
+      const fechaComunicacion = this.adps[i].fecha_comunicacion
+        .split("T00:00:00.000Z")[0]
+        .split("-");
       const templateParams = {
-        nombre_ADP: this.nombre_ADP,
-        apellido_ADP: this.apellido_ADP,
-        cargo_ADP: this.cargo_ADP,
-        email: this.email,
-        nombramiento_ADP: this.nombramiento_ADP_formateado,
-        suscripcion_ADP: this.suscripcion_ADP,
-        comunicacion_ADP: this.comunicacion_ADP,
+        nombre_ADP: this.adps[i].nombre_corregido,
+        apellido_ADP: this.adps[i].apellido_corregido,
+        cargo_ADP: this.adps[i].cargo,
+        email: this.adps[i].mail_contraparte_cd,
+        nombramiento_ADP: `${fechaNombramiento[2]}/${fechaNombramiento[1]}/${fechaNombramiento[0]}`,
+        suscripcion_ADP: `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`,
+        comunicacion_ADP: `${fechaComunicacion[2]}/${fechaComunicacion[1]}/${fechaComunicacion[0]}`,
         anadir_nombramiento: `<a href="https://calndr.link/d/event/?service=google&start=${
-          this.nombramiento_ADP.split("T00:00:00.000Z")[0]
-        } 08:00&title=Inicio elaboración convenio ${this.nombre_ADP} ${
-          this.apellido_ADP
+          this.adps[i].fecha_nombramiento_renovacion.split("T00:00:00.000Z")[0]
+        } 08:00&title=Inicio elaboración convenio ${
+          this.adps[i].nombre_corregido
+        } ${
+          this.adps[i].apellido_corregido
         }&timezone=America/Santiago">Añadir al Calendario</a>`,
       };
+
       const userID = "user_j03eIIBx2tfg0roipyWbX";
       const templateID = "alerta0_nombrado";
       const serviceID = "gmail_dnsc";
@@ -326,17 +452,17 @@ export default {
         url: "https://v1.nocodeapi.com/yerigagarin/calendar/kPSHlVqrfCmjOchV/event?maxAttendees=1&sendNotifications=true&sendUpdates=none",
         params: {},
         data: {
-          summary: `Noventa días de ${this.adps[i].nombre_corregido} ${this.adps[i].apellido_corregido} [${this.adps[i].concurso}]`,
-          description: `El concurso ${this.adps[i].concurso} se encuentra próximo al cumplimiento de los 90 días.`,
+          summary: `Treinta días desde el nombramiento de ${this.adps[i].nombre_corregido} ${this.adps[i].apellido_corregido} [${this.adps[i].concurso}]`,
+          description: `Han pasado 30 días desde la fecha de nombramiento o renovación`,
           start: {
             dateTime: `${
-              this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+              this.adps[i].fecha_propuesta.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           end: {
             dateTime: `${
-              this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+              this.adps[i].fecha_propuesta.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
@@ -369,29 +495,17 @@ export default {
         })
       );
     },
-    formateaNombramiento() {
-      const date = this.nombramiento_ADP;
-      const shortDate = date.split("T00:00:00.000Z")[0];
-      const arregloFecha = shortDate.split("-");
-      const fechaFinal = `${arregloFecha[2]}/${arregloFecha[1]}/${arregloFecha[0]}`;
-      return fechaFinal;
-    },
-    ...mapState(["adps"]),
+    // ...mapState(["adps"]),
   },
-  created() {
-    // this.concurso = this.concursoMasActual;
-    this.nombramiento_ADP_formateado = this.formateaNombramiento;
-  },
+  // created() {
+  // this.concurso = this.concursoMasActual;
+  // },
 };
 </script>
 
 <style scoped lang="scss">
 ul {
   list-style-type: none;
-}
-
-.cursor {
-  cursor: copy;
 }
 
 .row {

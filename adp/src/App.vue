@@ -50,4 +50,8 @@ export default {
 #convenioSuscrito {
   color: green;
 }
+
+.cursor {
+  cursor: copy;
+}
 </style>

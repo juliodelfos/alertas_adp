@@ -25,8 +25,12 @@
           <tr>
             <td>
               <b-icon icon="person-badge-fill"></b-icon>
-              <b> Contraparte convenio:</b>
-              {{ mail_contraparte_cd }}
+              <b> Contraparte convenio: </b>
+              <a
+                :href="`https://mail.google.com/mail/?view=cm&source=mailto&to=${mail_contraparte_cd}&body=Estimada/o,`"
+                target="_blank"
+                >{{ mail_contraparte_cd }}</a
+              >
             </td>
           </tr>
         </tbody>
@@ -45,7 +49,8 @@
             <td>
               <b-icon icon="envelope-fill"></b-icon>
               <b> Correo:</b>
-              {{ mail }}
+              <a :href="`https://mail.google.com/mail/?view=cm&source=mailto&to=${mail}&body=Estimada/o Directiva/o,`" target="_blank">
+              {{ mail }}</a>
             </td>
           </tr>
           <tr>
@@ -62,8 +67,9 @@
           <tr>
             <td>
               <b-icon icon="person-lines-fill"></b-icon>
-              <b> Contraparte evaluación:</b>
-              {{ mail_contraparte_eval }}
+              <b> Contraparte evaluación: </b>
+              <a :href="`https://mail.google.com/mail/?view=cm&source=mailto&to=${mail_contraparte_eval}&body=Estimada/o,`" target="_blank">
+              {{ mail_contraparte_eval }}</a>
             </td>
           </tr>
         </tbody>
