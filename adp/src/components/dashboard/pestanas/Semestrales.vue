@@ -48,6 +48,14 @@
               @click="$emit('inicioEvalSemestral')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >
+            <div>
+              <a
+                :href="`https://mail.google.com/mail/?view=cm&source=mailto&to=${mail}&body=Estimada Contraparte,%0D%0DJunto con saludar, se recuerda que se encuentra pendiente la suscripción del convenio de desempeño de ${nombre_corregido} ${apellido_corregido}. El plazo máximo para suscribir el convenio es el ${eval_semestral_inicio}%0D%0DProblema:No se pueden añadir links y el código queda horrible`"
+                target="_blank"
+              >
+                Prueba con Gmail</a
+              >
+            </div>
           </td>
           <td>
             <span
@@ -76,6 +84,9 @@ export default {
     eval_semestral_inicio: { type: String, required: true },
     eval_semestral_auto: { type: String, required: true },
     eval_semestral_retro: { type: String, required: true },
+    mail: { type: String, required: true },
+    nombre_corregido: { type: String, required: true },
+    apellido_corregido: { type: String, required: true },
   },
 };
 </script>

@@ -124,6 +124,9 @@
                 :eval_semestral_inicio="adp.eval_semestral_inicio"
                 :eval_semestral_auto="adp.eval_semestral_auto"
                 :eval_semestral_retro="adp.eval_semestral_retro"
+                :mail="adp.mail"
+                :nombre_corregido="adp.nombre_corregido"
+                :apellido_corregido="adp.apellido_corregido"
                 @inicioEvalSemestral="inicioEvalSemestral(adp.indice)"
                 @autoEvalSemestral="autoEvalSemestral(adp.indice)"
                 @retroEvalSemestral="retroEvalSemestral(adp.indice)"
@@ -449,6 +452,34 @@ export default {
         );
       this.registrarCorreo();
     },
+    alertaSesenta(i) {
+      const fechaSuscripcion = this.adps[i].fecha_suscripcion
+        .split("T00:00:00.000Z")[0]
+        .split("-");
+      const suscripcion_ADP = `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`;
+      const nombre_ADP = this.adps[i].nombre_corregido;
+      const apellido_ADP = this.adps[i].apellido_corregido;
+      const cargo_ADP = this.adps[i].cargo;
+      const email = this.adps[i].mail_contraparte_cd;
+
+      const templateParams = {
+        asunto: `Convenio de desempeño pendiente`,
+        email: email,
+        mensaje: `Estimada Contraparte,Junto con saludar, y en virtud del nombramiento de ${nombre_ADP} ${apellido_ADP}, ${cargo_ADP}, informado recientemente, recordamos que es necesario elaborar la propuesta de convenio de desempeño la cual debe contar con la aprobación del Servicio Civil a través del Sistema Informático de Convenios de Desempeño (SICDE).
+La fecha máxima de suscripción es el ${suscripcion_ADP}. En caso de tener alguna diferencia con la fecha, por favor infórmanos respondiendo este correo a fin de evitar problemas posteriores en el sistema.`,
+      };
+
+      const userID = "user_j03eIIBx2tfg0roipyWbX";
+      const templateID = "general";
+      const serviceID = "gmail_dnsc";
+
+      const emailSaliente = emailjs
+        .send(serviceID, templateID, templateParams, userID)
+        .then(
+          (result) => console.log(result.text),
+          (error) => console.log(error.text)
+        );
+    },
     addToCalendar(i) {
       axios({
         method: "post",
@@ -485,7 +516,7 @@ export default {
       axios({
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-        data: [['Aún no', fecha]],
+        data: [["Aún no", fecha]],
       })
         .then((response) => console.log(response.data))
         .catch((error) => console.log(error));
