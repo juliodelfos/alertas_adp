@@ -485,7 +485,7 @@ export default {
       axios({
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-        data: [["Hola", fecha]],
+        data: [['Aún no', fecha]],
       })
         .then((response) => console.log(response.data))
         .catch((error) => console.log(error));
