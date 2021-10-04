@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Inicio from "@/views/Home.vue";
 import PerfilADP from "@/views/PerfilADP.vue";
 import GrupoCards from "@/views/GrupoCards.vue";
+import Timeline from "@/views/Timeline.vue";
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,12 @@ const routes = [
     path: "/general",
     name: "GrupoCards",
     component: GrupoCards,
+    props: true,
+  },
+  {
+    path: "/timeline",
+    name: "Timeline",
+    component: Timeline,
     props: true,
   },
 ];

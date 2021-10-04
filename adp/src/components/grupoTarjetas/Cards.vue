@@ -1,6 +1,6 @@
 <template>
   <div class="d-none d-lg-block">
-    <b-row cols="1" cols-sm="2" cols-md="2" cols-lg="4" class="mt-4">
+    <b-row cols="1" cols-sm="2" cols-md="2" cols-lg="3" class="mt-4">
       <b-col
         v-for="(
           {
@@ -19,10 +19,10 @@
       >
         <b-card tag="article" class="mb-2 shadow">
           <b-row class="pb-4">
-            <b-col id="firstColumn" md="4" class="sinPadding text-center">
+            <b-col id="firstColumn" md="3" class="sinPadding text-center">
               <b-img :src="img" class="mt-1 rounded-circle"></b-img>
             </b-col>
-            <b-col md="8" class="my-auto sinPadding">
+            <b-col md="9" class="my-auto sinPadding">
               <h5>
                 {{ nombre_corregido.split(" ")[0] }}
                 {{ apellido_corregido }}
@@ -50,12 +50,10 @@
 </template>
 
 <script>
+import axios from "axios";
 import { mapState } from "vuex";
 export default {
   name: "Cards",
-  methods: {
-    verMas() {},
-  },
   computed: {
     ...mapState(["adps"]),
   },
