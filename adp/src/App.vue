@@ -42,9 +42,11 @@ export default {
 .fotoPerfil {
   height: 7rem;
   width: 7rem;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+}
+
+.fotoPerfilPequena {
+  height: 5rem;
+  width: 5rem;
 }
 
 #convenioSuscrito {

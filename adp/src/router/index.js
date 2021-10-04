@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Inicio from "@/views/Home.vue";
 import PerfilADP from "@/views/PerfilADP.vue";
+import GrupoCards from "@/views/GrupoCards.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,12 @@ const routes = [
     path: "/perfil",
     name: "PerfilADP",
     component: PerfilADP,
+    props: true,
+  },
+  {
+    path: "/general",
+    name: "GrupoCards",
+    component: GrupoCards,
     props: true,
   },
 ];

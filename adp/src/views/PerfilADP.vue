@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Perfiles />
+    <Perfiles :id="id" />
   </div>
 </template>
 
@@ -12,6 +12,9 @@ export default {
   name: "PerfilADP",
   components: {
     Perfiles,
+  },
+  props: {
+    id: String,
   },
 };
 </script>
