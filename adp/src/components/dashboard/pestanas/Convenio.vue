@@ -40,8 +40,15 @@
         <tr>
           <td>
             <span
+              v-if="estado_adp == 'Nombrado (primer periodo)'"
               class="badge rounded-pill bg-warning text-dark cursor"
-              @click="$emit('alertaCero', 'registrarCorreo')"
+              @click="$emit('alertaCero')"
+              ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
+            >
+            <span
+              v-else
+              class="badge rounded-pill bg-warning text-dark cursor"
+              @click="$emit('alertaCeroRenovado')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >
           </td>
@@ -73,6 +80,7 @@ export default {
     fecha_propuesta: { type: String, required: true },
     fecha_suscripcion: { type: String, required: true },
     fecha_comunicacion: { type: String, required: true },
+    estado_adp: { type: String, required: true },
   },
 };
 </script>

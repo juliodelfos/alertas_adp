@@ -17,5 +17,6 @@ export default new Vuex.Store({
       commit("FETCH_ADP", data);
     },
   },
+  getters: {},
   modules: {},
 });

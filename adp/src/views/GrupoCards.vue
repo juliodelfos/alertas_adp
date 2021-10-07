@@ -1,7 +1,7 @@
 <template>
-  <b-container class="pt-3">
+  <div>
     <Cards />
-  </b-container>
+  </div>
 </template>
 
 <script>

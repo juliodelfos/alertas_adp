@@ -4,6 +4,7 @@
     toggleable="lg"
     type="dark"
     variant="primary"
+    v-show="this.$route.name !== 'Inicio'"
   >
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
