@@ -10,6 +10,8 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
+import "bootswatch/dist/darkly/bootstrap.min.css";
+
 //MomentJS
 import moment from "moment";
 Vue.filter("formatDate", (value) => {

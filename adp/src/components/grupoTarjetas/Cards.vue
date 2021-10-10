@@ -6,7 +6,7 @@
       cols-sm="1"
       cols-md="4"
       cols-lg="4"
-      class="mb-4 pb-4 pt-3 px-3 bg-primary text-white shadow"
+      class="mb-4 pb-4 pt-3 px-3 bg-dark shadow"
       rounded="bottom"
     >
       <b-col>
@@ -117,7 +117,7 @@
               <router-link
                 :to="{ name: 'PerfilADP', params: { id: `${concurso}` } }"
               >
-                <b-button variant="outline-primary" class="mt-4" size="sm"
+                <b-button variant="primary" class="mt-4" size="sm"
                   >Ver detalles</b-button
                 >
               </router-link>
@@ -165,7 +165,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(["adps", "servicios", 'estadosConvenios']),
+    ...mapState(["adps", "servicios", "estadosConvenios"]),
     filtrarADPs() {
       return this.filtroPorConcurso(
         this.filtroPorNombreDeServicio(

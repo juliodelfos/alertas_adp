@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Nav/>
+    <Nav />
     <div id="principal">
       <router-view />
     </div>
@@ -14,7 +14,7 @@ import axios from "axios";
 export default {
   name: "App",
   components: {
-    Nav
+    Nav,
   },
   methods: {
     ...mapActions(["fetch_Adp"]),
@@ -39,6 +39,8 @@ export default {
 
 
 <style lang="scss">
+// @import "./bootswatch/dist/darkly/bootstrap.min.css";
+// @import "@/assets/style/_bootswatch.scss";
 .fotoPerfil {
   height: 7rem;
   width: 7rem;

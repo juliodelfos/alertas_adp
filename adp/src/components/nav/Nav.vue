@@ -3,7 +3,7 @@
     class="px-3"
     toggleable="lg"
     type="dark"
-    variant="primary"
+    variant="dark"
     v-show="this.$route.name !== 'Inicio'"
   >
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
