@@ -10,7 +10,12 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
-import "bootswatch/dist/darkly/bootstrap.min.css";
+//Theme Bootstrap
+import "bootswatch/dist/superhero/bootstrap.min.css";
+
+//Vue Notifications
+import Notifications from "vue-notification";
+Vue.use(Notifications);
 
 //MomentJS
 import moment from "moment";

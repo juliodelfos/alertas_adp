@@ -92,6 +92,7 @@
 
 <script>
 import { mapState } from "vuex";
+// import Vue from "vue";
 import emailjs from "emailjs-com";
 import axios from "axios";
 import Convenio from "@/components/dashboard/pestanas/Convenio.vue";
@@ -148,63 +149,84 @@ export default {
 
     // Inicio APIs
     alertaCero(i) {
-      // Creo arrays con cada número de la fecha para ordenarlos en fecha chilena
-      const fechaNombramiento = this.adps[i].fecha_nombramiento_renovacion
-        .split("T00:00:00.000Z")[0]
-        .split("-");
-      const fechaSuscripcion = this.adps[i].fecha_suscripcion
-        .split("T00:00:00.000Z")[0]
-        .split("-");
-      const fechaComunicacion = this.adps[i].fecha_comunicacion
-        .split("T00:00:00.000Z")[0]
-        .split("-");
-      const templateParams = {
-        nombre_ADP: this.adps[i].nombre_corregido,
-        apellido_ADP: this.adps[i].apellido_corregido,
-        cargo_ADP: this.adps[i].cargo,
-        // email: this.adps[i].mail_contraparte_cd,
-        email: "yersonob@gmail.com",
-        nombramiento_ADP: `${fechaNombramiento[2]}/${fechaNombramiento[1]}/${fechaNombramiento[0]}`,
-        suscripcion_ADP: `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`,
-        comunicacion_ADP: `${fechaComunicacion[2]}/${fechaComunicacion[1]}/${fechaComunicacion[0]}`,
-        anadir_nombramiento: `<a href="https://calndr.link/d/event/?service=google&start=${
-          this.adps[i].fecha_nombramiento_renovacion.split("T00:00:00.000Z")[0]
-        } 08:00&title=Inicio elaboración convenio ${
-          this.adps[i].nombre_corregido
-        } ${
-          this.adps[i].apellido_corregido
-        }&timezone=America/Santiago">Añadir al Calendario</a>`,
-        anadir_suscripcion: `<a href="https://calndr.link/d/event/?service=google&start=${
-          this.adps[i].fecha_suscripcion.split("T00:00:00.000Z")[0]
-        } 08:00&title=Suscripción convenio ${this.adps[i].nombre_corregido} ${
-          this.adps[i].apellido_corregido
-        }&timezone=America/Santiago">Añadir al Calendario</a>`,
-        anadir_comunicacion: `<a href="https://calndr.link/d/event/?service=google&start=${
-          this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
-        } 08:00&title=Comunicación convenio ${this.adps[i].nombre_corregido} ${
-          this.adps[i].apellido_corregido
-        } (90 días)&timezone=America/Santiago">Añadir al Calendario</a>`,
-      };
-
-      const userID = "user_j03eIIBx2tfg0roipyWbX";
-      const templateID = "alerta0_nombrado";
-      const serviceID = "gmail_dnsc";
-
-      emailjs.send(serviceID, templateID, templateParams, userID).then(
-        (result) => console.log(result.text),
-        (error) => console.log(error.text)
+      const solicitaConfirmacion = confirm(
+        `¿Seguro que quieres enviar la Alerta Cero al mail ${this.adps[i].mail_contraparte_cd}`
       );
+      if (solicitaConfirmacion) {
+        const fechaNombramiento = this.adps[i].fecha_nombramiento_renovacion
+          .split("T00:00:00.000Z")[0]
+          .split("-");
+        const fechaSuscripcion = this.adps[i].fecha_suscripcion
+          .split("T00:00:00.000Z")[0]
+          .split("-");
+        const fechaComunicacion = this.adps[i].fecha_comunicacion
+          .split("T00:00:00.000Z")[0]
+          .split("-");
+        const templateParams = {
+          nombre_ADP: this.adps[i].nombre_corregido,
+          apellido_ADP: this.adps[i].apellido_corregido,
+          cargo_ADP: this.adps[i].cargo,
+          // email: this.adps[i].mail_contraparte_cd,
+          email: "yersonob@gmail.com",
+          nombramiento_ADP: `${fechaNombramiento[2]}/${fechaNombramiento[1]}/${fechaNombramiento[0]}`,
+          suscripcion_ADP: `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`,
+          comunicacion_ADP: `${fechaComunicacion[2]}/${fechaComunicacion[1]}/${fechaComunicacion[0]}`,
+          anadir_nombramiento: `<a href="https://calndr.link/d/event/?service=google&start=${
+            this.adps[i].fecha_nombramiento_renovacion.split(
+              "T00:00:00.000Z"
+            )[0]
+          } 08:00&title=Inicio elaboración convenio ${
+            this.adps[i].nombre_corregido
+          } ${
+            this.adps[i].apellido_corregido
+          }&timezone=America/Santiago">Añadir al Calendario</a>`,
+          anadir_suscripcion: `<a href="https://calndr.link/d/event/?service=google&start=${
+            this.adps[i].fecha_suscripcion.split("T00:00:00.000Z")[0]
+          } 08:00&title=Suscripción convenio ${this.adps[i].nombre_corregido} ${
+            this.adps[i].apellido_corregido
+          }&timezone=America/Santiago">Añadir al Calendario</a>`,
+          anadir_comunicacion: `<a href="https://calndr.link/d/event/?service=google&start=${
+            this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+          } 08:00&title=Comunicación convenio ${
+            this.adps[i].nombre_corregido
+          } ${
+            this.adps[i].apellido_corregido
+          } (90 días)&timezone=America/Santiago">Añadir al Calendario</a>`,
+        };
 
-      //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
-      const fecha = new Date();
-      const concurso = this.adps[i].concurso;
-      axios({
-        method: "post",
-        url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-        data: [["Alerta Cero primer periodo", concurso, fecha]],
-      })
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error));
+        const userID = "user_j03eIIBx2tfg0roipyWbX";
+        const templateID = "alerta0_nombrado";
+        const serviceID = "gmail_dnsc";
+
+        emailjs.send(serviceID, templateID, templateParams, userID).then(
+          (result) => console.log(result.text),
+          (error) => console.log(error.text)
+        );
+
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
+        const fecha = new Date();
+        const concurso = this.adps[i].concurso;
+        axios({
+          method: "post",
+          url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+          data: [["Alerta Cero primer periodo", concurso, fecha]],
+        })
+          .then((response) => console.log(response.data))
+          .catch((error) => console.log(error));
+
+        // Vue.notify({
+        //   type: "success",
+        //   text: "Correo enviado",
+        // });
+        console.log("Enviado");
+
+      } else {
+        // Vue.notify({
+        //   type: "warn",
+        //   text: "Correo no enviado",
+        // });
+        console.log("No enviado");
+      }
     },
     alertaCeroRenovado(i) {
       // Creo arrays con cada número de la fecha para ordenarlos en fecha chilena
@@ -324,6 +346,13 @@ La fecha máxima de suscripción es el ${suscripcion_ADP}. En caso de tener algu
         .then((response) => console.log(response.data))
         .catch((error) => console.log(error));
     },
+    // alertaNoventa() {
+    //   Vue.notify({
+    //     type: "warn",
+    //     text: "Correo no enviado",
+    //   });
+    //   console.log("Ah?");
+    // },
   },
 
   computed: {
