@@ -25,12 +25,20 @@
           <b-icon icon="exclamation-circle-fill" id="sicdeCaido"></b-icon
         ></span>
       </b-navbar-nav>
+      <b-navbar-nav>
+        <span class="badge bg-light text-dark ms-4" @click="socialLogout"
+          >Salir
+        </span>
+      </b-navbar-nav>
     </b-collapse>
   </b-navbar>
 </template>
 
 <script>
 import axios from "axios";
+import { mapState, mapActions } from "vuex";
+import firebase from "firebase";
+
 export default {
   name: "Nav",
   data() {
@@ -39,6 +47,8 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["social_Logout"]),
+
     async estadoSICDE() {
       await axios
         .get(
@@ -51,6 +61,19 @@ export default {
           console.log(error);
         });
     },
+    socialLogout() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.push("/");
+          location.reload();
+        });
+      this.social_Logout();
+    },
+  },
+  computed: {
+    ...mapState(["user"]),
   },
   created() {
     this.estadoSICDE();

@@ -1,10 +1,12 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    user: "",
     adps: [],
     servicios: [
       { value: "", text: "Selecciona un servicio" },
@@ -107,12 +109,24 @@ export default new Vuex.Store({
     FETCH_ADP(state, data) {
       state.adps = data;
     },
+    SOCIAL_LOGIN(state, user) {
+      state.user = user;
+    },
+    SOCIAL_LOGOUT(state) {
+      state.user = "";
+    },
   },
   actions: {
     fetch_Adp({ commit }, data) {
       commit("FETCH_ADP", data);
     },
+    social_Login({ commit }, user) {
+      commit("SOCIAL_LOGIN", user);
+    },
+    social_Logout({ commit }) {
+      commit("SOCIAL_LOGOUT");
+    },
   },
-  getters: {},
-  modules: {},
+  plugins: [createPersistedState()],
+
 });

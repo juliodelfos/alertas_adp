@@ -80,33 +80,33 @@
 
             <b-card-text>
               <b-row class="text-center">
-                <b-col md="4"
+                <b-col md="3"
                   ><p class="text-muted">Concurso</p>
                   <p>{{ concurso }}</p></b-col
                 >
-                <b-col md="4" v-if="estado_cd == 'Suscrito'"
+                <b-col md="6" v-if="estado_cd == 'Suscrito'"
                   ><p class="text-muted">Convenio</p>
                   <p>
                     {{ estado_cd }}
                   </p></b-col
                 >
-                <b-col md="4" v-else
+                <b-col md="6" v-else
                   ><p class="text-muted">Convenio</p>
                   <p>
                     {{ estado_cd }}
                   </p></b-col
                 >
-                <b-col md="4" v-if="estado_adp == 'Nombrado (primer periodo)'"
+                <b-col md="3" v-if="estado_adp == 'Nombrado (primer periodo)'"
                   ><p class="text-muted">Periodo</p>
                   <p>Primero</p>
                 </b-col>
                 <b-col
-                  md="4"
+                  md="3"
                   v-else-if="estado_adp == 'Renovado (segundo periodo)'"
                   ><p class="text-muted">Periodo</p>
                   <p>Segundo</p>
                 </b-col>
-                <b-col md="4" v-else
+                <b-col md="3" v-else
                   ><p class="text-muted">Periodo</p>
                   <p>Tercero</p>
                 </b-col>

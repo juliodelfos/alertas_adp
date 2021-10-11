@@ -17,6 +17,20 @@ import "bootswatch/dist/superhero/bootstrap.min.css";
 import Notifications from "vue-notification";
 Vue.use(Notifications);
 
+//Firebase
+import firebase from "firebase";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBzbYsbg9B4_F9is3T7R48UfGfhQgId74o",
+  authDomain: "dnsc-ccaf2.firebaseapp.com",
+  projectId: "dnsc-ccaf2",
+  storageBucket: "dnsc-ccaf2.appspot.com",
+  messagingSenderId: "354745127673",
+  appId: "1:354745127673:web:31a30e80e606941ad8c828",
+};
+
+firebase.initializeApp(firebaseConfig);
+
 //MomentJS
 import moment from "moment";
 Vue.filter("formatDate", (value) => {

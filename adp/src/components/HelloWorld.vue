@@ -11,6 +11,7 @@
           class="form-control"
           id="floatingInput"
           placeholder="napellido@serviciocivil.cl"
+          v-model="acceso.user"
         />
         <label for="floatingInput">Correo institucional</label>
       </div>
@@ -20,10 +21,16 @@
           class="form-control"
           id="floatingPassword"
           placeholder="Contraseña"
+          v-model="acceso.password"
         />
         <label for="floatingPassword">Contraseña</label>
       </div>
-      <b-button variant="primary" class="w-100 btn" type="submit">
+      <b-button
+        variant="primary"
+        class="w-100 btn"
+        type="submit"
+        @click="login"
+      >
         Ingresar
       </b-button>
     </form>
@@ -31,8 +38,35 @@
 </template>
 
 <script>
+import firebase from "firebase";
+import { mapActions } from "vuex";
+
 export default {
   name: "HelloWorld",
+  data() {
+    return {
+      acceso: {
+        user: "",
+        password: "",
+      },
+    };
+  },
+  methods: {
+    ...mapActions(["social_Login"]),
+    login() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.acceso.user, this.acceso.password)
+        .then(
+          (accept) => {
+            this.$router.push("general");
+            // this.$router.replace({ name: "GrupoCards" });
+            this.social_Login(accept.user);
+          },
+          (reject) => console.log("Error", reject)
+        );
+    },
+  },
 };
 </script>
 
