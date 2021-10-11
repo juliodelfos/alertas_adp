@@ -18,21 +18,25 @@
           </h1>
         </div>
 
-        <!-- Foto y gráfico -->
-        <b-row class="pb-4">
+        <!-- Foto, gráfico y correos -->
+        <b-row class="py-4 pe-5">
           <b-col md="2" class="text-center my-auto pt-4">
             <FotoPerfil :img="adp.img" />
           </b-col>
-          <b-col md="10">
+          <b-col md="6">
             <Grafico
               :porcentaje_dias_cargo="adp.porcentaje_dias_cargo"
               :porcentaje_dias_anogestion="adp.porcentaje_dias_anogestion"
             />
           </b-col>
+          <b-col md="4">
+            <UltimosCorreos :concurso="adp.concurso" />
+          </b-col>
         </b-row>
 
         <!-- Datos básicos -->
         <Datos
+          class="pe-5"
           :cargo="adp.cargo"
           :fecha_nombramiento_renovacion="adp.fecha_nombramiento_renovacion"
           :estado_adp="adp.estado_adp"
@@ -102,6 +106,7 @@ import Otras from "@/components/dashboard/pestanas/Otras.vue";
 import Datos from "@/components/dashboard/datos_personales/Datos.vue";
 import Grafico from "@/components/dashboard/datos_personales/Grafico.vue";
 import FotoPerfil from "@/components/dashboard/datos_personales/FotoPerfil.vue";
+import UltimosCorreos from "@/components/dashboard/datos_personales/UltimosCorreos.vue";
 import Filtros from "@/components/dashboard/buscador/Filtros.vue";
 export default {
   name: "Perfiles",
@@ -114,6 +119,7 @@ export default {
     Grafico,
     Filtros,
     FotoPerfil,
+    UltimosCorreos,
   },
   data() {
     return {
@@ -122,6 +128,7 @@ export default {
       servicio: "",
       estadoConvenio: "",
       nombreADP: "",
+      correosSalientes: [],
     };
   },
   methods: {
@@ -219,7 +226,6 @@ export default {
         //   text: "Correo enviado",
         // });
         console.log("Enviado");
-
       } else {
         // Vue.notify({
         //   type: "warn",
