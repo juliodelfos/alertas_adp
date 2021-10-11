@@ -9,11 +9,11 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item><router-link to="/">Inicio</router-link></b-nav-item>
-        <b-nav-item><router-link to="/general">Tarjetas</router-link></b-nav-item>
-        <b-nav-item
+        <!-- <b-nav-item><router-link to="/">Inicio</router-link></b-nav-item> -->
+        <b-nav-item><router-link to="/general">Home</router-link></b-nav-item>
+        <!-- <b-nav-item
           ><router-link to="/perfil">Dashboard</router-link></b-nav-item
-        >
+        > -->
       </b-navbar-nav>
       <b-navbar-nav class="ms-auto">
         <span class="badge bg-light text-dark" v-if="estado"

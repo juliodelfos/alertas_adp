@@ -1,7 +1,7 @@
 <template>
   <section id="tabla">
     <b-table striped hover :items="filtraPorConcurso" v-if="filtraPorConcurso.length > 0" small ></b-table>
-    <b-table striped hover :items="sinRegistros" v-else></b-table>
+    <b-table striped hover :items="sinRegistros" v-else small></b-table>
   </section>
 </template>
 

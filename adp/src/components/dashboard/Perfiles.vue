@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- Cards -->
     <div
       no-body
       class="overflow-hidden mb-4"
@@ -8,7 +7,7 @@
       :key="i"
     >
       <b-row no-gutters>
-        <div class="bg-primary text-white text-center pt-2 pb-1">
+        <div class="bg-dark text-center pb-1">
           <h1 class="fs-4">
             <b-icon icon="person-circle"></b-icon>
             {{ adp.nombre_corregido.split(" ")[0] }}
@@ -211,7 +210,7 @@ export default {
         );
 
         //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
-        const fecha = new Date();
+        const fecha = new Date().toLocaleDateString();
         const concurso = this.adps[i].concurso;
         axios({
           method: "post",
