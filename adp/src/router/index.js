@@ -57,18 +57,6 @@ router.beforeEach((to, from, next) => {
   } else {
     next();
   }
-
-  // if (isAuthenticated && to.name === "Timeline") {
-  //   next({ name: "Inicio" });
-  // }
-  // else if (isAuthenticated && to.name === "PerfilADP") {
-  //   next({ name: "Inicio" });
-  // }
-  // if (requiresAuth && !isAuthenticated) {
-  //   next({ name: "GrupoCards" });
-  // } else {
-  //   next();
-  // }
 });
 
 export default router;

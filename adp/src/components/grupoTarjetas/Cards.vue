@@ -150,6 +150,9 @@ export default {
     filtroPorEstadoConvenio(adps) {
       return adps.filter((adp) => !adp.estado_cd.indexOf(this.estadoConvenio));
     },
+    // filtroConveniosNoSuscritos(adps) {
+    //   return adps.filter((adp) => adp.estado_cd !== "Suscrito");
+    // },
     filtroPorConcurso(adps) {
       return adps.filter(
         (adp) => !adp.concurso.toString().indexOf(this.concurso)
@@ -169,10 +172,18 @@ export default {
     filtrarADPs() {
       return this.filtroPorConcurso(
         this.filtroPorNombreDeServicio(
-          this.filtroPorNombreADP(this.filtroPorEstadoConvenio(this.adps))
+          // this.filtroConveniosNoSuscritos(
+            this.filtroPorNombreADP(this.filtroPorEstadoConvenio(this.adps))
+          // )
         )
       );
     },
+    // filtroTodosMenosCDSuscritos() {
+    //   const conveniosNoSuscritos = this.adps.filter(
+    //     (adp) => adp.estado_cd !== "Suscrito"
+    //   );
+    //   return conveniosNoSuscritos;
+    // },
   },
 };
 </script>

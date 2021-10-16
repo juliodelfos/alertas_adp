@@ -85,6 +85,7 @@ export default new Vuex.Store({
     ],
     estadosConvenios: [
       { value: "", text: "Selecciona un estado" },
+      // { value: "", text: "No suscritos" },
       { value: "Suscrito", text: "Suscrito" },
       { value: "Elaboración Servicio", text: "Elaboración Servicio" },
       { value: "Servicio Firma", text: "Servicio Firma" },
@@ -97,10 +98,6 @@ export default new Vuex.Store({
       },
       {
         value: "Ministerio Revisión de Observaciones",
-        text: "Ministerio Revisión de Observaciones",
-      },
-      {
-        value: "Ministerio Resolución",
         text: "Ministerio Revisión de Observaciones",
       },
     ],
@@ -127,6 +124,9 @@ export default new Vuex.Store({
       commit("SOCIAL_LOGOUT");
     },
   },
+  getters: { 
+
+  }
   // plugins: [createPersistedState()],
 
 });

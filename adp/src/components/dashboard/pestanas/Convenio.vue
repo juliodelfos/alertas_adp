@@ -15,7 +15,7 @@
             <div>
               <span
                 class="badge rounded-pill bg-primary text-white cursor"
-                @click="$emit('addToCalendar')"
+                @click="$emit('calendarAlertaCero')"
                 ><b-icon icon="calendar"></b-icon> Añadir a calendario
               </span>
             </div>
@@ -23,7 +23,9 @@
           <td>
             {{ fecha_suscripcion | formatDate }}
             <div>
-              <span class="badge rounded-pill bg-primary text-white cursor"
+              <span
+                class="badge rounded-pill bg-primary text-white cursor"
+                @click="$emit('calendarAlertaSesenta')"
                 ><b-icon icon="calendar"></b-icon> Añadir a calendario
               </span>
             </div>
@@ -31,7 +33,9 @@
           <td>
             {{ fecha_comunicacion | formatDate }}
             <div>
-              <span class="badge rounded-pill bg-primary text-white cursor"
+              <span
+                class="badge rounded-pill bg-primary text-white cursor"
+                @click="$emit('calendarAlertaNoventa')"
                 ><b-icon icon="calendar"></b-icon> Añadir a calendario
               </span>
             </div>
