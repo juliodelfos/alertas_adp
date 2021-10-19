@@ -49,42 +49,86 @@
         <!-- Pestañas -->
         <b-tabs content-class="mt-3" align="center">
           <b-tab title="Convenio de desempeño" active>
-            <Convenio
-              v-if="adp.estado_cd !== 'Suscrito'"
-              :fecha_comunicacion="adp.fecha_comunicacion"
-              :fecha_propuesta="adp.fecha_propuesta"
-              :fecha_suscripcion="adp.fecha_suscripcion"
-              :estado_adp="adp.estado_adp"
-              @registrarCorreo="registrarCorreo()"
-              @alertaCero="alertaCero(adp.indice)"
-              @alertaCeroRenovado="alertaCeroRenovado(adp.indice)"
-              @alertaSesenta="alertaSesenta(adp.indice)"
-              @alertaNoventa="alertaNoventa(adp.indice)"
-              @calendarAlertaCero="calendarAlertaCero(adp.indice)"
-              @calendarAlertaSesenta="calendarAlertaSesenta(adp.indice)"
-              @calendarAlertaNoventa="calendarAlertaNoventa(adp.indice)"
-            />
-            <div class="text-center pt-3 pb-4 fs-5 fw-bold" v-else>
-              Convenio suscrito
-              <b-icon icon="check-circle-fill" id="convenioSuscrito"></b-icon>
+            <div id="alertasConvenio">
+              <Convenio
+                v-if="adp.estado_cd !== 'Suscrito'"
+                :fecha_comunicacion="adp.fecha_comunicacion"
+                :fecha_propuesta="adp.fecha_propuesta"
+                :fecha_suscripcion="adp.fecha_suscripcion"
+                :estado_adp="adp.estado_adp"
+                @registrarCorreo="registrarCorreo()"
+                @alertaCero="alertaCero(adp.indice)"
+                @alertaCeroRenovado="alertaCeroRenovado(adp.indice)"
+                @alertaSesenta="alertaSesenta(adp.indice)"
+                @alertaNoventa="alertaNoventa(adp.indice)"
+                @calendarAlertaCero="calendarAlertaCero(adp.indice)"
+                @calendarAlertaSesenta="calendarAlertaSesenta(adp.indice)"
+                @calendarAlertaNoventa="calendarAlertaNoventa(adp.indice)"
+              />
+              <div class="text-center pt-3 pb-4 fs-5 fw-bold" v-else>
+                Convenio suscrito
+                <b-icon icon="check-circle-fill" id="convenioSuscrito"></b-icon>
+              </div>
             </div>
           </b-tab>
           <b-tab title="Evaluaciones semestrales">
-            <Semestrales
-              :eval_semestral_inicio="adp.eval_semestral_inicio"
-              :eval_semestral_auto="adp.eval_semestral_auto"
-              :eval_semestral_retro="adp.eval_semestral_retro"
+            <div id="Evaluaciones semestrales">
+              <Semestrales
+                v-if="
+                  adp.servicio == 'Servicio Local de Educación Barrancas' ||
+                  adp.servicio == 'Servicio Local de Educación Andalién Sur' ||
+                  adp.servicio == 'Servicio Local de Educación Atacama' ||
+                  adp.servicio == 'Servicio Local de Educación Chinchorro' ||
+                  adp.servicio == 'Servicio Local de Educación Colchagua' ||
+                  adp.servicio ==
+                    'Servicio Local de Educación Costa Araucanía' ||
+                  adp.servicio ==
+                    'Servicio Local de Educación Gabriela Mistral' ||
+                  adp.servicio == 'Servicio Local de Educación Huasco' ||
+                  adp.servicio == 'Servicio Local de Educación Llanquihue' ||
+                  adp.servicio ==
+                    'Servicio Local de Educación Puerto Cordillera' ||
+                  adp.servicio == 'Servicio Local de Educación Valparaíso' ||
+                  adp.nivel == 'II'
+                "
+                :eval_semestral_inicio="adp.eval_semestral_inicio"
+                :eval_semestral_auto="adp.eval_semestral_auto"
+                :eval_semestral_retro="adp.eval_semestral_retro"
+                :mail="adp.mail"
+                :nombre_corregido="adp.nombre_corregido"
+                :apellido_corregido="adp.apellido_corregido"
+                @inicioEvalSemestral="inicioEvalSemestral(adp.indice)"
+                @autoEvalSemestral="autoEvalSemestral(adp.indice)"
+                @retroEvalSemestral="retroEvalSemestral(adp.indice)"
+                @calendarInicioEvalParcial="
+                  calendarInicioEvalParcial(adp.indice)
+                "
+                @calendarAutoEvalParcial="calendarAutoEvalParcial(adp.indice)"
+                @calendarRetroEvalParcial="calendarRetroEvalParcial(adp.indice)"
+              />
+              <div class="text-center pt-3 pb-4 fs-5 fw-bold" v-else>
+                I niveles no sujetos a evaluación parcial
+              </div>
+            </div>
+          </b-tab>
+          <b-tab title="Evaluaciones anuales">
+            <Anuales
+              :eval_anual_inicio="adp.eval_anual_inicio"
+              :eval_anual_auto="adp.eval_anual_auto"
+              :eval_anual_retro="adp.eval_anual_retro"
+              :eval_anual_rex="adp.eval_anual_rex"
               :mail="adp.mail"
               :nombre_corregido="adp.nombre_corregido"
               :apellido_corregido="adp.apellido_corregido"
-              @inicioEvalSemestral="inicioEvalSemestral(adp.indice)"
-              @autoEvalSemestral="autoEvalSemestral(adp.indice)"
-              @retroEvalSemestral="retroEvalSemestral(adp.indice)"
-              @anadirCalendario="anadirCalendario(adp.indice)"
+              @inicioEvalAnual="inicioEvalAnual(adp.indice)"
+              @autoEvalAnual="autoEvalAnual(adp.indice)"
+              @retroEvalAnual="retroEvalAnual(adp.indice)"
+              @rexEvalAnual="rexEvalAnual(adp.indice)"
+              @calendarInicioEvalAnual="calendarInicioEvalAnual(adp.indice)"
+              @calendarAutoEvalAnual="calendarAutoEvalAnual(adp.indice)"
+              @calendarRetroEvalAnual="calendarRetroEvalAnual(adp.indice)"
+              @calendarRetroEvalAnualREX="calendarRetroEvalAnualREX(adp.indice)"
             />
-          </b-tab>
-          <b-tab title="Evaluaciones anuales">
-            <Anuales />
           </b-tab>
           <b-tab title="Otras comunicaciones">
             <Otras />
@@ -153,14 +197,16 @@ export default {
             .indexOf(this.nombreADP.toLowerCase())
       );
     },
-    //Fin Filtros
-
+    //
+    //
     // Correos de Alerta
     alertaCero(i) {
+      // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = confirm(
         `¿Seguro que quieres enviar la Alerta Cero al mail ${this.adps[i].mail_contraparte_cd}`
       );
       if (solicitaConfirmacion) {
+        // Se formatean fechas
         const fechaNombramiento = this.adps[i].fecha_nombramiento_renovacion
           .split("T00:00:00.000Z")[0]
           .split("-");
@@ -170,6 +216,8 @@ export default {
         const fechaComunicacion = this.adps[i].fecha_comunicacion
           .split("T00:00:00.000Z")[0]
           .split("-");
+
+        // Variables requeridas por EmailJS
         const templateParams = {
           nombre_ADP: this.adps[i].nombre_corregido,
           apellido_ADP: this.adps[i].apellido_corregido,
@@ -201,7 +249,6 @@ export default {
             this.adps[i].apellido_corregido
           } (90 días)&timezone=America/Santiago">Añadir al Calendario</a>`,
         };
-
         const userID = "user_j03eIIBx2tfg0roipyWbX";
         const templateID = "alerta0_nombrado";
         const serviceID = "desarrolloadp";
@@ -221,9 +268,9 @@ export default {
         })
           .then((response) => console.log(response.data))
           .catch((error) => console.log(error));
-        console.log("Correo enviado y registrado en planilla");
+        alert("Correo enviado y registrado en planilla");
       } else {
-        console.log("No enviado");
+        alert("No enviado");
       }
     },
     alertaCeroRenovado(i) {
@@ -275,7 +322,7 @@ export default {
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
         const templateID = "alerta0_renovado";
-        const serviceID = "gmail_dnsc";
+        const serviceID = "desarrolloadp";
 
         emailjs.send(serviceID, templateID, templateParams, userID).then(
           (result) => console.log(result.text),
@@ -292,13 +339,14 @@ export default {
         })
           .then((response) => console.log(response.data))
           .catch((error) => console.log(error));
+        alert("Alerta Cero renovado enviado y registrado");
       } else {
-        console.log("No enviado");
+        alert("No enviado");
       }
     },
     alertaSesenta(i) {
       const solicitaConfirmacion = confirm(
-        `¿Seguro que quieres enviar la Alerta Noventa al mail ${this.adps[i].mail_contraparte_cd}`
+        `¿Seguro que quieres enviar alerta sesenta al mail ${this.adps[i].mail_contraparte_cd}`
       );
       if (solicitaConfirmacion) {
         const fechaSuscripcion = this.adps[i].fecha_suscripcion
@@ -310,23 +358,16 @@ export default {
         const cargo_ADP = this.adps[i].cargo;
         const email = this.adps[i].mail_contraparte_cd;
 
-        const templateParams = {
-          asunto: `Convenio de desempeño pendiente`,
-          email: email,
-          mensaje: `Estimada Contraparte,Junto con saludar, y en virtud del nombramiento de ${nombre_ADP} ${apellido_ADP}, ${cargo_ADP}, informado recientemente, recordamos que es necesario elaborar la propuesta de convenio de desempeño la cual debe contar con la aprobación del Servicio Civil a través del Sistema Informático de Convenios de Desempeño (SICDE).
-La fecha máxima de suscripción es el ${suscripcion_ADP}. En caso de tener alguna diferencia con la fecha, por favor infórmanos respondiendo este correo a fin de evitar problemas posteriores en el sistema.`,
-        };
+        const templateParams = {};
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
         const templateID = "general";
         const serviceID = "gmail_dnsc";
 
-        const emailSaliente = emailjs
-          .send(serviceID, templateID, templateParams, userID)
-          .then(
-            (result) => console.log(result.text),
-            (error) => console.log(error.text)
-          );
+        emailjs.send(serviceID, templateID, templateParams, userID).then(
+          (result) => console.log(result.text),
+          (error) => console.log(error.text)
+        );
 
         //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
         const fecha = new Date().toLocaleDateString();
@@ -345,7 +386,7 @@ La fecha máxima de suscripción es el ${suscripcion_ADP}. En caso de tener algu
     },
     alertaNoventa(i) {
       const solicitaConfirmacion = confirm(
-        `¿Seguro que quieres enviar la Alerta Noventa al mail ${this.adps[i].mail_contraparte_cd}`
+        `¿Seguro que quieres enviar la alerta noventa al mail ${this.adps[i].mail_contraparte_cd}`
       );
       if (solicitaConfirmacion) {
         const fechaSuscripcion = this.adps[i].fecha_suscripcion
@@ -357,23 +398,16 @@ La fecha máxima de suscripción es el ${suscripcion_ADP}. En caso de tener algu
         const cargo_ADP = this.adps[i].cargo;
         const email = this.adps[i].mail_contraparte_cd;
 
-        const templateParams = {
-          asunto: `Convenio de desempeño pendiente`,
-          email: email,
-          mensaje: `Estimada Contraparte,Junto con saludar, y en virtud del nombramiento de ${nombre_ADP} ${apellido_ADP}, ${cargo_ADP}, informado recientemente, recordamos que es necesario elaborar la propuesta de convenio de desempeño la cual debe contar con la aprobación del Servicio Civil a través del Sistema Informático de Convenios de Desempeño (SICDE).
-La fecha máxima de suscripción es el ${suscripcion_ADP}. En caso de tener alguna diferencia con la fecha, por favor infórmanos respondiendo este correo a fin de evitar problemas posteriores en el sistema.`,
-        };
+        const templateParams = {};
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
         const templateID = "general";
         const serviceID = "gmail_dnsc";
 
-        const emailSaliente = emailjs
-          .send(serviceID, templateID, templateParams, userID)
-          .then(
-            (result) => console.log(result.text),
-            (error) => console.log(error.text)
-          );
+        emailjs.send(serviceID, templateID, templateParams, userID).then(
+          (result) => console.log(result.text),
+          (error) => console.log(error.text)
+        );
 
         //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
         const fecha = new Date().toLocaleDateString();
@@ -390,7 +424,6 @@ La fecha máxima de suscripción es el ${suscripcion_ADP}. En caso de tener algu
         console.log("No enviado");
       }
     },
-    //
     // Métodos de Calendario
     calendarAlertaCero(i) {
       axios({
@@ -451,6 +484,250 @@ La fecha máxima de suscripción es el ${suscripcion_ADP}. En caso de tener algu
         .catch((error) => console.log(error));
     },
     calendarAlertaNoventa(i) {
+      axios({
+        method: "post",
+        url: "https://v1.nocodeapi.com/yerigagarin/calendar/CCchNoezLaivkrgi/event?calendarId=c_2eq0jmn2nban422ruotm00h3fg@group.calendar.google.com&sendNotifications=true&sendUpdates=none",
+        data: {
+          summary: `90 días desde el nombramiento de ${
+            this.adps[i].nombre_corregido.split(" ")[0]
+          } ${this.adps[i].apellido_corregido.split(" ")[0]} [${
+            this.adps[i].concurso
+          }]`,
+          description: `Plazo fatal de suscripción del convenio de desempeño`,
+          start: {
+            dateTime: `${
+              this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+            }T8:00:00-03:00`,
+            timeZone: "GMT",
+          },
+          end: {
+            dateTime: `${
+              this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+            }T8:00:00-03:00`,
+            timeZone: "GMT",
+          },
+          sendNotifications: true,
+        },
+      })
+        .then((response) => console.log(response.data))
+        .catch((error) => console.log(error));
+    },
+    //
+    //
+    // Evaluaciones Semestrales
+    inicioEvalSemestral(i) {
+      // Cuadro de diálogo para confirmar envío de correo
+      const solicitaConfirmacion = confirm(
+        `¿Seguro que quieres enviar la Alerta Cero al mail ${this.adps[i].mail_contraparte_cd}`
+      );
+      if (solicitaConfirmacion) {
+        // Se formatean fechas
+        const fechaNombramiento = this.adps[i].fecha_nombramiento_renovacion
+          .split("T00:00:00.000Z")[0]
+          .split("-");
+        const fechaSuscripcion = this.adps[i].fecha_suscripcion
+          .split("T00:00:00.000Z")[0]
+          .split("-");
+        const fechaComunicacion = this.adps[i].fecha_comunicacion
+          .split("T00:00:00.000Z")[0]
+          .split("-");
+
+        // Variables requeridas por EmailJS
+        const templateParams = {
+          nombre_ADP: this.adps[i].nombre_corregido,
+          apellido_ADP: this.adps[i].apellido_corregido,
+          cargo_ADP: this.adps[i].cargo,
+          // email: this.adps[i].mail_contraparte_cd,
+          email: "yersonob@gmail.com",
+          nombramiento_ADP: `${fechaNombramiento[2]}/${fechaNombramiento[1]}/${fechaNombramiento[0]}`,
+          suscripcion_ADP: `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`,
+          comunicacion_ADP: `${fechaComunicacion[2]}/${fechaComunicacion[1]}/${fechaComunicacion[0]}`,
+          anadir_nombramiento: `<a href="https://calndr.link/d/event/?service=google&start=${
+            this.adps[i].fecha_nombramiento_renovacion.split(
+              "T00:00:00.000Z"
+            )[0]
+          } 08:00&title=Inicio elaboración convenio ${
+            this.adps[i].nombre_corregido
+          } ${
+            this.adps[i].apellido_corregido
+          }&timezone=America/Santiago">Añadir al Calendario</a>`,
+          anadir_suscripcion: `<a href="https://calndr.link/d/event/?service=google&start=${
+            this.adps[i].fecha_suscripcion.split("T00:00:00.000Z")[0]
+          } 08:00&title=Suscripción convenio ${this.adps[i].nombre_corregido} ${
+            this.adps[i].apellido_corregido
+          }&timezone=America/Santiago">Añadir al Calendario</a>`,
+          anadir_comunicacion: `<a href="https://calndr.link/d/event/?service=google&start=${
+            this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+          } 08:00&title=Comunicación convenio ${
+            this.adps[i].nombre_corregido
+          } ${
+            this.adps[i].apellido_corregido
+          } (90 días)&timezone=America/Santiago">Añadir al Calendario</a>`,
+        };
+        const userID = "user_j03eIIBx2tfg0roipyWbX";
+        const templateID = "alerta0_nombrado";
+        const serviceID = "desarrolloadp";
+
+        emailjs.send(serviceID, templateID, templateParams, userID).then(
+          (result) => console.log(result.text),
+          (error) => console.log(error.text)
+        );
+
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
+        const fecha = new Date().toLocaleDateString();
+        const concurso = this.adps[i].concurso;
+        axios({
+          method: "post",
+          url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+          data: [["Alerta Cero primer periodo", concurso, fecha]],
+        })
+          .then((response) => console.log(response.data))
+          .catch((error) => console.log(error));
+        alert("Correo enviado y registrado en planilla");
+      } else {
+        alert("No enviado");
+      }
+    },
+    autoEvalSemestral(i) {
+      const solicitaConfirmacion = confirm(
+        `¿Seguro que quieres enviar alerta sesenta al mail ${this.adps[i].mail_contraparte_cd}`
+      );
+      if (solicitaConfirmacion) {
+        const fechaSuscripcion = this.adps[i].fecha_suscripcion
+          .split("T00:00:00.000Z")[0]
+          .split("-");
+        const suscripcion_ADP = `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`;
+        const nombre_ADP = this.adps[i].nombre_corregido;
+        const apellido_ADP = this.adps[i].apellido_corregido;
+        const cargo_ADP = this.adps[i].cargo;
+        const email = this.adps[i].mail_contraparte_cd;
+
+        const templateParams = {};
+
+        const userID = "user_j03eIIBx2tfg0roipyWbX";
+        const templateID = "general";
+        const serviceID = "gmail_dnsc";
+
+        emailjs.send(serviceID, templateID, templateParams, userID).then(
+          (result) => console.log(result.text),
+          (error) => console.log(error.text)
+        );
+
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
+        const fecha = new Date().toLocaleDateString();
+        const concurso = this.adps[i].concurso;
+        axios({
+          method: "post",
+          url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+          data: [["Alerta Sesenta primer periodo", concurso, fecha]],
+        })
+          .then((response) => console.log(response.data))
+          .catch((error) => console.log(error));
+        console.log("Correo enviado y registrado en planilla");
+      } else {
+        console.log("No enviado");
+      }
+    },
+    retroEvalSemestral(i) {
+      const solicitaConfirmacion = confirm(
+        `¿Seguro que quieres enviar la alerta noventa al mail ${this.adps[i].mail_contraparte_cd}`
+      );
+      if (solicitaConfirmacion) {
+        const fechaSuscripcion = this.adps[i].fecha_suscripcion
+          .split("T00:00:00.000Z")[0]
+          .split("-");
+        const suscripcion_ADP = `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`;
+        const nombre_ADP = this.adps[i].nombre_corregido;
+        const apellido_ADP = this.adps[i].apellido_corregido;
+        const cargo_ADP = this.adps[i].cargo;
+        const email = this.adps[i].mail_contraparte_cd;
+
+        const templateParams = {};
+
+        const userID = "user_j03eIIBx2tfg0roipyWbX";
+        const templateID = "general";
+        const serviceID = "gmail_dnsc";
+
+        emailjs.send(serviceID, templateID, templateParams, userID).then(
+          (result) => console.log(result.text),
+          (error) => console.log(error.text)
+        );
+
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
+        const fecha = new Date().toLocaleDateString();
+        const concurso = this.adps[i].concurso;
+        axios({
+          method: "post",
+          url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+          data: [["Alerta Noventa Primer Periodo", concurso, fecha]],
+        })
+          .then((response) => console.log(response.data))
+          .catch((error) => console.log(error));
+        console.log("Correo enviado y registrado en planilla");
+      } else {
+        console.log("No enviado");
+      }
+    },
+    // Métodos de Calendario
+    calendarInicioEvalParcial(i) {
+      axios({
+        method: "post",
+        url: "https://v1.nocodeapi.com/yerigagarin/calendar/CCchNoezLaivkrgi/event?calendarId=c_2eq0jmn2nban422ruotm00h3fg@group.calendar.google.com&sendNotifications=true&sendUpdates=none",
+        data: {
+          summary: `30 días desde el nombramiento de ${
+            this.adps[i].nombre_corregido.split(" ")[0]
+          } ${this.adps[i].apellido_corregido.split(" ")[0]} [${
+            this.adps[i].concurso
+          }]`,
+          description: `Han pasado 30 días desde la fecha de nombramiento o renovación`,
+          start: {
+            dateTime: `${
+              this.adps[i].fecha_propuesta.split("T00:00:00.000Z")[0]
+            }T8:00:00-03:00`,
+            timeZone: "GMT",
+          },
+          end: {
+            dateTime: `${
+              this.adps[i].fecha_propuesta.split("T00:00:00.000Z")[0]
+            }T8:00:00-03:00`,
+            timeZone: "GMT",
+          },
+          sendNotifications: true,
+        },
+      })
+        .then((response) => console.log(response.data))
+        .catch((error) => console.log(error));
+    },
+    calendarAutoEvalParcial(i) {
+      axios({
+        method: "post",
+        url: "https://v1.nocodeapi.com/yerigagarin/calendar/CCchNoezLaivkrgi/event?calendarId=c_2eq0jmn2nban422ruotm00h3fg@group.calendar.google.com&sendNotifications=true&sendUpdates=none",
+        data: {
+          summary: `60 días desde el nombramiento de ${
+            this.adps[i].nombre_corregido.split(" ")[0]
+          } ${this.adps[i].apellido_corregido.split(" ")[0]} [${
+            this.adps[i].concurso
+          }]`,
+          description: `Han pasado 60 días desde la fecha de nombramiento o renovación`,
+          start: {
+            dateTime: `${
+              this.adps[i].fecha_suscripcion.split("T00:00:00.000Z")[0]
+            }T8:00:00-03:00`,
+            timeZone: "GMT",
+          },
+          end: {
+            dateTime: `${
+              this.adps[i].fecha_suscripcion.split("T00:00:00.000Z")[0]
+            }T8:00:00-03:00`,
+            timeZone: "GMT",
+          },
+          sendNotifications: true,
+        },
+      })
+        .then((response) => console.log(response.data))
+        .catch((error) => console.log(error));
+    },
+    calendarRetroEvalParcial(i) {
       axios({
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/calendar/CCchNoezLaivkrgi/event?calendarId=c_2eq0jmn2nban422ruotm00h3fg@group.calendar.google.com&sendNotifications=true&sendUpdates=none",
