@@ -13,9 +13,14 @@ Vue.use(IconsPlugin);
 //Theme Bootstrap
 import "bootswatch/dist/superhero/bootstrap.min.css";
 
-//Vue Notifications
-import Notifications from "vue-notification";
-Vue.use(Notifications);
+//Vue Toast Notification
+import VueToast from "vue-toast-notification";
+//import 'vue-toast-notification/dist/theme-default.css';
+import "vue-toast-notification/dist/theme-sugar.css";
+Vue.use(VueToast, {
+  // One of the options
+  duration: 4000,
+});
 
 //Firebase
 import firebase from "firebase";

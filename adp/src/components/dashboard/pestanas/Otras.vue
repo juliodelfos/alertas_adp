@@ -6,7 +6,6 @@
           <th scope="col">Clave SICDE</th>
           <th scope="col">Clave APP</th>
           <th scope="col">Bienvenida</th>
-          <th scope="col">Bienvenida Renovado</th>
           <th scope="col">Encuesta de cierre</th>
           <th scope="col">Encuesta percepción</th>
         </tr>
@@ -14,25 +13,31 @@
       <tbody>
         <tr>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark" @click="$emit('claveSICDE')"
+            <span
+              class="badge rounded-pill bg-warning text-dark"
+              @click="$emit('claveSICDE')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar clave</span
             >
           </td>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark" @click="$emit('claveAPP')"
+            <span
+              class="badge rounded-pill bg-warning text-dark"
+              @click="$emit('claveAPP')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar clave</span
             >
           </td>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark" @click="$emit('bienvenida')"
+            <span
+              class="badge rounded-pill bg-warning text-dark"
+              @click="$emit('bienvenida')"
+              v-if="estado_adp == 'Nombrado (primer periodo)'"
+              ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
+            >
+            <span class="badge rounded-pill bg-warning text-dark" v-else
               ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
           </td>
-          <td>
-            <span class="badge rounded-pill bg-warning text-dark"
-              ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
-            >
-          </td>
+
           <td>
             <span class="badge rounded-pill bg-warning text-dark"
               ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
@@ -52,6 +57,9 @@
 <script>
 export default {
   name: "Otras",
+  props: {
+    estado_adp: { type: String, required: true },
+  },
 };
 </script>
 
