@@ -39,7 +39,7 @@
           </td>
 
           <td>
-            <span class="badge rounded-pill bg-warning text-dark"
+            <span class="badge rounded-pill bg-warning text-dark" @click="$emit('encuestaCierre')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
           </td>

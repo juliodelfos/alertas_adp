@@ -169,6 +169,7 @@
               @claveSICDE="claveSICDE(adp.indice)"
               @claveAPP="claveAPP(adp.indice)"
               @bienvenida="bienvenida(adp.indice)"
+              @encuestaCierre="encuestaCierre(adp.indice)"
             />
           </b-tab>
         </b-tabs>
@@ -1408,7 +1409,53 @@ export default {
         Vue.$toast.warning("Correo no enviado");
       }
     },
-    encuestaCierre(i) {},
+    encuestaCierre(i) {
+      const solicitaConfirmacion = confirm(
+        `¿Seguro que quieres enviar el cuestionario de cierre al mail ${this.adps[i].mail}`
+      );
+      if (solicitaConfirmacion) {
+        const nombre = this.adps[i].nombre_corregido.split(" ")[0];
+        // const apellido = this.adps[i].apellido_corregido.split(" ")[0];
+
+        const templateParams = {
+          nombre_ADP: nombre,
+          // email: this.adps[i].mail,
+          email: "yersonob@gmail.com",
+        };
+
+        const userID = "user_j03eIIBx2tfg0roipyWbX";
+        const templateID = "cuestionarioCierre";
+        const serviceID = "desarrolloadp";
+
+        const correo = emailjs
+          .send(serviceID, templateID, templateParams, userID)
+          .then(
+            (result) => console.log(result.text),
+            (error) => console.log(error.text)
+          );
+
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          const fecha =
+            new Date().toLocaleDateString() +
+            " " +
+            new Date().toLocaleTimeString();
+          const concurso = this.adps[i].concurso;
+          axios({
+            method: "post",
+            url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+            data: [["Cuestionario de cierre", concurso, fecha]],
+          })
+            .then((response) => console.log(response.data))
+            .catch((error) => console.log(error));
+          Vue.$toast.success("Correo enviado y registrado en planilla");
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
+      } else {
+        Vue.$toast.warning("Correo no enviado");
+      }
+    },
     encuestaPercepcion(i) {},
   },
 
