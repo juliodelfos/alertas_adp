@@ -14,17 +14,17 @@
       <tbody>
         <tr>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark"
+            <span class="badge rounded-pill bg-warning text-dark" @click="$emit('claveSICDE')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar clave</span
             >
           </td>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark"
+            <span class="badge rounded-pill bg-warning text-dark" @click="$emit('claveAPP')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar clave</span
             >
           </td>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark"
+            <span class="badge rounded-pill bg-warning text-dark" @click="$emit('bienvenida')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
           </td>
