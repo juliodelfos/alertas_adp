@@ -7,7 +7,7 @@
       :key="i"
     >
       <b-row no-gutters>
-        <div class="bg-dark text-center pb-1">
+        <div class="bg-primary text-center pt-3 pb-2 text-white shadow">
           <h1 class="fs-4">
             <b-icon icon="person-circle"></b-icon>
             {{ adp.nombre_corregido.split(" ")[0] }}
@@ -19,8 +19,15 @@
 
         <!-- Foto, gráfico y correos -->
         <b-row class="py-4 pe-5">
-          <b-col md="2" class="text-center my-auto pt-4">
+          <b-col md="2" class="text-center my-auto pt-4" v-if="adp.img">
             <FotoPerfil :img="adp.img" />
+          </b-col>
+          <b-col md="2" class="text-center my-auto pt-4" v-else>
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/adp.png?alt=media&token=d6fcd70c-d85d-4b55-846c-9ec2c056ebd2"
+              alt="Foto de perfil"
+              class="fotoPerfil rounded-circle"
+            />
           </b-col>
           <b-col md="6">
             <Grafico

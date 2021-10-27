@@ -6,8 +6,8 @@
       cols-sm="1"
       cols-md="4"
       cols-lg="4"
-      class="mb-4 pb-4 pt-3 px-3 bg-dark shadow"
-      rounded="bottom"
+      class="mb-4 pb-4 pt-3 px-3 bg-primary shadow"
+      
     >
       <b-col>
         <b-form-group>
@@ -45,8 +45,8 @@
       ></b-col>
     </b-row>
 
-    <b-container class="d-none d-lg-block">
-      <b-row cols="1" cols-sm="2" cols-md="2" cols-lg="3" class="mt-4">
+    <div class="d-none d-lg-block">
+      <b-row cols="1" cols-sm="2" cols-md="2" cols-lg="4" class="mt-4">
         <b-col
           v-for="(
             {
@@ -125,7 +125,7 @@
           </b-card>
         </b-col>
       </b-row>
-    </b-container>
+    </div>
   </main>
 </template>
 
@@ -173,7 +173,7 @@ export default {
       return this.filtroPorConcurso(
         this.filtroPorNombreDeServicio(
           // this.filtroConveniosNoSuscritos(
-            this.filtroPorNombreADP(this.filtroPorEstadoConvenio(this.adps))
+          this.filtroPorNombreADP(this.filtroPorEstadoConvenio(this.adps))
           // )
         )
       );
@@ -205,6 +205,10 @@ img {
 
 .sinPadding {
   padding: 0 !important;
+}
+
+.sinPaddingHorizontal {
+  padding: 1rem 0 !important;
 }
 
 p {

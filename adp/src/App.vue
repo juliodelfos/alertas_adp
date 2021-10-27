@@ -1,20 +1,31 @@
 <template>
   <div>
-    <Nav />
+    <b-row id="noMargin">
+      <b-col cols="1" class="sinPadding bg-primary">
+        <Side />
+      </b-col>
+
+      <b-col cols="11" class="sinPadding">
+        <router-view />
+      </b-col>
+    </b-row>
+    <!-- <Nav />
     <div id="principal">
       <router-view />
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import Nav from "@/components/nav/Nav.vue";
+import Side from "@/components/nav/Side.vue";
 import { mapActions } from "vuex";
 import axios from "axios";
 export default {
   name: "App",
   components: {
     Nav,
+    Side,
   },
   methods: {
     ...mapActions(["fetch_Adp"]),
@@ -57,5 +68,14 @@ export default {
 
 .cursor {
   cursor: copy;
+}
+
+.sinPadding {
+  padding: 0 !important;
+}
+
+#noMargin {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 }
 </style>

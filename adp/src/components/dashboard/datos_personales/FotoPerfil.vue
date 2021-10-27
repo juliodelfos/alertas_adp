@@ -5,7 +5,6 @@
       :src="img"
       alt="Foto de perfil"
       class="fotoPerfil rounded-circle"
-      v-show="img"
     />
   </div>
 </template>

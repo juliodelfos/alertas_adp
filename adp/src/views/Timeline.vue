@@ -1,5 +1,15 @@
 <template>
-  <b-container>
+  <aside class="d-flex flex-column flex-shrink-0 p-3 bg-white my-2 restaNavbar">
+    <ul class="nav nav-pills flex-column mb-auto">
+      <!-- Feed -->
+      <li class="nav-item">Feed</li>
+      <!-- Artículos -->
+      <li class="nav-item">Artículos</li>
+      <!-- Podcasts -->
+    </ul>
+  </aside>
+
+  <!-- <b-container>
     <div class="row">
       <div class="col-lg-12">
         <div class="card">
@@ -57,10 +67,9 @@
             </div>
           </div>
         </div>
-        <!-- end card -->
       </div>
     </div>
-  </b-container>
+  </b-container> -->
 </template>
 
 <script>

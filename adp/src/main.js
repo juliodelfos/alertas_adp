@@ -11,7 +11,7 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
 //Theme Bootstrap
-import "bootswatch/dist/superhero/bootstrap.min.css";
+// import "bootswatch/dist/litera/bootstrap.min.css";
 
 //Vue Toast Notification
 import VueToast from "vue-toast-notification";
