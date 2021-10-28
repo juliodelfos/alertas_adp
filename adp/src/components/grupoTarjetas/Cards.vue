@@ -65,7 +65,6 @@
               cargo,
               concurso,
               estado_cd,
-              img,
               estado_adp,
             },
             i
@@ -77,7 +76,13 @@
           <b-card tag="article" class="mb-2 shadow">
             <b-row>
               <b-col id="firstColumn" md="3" class="sinPadding text-center">
-                <b-img :src="img" class="mt-1 rounded-circle"></b-img>
+                <!-- <b-img :src="img" class="mt-1 rounded-circle"></b-img> -->
+                <div class="contenedor">
+                  <span id="profilePic">
+                    {{ nombre_corregido.charAt(0)
+                    }}{{ apellido_corregido.charAt(0) }}
+                  </span>
+                </div>
               </b-col>
               <b-col md="9" class="my-auto sinPadding">
                 <h5 class="fs-6">
@@ -198,10 +203,10 @@ export default {
   height: 6rem;
 }
 
-img {
+/* img {
   width: 70%;
   height: 70%;
-}
+} */
 
 .row {
   margin: 0;
@@ -219,5 +224,21 @@ img {
 p {
   margin: 0;
   font-size: 0.9rem;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 70%;
+  height: 70%;
+  background-color: #b7acf3;
+  color: white;
+  font-size: 1.4rem;
+}
+
+#profilePic {
+  flex: 0 0 120px;
 }
 </style>

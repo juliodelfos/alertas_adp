@@ -1,5 +1,6 @@
 <template>
   <div class="conteiner">
+    <!-- <div class="bg-primary sidebar" v-show="this.$route.path !== '/'"> -->
     <div class="bg-primary sidebar">
       <Side />
     </div>
@@ -44,8 +45,6 @@ export default {
 
 
 <style lang="scss">
-// @import "./bootswatch/dist/darkly/bootstrap.min.css";
-// @import "@/assets/style/_bootswatch.scss";
 .fotoPerfil {
   height: 7rem;
   width: 7rem;
@@ -75,7 +74,7 @@ export default {
 
 .conteiner {
   display: grid;
-  grid-template-columns: 4% 96%;
+  grid-template-columns: 4% 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
@@ -88,5 +87,12 @@ export default {
 
 .main {
   grid-area: main;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: white;
+  }
 }
 </style>

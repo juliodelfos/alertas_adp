@@ -19,16 +19,21 @@
 
         <!-- Foto, gráfico y correos -->
         <b-row class="py-4 pe-5">
-          <b-col md="2" class="text-center my-auto pt-4">
-            <FotoPerfil :img="adp.img" />
-          </b-col>
+          <!-- <b-col md="2" class="text-center my-auto pt-4">
+            <div class="contenedor">
+              <span id="profilePic">
+                {{ nombre_corregido.charAt(0) }}
+                {{ apellido_corregido.charAt(0) }}
+              </span>
+            </div>
+          </b-col> -->
           <b-col md="6">
             <Grafico
               :porcentaje_dias_cargo="adp.porcentaje_dias_cargo"
               :porcentaje_dias_anogestion="adp.porcentaje_dias_anogestion"
             />
           </b-col>
-          <b-col md="4">
+          <b-col md="6">
             <UltimosCorreos :concurso="adp.concurso" />
           </b-col>
         </b-row>
@@ -1367,5 +1372,21 @@ ul {
 .row {
   padding: 0;
   margin: 0;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 70%;
+  height: 70%;
+  background-color: #b7acf3;
+  color: white;
+  font-size: 1.4rem;
+}
+
+#profilePic {
+  flex: 0 0 120px;
 }
 </style>

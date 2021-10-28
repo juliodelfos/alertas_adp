@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <navbar>
     <aside class="text-center text-white">
       <div class="logo"></div>
       <ul>
@@ -27,7 +27,7 @@
         </li>
       </ul>
     </aside>
-  </div>
+  </navbar>
 </template>
 
 <script>
