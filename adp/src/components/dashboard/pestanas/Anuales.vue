@@ -55,7 +55,7 @@
         <tr>
           <td>
             <span
-              class="badge rounded-pill bg-warning text-dark cursor"
+              class="badge rounded-pill bg-secondary text-dark "
               @click="$emit('inicioEvalAnual')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >
@@ -69,7 +69,7 @@
           </td>
           <td>
             <span
-              class="badge rounded-pill bg-warning text-dark cursor"
+              class="badge rounded-pill bg-secondary text-dark "
               @click="$emit('retroEvalAnual')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >

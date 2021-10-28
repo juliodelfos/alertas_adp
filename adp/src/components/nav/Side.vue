@@ -5,19 +5,74 @@
       <ul>
         <li>
           <router-link to="/general"
-            ><b-icon class="h3 mt-5" icon="house-door-fill"></b-icon
+            ><b-icon class="h4 mt-5" icon="house-door-fill" ></b-icon
           ></router-link>
         </li>
         <hr class="my-3" />
-        <li><b-icon class="h3" icon="moon"></b-icon></li>
+        <li v-if="estado" >
+          <b-icon
+          v-b-tooltip.hover title="SICDE operativo"
+            class="h4"
+            icon="check-circle-fill"
+            id="sicdeOperativo"
+          ></b-icon>
+        </li>
+        <li v-else>
+          <b-icon
+          v-b-tooltip.hover title="SICDE está caído"
+            class="h3"
+            icon="exclamation-circle-fill"
+            id="sicdeCaido"
+          ></b-icon>
+        </li>
       </ul>
     </aside>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import { mapState, mapActions } from "vuex";
+import firebase from "firebase";
 export default {
   name: "Sidebar",
+  data() {
+    return {
+      estado: "",
+    };
+  },
+  methods: {
+    ...mapActions(["social_Logout"]),
+
+    async estadoSICDE() {
+      await axios
+        .get(
+          "https://v1.nocodeapi.com/yerigagarin/uptime/AUpowmIbIGdzFDkI?monitors=789280592"
+        )
+        .then((response) => {
+          this.estado = response.data.stat;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    socialLogout() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.push("/");
+          location.reload();
+        });
+      this.social_Logout();
+    },
+  },
+  computed: {
+    ...mapState(["user"]),
+  },
+  created() {
+    this.estadoSICDE();
+  },
 };
 </script>
 
@@ -40,5 +95,13 @@ a {
 
 .logo {
   height: 78px;
+}
+
+#sicdeOperativo {
+  color: #3bd19f;
+}
+
+#sicdeCaido {
+  color: #c95f68;
 }
 </style>

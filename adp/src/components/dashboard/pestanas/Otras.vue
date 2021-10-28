@@ -28,12 +28,12 @@
           </td>
           <td>
             <span
-              class="badge rounded-pill bg-warning text-dark"
+              class="badge rounded-pill bg-warning text-dark" 
               @click="$emit('bienvenida')"
               v-if="estado_adp == 'Nombrado (primer periodo)'"
               ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
-            <span class="badge rounded-pill bg-warning text-dark" v-else
+            <span class="badge rounded-pill bg-warning text-dark" v-else @click="$emit('bienvenidaRenovado')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
           </td>
@@ -44,7 +44,7 @@
             >
           </td>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark"
+            <span class="badge rounded-pill bg-warning text-dark"  @click="$emit('encuestaPercepcion')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
           </td>

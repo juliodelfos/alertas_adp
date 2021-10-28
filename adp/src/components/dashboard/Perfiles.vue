@@ -19,15 +19,8 @@
 
         <!-- Foto, gráfico y correos -->
         <b-row class="py-4 pe-5">
-          <b-col md="2" class="text-center my-auto pt-4" v-if="adp.img">
+          <b-col md="2" class="text-center my-auto pt-4">
             <FotoPerfil :img="adp.img" />
-          </b-col>
-          <b-col md="2" class="text-center my-auto pt-4" v-else>
-            <img
-              src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/adp.png?alt=media&token=d6fcd70c-d85d-4b55-846c-9ec2c056ebd2"
-              alt="Foto de perfil"
-              class="fotoPerfil rounded-circle"
-            />
           </b-col>
           <b-col md="6">
             <Grafico
@@ -104,9 +97,7 @@
                 :mail="adp.mail"
                 :nombre_corregido="adp.nombre_corregido"
                 :apellido_corregido="adp.apellido_corregido"
-                @inicioEvalSemestral="inicioEvalSemestral(adp.indice)"
                 @autoEvalSemestral="autoEvalSemestral(adp.indice)"
-                @retroEvalSemestral="retroEvalSemestral(adp.indice)"
                 @calendarInicioEvalParcial="
                   calendarInicioEvalParcial(adp.indice)
                 "
@@ -160,9 +151,7 @@
               :mail="adp.mail"
               :nombre_corregido="adp.nombre_corregido"
               :apellido_corregido="adp.apellido_corregido"
-              @inicioEvalAnual="inicioEvalAnual(adp.indice)"
               @autoEvalAnual="autoEvalAnual(adp.indice)"
-              @retroEvalAnual="retroEvalAnual(adp.indice)"
               @rexEvalAnual="rexEvalAnual(adp.indice)"
               @calendarInicioEvalAnual="calendarInicioEvalAnual(adp.indice)"
               @calendarAutoEvalAnual="calendarAutoEvalAnual(adp.indice)"
@@ -176,7 +165,9 @@
               @claveSICDE="claveSICDE(adp.indice)"
               @claveAPP="claveAPP(adp.indice)"
               @bienvenida="bienvenida(adp.indice)"
+              @bienvenidaRenovado="bienvenidaRenovado(adp.indice)"
               @encuestaCierre="encuestaCierre(adp.indice)"
+              @encuestaPercepcion="encuestaPercepcion(adp.indice)"
             />
           </b-tab>
         </b-tabs>
@@ -645,158 +636,48 @@ export default {
     //
     //
     // Evaluaciones Semestrales
-    inicioEvalSemestral(i) {
-      // Cuadro de diálogo para confirmar envío de correo
-      const solicitaConfirmacion = confirm(
-        `¿Seguro que quieres enviar la Alerta Cero al mail ${this.adps[i].mail_contraparte_cd}`
-      );
-      if (solicitaConfirmacion) {
-        // Se formatean fechas
-        const fechaNombramiento = this.adps[i].fecha_nombramiento_renovacion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-        const fechaSuscripcion = this.adps[i].fecha_suscripcion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-        const fechaComunicacion = this.adps[i].fecha_comunicacion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-
-        // Variables requeridas por EmailJS
-        const templateParams = {
-          nombre_ADP: this.adps[i].nombre_corregido,
-          apellido_ADP: this.adps[i].apellido_corregido,
-          cargo_ADP: this.adps[i].cargo,
-          // email: this.adps[i].mail_contraparte_cd,
-          email: "yersonob@gmail.com",
-          nombramiento_ADP: `${fechaNombramiento[2]}/${fechaNombramiento[1]}/${fechaNombramiento[0]}`,
-          suscripcion_ADP: `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`,
-          comunicacion_ADP: `${fechaComunicacion[2]}/${fechaComunicacion[1]}/${fechaComunicacion[0]}`,
-          anadir_nombramiento: `<a href="https://calndr.link/d/event/?service=google&start=${
-            this.adps[i].fecha_nombramiento_renovacion.split(
-              "T00:00:00.000Z"
-            )[0]
-          } 08:00&title=Inicio elaboración convenio ${
-            this.adps[i].nombre_corregido
-          } ${
-            this.adps[i].apellido_corregido
-          }&timezone=America/Santiago">Añadir al Calendario</a>`,
-          anadir_suscripcion: `<a href="https://calndr.link/d/event/?service=google&start=${
-            this.adps[i].fecha_suscripcion.split("T00:00:00.000Z")[0]
-          } 08:00&title=Suscripción convenio ${this.adps[i].nombre_corregido} ${
-            this.adps[i].apellido_corregido
-          }&timezone=America/Santiago">Añadir al Calendario</a>`,
-          anadir_comunicacion: `<a href="https://calndr.link/d/event/?service=google&start=${
-            this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
-          } 08:00&title=Comunicación convenio ${
-            this.adps[i].nombre_corregido
-          } ${
-            this.adps[i].apellido_corregido
-          } (90 días)&timezone=America/Santiago">Añadir al Calendario</a>`,
-        };
-        const userID = "user_j03eIIBx2tfg0roipyWbX";
-        const templateID = "alerta0_nombrado";
-        const serviceID = "desarrolloadp";
-
-        emailjs.send(serviceID, templateID, templateParams, userID).then(
-          (result) => console.log(result.text),
-          (error) => console.log(error.text)
-        );
-
-        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
-        const fecha = new Date().toLocaleDateString();
-        const hora = new Date().toLocaleTimeString();
-        const concurso = this.adps[i].concurso;
-        axios({
-          method: "post",
-          url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-          data: [["Alerta Cero primer periodo", concurso, fecha + " " + hora]],
-        })
-          .then((response) => console.log(response.data))
-          .catch((error) => console.log(error));
-        alert("Correo enviado y registrado en planilla");
-      } else {
-        alert("No enviado");
-      }
-    },
     autoEvalSemestral(i) {
       const solicitaConfirmacion = confirm(
-        `¿Seguro que quieres enviar alerta sesenta al mail ${this.adps[i].mail_contraparte_cd}`
+        `¿Seguro que quieres enviar alerta evaluación semestral pendiente al mail ${this.adps[i].mail}`
       );
       if (solicitaConfirmacion) {
-        const fechaSuscripcion = this.adps[i].fecha_suscripcion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-        const suscripcion_ADP = `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`;
-        const nombre_ADP = this.adps[i].nombre_corregido;
-        const apellido_ADP = this.adps[i].apellido_corregido;
-        const cargo_ADP = this.adps[i].cargo;
-        const email = this.adps[i].mail_contraparte_cd;
-
-        const templateParams = {};
+        const templateParams = {
+          nombre_ADP: this.adps[i].nombre_corregido,
+          // email: this.adps[i].mail,
+          email: "yerson.o.b@gmail.com",
+        };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
-        const templateID = "general";
-        const serviceID = "gmail_dnsc";
+        const templateID = "autoEvalParcial";
+        const serviceID = "desarrolloadp";
 
-        emailjs.send(serviceID, templateID, templateParams, userID).then(
-          (result) => console.log(result.text),
-          (error) => console.log(error.text)
-        );
+        const correo = emailjs
+          .send(serviceID, templateID, templateParams, userID)
+          .then(
+            (result) => console.log(result.text),
+            (error) => console.log(error.text)
+          );
 
-        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
-        const fecha = new Date().toLocaleDateString();
-        const concurso = this.adps[i].concurso;
-        axios({
-          method: "post",
-          url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-          data: [["Alerta Sesenta primer periodo", concurso, fecha]],
-        })
-          .then((response) => console.log(response.data))
-          .catch((error) => console.log(error));
-        console.log("Correo enviado y registrado en planilla");
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          const fecha =
+            new Date().toLocaleDateString() +
+            " " +
+            new Date().toLocaleTimeString();
+          const concurso = this.adps[i].concurso;
+          axios({
+            method: "post",
+            url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+            data: [["Eval parcial pendiente", concurso, fecha]],
+          })
+            .then((response) => console.log(response.data))
+            .catch((error) => console.log(error));
+          Vue.$toast.success("Correo enviado y registrado en planilla");
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
       } else {
-        console.log("No enviado");
-      }
-    },
-    retroEvalSemestral(i) {
-      const solicitaConfirmacion = confirm(
-        `¿Seguro que quieres enviar la alerta noventa al mail ${this.adps[i].mail_contraparte_cd}`
-      );
-      if (solicitaConfirmacion) {
-        const fechaSuscripcion = this.adps[i].fecha_suscripcion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-        const suscripcion_ADP = `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`;
-        const nombre_ADP = this.adps[i].nombre_corregido;
-        const apellido_ADP = this.adps[i].apellido_corregido;
-        const cargo_ADP = this.adps[i].cargo;
-        const email = this.adps[i].mail_contraparte_cd;
-
-        const templateParams = {};
-
-        const userID = "user_j03eIIBx2tfg0roipyWbX";
-        const templateID = "general";
-        const serviceID = "gmail_dnsc";
-
-        emailjs.send(serviceID, templateID, templateParams, userID).then(
-          (result) => console.log(result.text),
-          (error) => console.log(error.text)
-        );
-
-        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
-        const fecha = new Date().toLocaleDateString();
-        const concurso = this.adps[i].concurso;
-        axios({
-          method: "post",
-          url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-          data: [["Alerta Noventa Primer Periodo", concurso, fecha]],
-        })
-          .then((response) => console.log(response.data))
-          .catch((error) => console.log(error));
-        console.log("Correo enviado y registrado en planilla");
-      } else {
-        console.log("No enviado");
+        Vue.$toast.warning("Correo no enviado");
       }
     },
     // Métodos de Calendario
@@ -889,198 +770,94 @@ export default {
     },
     //
     //
-    // Evaluaciones Semestrales
-    inicioEvalAnual(i) {
-      // Cuadro de diálogo para confirmar envío de correo
-      const solicitaConfirmacion = confirm(
-        `¿Seguro que quieres enviar la Alerta Cero al mail ${this.adps[i].mail_contraparte_cd}`
-      );
-      if (solicitaConfirmacion) {
-        // Se formatean fechas
-        const fechaNombramiento = this.adps[i].fecha_nombramiento_renovacion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-        const fechaSuscripcion = this.adps[i].fecha_suscripcion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-        const fechaComunicacion = this.adps[i].fecha_comunicacion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-
-        // Variables requeridas por EmailJS
-        const templateParams = {
-          nombre_ADP: this.adps[i].nombre_corregido,
-          apellido_ADP: this.adps[i].apellido_corregido,
-          cargo_ADP: this.adps[i].cargo,
-          // email: this.adps[i].mail_contraparte_cd,
-          email: "yersonob@gmail.com",
-          nombramiento_ADP: `${fechaNombramiento[2]}/${fechaNombramiento[1]}/${fechaNombramiento[0]}`,
-          suscripcion_ADP: `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`,
-          comunicacion_ADP: `${fechaComunicacion[2]}/${fechaComunicacion[1]}/${fechaComunicacion[0]}`,
-          anadir_nombramiento: `<a href="https://calndr.link/d/event/?service=google&start=${
-            this.adps[i].fecha_nombramiento_renovacion.split(
-              "T00:00:00.000Z"
-            )[0]
-          } 08:00&title=Inicio elaboración convenio ${
-            this.adps[i].nombre_corregido
-          } ${
-            this.adps[i].apellido_corregido
-          }&timezone=America/Santiago">Añadir al Calendario</a>`,
-          anadir_suscripcion: `<a href="https://calndr.link/d/event/?service=google&start=${
-            this.adps[i].fecha_suscripcion.split("T00:00:00.000Z")[0]
-          } 08:00&title=Suscripción convenio ${this.adps[i].nombre_corregido} ${
-            this.adps[i].apellido_corregido
-          }&timezone=America/Santiago">Añadir al Calendario</a>`,
-          anadir_comunicacion: `<a href="https://calndr.link/d/event/?service=google&start=${
-            this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
-          } 08:00&title=Comunicación convenio ${
-            this.adps[i].nombre_corregido
-          } ${
-            this.adps[i].apellido_corregido
-          } (90 días)&timezone=America/Santiago">Añadir al Calendario</a>`,
-        };
-        const userID = "user_j03eIIBx2tfg0roipyWbX";
-        const templateID = "alerta0_nombrado";
-        const serviceID = "desarrolloadp";
-
-        emailjs.send(serviceID, templateID, templateParams, userID).then(
-          (result) => console.log(result.text),
-          (error) => console.log(error.text)
-        );
-
-        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
-        const fecha = new Date().toLocaleDateString();
-        const concurso = this.adps[i].concurso;
-        axios({
-          method: "post",
-          url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-          data: [["Alerta Cero primer periodo", concurso, fecha]],
-        })
-          .then((response) => console.log(response.data))
-          .catch((error) => console.log(error));
-        alert("Correo enviado y registrado en planilla");
-      } else {
-        alert("No enviado");
-      }
-    },
+    // Evaluaciones Anuales
     autoEvalAnual(i) {
       const solicitaConfirmacion = confirm(
-        `¿Seguro que quieres enviar alerta sesenta al mail ${this.adps[i].mail_contraparte_cd}`
+        `¿Seguro que quieres enviar alerta evaluación anual pendiente al mail ${this.adps[i].mail}`
       );
       if (solicitaConfirmacion) {
-        const fechaSuscripcion = this.adps[i].fecha_suscripcion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-        const suscripcion_ADP = `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`;
-        const nombre_ADP = this.adps[i].nombre_corregido;
-        const apellido_ADP = this.adps[i].apellido_corregido;
-        const cargo_ADP = this.adps[i].cargo;
-        const email = this.adps[i].mail_contraparte_cd;
-
-        const templateParams = {};
+        const templateParams = {
+          nombre_ADP: this.adps[i].nombre_corregido,
+          // email: this.adps[i].mail,
+          email: "yerson.o.b@gmail.com",
+        };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
-        const templateID = "general";
-        const serviceID = "gmail_dnsc";
+        const templateID = "autoEvalAnual";
+        const serviceID = "desarrolloadp";
 
-        emailjs.send(serviceID, templateID, templateParams, userID).then(
-          (result) => console.log(result.text),
-          (error) => console.log(error.text)
-        );
+        const correo = emailjs
+          .send(serviceID, templateID, templateParams, userID)
+          .then(
+            (result) => console.log(result.text),
+            (error) => console.log(error.text)
+          );
 
-        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
-        const fecha = new Date().toLocaleDateString();
-        const concurso = this.adps[i].concurso;
-        axios({
-          method: "post",
-          url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-          data: [["Alerta Sesenta primer periodo", concurso, fecha]],
-        })
-          .then((response) => console.log(response.data))
-          .catch((error) => console.log(error));
-        console.log("Correo enviado y registrado en planilla");
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          const fecha =
+            new Date().toLocaleDateString() +
+            " " +
+            new Date().toLocaleTimeString();
+          const concurso = this.adps[i].concurso;
+          axios({
+            method: "post",
+            url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+            data: [["Eval anual pendiente", concurso, fecha]],
+          })
+            .then((response) => console.log(response.data))
+            .catch((error) => console.log(error));
+          Vue.$toast.success("Correo enviado y registrado en planilla");
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
       } else {
-        console.log("No enviado");
-      }
-    },
-    retroEvalAnual(i) {
-      const solicitaConfirmacion = confirm(
-        `¿Seguro que quieres enviar la alerta noventa al mail ${this.adps[i].mail_contraparte_cd}`
-      );
-      if (solicitaConfirmacion) {
-        const fechaSuscripcion = this.adps[i].fecha_suscripcion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-        const suscripcion_ADP = `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`;
-        const nombre_ADP = this.adps[i].nombre_corregido;
-        const apellido_ADP = this.adps[i].apellido_corregido;
-        const cargo_ADP = this.adps[i].cargo;
-        const email = this.adps[i].mail_contraparte_cd;
-
-        const templateParams = {};
-
-        const userID = "user_j03eIIBx2tfg0roipyWbX";
-        const templateID = "general";
-        const serviceID = "gmail_dnsc";
-
-        emailjs.send(serviceID, templateID, templateParams, userID).then(
-          (result) => console.log(result.text),
-          (error) => console.log(error.text)
-        );
-
-        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
-        const fecha = new Date().toLocaleDateString();
-        const concurso = this.adps[i].concurso;
-        axios({
-          method: "post",
-          url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-          data: [["Alerta Noventa Primer Periodo", concurso, fecha]],
-        })
-          .then((response) => console.log(response.data))
-          .catch((error) => console.log(error));
-        console.log("Correo enviado y registrado en planilla");
-      } else {
-        console.log("No enviado");
+        Vue.$toast.warning("Correo no enviado");
       }
     },
     rexEvalAnual(i) {
       const solicitaConfirmacion = confirm(
-        `¿Seguro que quieres enviar la alerta noventa al mail ${this.adps[i].mail_contraparte_cd}`
+        `¿Seguro que quieres enviar alerta REX evaluación anual pendiente al mail ${this.adps[i].mail_contraparte_eval}`
       );
       if (solicitaConfirmacion) {
-        const fechaSuscripcion = this.adps[i].fecha_suscripcion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-        const suscripcion_ADP = `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`;
-        const nombre_ADP = this.adps[i].nombre_corregido;
-        const apellido_ADP = this.adps[i].apellido_corregido;
-        const cargo_ADP = this.adps[i].cargo;
-        const email = this.adps[i].mail_contraparte_cd;
-
-        const templateParams = {};
+        const templateParams = {
+          nombre_ADP: this.adps[i].nombre_corregido,
+          apellido_ADP: this.adps[i].apellido_corregido,
+          // email: this.adps[i].mail_contraparte_eval,
+          email: "yerson.o.b@gmail.com",
+        };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
-        const templateID = "general";
-        const serviceID = "gmail_dnsc";
+        const templateID = "rexEvalAnual";
+        const serviceID = "desarrolloadp";
 
-        emailjs.send(serviceID, templateID, templateParams, userID).then(
-          (result) => console.log(result.text),
-          (error) => console.log(error.text)
-        );
+        const correo = emailjs
+          .send(serviceID, templateID, templateParams, userID)
+          .then(
+            (result) => console.log(result.text),
+            (error) => console.log(error.text)
+          );
 
-        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas'
-        const fecha = new Date().toLocaleDateString();
-        const concurso = this.adps[i].concurso;
-        axios({
-          method: "post",
-          url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-          data: [["Alerta Noventa Primer Periodo", concurso, fecha]],
-        })
-          .then((response) => console.log(response.data))
-          .catch((error) => console.log(error));
-        console.log("Correo enviado y registrado en planilla");
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          const fecha =
+            new Date().toLocaleDateString() +
+            " " +
+            new Date().toLocaleTimeString();
+          const concurso = this.adps[i].concurso;
+          axios({
+            method: "post",
+            url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+            data: [["REX Eval anual pendiente", concurso, fecha]],
+          })
+            .then((response) => console.log(response.data))
+            .catch((error) => console.log(error));
+          Vue.$toast.success("Correo enviado y registrado en planilla");
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
       } else {
-        console.log("No enviado");
+        Vue.$toast.warning("Correo no enviado");
       }
     },
     // Métodos de Calendario
@@ -1369,23 +1146,22 @@ export default {
     },
     bienvenidaRenovado(i) {
       const solicitaConfirmacion = confirm(
-        `¿Seguro que quieres enviar la alerta noventa al mail ${this.adps[i].mail_contraparte_cd}`
+        `¿Seguro que quieres enviar correo del bienvenida al mail ${this.adps[i].mail}`
       );
       if (solicitaConfirmacion) {
-        const fechaSuscripcion = this.adps[i].fecha_suscripcion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-        const suscripcion_ADP = `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`;
-        const nombre_ADP = this.adps[i].nombre_corregido;
-        const apellido_ADP = this.adps[i].apellido_corregido;
-        const cargo_ADP = this.adps[i].cargo;
-        const email = this.adps[i].mail_contraparte_cd;
+        const nombre = this.adps[i].nombre_corregido.split(" ")[0];
+        const apellido = this.adps[i].apellido_corregido.split(" ")[0];
 
-        const templateParams = {};
+        const templateParams = {
+          nombre_ADP: nombre,
+          apellido_ADP: apellido,
+          // email: this.adps[i].mail,
+          email: "yersonob@gmail.com",
+        };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
-        const templateID = "general";
-        const serviceID = "gmail_dnsc";
+        const templateID = "mailBienvenida";
+        const serviceID = "desarrolloadp";
 
         const correo = emailjs
           .send(serviceID, templateID, templateParams, userID)
@@ -1404,7 +1180,7 @@ export default {
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Bienvenida renovado", concurso, fecha]],
+            data: [["Bienvenida Renovado", concurso, fecha]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -1463,7 +1239,52 @@ export default {
         Vue.$toast.warning("Correo no enviado");
       }
     },
-    encuestaPercepcion(i) {},
+    encuestaPercepcion(i) {
+      const solicitaConfirmacion = confirm(
+        `¿Seguro que quieres enviar encuesta percepcion al mail ${this.adps[i].mail_contraparte_cd}`
+      );
+      if (solicitaConfirmacion) {
+        const templateParams = {
+          nombre_ADP: this.adps[i].nombre_corregido,
+          apellido_ADP: this.adps[i].apellido_corregido,
+          cargo_ADP: this.adps[i].cargo,
+          // email: this.adps[i].mail_contraparte_cd,
+          email: "yerson.o.b@gmail.com",
+        };
+
+        const userID = "user_j03eIIBx2tfg0roipyWbX";
+        const templateID = "encuestaPercepcion";
+        const serviceID = "desarrolloadp";
+
+        const correo = emailjs
+          .send(serviceID, templateID, templateParams, userID)
+          .then(
+            (result) => console.log(result.text),
+            (error) => console.log(error.text)
+          );
+
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          const fecha =
+            new Date().toLocaleDateString() +
+            " " +
+            new Date().toLocaleTimeString();
+          const concurso = this.adps[i].concurso;
+          axios({
+            method: "post",
+            url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+            data: [["Encuesta de percepción", concurso, fecha]],
+          })
+            .then((response) => console.log(response.data))
+            .catch((error) => console.log(error));
+          Vue.$toast.success("Correo enviado y registrado en planilla");
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
+      } else {
+        Vue.$toast.warning("Correo no enviado");
+      }
+    },
   },
 
   computed: {

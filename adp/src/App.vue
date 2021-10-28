@@ -1,18 +1,12 @@
 <template>
-  <div>
-    <b-row id="noMargin">
-      <b-col cols="1" class="sinPadding bg-primary">
-        <Side />
-      </b-col>
+  <div class="conteiner">
+    <div class="bg-primary sidebar">
+      <Side />
+    </div>
 
-      <b-col cols="11" class="sinPadding">
-        <router-view />
-      </b-col>
-    </b-row>
-    <!-- <Nav />
-    <div id="principal">
+    <div class="main">
       <router-view />
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -77,5 +71,22 @@ export default {
 #noMargin {
   margin-right: 0 !important;
   margin-left: 0 !important;
+}
+
+.conteiner {
+  display: grid;
+  grid-template-columns: 4% 96%;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "sidebar main";
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.main {
+  grid-area: main;
 }
 </style>

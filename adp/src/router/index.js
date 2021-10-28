@@ -3,8 +3,9 @@ import VueRouter from "vue-router";
 import Inicio from "@/views/Home.vue";
 import PerfilADP from "@/views/PerfilADP.vue";
 import VistaPrincipal from "@/views/GrupoCards.vue";
-import firebase from "firebase";
+// import firebase from "firebase";
 import Timeline from "@/views/Timeline.vue";
+import NotFound from "@/views/NotFound.vue";
 
 Vue.use(VueRouter);
 
@@ -36,6 +37,11 @@ const router = new VueRouter({
       component: Timeline,
       props: true,
       // meta: { requiresAuth: true },
+    },
+    {
+      path: "*",
+      name: "NotFound",
+      component: NotFound,
     },
   ],
 });

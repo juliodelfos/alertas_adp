@@ -45,8 +45,8 @@
       ></b-col>
     </b-row>
 
-    <div class="d-none d-lg-block">
-      <b-row cols="1" cols-sm="2" cols-md="2" cols-lg="4" class="mt-4">
+    <b-container class="d-none d-lg-block">
+      <b-row cols="1" cols-sm="2" cols-md="2" cols-lg="3" class="mt-4">
         <b-col
           v-for="(
             {
@@ -125,7 +125,7 @@
           </b-card>
         </b-col>
       </b-row>
-    </div>
+    </b-container>
   </main>
 </template>
 
