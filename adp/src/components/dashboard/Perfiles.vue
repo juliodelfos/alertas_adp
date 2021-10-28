@@ -169,8 +169,6 @@
               :estado_adp="adp.estado_adp"
               @claveSICDE="claveSICDE(adp.indice)"
               @claveAPP="claveAPP(adp.indice)"
-              @bienvenida="bienvenida(adp.indice)"
-              @bienvenidaRenovado="bienvenidaRenovado(adp.indice)"
               @encuestaCierre="encuestaCierre(adp.indice)"
               @encuestaPercepcion="encuestaPercepcion(adp.indice)"
             />
