@@ -4,10 +4,9 @@
       id="filtros"
       cols="1"
       cols-sm="1"
-      cols-md="4"
-      cols-lg="4"
+      cols-md="5"
+      cols-lg="5"
       class="mb-4 pb-4 pt-3 px-3 bg-primary shadow"
-      
     >
       <b-col>
         <b-form-group>
@@ -19,6 +18,16 @@
       <b-col>
         <b-form-group>
           <b-form-select
+            :options="ministerios"
+            v-model="ministerio"
+            class="form-select"
+          >
+          </b-form-select>
+        </b-form-group>
+      </b-col>
+      <b-col>
+        <b-form-group>
+          <b-form-select
             :options="servicios"
             v-model="servicio"
             class="form-select"
@@ -26,6 +35,7 @@
           </b-form-select>
         </b-form-group>
       </b-col>
+
       <b-col>
         <b-form-group>
           <b-form-select
@@ -136,6 +146,7 @@ export default {
   data() {
     return {
       servicio: "",
+      ministerio: "",
       estadoConvenio: "",
       concurso: "",
       nombreADP: "",
@@ -147,12 +158,12 @@ export default {
     filtroPorNombreDeServicio(adps) {
       return adps.filter((adp) => !adp.servicio.indexOf(this.servicio));
     },
+    filtroPorNombreDeMinisterio(adps) {
+      return adps.filter((adp) => !adp.ministerio.indexOf(this.ministerio));
+    },
     filtroPorEstadoConvenio(adps) {
       return adps.filter((adp) => !adp.estado_cd.indexOf(this.estadoConvenio));
     },
-    // filtroConveniosNoSuscritos(adps) {
-    //   return adps.filter((adp) => adp.estado_cd !== "Suscrito");
-    // },
     filtroPorConcurso(adps) {
       return adps.filter(
         (adp) => !adp.concurso.toString().indexOf(this.concurso)
@@ -168,22 +179,16 @@ export default {
     },
   },
   computed: {
-    ...mapState(["adps", "servicios", "estadosConvenios"]),
+    ...mapState(["adps", "servicios", "ministerios", "estadosConvenios"]),
     filtrarADPs() {
       return this.filtroPorConcurso(
-        this.filtroPorNombreDeServicio(
-          // this.filtroConveniosNoSuscritos(
-          this.filtroPorNombreADP(this.filtroPorEstadoConvenio(this.adps))
-          // )
+        this.filtroPorNombreDeMinisterio(
+          this.filtroPorNombreDeServicio(
+            this.filtroPorNombreADP(this.filtroPorEstadoConvenio(this.adps))
+          )
         )
       );
     },
-    // filtroTodosMenosCDSuscritos() {
-    //   const conveniosNoSuscritos = this.adps.filter(
-    //     (adp) => adp.estado_cd !== "Suscrito"
-    //   );
-    //   return conveniosNoSuscritos;
-    // },
   },
 };
 </script>
