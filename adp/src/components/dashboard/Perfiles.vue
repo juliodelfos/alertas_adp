@@ -686,65 +686,81 @@ export default {
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/calendar/CCchNoezLaivkrgi/event?calendarId=c_2eq0jmn2nban422ruotm00h3fg@group.calendar.google.com&sendNotifications=true&sendUpdates=none",
         data: {
-          summary: `30 días desde el nombramiento de ${
+          summary: `Inicio evaluación parcial de ${
             this.adps[i].nombre_corregido.split(" ")[0]
           } ${this.adps[i].apellido_corregido.split(" ")[0]} [${
             this.adps[i].concurso
           }]`,
-          description: `Han pasado 30 días desde la fecha de nombramiento o renovación`,
+          description: `Inicio evaluación parcial`,
           start: {
             dateTime: `${
-              this.adps[i].fecha_propuesta.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_semestral_inicio.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           end: {
             dateTime: `${
-              this.adps[i].fecha_propuesta.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_semestral_inicio.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           sendNotifications: true,
         },
       })
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error));
+        .then((response) => {
+          console.log(response.data);
+          Vue.$toast.success("Evento añadido a calendario compartido");
+        })
+        .catch((error) => {
+          console.log(error);
+          Vue.$toast.warning(
+            "Hubo un error al registrar el evento en calendario"
+          );
+        });
     },
     calendarAutoEvalParcial(i) {
       axios({
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/calendar/CCchNoezLaivkrgi/event?calendarId=c_2eq0jmn2nban422ruotm00h3fg@group.calendar.google.com&sendNotifications=true&sendUpdates=none",
         data: {
-          summary: `60 días desde el nombramiento de ${
+          summary: `Término periodo autoevaluación parcial de de ${
             this.adps[i].nombre_corregido.split(" ")[0]
           } ${this.adps[i].apellido_corregido.split(" ")[0]} [${
             this.adps[i].concurso
           }]`,
-          description: `Han pasado 60 días desde la fecha de nombramiento o renovación`,
+          description: `Término periodo autoevaluación parcial`,
           start: {
             dateTime: `${
-              this.adps[i].fecha_suscripcion.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_semestral_auto.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           end: {
             dateTime: `${
-              this.adps[i].fecha_suscripcion.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_semestral_auto.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           sendNotifications: true,
         },
       })
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error));
+        .then((response) => {
+          console.log(response.data);
+          Vue.$toast.success("Evento añadido a calendario compartido");
+        })
+        .catch((error) => {
+          console.log(error);
+          Vue.$toast.warning(
+            "Hubo un error al registrar el evento en calendario"
+          );
+        });
     },
     calendarRetroEvalParcial(i) {
       axios({
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/calendar/CCchNoezLaivkrgi/event?calendarId=c_2eq0jmn2nban422ruotm00h3fg@group.calendar.google.com&sendNotifications=true&sendUpdates=none",
         data: {
-          summary: `90 días desde el nombramiento de ${
+          summary: `Término retroalimentación evaluación parcial de ${
             this.adps[i].nombre_corregido.split(" ")[0]
           } ${this.adps[i].apellido_corregido.split(" ")[0]} [${
             this.adps[i].concurso
@@ -752,21 +768,29 @@ export default {
           description: `Plazo fatal de suscripción del convenio de desempeño`,
           start: {
             dateTime: `${
-              this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_semestral_retro.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           end: {
             dateTime: `${
-              this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_semestral_retro.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           sendNotifications: true,
         },
       })
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error));
+        .then((response) => {
+          console.log(response.data);
+          Vue.$toast.success("Evento añadido a calendario compartido");
+        })
+        .catch((error) => {
+          console.log(error);
+          Vue.$toast.warning(
+            "Hubo un error al registrar el evento en calendario"
+          );
+        });
     },
     //
     //
@@ -866,65 +890,81 @@ export default {
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/calendar/CCchNoezLaivkrgi/event?calendarId=c_2eq0jmn2nban422ruotm00h3fg@group.calendar.google.com&sendNotifications=true&sendUpdates=none",
         data: {
-          summary: `30 días desde el nombramiento de ${
+          summary: `Inicio evaluación anual de de ${
             this.adps[i].nombre_corregido.split(" ")[0]
           } ${this.adps[i].apellido_corregido.split(" ")[0]} [${
             this.adps[i].concurso
           }]`,
-          description: `Han pasado 30 días desde la fecha de nombramiento o renovación`,
+          description: `Inicio evaluación anual`,
           start: {
             dateTime: `${
-              this.adps[i].fecha_propuesta.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_anual_inicio.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           end: {
             dateTime: `${
-              this.adps[i].fecha_propuesta.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_anual_inicio.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           sendNotifications: true,
         },
       })
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error));
+        .then((response) => {
+          console.log(response.data);
+          Vue.$toast.success("Evento añadido a calendario compartido");
+        })
+        .catch((error) => {
+          console.log(error);
+          Vue.$toast.warning(
+            "Hubo un error al registrar el evento en calendario"
+          );
+        });
     },
     calendarAutoEvalAnual(i) {
       axios({
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/calendar/CCchNoezLaivkrgi/event?calendarId=c_2eq0jmn2nban422ruotm00h3fg@group.calendar.google.com&sendNotifications=true&sendUpdates=none",
         data: {
-          summary: `60 días desde el nombramiento de ${
+          summary: `Término plazo autoevaluación anual de ${
             this.adps[i].nombre_corregido.split(" ")[0]
           } ${this.adps[i].apellido_corregido.split(" ")[0]} [${
             this.adps[i].concurso
           }]`,
-          description: `Han pasado 60 días desde la fecha de nombramiento o renovación`,
+          description: `Término plazo autoevaluación`,
           start: {
             dateTime: `${
-              this.adps[i].fecha_suscripcion.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_anual_auto.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           end: {
             dateTime: `${
-              this.adps[i].fecha_suscripcion.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_anual_auto.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           sendNotifications: true,
         },
       })
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error));
+        .then((response) => {
+          console.log(response.data);
+          Vue.$toast.success("Evento añadido a calendario compartido");
+        })
+        .catch((error) => {
+          console.log(error);
+          Vue.$toast.warning(
+            "Hubo un error al registrar el evento en calendario"
+          );
+        });
     },
     calendarRetroEvalAnual(i) {
       axios({
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/calendar/CCchNoezLaivkrgi/event?calendarId=c_2eq0jmn2nban422ruotm00h3fg@group.calendar.google.com&sendNotifications=true&sendUpdates=none",
         data: {
-          summary: `90 días desde el nombramiento de ${
+          summary: `Término plazo retroalimentación anual de ${
             this.adps[i].nombre_corregido.split(" ")[0]
           } ${this.adps[i].apellido_corregido.split(" ")[0]} [${
             this.adps[i].concurso
@@ -932,50 +972,66 @@ export default {
           description: `Plazo fatal de suscripción del convenio de desempeño`,
           start: {
             dateTime: `${
-              this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_anual_retro.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           end: {
             dateTime: `${
-              this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_anual_retro.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           sendNotifications: true,
         },
       })
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error));
+        .then((response) => {
+          console.log(response.data);
+          Vue.$toast.success("Evento añadido a calendario compartido");
+        })
+        .catch((error) => {
+          console.log(error);
+          Vue.$toast.warning(
+            "Hubo un error al registrar el evento en calendario"
+          );
+        });
     },
     calendarRetroEvalAnualREX(i) {
       axios({
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/calendar/CCchNoezLaivkrgi/event?calendarId=c_2eq0jmn2nban422ruotm00h3fg@group.calendar.google.com&sendNotifications=true&sendUpdates=none",
         data: {
-          summary: `90 días desde el nombramiento de ${
+          summary: `Término plazo para subir REX evaluación anual de ${
             this.adps[i].nombre_corregido.split(" ")[0]
           } ${this.adps[i].apellido_corregido.split(" ")[0]} [${
             this.adps[i].concurso
           }]`,
-          description: `Plazo fatal de suscripción del convenio de desempeño`,
+          description: `Término de los 5 días hábiles`,
           start: {
             dateTime: `${
-              this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_anual_rex.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           end: {
             dateTime: `${
-              this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
+              this.adps[i].eval_anual_rex.split("T00:00:00.000Z")[0]
             }T8:00:00-03:00`,
             timeZone: "GMT",
           },
           sendNotifications: true,
         },
       })
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error));
+        .then((response) => {
+          console.log(response.data);
+          Vue.$toast.success("Evento añadido a calendario compartido");
+        })
+        .catch((error) => {
+          console.log(error);
+          Vue.$toast.warning(
+            "Hubo un error al registrar el evento en calendario"
+          );
+        });
     },
     //
     //
