@@ -2,7 +2,7 @@
   <div class="conteiner">
     <!-- <div class="bg-primary sidebar" v-show="this.$route.path !== '/'"> -->
     <div class="bg-primary sidebar">
-      <Side />
+      <Sidebar />
     </div>
 
     <div class="main">
@@ -12,15 +12,13 @@
 </template>
 
 <script>
-import Nav from "@/components/nav/Nav.vue";
-import Side from "@/components/nav/Side.vue";
+import Sidebar from "@/components/navegacion/Sidebar.vue";
 import { mapActions } from "vuex";
 import axios from "axios";
 export default {
   name: "App",
   components: {
-    Nav,
-    Side,
+    Sidebar,
   },
   methods: {
     ...mapActions(["fetch_Adp"]),

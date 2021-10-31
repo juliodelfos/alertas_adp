@@ -130,7 +130,7 @@
 
             <div class="text-center">
               <router-link
-                :to="{ name: 'PerfilADP', params: { id: `${concurso}` } }"
+                :to="{ name: 'Perfil', params: { id: `${concurso}` } }"
               >
                 <b-button variant="primary" class="mt-4" size="sm"
                   >Ver detalles</b-button

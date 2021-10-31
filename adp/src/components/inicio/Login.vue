@@ -42,7 +42,7 @@ import firebase from "firebase";
 import { mapActions } from "vuex";
 
 export default {
-  name: "HelloWorld",
+  name: "Login",
   data() {
     return {
       acceso: {
@@ -60,7 +60,7 @@ export default {
         .then(
           (accept) => {
             this.$router.push("general");
-            // this.$router.replace({ name: "GrupoCards" });
+            // this.$router.replace({ name: "Tarjetas" });
             this.social_Login(accept.user);
           },
           (reject) => console.log("Error", reject)

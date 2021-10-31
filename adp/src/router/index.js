@@ -1,40 +1,44 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Inicio from "@/views/Home.vue";
-import PerfilADP from "@/views/PerfilADP.vue";
-import VistaPrincipal from "@/views/GrupoCards.vue";
 // import firebase from "firebase";
-import Timeline from "@/views/Timeline.vue";
+
+//Vistas
+import Inicio from "@/views/Inicio.vue";
+// import Tabla from "@/views/Tabla.vue";
+import Tarjetas from "@/views/Tarjetas.vue";
+import Perfil from "@/views/Perfil.vue";
+
+//404
 import NotFound from "@/views/NotFound.vue";
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   routes: [
     {
       path: "/",
       name: "Inicio",
       component: Inicio,
     },
+    // {
+    //   path: "/tabla",
+    //   name: "Tabla",
+    //   component: Tabla,
+    //   props: true,
+    // meta: { requiresAuth: true },
+    // },
     {
-      path: "/general",
-      name: "GrupoCards",
-      component: VistaPrincipal,
+      path: "/tarjetas",
+      name: "Tarjetas",
+      component: Tarjetas,
       props: true,
       // meta: { requiresAuth: true },
     },
     {
       path: "/perfil",
-      name: "PerfilADP",
-      component: PerfilADP,
-      props: true,
-      // meta: { requiresAuth: true },
-    },
-    {
-      path: "/timeline",
-      name: "Timeline",
-      component: Timeline,
+      name: "Perfil",
+      component: Perfil,
       props: true,
       // meta: { requiresAuth: true },
     },

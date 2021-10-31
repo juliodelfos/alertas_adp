@@ -39,7 +39,7 @@
         </b-row>
 
         <!-- Datos básicos -->
-        <Datos
+        <Identificacion
           class="pe-5"
           :cargo="adp.cargo"
           :fecha_nombramiento_renovacion="adp.fecha_nombramiento_renovacion"
@@ -184,26 +184,22 @@ import Vue from "vue";
 import { mapState } from "vuex";
 import emailjs from "emailjs-com";
 import axios from "axios";
-import Convenio from "@/components/dashboard/pestanas/Convenio.vue";
-import Semestrales from "@/components/dashboard/pestanas/Semestrales.vue";
-import Anuales from "@/components/dashboard/pestanas/Anuales.vue";
-import Otras from "@/components/dashboard/pestanas/Otras.vue";
-import Datos from "@/components/dashboard/datos_personales/Datos.vue";
-import Grafico from "@/components/dashboard/datos_personales/Grafico.vue";
-import FotoPerfil from "@/components/dashboard/datos_personales/FotoPerfil.vue";
-import UltimosCorreos from "@/components/dashboard/datos_personales/UltimosCorreos.vue";
-import Filtros from "@/components/dashboard/buscador/Filtros.vue";
+import Convenio from "@/components/perfil/pestanas/Convenio.vue";
+import Semestrales from "@/components/perfil/pestanas/Semestrales.vue";
+import Anuales from "@/components/perfil/pestanas/Anuales.vue";
+import Otras from "@/components/perfil/pestanas/Otras.vue";
+import Identificacion from "@/components/perfil/datos_personales/Identificacion.vue";
+import Grafico from "@/components/perfil/datos_personales/Grafico.vue";
+import UltimosCorreos from "@/components/perfil/datos_personales/UltimosCorreos.vue";
 export default {
-  name: "Perfiles",
+  name: "DatosPersonales",
   components: {
     Convenio,
     Semestrales,
     Anuales,
     Otras,
-    Datos,
+    Identificacion,
     Grafico,
-    Filtros,
-    FotoPerfil,
     UltimosCorreos,
   },
   data() {

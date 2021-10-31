@@ -1,17 +1,16 @@
 <template>
   <div class="home">
-    <Perfiles :id="id" />
+    <DatosPersonales :id="id" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Perfiles from "@/components/dashboard/Perfiles.vue";
+import DatosPersonales from "@/components/perfil/DatosPersonales.vue";
 
 export default {
-  name: "PerfilADP",
+  name: "Perfil",
   components: {
-    Perfiles,
+    DatosPersonales,
   },
   props: {
     id: String,

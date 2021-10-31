@@ -1,10 +1,10 @@
 <template>
-  <navbar>
+  <div>
     <aside class="text-center text-white">
       <div class="logo"></div>
       <ul>
         <li>
-          <router-link to="/general"
+          <router-link to="/tarjetas"
             ><b-icon class="h4 mt-5" icon="house-door-fill" ></b-icon
           ></router-link>
         </li>
@@ -27,7 +27,7 @@
         </li>
       </ul>
     </aside>
-  </navbar>
+  </div>
 </template>
 
 <script>
