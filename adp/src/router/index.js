@@ -4,7 +4,7 @@ import VueRouter from "vue-router";
 
 //Vistas
 import Inicio from "@/views/Inicio.vue";
-// import Tabla from "@/views/Tabla.vue";
+import Tabla from "@/views/Tabla.vue";
 import Tarjetas from "@/views/Tarjetas.vue";
 import Perfil from "@/views/Perfil.vue";
 
@@ -21,13 +21,11 @@ const router = new VueRouter({
       name: "Inicio",
       component: Inicio,
     },
-    // {
-    //   path: "/tabla",
-    //   name: "Tabla",
-    //   component: Tabla,
-    //   props: true,
-    // meta: { requiresAuth: true },
-    // },
+    {
+      path: "/tabla",
+      name: "Tabla",
+      component: Tabla,
+    },
     {
       path: "/tarjetas",
       name: "Tarjetas",

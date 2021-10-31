@@ -11,4 +11,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+p { 
+  font-size: 2rem;
+}
 </style>
