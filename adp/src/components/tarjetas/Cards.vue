@@ -66,6 +66,7 @@
               concurso,
               estado_cd,
               estado_adp,
+              indice
             },
             i
           ) in filtrarADPs"
@@ -80,6 +81,7 @@
             :concurso="concurso"
             :estado_cd="estado_cd"
             :estado_adp="estado_adp"
+            :indice="indice"
           />
         </b-col>
       </b-row>

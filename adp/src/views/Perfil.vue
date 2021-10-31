@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <DatosPersonales :id="id" />
+    <DatosPersonales :indice="indice" />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     DatosPersonales,
   },
   props: {
-    id: String,
+    indice: { type: String, required: true },
   },
 };
 </script>

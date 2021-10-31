@@ -34,7 +34,7 @@ const router = new VueRouter({
       // meta: { requiresAuth: true },
     },
     {
-      path: "/perfil",
+      path: "/perfil/:indice",
       name: "Perfil",
       component: Perfil,
       props: true,

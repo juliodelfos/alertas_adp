@@ -53,7 +53,7 @@
       </b-card-text>
 
       <div class="text-center">
-        <router-link :to="{ name: 'Perfil', params: { id: `${concurso}` } }">
+        <router-link :to="`/perfil/${indice}`">
           <b-button variant="primary" class="mt-4" size="sm"
             >Ver detalles</b-button
           >
@@ -70,9 +70,10 @@ export default {
     nombre_corregido: { type: String, required: true },
     apellido_corregido: { type: String, required: true },
     cargo: { type: String, required: true },
-    concurso: { type: String, required: true },
+    concurso: { type: Number, required: true },
     estado_cd: { type: String, required: true },
     estado_adp: { type: String, required: true },
+    indice: { type: String, required: true },
   },
 };
 </script>
