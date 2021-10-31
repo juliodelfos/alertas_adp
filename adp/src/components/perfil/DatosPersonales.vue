@@ -1,182 +1,204 @@
 <template>
   <div>
-    <div
-      no-body
-      class="overflow-hidden mb-4"
-      v-for="(adp, i) in filtrarADPs"
-      :key="i"
-    >
-      <b-row no-gutters>
-        <div class="bg-primary text-center pt-3 pb-2 text-white shadow">
-          <h1 class="fs-4">
-            <b-icon icon="person-circle"></b-icon>
-            {{ adp.nombre_corregido.split(" ")[0] }}
-            {{ adp.apellido_corregido.split(" ")[0] }}
-            ·
-            {{ adp.concurso }}
-          </h1>
-        </div>
+    <b-row no-gutters>
+      <div class="bg-primary text-center pt-3 pb-2 text-white shadow">
+        <h1 class="fs-4">
+          <b-icon icon="person-circle"></b-icon>
+          {{ adps[this.indice].nombre_corregido.split(" ")[0] }}
+          {{ adps[this.indice].apellido_corregido.split(" ")[0] }}
+          ·
+          {{ adps[this.indice].concurso }}
+        </h1>
+      </div>
 
-        <!-- Foto, gráfico y correos -->
-        <b-row class="py-4 pe-5">
-          <!-- <b-col md="2" class="text-center my-auto pt-4">
-            <div class="contenedor">
-              <span id="profilePic">
-                {{ nombre_corregido.charAt(0) }}
-                {{ apellido_corregido.charAt(0) }}
-              </span>
-            </div>
-          </b-col> -->
-          <b-col md="6">
-            <Grafico
-              :porcentaje_dias_cargo="adp.porcentaje_dias_cargo"
-              :porcentaje_dias_anogestion="adp.porcentaje_dias_anogestion"
-            />
-          </b-col>
-          <b-col md="6">
-            <UltimosCorreos :concurso="adp.concurso" />
-          </b-col>
-        </b-row>
-
-        <!-- Datos básicos -->
-        <Datos
-          class="pe-5"
-          :cargo="adp.cargo"
-          :fecha_nombramiento_renovacion="adp.fecha_nombramiento_renovacion"
-          :estado_adp="adp.estado_adp"
-          :mail="adp.mail"
-          :mail_contraparte_cd="adp.mail_contraparte_cd"
-          :mail_contraparte_eval="adp.mail_contraparte_eval"
-          :estado_cd="adp.estado_cd"
-          :servicio="adp.servicio"
-        />
-
-        <!-- Pestañas -->
-        <b-tabs content-class="mt-3" align="center">
-          <b-tab title="Convenio de desempeño" active>
-            <div id="alertasConvenio">
-              <Convenio
-                v-if="adp.estado_cd !== 'Suscrito'"
-                :fecha_comunicacion="adp.fecha_comunicacion"
-                :fecha_propuesta="adp.fecha_propuesta"
-                :fecha_suscripcion="adp.fecha_suscripcion"
-                :estado_adp="adp.estado_adp"
-                @registrarCorreo="registrarCorreo()"
-                @alertaCero="alertaCero(adp.indice)"
-                @alertaCeroRenovado="alertaCeroRenovado(adp.indice)"
-                @alertaSesenta="alertaSesenta(adp.indice)"
-                @alertaNoventa="alertaNoventa(adp.indice)"
-                @calendarAlertaCero="calendarAlertaCero(adp.indice)"
-                @calendarAlertaSesenta="calendarAlertaSesenta(adp.indice)"
-                @calendarAlertaNoventa="calendarAlertaNoventa(adp.indice)"
-              />
-              <div class="text-center pt-3 pb-4 fs-5 fw-bold" v-else>
-                Convenio suscrito
-                <b-icon icon="check-circle-fill" id="convenioSuscrito"></b-icon>
-              </div>
-            </div>
-          </b-tab>
-          <b-tab title="Evaluaciones semestrales">
-            <div id="Evaluaciones semestrales">
-              <Semestrales
-                v-if="
-                  adp.servicio == 'Servicio Local de Educación Barrancas' ||
-                  adp.servicio == 'Servicio Local de Educación Andalién Sur' ||
-                  adp.servicio == 'Servicio Local de Educación Atacama' ||
-                  adp.servicio == 'Servicio Local de Educación Chinchorro' ||
-                  adp.servicio == 'Servicio Local de Educación Colchagua' ||
-                  adp.servicio ==
-                    'Servicio Local de Educación Costa Araucanía' ||
-                  adp.servicio ==
-                    'Servicio Local de Educación Gabriela Mistral' ||
-                  adp.servicio == 'Servicio Local de Educación Huasco' ||
-                  adp.servicio == 'Servicio Local de Educación Llanquihue' ||
-                  adp.servicio ==
-                    'Servicio Local de Educación Puerto Cordillera' ||
-                  adp.servicio == 'Servicio Local de Educación Valparaíso' ||
-                  adp.nivel == 'II'
-                "
-                :eval_semestral_inicio="adp.eval_semestral_inicio"
-                :eval_semestral_auto="adp.eval_semestral_auto"
-                :eval_semestral_retro="adp.eval_semestral_retro"
-                :mail="adp.mail"
-                :nombre_corregido="adp.nombre_corregido"
-                :apellido_corregido="adp.apellido_corregido"
-                @autoEvalSemestral="autoEvalSemestral(adp.indice)"
-                @calendarInicioEvalParcial="
-                  calendarInicioEvalParcial(adp.indice)
-                "
-                @calendarAutoEvalParcial="calendarAutoEvalParcial(adp.indice)"
-                @calendarRetroEvalParcial="calendarRetroEvalParcial(adp.indice)"
-              />
-              <div class="text-center pt-3 pb-4 fs-5 fw-bold" v-else>
-                I niveles no sujetos a evaluación parcial
-              </div>
-            </div>
-          </b-tab>
-          <b-tab title="Evaluaciones anuales">
-            <div
-              class="text-center pt-3 pb-4 fs-5 fw-bold"
-              v-if="
-                (adp.nivel == 'I' &&
-                  adp.servicio == 'Servicio Local de Educación Barrancas') ||
-                (adp.nivel == 'I' &&
-                  adp.servicio == 'Servicio Local de Educación Andalién Sur') ||
-                (adp.nivel == 'I' &&
-                  adp.servicio == 'Servicio Local de Educación Atacama') ||
-                (adp.nivel == 'I' &&
-                  adp.servicio == 'Servicio Local de Educación Chinchorro') ||
-                (adp.nivel == 'I' &&
-                  adp.servicio == 'Servicio Local de Educación Colchagua') ||
-                (adp.nivel == 'I' &&
-                  adp.servicio ==
-                    'Servicio Local de Educación Costa Araucanía') ||
-                (adp.nivel == 'I' &&
-                  adp.servicio ==
-                    'Servicio Local de Educación Gabriela Mistral') ||
-                (adp.nivel == 'I' &&
-                  adp.servicio == 'Servicio Local de Educación Huasco') ||
-                (adp.nivel == 'I' &&
-                  adp.servicio == 'Servicio Local de Educación Llanquihue') ||
-                (adp.nivel == 'I' &&
-                  adp.servicio ==
-                    'Servicio Local de Educación Puerto Cordillera') ||
-                (adp.nivel == 'I' &&
-                  adp.servicio == 'Servicio Local de Educación Valparaíso')
-              "
-            >
-              Fecha varía según año escolar
-            </div>
-            <Anuales
-              v-else
-              :eval_anual_inicio="adp.eval_anual_inicio"
-              :eval_anual_auto="adp.eval_anual_auto"
-              :eval_anual_retro="adp.eval_anual_retro"
-              :eval_anual_rex="adp.eval_anual_rex"
-              :mail="adp.mail"
-              :nombre_corregido="adp.nombre_corregido"
-              :apellido_corregido="adp.apellido_corregido"
-              @autoEvalAnual="autoEvalAnual(adp.indice)"
-              @rexEvalAnual="rexEvalAnual(adp.indice)"
-              @calendarInicioEvalAnual="calendarInicioEvalAnual(adp.indice)"
-              @calendarAutoEvalAnual="calendarAutoEvalAnual(adp.indice)"
-              @calendarRetroEvalAnual="calendarRetroEvalAnual(adp.indice)"
-              @calendarRetroEvalAnualREX="calendarRetroEvalAnualREX(adp.indice)"
-            />
-          </b-tab>
-          <b-tab title="Otras comunicaciones">
-            <Otras
-              :estado_adp="adp.estado_adp"
-              @claveSICDE="claveSICDE(adp.indice)"
-              @claveAPP="claveAPP(adp.indice)"
-              @encuestaCierre="encuestaCierre(adp.indice)"
-              @encuestaPercepcion="encuestaPercepcion(adp.indice)"
-            />
-          </b-tab>
-        </b-tabs>
+      <!-- Foto, gráfico y correos -->
+      <b-row class="py-4 pe-5">
+        <b-col md="6">
+          <Grafico
+            :porcentaje_dias_cargo="adps[this.indice].porcentaje_dias_cargo"
+            :porcentaje_dias_anogestion="
+              adps[this.indice].porcentaje_dias_anogestion
+            "
+          />
+        </b-col>
+        <b-col md="6">
+          <UltimosCorreos :concurso="adps[this.indice].concurso" />
+        </b-col>
       </b-row>
-    </div>
+
+      <!-- Datos básicos -->
+      <Identificacion
+        class="pe-5"
+        :cargo="adps[this.indice].cargo"
+        :fecha_nombramiento_renovacion="
+          adps[this.indice].fecha_nombramiento_renovacion
+        "
+        :estado_adp="adps[this.indice].estado_adp"
+        :mail="adps[this.indice].mail"
+        :mail_contraparte_cd="adps[this.indice].mail_contraparte_cd"
+        :mail_contraparte_eval="adps[this.indice].mail_contraparte_eval"
+        :estado_cd="adps[this.indice].estado_cd"
+        :servicio="adps[this.indice].servicio"
+      />
+
+      <!-- Pestañas -->
+      <b-tabs content-class="mt-3" align="center">
+        <b-tab title="Convenio de desempeño" active>
+          <div id="alertasConvenio">
+            <Convenio
+              v-if="adps[this.indice].estado_cd !== 'Suscrito'"
+              :fecha_comunicacion="adps[this.indice].fecha_comunicacion"
+              :fecha_propuesta="adps[this.indice].fecha_propuesta"
+              :fecha_suscripcion="adps[this.indice].fecha_suscripcion"
+              :estado_adp="adps[this.indice].estado_adp"
+              @registrarCorreo="registrarCorreo()"
+              @alertaCero="alertaCero(adps[this.indice].indice)"
+              @alertaCeroRenovado="alertaCeroRenovado(adps[this.indice].indice)"
+              @alertaSesenta="alertaSesenta(adps[this.indice].indice)"
+              @alertaNoventa="alertaNoventa(adps[this.indice].indice)"
+              @calendarAlertaCero="calendarAlertaCero(adps[this.indice].indice)"
+              @calendarAlertaSesenta="
+                calendarAlertaSesenta(adps[this.indice].indice)
+              "
+              @calendarAlertaNoventa="
+                calendarAlertaNoventa(adps[this.indice].indice)
+              "
+            />
+            <div class="text-center pt-3 pb-4 fs-5 fw-bold" v-else>
+              Convenio suscrito
+              <b-icon icon="check-circle-fill" id="convenioSuscrito"></b-icon>
+            </div>
+          </div>
+        </b-tab>
+        <b-tab title="Evaluaciones semestrales">
+          <div id="Evaluaciones semestrales">
+            <Semestrales
+              v-if="
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Barrancas' ||
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Andalién Sur' ||
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Atacama' ||
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Chinchorro' ||
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Colchagua' ||
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Costa Araucanía' ||
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Gabriela Mistral' ||
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Huasco' ||
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Llanquihue' ||
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Puerto Cordillera' ||
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Valparaíso' ||
+                adps[this.indice].nivel == 'II'
+              "
+              :eval_semestral_inicio="adps[this.indice].eval_semestral_inicio"
+              :eval_semestral_auto="adps[this.indice].eval_semestral_auto"
+              :eval_semestral_retro="adps[this.indice].eval_semestral_retro"
+              :mail="adps[this.indice].mail"
+              :nombre_corregido="adps[this.indice].nombre_corregido"
+              :apellido_corregido="adps[this.indice].apellido_corregido"
+              @autoEvalSemestral="autoEvalSemestral(adps[this.indice].indice)"
+              @calendarInicioEvalParcial="
+                calendarInicioEvalParcial(adps[this.indice].indice)
+              "
+              @calendarAutoEvalParcial="
+                calendarAutoEvalParcial(adps[this.indice].indice)
+              "
+              @calendarRetroEvalParcial="
+                calendarRetroEvalParcial(adps[this.indice].indice)
+              "
+            />
+            <div class="text-center pt-3 pb-4 fs-5 fw-bold" v-else>
+              I niveles no sujetos a evaluación parcial
+            </div>
+          </div>
+        </b-tab>
+        <b-tab title="Evaluaciones anuales">
+          <div
+            class="text-center pt-3 pb-4 fs-5 fw-bold"
+            v-if="
+              (adps[this.indice].nivel == 'I' &&
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Barrancas') ||
+              (adps[this.indice].nivel == 'I' &&
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Andalién Sur') ||
+              (adps[this.indice].nivel == 'I' &&
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Atacama') ||
+              (adps[this.indice].nivel == 'I' &&
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Chinchorro') ||
+              (adps[this.indice].nivel == 'I' &&
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Colchagua') ||
+              (adps[this.indice].nivel == 'I' &&
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Costa Araucanía') ||
+              (adps[this.indice].nivel == 'I' &&
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Gabriela Mistral') ||
+              (adps[this.indice].nivel == 'I' &&
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Huasco') ||
+              (adps[this.indice].nivel == 'I' &&
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Llanquihue') ||
+              (adps[this.indice].nivel == 'I' &&
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Puerto Cordillera') ||
+              (adps[this.indice].nivel == 'I' &&
+                adps[this.indice].servicio ==
+                  'Servicio Local de Educación Valparaíso')
+            "
+          >
+            Fecha varía según año escolar
+          </div>
+          <Anuales
+            v-else
+            :eval_anual_inicio="adps[this.indice].eval_anual_inicio"
+            :eval_anual_auto="adps[this.indice].eval_anual_auto"
+            :eval_anual_retro="adps[this.indice].eval_anual_retro"
+            :eval_anual_rex="adps[this.indice].eval_anual_rex"
+            :mail="adps[this.indice].mail"
+            :nombre_corregido="adps[this.indice].nombre_corregido"
+            :apellido_corregido="adps[this.indice].apellido_corregido"
+            @autoEvalAnual="autoEvalAnual(adps[this.indice].indice)"
+            @rexEvalAnual="rexEvalAnual(adps[this.indice].indice)"
+            @calendarInicioEvalAnual="
+              calendarInicioEvalAnual(adps[this.indice].indice)
+            "
+            @calendarAutoEvalAnual="
+              calendarAutoEvalAnual(adps[this.indice].indice)
+            "
+            @calendarRetroEvalAnual="
+              calendarRetroEvalAnual(adps[this.indice].indice)
+            "
+            @calendarRetroEvalAnualREX="
+              calendarRetroEvalAnualREX(adps[this.indice].indice)
+            "
+          />
+        </b-tab>
+        <b-tab title="Otras comunicaciones">
+          <Otras
+            :estado_adp="adps[this.indice].estado_adp"
+            @claveSICDE="claveSICDE(adps[this.indice].indice)"
+            @claveAPP="claveAPP(adps[this.indice].indice)"
+            @encuestaCierre="encuestaCierre(adps[this.indice].indice)"
+            @encuestaPercepcion="encuestaPercepcion(adps[this.indice].indice)"
+          />
+        </b-tab>
+      </b-tabs>
+    </b-row>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -184,26 +206,22 @@ import Vue from "vue";
 import { mapState } from "vuex";
 import emailjs from "emailjs-com";
 import axios from "axios";
-import Convenio from "@/components/dashboard/pestanas/Convenio.vue";
-import Semestrales from "@/components/dashboard/pestanas/Semestrales.vue";
-import Anuales from "@/components/dashboard/pestanas/Anuales.vue";
-import Otras from "@/components/dashboard/pestanas/Otras.vue";
-import Datos from "@/components/dashboard/datos_personales/Datos.vue";
-import Grafico from "@/components/dashboard/datos_personales/Grafico.vue";
-import FotoPerfil from "@/components/dashboard/datos_personales/FotoPerfil.vue";
-import UltimosCorreos from "@/components/dashboard/datos_personales/UltimosCorreos.vue";
-import Filtros from "@/components/dashboard/buscador/Filtros.vue";
+import Convenio from "@/components/perfil/pestanas/Convenio.vue";
+import Semestrales from "@/components/perfil/pestanas/Semestrales.vue";
+import Anuales from "@/components/perfil/pestanas/Anuales.vue";
+import Otras from "@/components/perfil/pestanas/Otras.vue";
+import Identificacion from "@/components/perfil/datos_personales/Identificacion.vue";
+import Grafico from "@/components/perfil/datos_personales/Grafico.vue";
+import UltimosCorreos from "@/components/perfil/datos_personales/UltimosCorreos.vue";
 export default {
-  name: "Perfiles",
+  name: "DatosPersonales",
   components: {
     Convenio,
     Semestrales,
     Anuales,
     Otras,
-    Datos,
+    Identificacion,
     Grafico,
-    Filtros,
-    FotoPerfil,
     UltimosCorreos,
   },
   data() {
@@ -216,29 +234,8 @@ export default {
       correosSalientes: [],
     };
   },
+  props: ["indice"],
   methods: {
-    // Inicio Filtros
-    filtroPorNombreDeServicio(adps) {
-      return adps.filter((adp) => !adp.servicio.indexOf(this.servicio));
-    },
-    filtroPorEstadoConvenio(adps) {
-      return adps.filter((adp) => !adp.estado_cd.indexOf(this.estadoConvenio));
-    },
-    filtroPorConcurso(adps) {
-      return adps.filter(
-        (adp) => !adp.concurso.toString().indexOf(this.concurso)
-      );
-    },
-    filtroPorNombreADP(adps) {
-      return adps.filter(
-        (adp) =>
-          !adp.nombre_corregido
-            .toLowerCase()
-            .indexOf(this.nombreADP.toLowerCase())
-      );
-    },
-    //
-    //
     // Correos de Alerta
     alertaCero(i) {
       // Cuadro de diálogo para confirmar envío de correo
@@ -1347,13 +1344,6 @@ export default {
   },
 
   computed: {
-    filtrarADPs() {
-      return this.filtroPorConcurso(
-        this.filtroPorNombreDeServicio(
-          this.filtroPorNombreADP(this.filtroPorEstadoConvenio(this.adps))
-        )
-      );
-    },
     ...mapState(["adps"]),
   },
   created() {
@@ -1370,21 +1360,5 @@ ul {
 .row {
   padding: 0;
   margin: 0;
-}
-
-.contenedor {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 70%;
-  height: 70%;
-  background-color: #b7acf3;
-  color: white;
-  font-size: 1.4rem;
-}
-
-#profilePic {
-  flex: 0 0 120px;
 }
 </style>

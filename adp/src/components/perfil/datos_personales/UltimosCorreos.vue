@@ -35,7 +35,7 @@ export default {
     this.ultimosCorreos();
   },
   props: {
-    concurso: { type: String, required: true },
+    concurso: { type: Number, required: true },
   },
 };
 </script>
