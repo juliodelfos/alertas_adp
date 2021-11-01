@@ -92,5 +92,8 @@ a {
   &:visited {
     color: white;
   }
+  &:hover {
+    color: white;
+  }
 }
 </style>
