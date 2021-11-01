@@ -95,5 +95,11 @@ a {
   &:hover {
     color: white;
   }
+  &:focus {
+    color: white;
+  }
+  &:active {
+    color: white;
+  }
 }
 </style>

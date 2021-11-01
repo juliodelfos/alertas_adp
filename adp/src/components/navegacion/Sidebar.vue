@@ -8,11 +8,11 @@
             ><b-icon class="h4 my-4" icon="card-heading" ></b-icon
           ></router-link>
         </li>
-        <!-- <li>
+        <li>
           <router-link to="/tabla"
             ><b-icon class="h4" icon="table" ></b-icon
           ></router-link>
-        </li> -->
+        </li>
         <hr class="my-3" />
         <li v-if="estado" >
           <b-icon
