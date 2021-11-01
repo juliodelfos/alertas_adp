@@ -5,7 +5,12 @@
       <ul>
         <li>
           <router-link to="/tarjetas"
-            ><b-icon class="h4 mt-5" icon="house-door-fill" ></b-icon
+            ><b-icon class="h4 my-4" icon="card-heading" ></b-icon
+          ></router-link>
+        </li>
+        <li>
+          <router-link to="/tabla"
+            ><b-icon class="h4" icon="table" ></b-icon
           ></router-link>
         </li>
         <hr class="my-3" />

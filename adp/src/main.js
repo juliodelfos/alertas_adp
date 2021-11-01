@@ -47,6 +47,10 @@ Vue.filter("formatDate", (value) => {
   }
 });
 
+//GridJS
+import { GridGlobal } from "gridjs-vue";
+Vue.use(GridGlobal);
+
 Vue.config.productionTip = false;
 
 new Vue({
