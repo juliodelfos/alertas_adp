@@ -5,18 +5,19 @@
       <ul>
         <li>
           <router-link to="/tarjetas"
-            ><b-icon class="h4 my-4" icon="card-heading" ></b-icon
+            ><b-icon class="h4 my-4" icon="card-heading"></b-icon
           ></router-link>
         </li>
         <li>
           <router-link to="/tabla"
-            ><b-icon class="h4" icon="table" ></b-icon
+            ><b-icon class="h4" icon="table"></b-icon
           ></router-link>
         </li>
         <hr class="my-3" />
-        <li v-if="estado" >
+        <li v-if="estado">
           <b-icon
-          v-b-tooltip.hover title="SICDE operativo"
+            v-b-tooltip.hover
+            title="SICDE operativo"
             class="h4"
             icon="check-circle-fill"
             id="sicdeOperativo"
@@ -24,7 +25,8 @@
         </li>
         <li v-else>
           <b-icon
-          v-b-tooltip.hover title="SICDE está caído"
+            v-b-tooltip.hover
+            title="SICDE está caído"
             class="h3"
             icon="exclamation-circle-fill"
             id="sicdeCaido"
@@ -92,8 +94,18 @@ aside {
 }
 
 a {
+  color: #fff;
   text-decoration: none;
   &:visited {
+    color: white;
+  }
+  &:hover {
+    color: white;
+  }
+  &:focus {
+    color: white;
+  }
+  &:active {
     color: white;
   }
 }
