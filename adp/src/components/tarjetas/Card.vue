@@ -73,7 +73,7 @@ export default {
     concurso: { type: Number, required: true },
     estado_cd: { type: String, required: true },
     estado_adp: { type: String, required: true },
-    indice: { type: String, required: true },
+    indice: { type: Number, required: true },
   },
 };
 </script>

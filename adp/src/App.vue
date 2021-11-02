@@ -58,7 +58,7 @@ export default {
 }
 
 .cursor {
-  cursor: copy;
+  cursor: pointer;
 }
 
 .sinPadding {

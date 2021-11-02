@@ -58,14 +58,14 @@
           </td>
           <td>
             <span
-              class="badge rounded-pill bg-warning text-dark"
+              class="badge rounded-pill bg-warning text-dark cursor"
               @click="$emit('alertaSesenta')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >
           </td>
           <td>
             <span
-              class="badge rounded-pill bg-warning text-dark"
+              class="badge rounded-pill bg-warning text-dark cursor"
               @click="$emit('alertaNoventa')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
             >
@@ -88,6 +88,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>

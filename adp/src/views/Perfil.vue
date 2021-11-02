@@ -13,7 +13,7 @@ export default {
     DatosPersonales,
   },
   props: {
-    indice: { type: String, required: true },
+    indice: { type: Number, required: true },
   },
 };
 </script>

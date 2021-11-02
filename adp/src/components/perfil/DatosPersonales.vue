@@ -51,17 +51,16 @@
               :fecha_propuesta="adps[this.indice].fecha_propuesta"
               :fecha_suscripcion="adps[this.indice].fecha_suscripcion"
               :estado_adp="adps[this.indice].estado_adp"
-              @registrarCorreo="registrarCorreo()"
-              @alertaCero="alertaCero(adps[this.indice].indice)"
-              @alertaCeroRenovado="alertaCeroRenovado(adps[this.indice].indice)"
-              @alertaSesenta="alertaSesenta(adps[this.indice].indice)"
-              @alertaNoventa="alertaNoventa(adps[this.indice].indice)"
-              @calendarAlertaCero="calendarAlertaCero(adps[this.indice].indice)"
+              @alertaCero="alertaCero(adps[indice].indice)"
+              @alertaCeroRenovado="alertaCeroRenovado(adps[indice].indice)"
+              @alertaSesenta="alertaSesenta(adps[indice].indice)"
+              @alertaNoventa="alertaNoventa(adps[indice].indice)"
+              @calendarAlertaCero="calendarAlertaCero(adps[indice].indice)"
               @calendarAlertaSesenta="
-                calendarAlertaSesenta(adps[this.indice].indice)
+                calendarAlertaSesenta(adps[indice].indice)
               "
               @calendarAlertaNoventa="
-                calendarAlertaNoventa(adps[this.indice].indice)
+                calendarAlertaNoventa(adps[indice].indice)
               "
             />
             <div class="text-center pt-3 pb-4 fs-5 fw-bold" v-else>
@@ -104,15 +103,15 @@
               :mail="adps[this.indice].mail"
               :nombre_corregido="adps[this.indice].nombre_corregido"
               :apellido_corregido="adps[this.indice].apellido_corregido"
-              @autoEvalSemestral="autoEvalSemestral(adps[this.indice].indice)"
+              @autoEvalSemestral="autoEvalSemestral(adps[indice].indice)"
               @calendarInicioEvalParcial="
-                calendarInicioEvalParcial(adps[this.indice].indice)
+                calendarInicioEvalParcial(adps[indice].indice)
               "
               @calendarAutoEvalParcial="
-                calendarAutoEvalParcial(adps[this.indice].indice)
+                calendarAutoEvalParcial(adps[indice].indice)
               "
               @calendarRetroEvalParcial="
-                calendarRetroEvalParcial(adps[this.indice].indice)
+                calendarRetroEvalParcial(adps[indice].indice)
               "
             />
             <div class="text-center pt-3 pb-4 fs-5 fw-bold" v-else>
@@ -170,29 +169,29 @@
             :mail="adps[this.indice].mail"
             :nombre_corregido="adps[this.indice].nombre_corregido"
             :apellido_corregido="adps[this.indice].apellido_corregido"
-            @autoEvalAnual="autoEvalAnual(adps[this.indice].indice)"
-            @rexEvalAnual="rexEvalAnual(adps[this.indice].indice)"
+            @autoEvalAnual="autoEvalAnual(adps[indice].indice)"
+            @rexEvalAnual="rexEvalAnual(adps[indice].indice)"
             @calendarInicioEvalAnual="
-              calendarInicioEvalAnual(adps[this.indice].indice)
+              calendarInicioEvalAnual(adps[indice].indice)
             "
             @calendarAutoEvalAnual="
-              calendarAutoEvalAnual(adps[this.indice].indice)
+              calendarAutoEvalAnual(adps[indice].indice)
             "
             @calendarRetroEvalAnual="
-              calendarRetroEvalAnual(adps[this.indice].indice)
+              calendarRetroEvalAnual(adps[indice].indice)
             "
             @calendarRetroEvalAnualREX="
-              calendarRetroEvalAnualREX(adps[this.indice].indice)
+              calendarRetroEvalAnualREX(adps[indice].indice)
             "
           />
         </b-tab>
         <b-tab title="Otras comunicaciones">
           <Otras
             :estado_adp="adps[this.indice].estado_adp"
-            @claveSICDE="claveSICDE(adps[this.indice].indice)"
-            @claveAPP="claveAPP(adps[this.indice].indice)"
-            @encuestaCierre="encuestaCierre(adps[this.indice].indice)"
-            @encuestaPercepcion="encuestaPercepcion(adps[this.indice].indice)"
+            @claveSICDE="claveSICDE(adps[indice].indice)"
+            @claveAPP="claveAPP(adps[indice].indice)"
+            @encuestaCierre="encuestaCierre(adps[indice].indice)"
+            @encuestaPercepcion="encuestaPercepcion(adps[indice].indice)"
           />
         </b-tab>
       </b-tabs>

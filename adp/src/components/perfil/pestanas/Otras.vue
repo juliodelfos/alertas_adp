@@ -14,14 +14,14 @@
         <tr>
           <td>
             <span
-              class="badge rounded-pill bg-warning text-dark"
+              class="badge rounded-pill bg-warning text-dark cursor"
               @click="$emit('claveSICDE')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar clave</span
             >
           </td>
           <td>
             <span
-              class="badge rounded-pill bg-warning text-dark"
+              class="badge rounded-pill bg-warning text-dark cursor"
               @click="$emit('claveAPP')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar clave</span
             >
@@ -39,12 +39,12 @@
           </td>
 
           <td>
-            <span class="badge rounded-pill bg-warning text-dark" @click="$emit('encuestaCierre')"
+            <span class="badge rounded-pill bg-warning text-dark cursor" @click="$emit('encuestaCierre')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
           </td>
           <td>
-            <span class="badge rounded-pill bg-warning text-dark"  @click="$emit('encuestaPercepcion')"
+            <span class="badge rounded-pill bg-warning text-dark cursor"  @click="$emit('encuestaPercepcion')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
           </td>
