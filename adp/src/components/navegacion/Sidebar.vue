@@ -5,12 +5,22 @@
       <ul>
         <li>
           <router-link to="/tarjetas"
-            ><b-icon class="h4 my-4" icon="card-heading"></b-icon
+            ><b-icon
+              class="h4 my-4 linksNavbar"
+              icon="card-heading"
+              v-b-tooltip.hover
+              title="Vista de tarjetas"
+            ></b-icon
           ></router-link>
         </li>
         <li>
           <router-link to="/tabla"
-            ><b-icon class="h4" icon="table"></b-icon
+            ><b-icon
+              class="h4 linksNavbar"
+              icon="table"
+              v-b-tooltip.hover
+              title="Vista de tablas"
+            ></b-icon
           ></router-link>
         </li>
         <hr class="my-3" />
@@ -91,23 +101,6 @@ export default {
 
 aside {
   height: 100vh;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-  &:visited {
-    color: white;
-  }
-  &:hover {
-    color: white;
-  }
-  &:focus {
-    color: white;
-  }
-  &:active {
-    color: white;
-  }
 }
 
 .logo {

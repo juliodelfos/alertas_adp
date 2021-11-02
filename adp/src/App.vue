@@ -87,7 +87,7 @@ export default {
   grid-area: main;
 }
 
-a {
+.linksNavbar {
   color: #fff;
   text-decoration: none;
   &:visited {
