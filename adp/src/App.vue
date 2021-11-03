@@ -1,10 +1,12 @@
 <template>
-  <div>
-    <div class="bg-primary sidebar" v-show="this.$route.path !== '/'">
+  <main :class="this.$route.path !== '/' ? conteiner : sidebarHide">
+    <div class="sidebar" v-show="this.$route.path !== '/'">
       <Sidebar />
     </div>
-    <router-view />
-  </div>
+    <div class="main">
+      <router-view />
+    </div>
+  </main>
 </template>
 
 <script>
@@ -15,6 +17,12 @@ export default {
   name: "App",
   components: {
     Sidebar,
+  },
+  data() {
+    return {
+      sidebarHide: "sidebarHide",
+      conteiner: "conteiner",
+    };
   },
   methods: {
     ...mapActions(["fetch_Adp", "fetch_EstadoSICDE"]),
@@ -52,16 +60,6 @@ export default {
 
 
 <style lang="scss">
-.fotoPerfil {
-  height: 7rem;
-  width: 7rem;
-}
-
-.fotoPerfilPequena {
-  height: 5rem;
-  width: 5rem;
-}
-
 #convenioSuscrito {
   color: green;
 }
@@ -74,26 +72,32 @@ export default {
   padding: 0 !important;
 }
 
+.conteiner {
+  display: grid;
+  grid-template-columns: 3.12em 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+}
+
+.sidebar {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.main {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.sidebarHide {
+  display: grid;
+  grid-template-columns: 0fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+}
+
 #noMargin {
   margin-right: 0 !important;
   margin-left: 0 !important;
-}
-
-// .conteiner {
-//   display: grid;
-//   grid-template-columns: 4% 1fr;
-//   grid-template-rows: 1fr;
-//   gap: 0px 0px;
-//   grid-auto-flow: row;
-//   grid-template-areas: "sidebar main";
-// }
-
-// .sidebar {
-//   grid-area: sidebar;
-// }
-
-.main {
-  grid-area: main;
 }
 
 .linksNavbar {

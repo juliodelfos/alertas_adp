@@ -1,11 +1,11 @@
 <template>
   <div>
-    <sidebar-menu :menu="menu" />
+    <sidebar-menu :menu="menu"  widthCollapsed="3.12rem" />
   </div>
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
 export default {
   name: "Sidebar",
   data() {
