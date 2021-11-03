@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     user: "",
     adps: [],
+    estadoSICDE: "",
     servicios: [
       { value: "", text: "Selecciona un servicio" },
       {
@@ -658,6 +659,9 @@ export default new Vuex.Store({
     SOCIAL_LOGOUT(state) {
       state.user = "";
     },
+    FETCH_ESTADOSICDE(state, data) {
+      state.estadoSICDE = data;
+    },
   },
   actions: {
     fetch_Adp({ commit }, data) {
@@ -668,6 +672,9 @@ export default new Vuex.Store({
     },
     social_Logout({ commit }) {
       commit("SOCIAL_LOGOUT");
+    },
+    fetch_EstadoSICDE({ commit }, data) {
+      commit("FETCH_ESTADOSICDE", data);
     },
   },
   getters: {},

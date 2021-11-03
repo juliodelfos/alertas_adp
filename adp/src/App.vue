@@ -1,13 +1,9 @@
 <template>
-  <div class="conteiner">
-    <!-- <div class="bg-primary sidebar" v-show="this.$route.path !== '/'"> -->
-    <div class="bg-primary sidebar">
+  <div>
+    <div class="bg-primary sidebar" v-show="this.$route.path !== '/'">
       <Sidebar />
     </div>
-
-    <div class="main">
-      <router-view />
-    </div>
+    <router-view />
   </div>
 </template>
 
@@ -21,7 +17,7 @@ export default {
     Sidebar,
   },
   methods: {
-    ...mapActions(["fetch_Adp"]),
+    ...mapActions(["fetch_Adp", "fetch_EstadoSICDE"]),
     fetchAdp() {
       axios
         .get(
@@ -34,9 +30,22 @@ export default {
           console.log(error);
         });
     },
+    estadoSICDE() {
+      axios
+        .get(
+          "https://v1.nocodeapi.com/yerigagarin/uptime/AUpowmIbIGdzFDkI?monitors=789280592"
+        )
+        .then((response) => {
+          this.fetch_EstadoSICDE(response.data.stat);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   created() {
     this.fetchAdp();
+    this.estadoSICDE();
   },
 };
 </script>
@@ -70,18 +79,18 @@ export default {
   margin-left: 0 !important;
 }
 
-.conteiner {
-  display: grid;
-  grid-template-columns: 4% 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "sidebar main";
-}
+// .conteiner {
+//   display: grid;
+//   grid-template-columns: 4% 1fr;
+//   grid-template-rows: 1fr;
+//   gap: 0px 0px;
+//   grid-auto-flow: row;
+//   grid-template-areas: "sidebar main";
+// }
 
-.sidebar {
-  grid-area: sidebar;
-}
+// .sidebar {
+//   grid-area: sidebar;
+// }
 
 .main {
   grid-area: main;

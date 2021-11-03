@@ -1,117 +1,61 @@
 <template>
   <div>
-    <aside class="text-center text-white">
-      <div class="logo"></div>
-      <ul>
-        <li>
-          <router-link to="/tarjetas"
-            ><b-icon
-              class="h4 my-4 linksNavbar"
-              icon="card-heading"
-              v-b-tooltip.hover
-              title="Vista de tarjetas"
-            ></b-icon
-          ></router-link>
-        </li>
-        <li>
-          <router-link to="/tabla"
-            ><b-icon
-              class="h4 linksNavbar"
-              icon="table"
-              v-b-tooltip.hover
-              title="Vista de tablas"
-            ></b-icon
-          ></router-link>
-        </li>
-        <hr class="my-3" />
-        <li v-if="estado">
-          <b-icon
-            v-b-tooltip.hover
-            title="SICDE operativo"
-            class="h4"
-            icon="check-circle-fill"
-            id="sicdeOperativo"
-          ></b-icon>
-        </li>
-        <li v-else>
-          <b-icon
-            v-b-tooltip.hover
-            title="SICDE está caído"
-            class="h3"
-            icon="exclamation-circle-fill"
-            id="sicdeCaido"
-          ></b-icon>
-        </li>
-      </ul>
-    </aside>
+    <sidebar-menu :menu="menu" />
   </div>
 </template>
 
 <script>
-import axios from "axios";
 import { mapState, mapActions } from "vuex";
-import firebase from "firebase";
 export default {
   name: "Sidebar",
   data() {
     return {
-      estado: "",
+      menu: [
+        {
+          header: true,
+          title: "Navegación",
+          hiddenOnCollapse: true,
+        },
+        {
+          href: { path: "/tarjetas" },
+          title: "Tarjetas",
+          icon: "fa fa-id-card",
+        },
+        {
+          href: { path: "/tabla" },
+          title: "Tabla",
+          icon: "fa fa-table",
+        },
+        {
+          header: true,
+          title: "Más información",
+          hiddenOnCollapse: true,
+        },
+        {
+          href: "https://stats.uptimerobot.com/LG7nQhkY42",
+          external: true,
+          title: "Estado SICDE",
+          icon: "fa fa-check-circle",
+          badge: {
+            text: "",
+            class: "vsm--badge_default",
+          },
+        },
+      ],
     };
   },
-  methods: {
-    ...mapActions(["social_Logout"]),
-
-    async estadoSICDE() {
-      await axios
-        .get(
-          "https://v1.nocodeapi.com/yerigagarin/uptime/AUpowmIbIGdzFDkI?monitors=789280592"
-        )
-        .then((response) => {
-          this.estado = response.data.stat;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    socialLogout() {
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          this.$router.push("/");
-          location.reload();
-        });
-      this.social_Logout();
-    },
-  },
   computed: {
-    ...mapState(["user"]),
+    ...mapState(["user", "estadoSICDE"]),
+    asignaTextoMonitorSicde() {
+      const estadoSICDE =
+        this.estadoSICDE == "ok"
+          ? (this.menu[4].badge.text = "Operativo")
+          : (this.menu[4].badge.text = "Caído");
+      return estadoSICDE;
+    },
   },
   created() {
-    this.estadoSICDE();
+    this.menu[4].badge.text.estado = this.asignaTextoMonitorSicde;
   },
 };
 </script>
-
-<style scoped lang="scss">
-* {
-  list-style-type: none;
-  padding: 0;
-}
-
-aside {
-  height: 100vh;
-}
-
-.logo {
-  height: 78px;
-}
-
-#sicdeOperativo {
-  color: #3bd19f;
-}
-
-#sicdeCaido {
-  color: #c95f68;
-}
-</style>

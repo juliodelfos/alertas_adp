@@ -51,6 +51,15 @@ Vue.filter("formatDate", (value) => {
 import { GridGlobal } from "gridjs-vue";
 Vue.use(GridGlobal);
 
+//Sidebar
+import VueSidebarMenu from "vue-sidebar-menu";
+import "vue-sidebar-menu/dist/vue-sidebar-menu.css";
+Vue.use(VueSidebarMenu);
+
+//Font Awesome
+import "@fortawesome/fontawesome-free/css/all.css";
+import "@fortawesome/fontawesome-free/js/all.js";
+
 Vue.config.productionTip = false;
 
 new Vue({
