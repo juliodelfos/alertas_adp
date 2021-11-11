@@ -258,8 +258,8 @@ export default {
           nombre_ADP: this.adps[i].nombre_corregido,
           apellido_ADP: this.adps[i].apellido_corregido,
           cargo_ADP: this.adps[i].cargo,
-          // email: this.adps[i].mail_contraparte_cd,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail_contraparte_cd,
+          // email: "desarrolloadp@serviciocivil.cl",
           nombramiento_ADP: `${fechaNombramiento[2]}/${fechaNombramiento[1]}/${fechaNombramiento[0]}`,
           suscripcion_ADP: `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`,
           comunicacion_ADP: `${fechaComunicacion[2]}/${fechaComunicacion[1]}/${fechaComunicacion[0]}`,
@@ -338,8 +338,8 @@ export default {
           nombre_ADP: this.adps[i].nombre_corregido,
           apellido_ADP: this.adps[i].apellido_corregido,
           cargo_ADP: this.adps[i].cargo,
-          // email: this.adps[i].mail_contraparte_cd,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail_contraparte_cd,
+          // email: "desarrolloadp@serviciocivil.cl",
           nombramiento_ADP: `${fechaNombramiento[2]}/${fechaNombramiento[1]}/${fechaNombramiento[0]}`,
           suscripcion_ADP: `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`,
           comunicacion_ADP: `${fechaComunicacion[2]}/${fechaComunicacion[1]}/${fechaComunicacion[0]}`,
@@ -418,8 +418,8 @@ export default {
           } 08:00&title=Suscripción convenio ${this.adps[i].nombre_corregido} ${
             this.adps[i].apellido_corregido
           }&timezone=America/Santiago">Añadir al Calendario</a>`,
-          // email: this.adps[i].mail_contraparte_cd,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail_contraparte_cd,
+          // email: "desarrolloadp@serviciocivil.cl",
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
@@ -483,8 +483,8 @@ export default {
           } 08:00&title=Suscripción convenio ${this.adps[i].nombre_corregido} ${
             this.adps[i].apellido_corregido
           }&timezone=America/Santiago">Añadir al Calendario</a>`,
-          // email: this.adps[i].mail_contraparte_cd,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail_contraparte_cd,
+          // email: "desarrolloadp@serviciocivil.cl",
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
@@ -642,8 +642,8 @@ export default {
       if (solicitaConfirmacion) {
         const templateParams = {
           nombre_ADP: this.adps[i].nombre_corregido,
-          // email: this.adps[i].mail,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail,
+          // email: "desarrolloadp@serviciocivil.cl",
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
@@ -801,8 +801,8 @@ export default {
       if (solicitaConfirmacion) {
         const templateParams = {
           nombre_ADP: this.adps[i].nombre_corregido,
-          // email: this.adps[i].mail,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail,
+          // email: "desarrolloadp@serviciocivil.cl",
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
@@ -846,8 +846,8 @@ export default {
         const templateParams = {
           nombre_ADP: this.adps[i].nombre_corregido,
           apellido_ADP: this.adps[i].apellido_corregido,
-          // email: this.adps[i].mail_contraparte_eval,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail_contraparte_eval,
+          // email: "desarrolloadp@serviciocivil.cl",
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
@@ -1057,8 +1057,8 @@ export default {
         const templateParams = {
           usuario_SICDE: this.adps[i].mail,
           clave_SICDE: clave,
-          // email: this.adps[i].mail_contraparte_cd,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail,
+          // email: "desarrolloadp@serviciocivil.cl",
         };
         const userID = "user_j03eIIBx2tfg0roipyWbX";
         const templateID = "claveSICDE";
@@ -1115,8 +1115,8 @@ export default {
         const templateParams = {
           usuario_APP: this.adps[i].mail,
           clave_APP: clave,
-          // email: this.adps[i].mail_contraparte_cd,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail,
+          // email: "desarrolloadp@serviciocivil.cl",
         };
         const userID = "user_j03eIIBx2tfg0roipyWbX";
         const templateID = "claveAPP";
@@ -1162,8 +1162,8 @@ export default {
         const templateParams = {
           nombre_ADP: nombre,
           apellido_ADP: apellido,
-          // email: this.adps[i].mail,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail,
+          // email: "desarrolloadp@serviciocivil.cl",
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
@@ -1210,8 +1210,8 @@ export default {
         const templateParams = {
           nombre_ADP: nombre,
           apellido_ADP: apellido,
-          // email: this.adps[i].mail,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail,
+          // email: "desarrolloadp@serviciocivil.cl",
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
@@ -1257,8 +1257,8 @@ export default {
 
         const templateParams = {
           nombre_ADP: nombre,
-          // email: this.adps[i].mail,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail,
+          // email: "desarrolloadp@serviciocivil.cl",
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
@@ -1303,8 +1303,8 @@ export default {
           nombre_ADP: this.adps[i].nombre_corregido,
           apellido_ADP: this.adps[i].apellido_corregido,
           cargo_ADP: this.adps[i].cargo,
-          // email: this.adps[i].mail_contraparte_cd,
-          email: "desarrolloadp@serviciocivil.cl",
+          email: this.adps[i].mail_contraparte_cd,
+          // email: "desarrolloadp@serviciocivil.cl",
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
