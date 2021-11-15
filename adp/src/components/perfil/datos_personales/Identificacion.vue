@@ -45,12 +45,28 @@
               {{ servicio }}
             </td>
           </tr>
-          <tr>
+          <tr v-if="mail !== 'null'">
             <td>
               <b-icon icon="envelope-fill"></b-icon>
               <b> Correo:</b>
-              <a :href="`https://mail.google.com/mail/?view=cm&source=mailto&to=${mail}&body=Estimada/o Directiva/o,`" target="_blank">
-              {{ mail }}</a>
+              <a
+                :href="`https://mail.google.com/mail/?view=cm&source=mailto&to=${mail}&body=Estimada/o Directiva/o,`"
+                target="_blank"
+              >
+                {{ mail }}</a
+              >
+            </td>
+          </tr>
+          <tr v-else>
+            <td>
+              <b-icon icon="envelope-fill"></b-icon>
+              <b> Correo:</b>
+              <a
+                :href="`https://mail.google.com/mail/?view=cm&source=mailto&to=${mail_contraparte_cd}&su=Servicio Civil - Solicita correo institucional de ${nombre.charAt(0)}${nombre.split(' ')[0].slice(1).toLowerCase()} ${apellido.charAt(0)}${apellido.split(' ')[0].slice(1).toLowerCase()}&body=Estimada Contraparte,%0D%0A%0D%0AJunto con saludar, solicito hacer envío de correo institucional de ${nombre.charAt(0)}${nombre.split(' ')[0].slice(1).toLowerCase()} ${apellido.charAt(0)}${apellido.split(' ')[0].slice(1).toLowerCase()}, ${cargo}, ${servicio}.%0D%0A%0D%0AMuchas gracias`"
+                target="_blank"
+              >
+                Solicitar correo a contraparte</a
+              >
             </td>
           </tr>
           <tr>
@@ -68,8 +84,12 @@
             <td>
               <b-icon icon="person-lines-fill"></b-icon>
               <b> Contraparte evaluación: </b>
-              <a :href="`https://mail.google.com/mail/?view=cm&source=mailto&to=${mail_contraparte_eval}&body=Estimada/o,`" target="_blank">
-              {{ mail_contraparte_eval }}</a>
+              <a
+                :href="`https://mail.google.com/mail/?view=cm&source=mailto&to=${mail_contraparte_eval}&body=Estimada/o,`"
+                target="_blank"
+              >
+                {{ mail_contraparte_eval }}</a
+              >
             </td>
           </tr>
         </tbody>
@@ -90,6 +110,8 @@ export default {
     mail_contraparte_eval: { type: String, required: true },
     estado_cd: { type: String, required: true },
     servicio: { type: String, required: true },
+    nombre: { type: String, required: true },
+    apellido: { type: String, required: true },
   },
 };
 </script>

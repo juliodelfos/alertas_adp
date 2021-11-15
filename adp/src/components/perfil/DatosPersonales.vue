@@ -39,6 +39,8 @@
         :mail_contraparte_eval="adps[this.indice].mail_contraparte_eval"
         :estado_cd="adps[this.indice].estado_cd"
         :servicio="adps[this.indice].servicio"
+        :nombre="adps[this.indice].nombre"
+        :apellido="adps[this.indice].apellido"
       />
 
       <!-- Pestañas -->
