@@ -174,9 +174,7 @@
             @calendarInicioEvalAnual="
               calendarInicioEvalAnual(adps[indice].indice)
             "
-            @calendarAutoEvalAnual="
-              calendarAutoEvalAnual(adps[indice].indice)
-            "
+            @calendarAutoEvalAnual="calendarAutoEvalAnual(adps[indice].indice)"
             @calendarRetroEvalAnual="
               calendarRetroEvalAnual(adps[indice].indice)
             "
@@ -1248,17 +1246,15 @@ export default {
       }
     },
     encuestaCierre(i) {
-      const solicitaConfirmacion = confirm(
-        `¿Seguro que quieres enviar el cuestionario de cierre al mail ${this.adps[i].mail}`
+      const solicitaConfirmacion = prompt(
+        `¿A qué dirección de correo enviarás esta alerta?`,
+        `Recuerda que debe ser un correo personal`
       );
       if (solicitaConfirmacion) {
         const nombre = this.adps[i].nombre_corregido.split(" ")[0];
-        // const apellido = this.adps[i].apellido_corregido.split(" ")[0];
-
         const templateParams = {
           nombre_ADP: nombre,
-          email: this.adps[i].mail,
-          // email: "desarrolloadp@serviciocivil.cl",
+          email: solicitaConfirmacion,
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
@@ -1304,7 +1300,6 @@ export default {
           apellido_ADP: this.adps[i].apellido_corregido,
           cargo_ADP: this.adps[i].cargo,
           email: this.adps[i].mail_contraparte_cd,
-          // email: "desarrolloadp@serviciocivil.cl",
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
