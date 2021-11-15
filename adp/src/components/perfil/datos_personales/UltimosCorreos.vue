@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       items: [],
-      sinRegistros: [{ Tipo: "S/R", Concurso: "S/R", Fecha: "S/R" }],
+      sinRegistros: [{ Tipo: "S/R", Concurso: "S/R", Fecha: "S/R", Destinatario: "S/R" }],
     };
   },
   methods: {
