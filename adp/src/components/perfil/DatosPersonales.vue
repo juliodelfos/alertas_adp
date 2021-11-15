@@ -301,10 +301,12 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const destinatario = this.adps[i].mail_contraparte_cd;
+
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Alerta Cero primer periodo", concurso, fecha]],
+            data: [["Alerta Cero primer periodo", concurso, fecha, destinatario]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -382,10 +384,12 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const destinatario = this.adps[i].mail_contraparte_cd;
+
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Alerta Cero Renovado", concurso, fecha]],
+            data: [["Alerta Cero Renovado", concurso, fecha, destinatario]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -438,10 +442,12 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const destinatario = this.adps[i].mail_contraparte_cd;
+
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Alerta Sesenta", concurso, fecha]],
+            data: [["Alerta Sesenta", concurso, fecha, destinatario]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -503,10 +509,12 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const destinatario = this.adps[i].mail_contraparte_cd;
+          
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Alerta Noventa", concurso, fecha]],
+            data: [["Alerta Noventa", concurso, fecha, destinatario]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -662,10 +670,12 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const destinatario = this.adps[i].mail;
+
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Eval parcial pendiente", concurso, fecha]],
+            data: [["Eval parcial pendiente", concurso, fecha, destinatario]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -821,10 +831,12 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const destinatario = this.adps[i].mail;
+
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Eval anual pendiente", concurso, fecha]],
+            data: [["Eval anual pendiente", concurso, fecha, destinatario]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -866,10 +878,12 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const destinatario = this.adps[i].mail_contraparte_eval;
+
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["REX Eval anual pendiente", concurso, fecha]],
+            data: [["REX Eval anual pendiente", concurso, fecha, destinatario]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -1076,10 +1090,12 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const destinatario = this.adps[i].mail;
+
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Clave SICDE", concurso, fecha]],
+            data: [["Clave SICDE", concurso, fecha, destinatario]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -1114,7 +1130,6 @@ export default {
           usuario_APP: this.adps[i].mail,
           clave_APP: clave,
           email: this.adps[i].mail,
-          // email: "desarrolloadp@serviciocivil.cl",
         };
         const userID = "user_j03eIIBx2tfg0roipyWbX";
         const templateID = "claveAPP";
@@ -1134,10 +1149,11 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const destinatario = this.adps[i].mail;
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Clave app", concurso, fecha]],
+            data: [["Clave app", concurso, fecha, destinatario]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -1161,7 +1177,6 @@ export default {
           nombre_ADP: nombre,
           apellido_ADP: apellido,
           email: this.adps[i].mail,
-          // email: "desarrolloadp@serviciocivil.cl",
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
@@ -1182,10 +1197,11 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const destinatario = this.adps[i].mail;
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Bienvenida", concurso, fecha]],
+            data: [["Bienvenida", concurso, fecha, destinatario]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -1230,10 +1246,11 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const destinatario = this.adps[i].mail;
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Bienvenida Renovado", concurso, fecha]],
+            data: [["Bienvenida Renovado", concurso, fecha, destinatario]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -1275,14 +1292,20 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const mailDestinatario = solicitaConfirmacion;
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Cuestionario de cierre", concurso, fecha]],
+            data: [
+              ["Cuestionario de cierre", concurso, fecha, mailDestinatario],
+            ],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
           Vue.$toast.success("Correo enviado y registrado en planilla");
+          Vue.$toast.info(
+            "Recuerda registrar la alerta en SICDE y también en planilla de desvinculados"
+          );
         } else {
           Vue.$toast.warning("No se registró correo en planilla");
         }
@@ -1320,10 +1343,11 @@ export default {
             " " +
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
+          const destinatario = this.adps[i].mail_contraparte_cd;
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Encuesta de percepción", concurso, fecha]],
+            data: [["Encuesta de percepción", concurso, fecha, destinatario]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
