@@ -3,9 +3,9 @@
     <table class="table table-bordered text-center">
       <thead>
         <tr>
-          <th scope="col">Propuesta</th>
-          <th scope="col">Suscripción</th>
-          <th scope="col">Comunicación</th>
+          <th scope="col">Alerta 0</th>
+          <th scope="col">Alerta 60</th>
+          <th scope="col">Alerta 90</th>
         </tr>
       </thead>
       <tbody>
