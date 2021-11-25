@@ -235,31 +235,35 @@ export default {
   },
   props: ["indice"],
   methods: {
+    cuadroDeConfirmacion(mail) {
+      return confirm(`¿Seguro que quieres enviar esta alerta al mail ${mail}`);
+    },
+    formateaFecha(fecha) {
+      return fecha.split("T00:00:00.000Z")[0].split("-");
+    },
     // Correos de Alerta
     alertaCero(i) {
       // Cuadro de diálogo para confirmar envío de correo
-      const solicitaConfirmacion = confirm(
-        `¿Seguro que quieres enviar la Alerta Cero al mail ${this.adps[i].mail_contraparte_cd}`
-      );
+      const solicitaConfirmacion = this.cuadroDeConfirmacion("holi");
       if (solicitaConfirmacion) {
         // Se formatean fechas
-        const fechaNombramiento = this.adps[i].fecha_nombramiento_renovacion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-        const fechaSuscripcion = this.adps[i].fecha_suscripcion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
-        const fechaComunicacion = this.adps[i].fecha_comunicacion
-          .split("T00:00:00.000Z")[0]
-          .split("-");
+        const fechaNombramiento = this.formateaFecha(
+          this.adps[i].fecha_nombramiento_renovacion
+        );
+        const fechaSuscripcion = this.formateaFecha(
+          this.adps[i].fecha_suscripcion
+        );
+        const fechaComunicacion = this.formateaFecha(
+          this.adps[i].fecha_comunicacion
+        );
 
         // Variables requeridas por EmailJS
         const templateParams = {
           nombre_ADP: this.adps[i].nombre_corregido,
           apellido_ADP: this.adps[i].apellido_corregido,
           cargo_ADP: this.adps[i].cargo,
-          email: this.adps[i].mail_contraparte_cd,
-          // email: "desarrolloadp@serviciocivil.cl",
+          // email: this.adps[i].mail_contraparte_cd,
+          email: "yersonob@gmail.com",
           nombramiento_ADP: `${fechaNombramiento[2]}/${fechaNombramiento[1]}/${fechaNombramiento[0]}`,
           suscripcion_ADP: `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`,
           comunicacion_ADP: `${fechaComunicacion[2]}/${fechaComunicacion[1]}/${fechaComunicacion[0]}`,
@@ -308,7 +312,9 @@ export default {
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Alerta Cero primer periodo", concurso, fecha, destinatario]],
+            data: [
+              ["Alerta Cero primer periodo", concurso, fecha, destinatario],
+            ],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -512,7 +518,7 @@ export default {
             new Date().toLocaleTimeString();
           const concurso = this.adps[i].concurso;
           const destinatario = this.adps[i].mail_contraparte_cd;
-          
+
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
