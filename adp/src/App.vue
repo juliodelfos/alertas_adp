@@ -43,8 +43,8 @@ export default {
         .get(
           "https://v1.nocodeapi.com/yerigagarin/uptime/AUpowmIbIGdzFDkI?monitors=789280592"
         )
-        .then((response) => {
-          this.fetch_EstadoSICDE(response.data.stat);
+        .then(({ data: { stat } }) => {
+          this.fetch_EstadoSICDE(stat);
         })
         .catch((error) => {
           console.log(error);
