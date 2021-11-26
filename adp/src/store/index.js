@@ -6,7 +6,10 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    user: "",
+    user: {
+      loggedIn: false,
+      data: null,
+    },
     adps: [],
     estadoSICDE: "",
     servicios: [
@@ -653,30 +656,39 @@ export default new Vuex.Store({
     FETCH_ADP(state, data) {
       state.adps = data;
     },
-    SOCIAL_LOGIN(state, user) {
-      state.user = user;
-    },
-    SOCIAL_LOGOUT(state) {
-      state.user = "";
-    },
     FETCH_ESTADOSICDE(state, data) {
       state.estadoSICDE = data;
+    },
+    SET_LOGGED_IN(state, value) {
+      state.user.loggedIn = value;
+    },
+    SET_USER(state, data) {
+      state.user.data = data;
     },
   },
   actions: {
     fetch_Adp({ commit }, data) {
       commit("FETCH_ADP", data);
     },
-    social_Login({ commit }, user) {
-      commit("SOCIAL_LOGIN", user);
-    },
-    social_Logout({ commit }) {
-      commit("SOCIAL_LOGOUT");
-    },
     fetch_EstadoSICDE({ commit }, data) {
       commit("FETCH_ESTADOSICDE", data);
     },
+    fetchUser({ commit }, user) {
+      commit("SET_LOGGED_IN", user !== null);
+      if (user) {
+        commit("SET_USER", {
+          displayName: user.displayName,
+          email: user.email,
+        });
+      } else {
+        commit("SET_USER", null);
+      }
+    },
   },
-  getters: {},
+  getters: {
+    user(state) {
+      return state.user;
+    },
+  },
   // plugins: [createPersistedState()],
 });

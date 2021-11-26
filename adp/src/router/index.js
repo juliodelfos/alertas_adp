@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import firebase from "firebase";
+import firebase from "firebase";
 
 //Vistas
 import Inicio from "@/views/Inicio.vue";
@@ -15,6 +15,7 @@ Vue.use(VueRouter);
 
 const router = new VueRouter({
   mode: "history",
+  base: process.env.BASE_URL,
   routes: [
     {
       path: "/",
@@ -25,20 +26,21 @@ const router = new VueRouter({
       path: "/tabla",
       name: "Tabla",
       component: Tabla,
+      meta: { requiresAuth: true },
     },
     {
       path: "/tarjetas",
       name: "Tarjetas",
       component: Tarjetas,
       props: true,
-      // meta: { requiresAuth: true },
+      meta: { requiresAuth: true },
     },
     {
       path: "/perfil/:indice",
       name: "Perfil",
       component: Perfil,
       props: true,
-      // meta: { requiresAuth: true },
+      meta: { requiresAuth: true },
     },
     {
       path: "*",
@@ -48,10 +50,23 @@ const router = new VueRouter({
   ],
 });
 
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+  const isAuthenticated = firebase.auth().currentUser;
+  requiresAuth && !isAuthenticated ? next("Tarjetas") : next();
+});
+
 // router.beforeEach((to, from, next) => {
 //   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
 //   const isAuthenticated = firebase.auth().currentUser;
-//   requiresAuth && !isAuthenticated ? next("VistaPrincipal") : next();
+//   if (isAuthenticated && to.name === "Inicio") {
+//     next({ name: "Tarjetas" });
+//   }
+//   if (requiresAuth && !isAuthenticated) {
+//     next({ name: "NotFound" });
+//   } else {
+//     next();
+//   }
 // });
 
 export default router;

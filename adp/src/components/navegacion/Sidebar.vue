@@ -36,26 +36,12 @@ export default {
           external: true,
           title: "Estado SICDE",
           icon: "fa fa-check-circle",
-          badge: {
-            text: "",
-            class: "vsm--badge_default",
-          },
         },
       ],
     };
   },
   computed: {
-    ...mapState(["user", "estadoSICDE"]),
-    // asignaTextoMonitorSicde() {
-    //   const estadoSICDE =
-    //     this.estadoSICDE == "ok"
-    //       ? (this.menu[4].badge.text = "Operativo")
-    //       : (this.menu[4].badge.text = "Caído");
-    //   return estadoSICDE;
-    // },
-  },
-  created() {
-    this.menu[4].badge.text = this.estadoSICDE;
+    ...mapState(["user"]),
   },
 };
 </script>

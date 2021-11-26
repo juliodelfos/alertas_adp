@@ -31,10 +31,14 @@ const firebaseConfig = {
   projectId: "dnsc-ccaf2",
   storageBucket: "dnsc-ccaf2.appspot.com",
   messagingSenderId: "354745127673",
-  appId: "1:354745127673:web:31a30e80e606941ad8c828",
+  appId: "1:354745127673:web:31a30e80e606941ad8c828"
 };
 
 firebase.initializeApp(firebaseConfig);
+
+firebase.auth().onAuthStateChanged(user => {
+  store.dispatch("fetchUser", user);
+});
 
 //MomentJS
 import moment from "moment";
