@@ -4,7 +4,7 @@
       :menu="menu"
       widthCollapsed="3.12rem"
       :collapsed="collapsed"
-      @item-click="cerrarSesion(signOut(), menu[6])"
+      @item-click="signOut"
     />
   </div>
 </template>
@@ -55,21 +55,21 @@ export default {
           icon: "fa fa-sign-out-alt",
         },
       ],
+      index: "",
     };
   },
   methods: {
-    signOut() {
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          this.$router.replace({
-            name: "Inicio",
+    signOut({ type }, { title }, { _uid }) {
+      if (title === "Salir") {
+        firebase
+          .auth()
+          .signOut()
+          .then(() => {
+            this.$router.replace({
+              name: "Inicio",
+            });
           });
-        });
-    },
-    cerrarSesion(event, item) {
-      console.log(event, item);
+      }
     },
   },
   computed: {
@@ -77,3 +77,4 @@ export default {
   },
 };
 </script>
+
