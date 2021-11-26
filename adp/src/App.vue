@@ -116,4 +116,10 @@ export default {
     color: white;
   }
 }
+
+.vsm--icon {
+  // height: 80% !important;
+  // width: 80% !important;
+  padding: 5px;
+}
 </style>

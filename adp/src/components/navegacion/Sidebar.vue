@@ -1,19 +1,27 @@
 <template>
   <div>
-    <sidebar-menu :menu="menu"  widthCollapsed="3.12rem" />
+    <sidebar-menu
+      :menu="menu"
+      widthCollapsed="3.12rem"
+      :collapsed="collapsed"
+      @item-click="cerrarSesion(signOut(), menu[6])"
+    />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+import firebase from "firebase";
+
 export default {
   name: "Sidebar",
   data() {
     return {
+      collapsed: true,
       menu: [
         {
           header: true,
-          title: "Navegación",
+          title: "Vistas",
           hiddenOnCollapse: true,
         },
         {
@@ -35,10 +43,34 @@ export default {
           href: "https://stats.uptimerobot.com/LG7nQhkY42",
           external: true,
           title: "Estado SICDE",
-          icon: "fa fa-check-circle",
+          icon: "fa fa-info-circle",
+        },
+        {
+          header: true,
+          title: "Opciones",
+          hiddenOnCollapse: true,
+        },
+        {
+          title: "Salir",
+          icon: "fa fa-sign-out-alt",
         },
       ],
     };
+  },
+  methods: {
+    signOut() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace({
+            name: "Inicio",
+          });
+        });
+    },
+    cerrarSesion(event, item) {
+      console.log(event, item);
+    },
   },
   computed: {
     ...mapState(["user"]),
