@@ -59,8 +59,6 @@ img {
 }
 </style>
 
-
-
 <script>
 import firebase from "firebase";
 import Vue from "vue";
@@ -84,8 +82,8 @@ export default {
           this.$router.replace({ name: "Tarjetas" });
           Vue.$toast.success(`Bienvenida ${email}`);
         })
-        .catch((err) => {
-          this.error = err.message;
+        .catch(({ message }) => {
+          this.error = message;
         });
     },
   },
