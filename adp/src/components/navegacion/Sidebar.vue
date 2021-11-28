@@ -55,7 +55,6 @@ export default {
           icon: "fa fa-sign-out-alt",
         },
       ],
-      index: "",
     };
   },
   methods: {
@@ -64,11 +63,11 @@ export default {
         firebase
           .auth()
           .signOut()
-          .then(() => {
+          .then(() =>
             this.$router.replace({
               name: "Inicio",
-            });
-          });
+            })
+          );
       }
     },
   },
