@@ -31,8 +31,8 @@ export default {
         .get(
           "https://script.google.com/macros/s/AKfycbxOVp8dMaTZYznfrzAvO4g8Lj_Fo3k6MUGRv806R2VVljJAjnZj9_pbtisUce3OV-PUhA/exec"
         )
-        .then((response) => {
-          this.fetch_Adp(response.data.data);
+        .then(({ data: { data } }) => {
+          this.fetch_Adp(data);
         })
         .catch((error) => {
           console.log(error);
@@ -118,8 +118,6 @@ export default {
 }
 
 .vsm--icon {
-  // height: 80% !important;
-  // width: 80% !important;
   padding: 5px;
 }
 </style>

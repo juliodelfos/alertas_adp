@@ -238,15 +238,25 @@ export default {
     cuadroDeConfirmacion(mail) {
       return confirm(`¿Seguro que quieres enviar esta alerta al mail ${mail}`);
     },
+    // Formatea fecha para texto
     formateaFecha(fecha) {
       return fecha.split("T00:00:00.000Z")[0].split("-");
+    },
+    // Formatea fecha para añadir link a añadir a Calendar en el mail
+    formateaFechaCalendar(fecha) {
+      return fecha.split("T00:00:00.000Z")[0];
+    },
+    addFechaToCalendar(motivo, fecha, nombre, apellido) {
+      return `<a href="https://calndr.link/d/event/?service=google&start=${fecha} 08:00&title=${motivo} ${nombre} ${apellido}&timezone=America/Santiago">Añadir al Calendario</a>`;
     },
     // Correos de Alerta
     alertaCero(i) {
       // Cuadro de diálogo para confirmar envío de correo
-      const solicitaConfirmacion = this.cuadroDeConfirmacion("holi");
+      const solicitaConfirmacion = this.cuadroDeConfirmacion(
+        this.adps[i].mail_contraparte_cd
+      );
       if (solicitaConfirmacion) {
-        // Se formatean fechas
+        // Se formatean fechas para texto
         const fechaNombramiento = this.formateaFecha(
           this.adps[i].fecha_nombramiento_renovacion
         );
@@ -256,39 +266,47 @@ export default {
         const fechaComunicacion = this.formateaFecha(
           this.adps[i].fecha_comunicacion
         );
+        // Se formatean fechas para link de añadir a Calendar
+        const fechaNombramientoParaCalendar = this.formateaFechaCalendar(
+          this.adps[i].fecha_nombramiento_renovacion
+        );
+        const fechaSuscripcionParaCalendar = this.formateaFechaCalendar(
+          this.adps[i].fecha_suscripcion
+        );
+        const fechaComunicacionParaCalendar = this.formateaFechaCalendar(
+          this.adps[i].fecha_comunicacion
+        );
 
         // Variables requeridas por EmailJS
         const templateParams = {
           nombre_ADP: this.adps[i].nombre_corregido,
           apellido_ADP: this.adps[i].apellido_corregido,
           cargo_ADP: this.adps[i].cargo,
-          // email: this.adps[i].mail_contraparte_cd,
-          email: "yersonob@gmail.com",
+          email: this.adps[i].mail_contraparte_cd,
+          // email: "yersonob@gmail.com",
           nombramiento_ADP: `${fechaNombramiento[2]}/${fechaNombramiento[1]}/${fechaNombramiento[0]}`,
           suscripcion_ADP: `${fechaSuscripcion[2]}/${fechaSuscripcion[1]}/${fechaSuscripcion[0]}`,
           comunicacion_ADP: `${fechaComunicacion[2]}/${fechaComunicacion[1]}/${fechaComunicacion[0]}`,
-          anadir_nombramiento: `<a href="https://calndr.link/d/event/?service=google&start=${
-            this.adps[i].fecha_nombramiento_renovacion.split(
-              "T00:00:00.000Z"
-            )[0]
-          } 08:00&title=Inicio elaboración convenio ${
-            this.adps[i].nombre_corregido
-          } ${
+          anadir_nombramiento: this.addFechaToCalendar(
+            "Inicio elaboración convenio",
+            fechaNombramientoParaCalendar,
+            this.adps[i].nombre_corregido,
             this.adps[i].apellido_corregido
-          }&timezone=America/Santiago">Añadir al Calendario</a>`,
-          anadir_suscripcion: `<a href="https://calndr.link/d/event/?service=google&start=${
-            this.adps[i].fecha_suscripcion.split("T00:00:00.000Z")[0]
-          } 08:00&title=Suscripción convenio ${this.adps[i].nombre_corregido} ${
+          ),
+          anadir_suscripcion: this.addFechaToCalendar(
+            "Suscripción convenio",
+            fechaSuscripcionParaCalendar,
+            this.adps[i].nombre_corregido,
             this.adps[i].apellido_corregido
-          }&timezone=America/Santiago">Añadir al Calendario</a>`,
-          anadir_comunicacion: `<a href="https://calndr.link/d/event/?service=google&start=${
-            this.adps[i].fecha_comunicacion.split("T00:00:00.000Z")[0]
-          } 08:00&title=Comunicación convenio ${
-            this.adps[i].nombre_corregido
-          } ${
+          ),
+          anadir_comunicacion: this.addFechaToCalendar(
+            "Comunicación convenio",
+            fechaComunicacionParaCalendar,
+            this.adps[i].nombre_corregido,
             this.adps[i].apellido_corregido
-          } (90 días)&timezone=America/Santiago">Añadir al Calendario</a>`,
+          ),
         };
+
         const userID = "user_j03eIIBx2tfg0roipyWbX";
         const templateID = "alerta0_nombrado";
         const serviceID = "desarrolloadp";
@@ -296,8 +314,8 @@ export default {
         const correo = emailjs
           .send(serviceID, templateID, templateParams, userID)
           .then(
-            (result) => console.log(result.text),
-            (error) => console.log(error.text)
+            ({ text }) => console.log(text),
+            ({ text }) => console.log(text)
           );
 
         //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
@@ -316,7 +334,7 @@ export default {
               ["Alerta Cero primer periodo", concurso, fecha, destinatario],
             ],
           })
-            .then((response) => console.log(response.data))
+            .then(({ data }) => console.log(data))
             .catch((error) => console.log(error));
           Vue.$toast.success("Correo enviado y registrado en planilla");
         } else {
