@@ -1,10 +1,7 @@
 <template>
   <main class="form-signin">
     <form @submit.prevent="submit">
-      <img
-        src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Logo%20blanco.png?alt=media&token=a7238305-c52c-4d5a-801c-d979626c3651"
-        alt="Logo Servicio Civil"
-      />
+      <img src="@/assets/SC.png" alt="Logo Servicio Civil" />
       <div class="form-floating">
         <input
           type="email"
