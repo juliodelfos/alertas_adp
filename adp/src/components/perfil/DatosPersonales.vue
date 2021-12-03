@@ -292,13 +292,13 @@ export default {
         nombre_ADP: this.adps[i].nombre_corregido,
         apellido_ADP: this.adps[i].apellido_corregido,
         cargo_ADP: this.adps[i].cargo,
-        // email_Contraparte_Conv: this.adps[i].mail_contraparte_cd,
-        // email_Contraparte_Eval: this.adps[i].mail_contraparte_eval,
-        // email_ADP: this.adps[i].email,
+        email_Contraparte_Conv: this.adps[i].mail_contraparte_cd,
+        email_Contraparte_Eval: this.adps[i].mail_contraparte_eval,
+        email_ADP: this.adps[i].email,
         // Sólo para pruebas //
-        email_Contraparte_Conv: "yersonob@gmail.com",
-        email_Contraparte_Eval: "yersonob@gmail.com",
-        email_ADP: "yersonob@gmail.com",
+        // email_Contraparte_Conv: "yersonob@gmail.com",
+        // email_Contraparte_Eval: "yersonob@gmail.com",
+        // email_ADP: "yersonob@gmail.com",
         nombramiento_ADP: `${this.fechaNombramiento(i)[2]}/${
           this.fechaNombramiento(i)[1]
         }/${this.fechaNombramiento(i)[0]}`,

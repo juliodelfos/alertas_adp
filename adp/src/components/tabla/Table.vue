@@ -1,5 +1,5 @@
 <template>
-  <b-container class="mt-4">
+  <b-container class="my-4">
     <grid
       :cols="cols"
       :rows="adps"
@@ -28,13 +28,14 @@ export default {
         "Nombre",
         "Apellido",
         "Cargo",
-        "Servicio",
+        "Encargado",
         {
           name: "Indice",
           formatter: (cell) => html(`<span>${cell}</span>`),
         },
+        "Servicio",
         {
-          name: "Actions",
+          name: "Detalles",
           formatter: (cell, { _cells }) => {
             return h(
               "button",
@@ -66,7 +67,7 @@ export default {
       },
       pagination: {
         enabled: true,
-        limit: 7,
+        limit: 20,
         summary: true,
       },
     };
