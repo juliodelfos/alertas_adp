@@ -292,13 +292,13 @@ export default {
         nombre_ADP: this.adps[i].nombre_corregido,
         apellido_ADP: this.adps[i].apellido_corregido,
         cargo_ADP: this.adps[i].cargo,
-        email_Contraparte_Conv: this.adps[i].mail_contraparte_cd,
-        email_Contraparte_Eval: this.adps[i].mail_contraparte_eval,
-        email_ADP: this.adps[i].email,
+        // email_Contraparte_Conv: this.adps[i].mail_contraparte_cd,
+        // email_Contraparte_Eval: this.adps[i].mail_contraparte_eval,
+        // email_ADP: this.adps[i].email,
         // Sólo para pruebas //
-        // email_Contraparte_Conv: "yersonob@gmail.com",
-        // email_Contraparte_Eval: "yersonob@gmail.com",
-        // email_ADP: "yersonob@gmail.com",
+        email_Contraparte_Conv: "yersonob@gmail.com",
+        email_Contraparte_Eval: "yersonob@gmail.com",
+        email_ADP: "yersonob@gmail.com",
         nombramiento_ADP: `${this.fechaNombramiento(i)[2]}/${
           this.fechaNombramiento(i)[1]
         }/${this.fechaNombramiento(i)[0]}`,
@@ -361,23 +361,28 @@ export default {
     },
     // Alerta
     baseAlertas(tipodeAlerta, nombrePlantilla, nombreEnPlanilla, i) {
-      // Cuadro de diálogo para confirmar envío de correo
-      const solicitaConfirmacion = this.cuadroDeConfirmacion(
-        tipodeAlerta,
-        this.adps[i].mail_contraparte_cd
-      );
-      if (solicitaConfirmacion) {
-        // Valores para EmailJS
-        const correo = this.enviaCorreoPorEmailJS(nombrePlantilla, i);
-        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
-        if (correo) {
-          this.registraAlertaPlanilla(nombreEnPlanilla, i);
-          Vue.$toast.success("Correo enviado y registrado en planilla");
+      // Se evalúa que se haya iniciado expediente en SICDE
+      if (this.adps[i].estado_cd !== "null") {
+        // Cuadro de diálogo para confirmar envío de correo
+        const solicitaConfirmacion = this.cuadroDeConfirmacion(
+          tipodeAlerta,
+          this.adps[i].mail_contraparte_cd
+        );
+        if (solicitaConfirmacion) {
+          // Valores para EmailJS
+          const correo = this.enviaCorreoPorEmailJS(nombrePlantilla, i);
+          //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+          if (correo) {
+            this.registraAlertaPlanilla(nombreEnPlanilla, i);
+            Vue.$toast.success("Correo enviado y registrado en planilla");
+          } else {
+            Vue.$toast.warning("No se registró correo en planilla");
+          }
         } else {
-          Vue.$toast.warning("No se registró correo en planilla");
+          Vue.$toast.warning("Correo no enviado");
         }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        alert("Debes iniciar expediente del concurso en SICDE primero");
       }
     },
     // Correos de Alerta
