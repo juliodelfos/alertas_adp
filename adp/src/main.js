@@ -69,6 +69,10 @@ Vue.use(VueSidebarMenu);
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 
+//Vue Meta
+import VueMeta from "vue-meta";
+Vue.use(VueMeta);
+
 Vue.config.productionTip = false;
 
 new Vue({

@@ -24,6 +24,28 @@ export default {
       conteiner: "conteiner",
     };
   },
+   metaInfo: {
+    title: "SEA",
+    titleTemplate: "%s | Sistema de Envío de Alertas",
+    htmlAttrs: {
+      lang: "es",
+    },
+    meta: [
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "description",
+        content: "Sistema de Envío de Alertas",
+      },
+    ],
+    script: [
+      {
+        src: "https://plausible.io/js/plausible.js",
+        "data-domain": "sea-adp.netlify.app",
+        defer: true,
+      },
+    ],
+  },
   methods: {
     ...mapActions(["fetch_Adp", "fetch_EstadoSICDE"]),
     fetchAdp() {

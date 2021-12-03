@@ -25,6 +25,7 @@
       <b-button variant="primary" class="w-100 btn" type="submit">
         Ingresar
       </b-button>
+      <p v-show="this.error" class="text-white pt-3">Usuario o clave incorrecto</p>
     </form>
   </main>
 </template>
