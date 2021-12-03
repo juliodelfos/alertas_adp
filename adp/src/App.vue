@@ -64,6 +64,10 @@ export default {
   color: green;
 }
 
+#convenioNulo {
+  color: rgb(180, 34, 90);
+}
+
 .cursor {
   cursor: pointer;
 }

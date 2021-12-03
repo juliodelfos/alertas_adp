@@ -75,6 +75,11 @@
               ><b> Estado de convenio:</b> {{ estado_cd }}
               <b-icon icon="check-circle-fill" id="convenioSuscrito"></b-icon>
             </td>
+            <td v-else-if="estado_cd == 'null'">
+              <b-icon icon="question-octagon-fill"></b-icon
+              ><b> Estado de convenio:</b> Iniciar expediente
+              <b-icon icon="cone-striped" id="convenioNulo"></b-icon>
+            </td>
             <td v-else>
               <b-icon icon="question-octagon-fill"></b-icon
               ><b> Estado de convenio:</b> {{ estado_cd }}
@@ -115,6 +120,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>
