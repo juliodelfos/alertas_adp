@@ -56,17 +56,4 @@ router.beforeEach((to, from, next) => {
   requiresAuth && !isAuthenticated ? next("Tarjetas") : next();
 });
 
-// router.beforeEach((to, from, next) => {
-//   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
-//   const isAuthenticated = firebase.auth().currentUser;
-//   if (isAuthenticated && to.name === "Inicio") {
-//     next({ name: "Tarjetas" });
-//   }
-//   if (requiresAuth && !isAuthenticated) {
-//     next({ name: "NotFound" });
-//   } else {
-//     next();
-//   }
-// });
-
 export default router;
