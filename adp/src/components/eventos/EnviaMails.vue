@@ -25,9 +25,6 @@ export default {
     return {
       concurso: "",
       destinatarios: [],
-      adptmail: "",
-      adptconcurso: "",
-
       //   adps: [
       //     {
       //       concurso: "2113",
@@ -91,6 +88,7 @@ export default {
       }
       this.concurso = "";
     },
+
     recorreArregloEnviaMail() {
       this.destinatarios.forEach((adp, i) => {
         setTimeout(() => {
@@ -131,6 +129,9 @@ export default {
   },
   computed: {
     ...mapState(["adps"]),
+    // simplificaDestinatarios() {
+    //   return this.destinatarios.map(({ concurso }) => concurso);
+    // },
   },
 };
 </script>
