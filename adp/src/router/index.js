@@ -7,6 +7,8 @@ import Inicio from "@/views/Inicio.vue";
 import Tabla from "@/views/Tabla.vue";
 import Tarjetas from "@/views/Tarjetas.vue";
 import Perfil from "@/views/Perfil.vue";
+import Eventos from "@/views/Eventos.vue";
+import RegistroExitoso from "@/views/RegistroExitoso.vue";
 
 //404
 import NotFound from "@/views/NotFound.vue";
@@ -41,6 +43,20 @@ const router = new VueRouter({
       component: Perfil,
       props: true,
       meta: { requiresAuth: true },
+    },
+    {
+      path: "/eventos",
+      name: "Eventos",
+      component: Eventos,
+      props: true,
+      meta: { requiresAuth: false },
+    },
+    {
+      path: "/exito",
+      name: "RegistroExitoso",
+      component: RegistroExitoso,
+      props: true,
+      meta: { requiresAuth: false },
     },
     {
       path: "*",
