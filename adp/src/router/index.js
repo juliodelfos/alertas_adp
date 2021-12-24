@@ -45,18 +45,18 @@ const router = new VueRouter({
       meta: { requiresAuth: true },
     },
     {
-      path: "/eventos",
+      path: "/evaluaciones",
       name: "Eventos",
       component: Eventos,
       props: true,
-      meta: { requiresAuth: false },
+      meta: { requiresAuth: true },
     },
     {
       path: "/exito",
       name: "RegistroExitoso",
       component: RegistroExitoso,
       props: true,
-      meta: { requiresAuth: false },
+      meta: { requiresAuth: true },
     },
     {
       path: "*",

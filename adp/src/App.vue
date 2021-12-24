@@ -114,6 +114,7 @@ export default {
   grid-area: 1 / 2 / 2 / 3;
 }
 
+
 .sidebarHide {
   display: grid;
   grid-template-columns: 0fr 1fr;

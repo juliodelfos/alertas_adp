@@ -1,33 +1,35 @@
 <template>
-  <main class="form-signin">
-    <form @submit.prevent="submit">
-      <img src="@/assets/SC.png" alt="Logo Servicio Civil" />
-      <div class="form-floating">
-        <input
-          type="email"
-          class="form-control"
-          id="floatingInput"
-          placeholder="napellido@serviciocivil.cl"
-          v-model="form.email"
-        />
-        <label for="floatingInput">Correo institucional</label>
-      </div>
-      <div class="form-floating">
-        <input
-          type="password"
-          class="form-control"
-          id="floatingPassword"
-          placeholder="Contraseña"
-          v-model="form.password"
-        />
-        <label for="floatingPassword">Contraseña</label>
-      </div>
-      <b-button variant="primary" class="w-100 btn" type="submit">
-        Ingresar
-      </b-button>
-      <p v-show="this.error" class="text-white pt-3">Usuario o clave incorrecto</p>
-    </form>
-  </main>
+    <main class="form-signin">
+      <form @submit.prevent="submit">
+        <img src="@/assets/SC.png" alt="Logo Servicio Civil" />
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="napellido@serviciocivil.cl"
+            v-model="form.email"
+          />
+          <label for="floatingInput">Correo institucional</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Contraseña"
+            v-model="form.password"
+          />
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+        <b-button variant="primary" class="w-100 btn" type="submit">
+          Ingresar
+        </b-button>
+        <p v-show="this.error" class="text-white pt-3">
+          Usuario o clave incorrecto
+        </p>
+      </form>
+    </main>
 </template>
 
 

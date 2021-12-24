@@ -35,6 +35,11 @@ export default {
           icon: "fa fa-table",
         },
         {
+          href: { path: "/evaluaciones" },
+          title: "Evaluaciones mensuales",
+          icon: "fa fa-mail-bulk",
+        },
+        {
           header: true,
           title: "Más información",
           hiddenOnCollapse: true,
