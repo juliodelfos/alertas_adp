@@ -120,7 +120,6 @@ export default {
         mes: mes,
         cargo: this.adps[indice].cargo,
         encargado: this.adps[indice].encargado,
-        // mail_encargado: this.adps[i].encargado_mail,
         inicio: `${fechaInicio(this.adps[indice])[2]}/${
           fechaInicio(this.adps[indice])[1]
         }/${fechaInicio(this.adps[indice])[0]}`,
@@ -133,9 +132,11 @@ export default {
         rex: `${fechaRex(this.adps[indice])[2]}/${
           fechaRex(this.adps[indice])[1]
         }/${fechaRex(this.adps[indice])[0]}`,
-        // mail: this.adps[indice].mail_contraparte_cd,
+        mail: this.adps[indice].mail_contraparte_cd,
+        mail_encargado: this.adps[indice].encargado_mail,
         // Sólo para pruebas //
-        mail: "yersonob@gmail.com",
+        // mail: "yersonob@gmail.com",
+        // mail_encargado: "yersonob@gmail.com",
       };
 
       emailjs
