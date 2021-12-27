@@ -32,7 +32,9 @@
         <b-button variant="danger" class="mx-1" @click="recorreArregloEnviaMail"
           >Enviar</b-button
         >
-        <b-button variant="info" class="mx-1" @click="limpiarTabla">Limpiar tabla</b-button>
+        <b-button variant="info" class="mx-1" @click="limpiarTabla"
+          >Limpiar tabla</b-button
+        >
       </div>
     </div>
   </b-container>
@@ -42,6 +44,7 @@
 import { mapState } from "vuex";
 import emailjs from "emailjs-com";
 import Vue from "vue";
+import axios from "axios";
 
 export default {
   name: "EnviaMails",
@@ -63,6 +66,7 @@ export default {
       arregloApartirDeVariosConcursos.forEach((adp) => {
         const datosCompletos = this.adps.find((c) => c.concurso == adp);
         let {
+          indice,
           concurso,
           nombre_corregido,
           apellido_corregido,
@@ -72,6 +76,7 @@ export default {
         } = datosCompletos;
         if (datosCompletos) {
           this.destinatarios.push({
+            indice,
             concurso,
             nombre_corregido,
             apellido_corregido,
@@ -90,40 +95,49 @@ export default {
     },
     recorreArregloEnviaMail() {
       let mes = this.solicitaMes();
-      this.destinatarios.forEach((adp, i) => {
+      this.destinatarios.forEach(({ indice }, i) => {
         setTimeout(() => {
-          this.enviaCorreoPorEmailJS(i, mes);
+          this.enviaCorreoPorEmailJS(mes, indice);
         }, i * 1000);
       });
+      Vue.$toast.success("Correo enviado y registrado en planilla", {
+        queue: true,
+      });
     },
-    // confirmar(concurso, mail, evento) {
-    //   return `<a href="http://localhost:8080/exito?c=${concurso}&mail=${mail}&evento=${evento}" target="_blank">Aquí</a>`;
-    // },
-    enviaCorreoPorEmailJS(i, mes) {
+    enviaCorreoPorEmailJS(mes, indice) {
       const formateaFecha = (fecha) =>
         fecha.split("T00:00:00.000Z")[0].split("-");
-      const fechaInicio = (i) => formateaFecha(this.adps[i].eval_anual_inicio);
-      const fechaEval = (i) => formateaFecha(this.adps[i].eval_anual_auto);
-      const fechaRetro = (i) => formateaFecha(this.adps[i].eval_anual_retro);
-      const fechaRex = (i) => formateaFecha(this.adps[i].eval_anual_rex);
+      const fechaInicio = () =>
+        formateaFecha(this.adps[indice].eval_anual_inicio);
+      const fechaEval = () => formateaFecha(this.adps[indice].eval_anual_auto);
+      const fechaRetro = () =>
+        formateaFecha(this.adps[indice].eval_anual_retro);
+      const fechaRex = () => formateaFecha(this.adps[indice].eval_anual_rex);
 
       let parametros = {
-        nombre_ADP: this.adps[i].nombre_corregido,
-        apellido_ADP: this.adps[i].apellido_corregido,
+        nombre_ADP: this.adps[indice].nombre_corregido,
+        apellido_ADP: this.adps[indice].apellido_corregido,
         mes: mes,
-        cargo: this.adps[i].cargo,
-        encargado: this.adps[i].encargado,
+        cargo: this.adps[indice].cargo,
+        encargado: this.adps[indice].encargado,
         // mail_encargado: this.adps[i].encargado_mail,
-        inicio: `${fechaInicio(i)[2]}/${fechaInicio(i)[1]}/${
-          fechaInicio(i)[0]
-        }`,
-        autoeval: `${fechaEval(i)[2]}/${fechaEval(i)[1]}/${fechaEval(i)[0]}`,
-        retro: `${fechaRetro(i)[2]}/${fechaRetro(i)[1]}/${fechaRetro(i)[0]}`,
-        rex: `${fechaRex(i)[2]}/${fechaRex(i)[1]}/${fechaRex(i)[0]}`,
-        // mail: this.adps[i].mail,
+        inicio: `${fechaInicio(this.adps[indice])[2]}/${
+          fechaInicio(this.adps[indice])[1]
+        }/${fechaInicio(this.adps[indice])[0]}`,
+        autoeval: `${fechaEval(this.adps[indice])[2]}/${
+          fechaEval(this.adps[indice])[1]
+        }/${fechaEval(this.adps[indice])[0]}`,
+        retro: `${fechaRetro(this.adps[indice])[2]}/${
+          fechaRetro(this.adps[indice])[1]
+        }/${fechaRetro(this.adps[indice])[0]}`,
+        rex: `${fechaRex(this.adps[indice])[2]}/${
+          fechaRex(this.adps[indice])[1]
+        }/${fechaRex(this.adps[indice])[0]}`,
+        // mail: this.adps[indice].mail_contraparte_cd,
         // Sólo para pruebas //
         mail: "yersonob@gmail.com",
       };
+
       emailjs
         .send(
           "desarrolloadp",
@@ -132,10 +146,26 @@ export default {
           "user_j03eIIBx2tfg0roipyWbX"
         )
         .then(
-          ({ text }) =>
-            Vue.$toast.success("Todas las alertas han sido enviadas"),
+          ({ text }) => console.log(text),
           ({ text }) => console.log(text)
         );
+      axios({
+        method: "post",
+        url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+        data: [
+          [
+            `Alerta evaluación mensual ${mes}`,
+            this.adps[indice].concurso,
+            new Date().toLocaleDateString() +
+              " " +
+              new Date().toLocaleTimeString(),
+            // this.adps[indice].mail_contraparte_cd,
+            "yersonob@gmail.com",
+          ],
+        ],
+      })
+        .then(({ data }) => console.log(data))
+        .catch((error) => console.log(error));
     },
   },
   computed: {
