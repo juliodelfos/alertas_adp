@@ -1,39 +1,40 @@
 <template>
-  <b-container class="py-3">
-    <h1 class="fs-4 mb-3">Envío de correo que informa evaluación mensual</h1>
-    <p>
-      Se puede copiar uno o varios concursos, directamente desde un Excel. En
-      caso de añadir más de un concurso "a mano", separar cada uno de ellos por
-      un espacio.
-    </p>
-    <p>
-      Cada correo enviado sale con una diferencia de 1 segundo entre ellos, por
-      lo que 60 correos tomaría 1 minuto.
-      <b
-        >No cerrar la ventana hasta recibir confirmación de envío de todos los
-        correos</b
-      >
-    </p>
-    <b-input-group prepend="Concursos" class="mt-3 mb-4">
-      <b-form-input v-model="concurso"></b-form-input>
-      <b-input-group-append>
-        <b-button variant="primary" @click="anadeADPcomoDestinatario(concurso)"
-          >Añadir</b-button
-        >
-      </b-input-group-append>
-    </b-input-group>
-
-    <h1 class="fs-4 text-center mb-3" v-show="destinatarios.length > 0">
-      Destinatarios
-    </h1>
+  <b-container class="py-4">
     <div>
-      <b-table striped hover :items="destinatarios"></b-table>
-      <div class="text-center" v-show="destinatarios.length > 0">
-        <b-button variant="danger" class="mx-1" @click="recorreArregloEnviaMail"
+      <h1 class="fs-3 mb-4 text-center">
+        Envío de correo que informa evaluación mensual
+      </h1>
+      <div class="mb-3">
+        <p>
+          El listado a continuación muestra los ADP a evaluarse durante el mes
+          en curso.
+        </p>
+        <p>
+          Cada correo enviado sale con una diferencia de 1 segundo entre ellos,
+          por lo que 60 correos tomaría 1 minuto.
+          <b
+            >No cerrar la ventana hasta recibir confirmación de envío de todos
+            los correos.</b
+          >
+        </p>
+        <p>
+          Para el mes {{ this.mes }} del año {{ this.ano }}, deben evaluarse
+          {{ this.adpsDeEsteMes.length }} ADPs.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <b-table
+        responsive
+        striped
+        hover
+        :items="adpsDeEsteMes"
+        :fields="fields"
+      ></b-table>
+      <div class="text-center" v-show="adpsDeEsteMes.length > 0">
+        <b-button variant="danger" class="mx-1" @click="enviarCorreosDelMes"
           >Enviar</b-button
-        >
-        <b-button variant="info" class="mx-1" @click="limpiarTabla"
-          >Limpiar tabla</b-button
         >
       </div>
     </div>
@@ -52,57 +53,59 @@ export default {
   data() {
     return {
       concurso: "",
+      mes: "",
+      ano: "",
       destinatarios: [],
+      adpsDeEsteMes: [],
+      fields: [
+        {
+          key: "concurso",
+          sortable: true,
+        },
+        {
+          key: "nombre_corregido",
+          sortable: true,
+          label: "Nombre",
+          formatter: (value, key, item) => {
+            return value ? value + " " + item.apellido_corregido : "No";
+          },
+        },
+        {
+          key: "fecha_nombramiento_renovacion",
+          sortable: true,
+          label: "Fecha nombramiento/renovación",
+          formatter: (value, key, item) => {
+            return value
+              ? value.split("T00:00:00.000Z")[0].split("-").join(`/`)
+              : "No";
+          },
+        },
+        {
+          key: "eval_anual_inicio",
+          sortable: true,
+          label: "Fecha inicio evaluación",
+          formatter: (value, key, item) => {
+            return value
+              ? value.split("T00:00:00.000Z")[0].split("-").join(`/`)
+              : "Nombrado este año";
+          },
+        },
+        {
+          key: "mail",
+          sortable: true,
+          label: "Correo ADP",
+        },
+        {
+          key: "mail_contraparte_cd",
+          sortable: true,
+          label: "Correo Contraparte",
+        },
+      ],
     };
   },
   methods: {
-    limpiarTabla() {
-      this.destinatarios = [];
-    },
-    anadeADPcomoDestinatario(concurso) {
-      // Creo arreglo a partir de los concursos añadidos
-      const arregloApartirDeVariosConcursos = concurso.split(" ");
-      // Recorro arreglo y compruebo que existan en mi base
-      arregloApartirDeVariosConcursos.forEach((adp) => {
-        const datosCompletos = this.adps.find((c) => c.concurso == adp);
-        let {
-          indice,
-          concurso,
-          nombre_corregido,
-          apellido_corregido,
-          cargo,
-          servicio,
-          encargado_mail,
-        } = datosCompletos;
-        if (datosCompletos) {
-          this.destinatarios.push({
-            indice,
-            concurso,
-            nombre_corregido,
-            apellido_corregido,
-            cargo,
-            servicio,
-            encargado_mail,
-          });
-        } else {
-          console.log("no");
-        }
-      });
-      this.concurso = "";
-    },
     solicitaMes() {
       return prompt(`¿Qué mes corresponde la alerta?`, `Ej. diciembre`);
-    },
-    recorreArregloEnviaMail() {
-      let mes = this.solicitaMes();
-      this.destinatarios.forEach(({ indice }, i) => {
-        setTimeout(() => {
-          this.enviaCorreoPorEmailJS(mes, indice);
-        }, i * 1000);
-      });
-      Vue.$toast.success("Correo enviado y registrado en planilla", {
-        queue: true,
-      });
     },
     enviaCorreoPorEmailJS(mes, indice) {
       const formateaFecha = (fecha) =>
@@ -135,8 +138,8 @@ export default {
         mail: this.adps[indice].mail_contraparte_cd,
         mail_encargado: this.adps[indice].encargado_mail,
         // Sólo para pruebas //
-        // mail: "yersonob@gmail.com",
-        // mail_encargado: "yersonob@gmail.com",
+        // mail: "yerson.o.b@gmail.com",
+        // mail_encargado: "yers.on.ob@gmail.com",
       };
 
       emailjs
@@ -150,6 +153,7 @@ export default {
           ({ text }) => console.log(text),
           ({ text }) => console.log(text)
         );
+
       axios({
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
@@ -160,17 +164,61 @@ export default {
             new Date().toLocaleDateString() +
               " " +
               new Date().toLocaleTimeString(),
-            // this.adps[indice].mail_contraparte_cd,
-            "yersonob@gmail.com",
+            this.adps[indice].mail_contraparte_cd,
+            // "yersonob@gmail.com",
           ],
         ],
       })
         .then(({ data }) => console.log(data))
         .catch((error) => console.log(error));
     },
+    ADPsAEvaluarseMesEnCurso() {
+      let ADPqueDebenEvaluarseEsteMes = this.adps
+        .filter(
+          ({ eval_anual_inicio, mail, fecha_nombramiento_renovacion }) =>
+            eval_anual_inicio.split("T00:00:00.000Z")[0].split("-")[1] ===
+              this.mes &&
+            fecha_nombramiento_renovacion
+              .split("T00:00:00.000Z")[0]
+              .split("-")[0] <= this.ano &&
+            mail !== "null"
+        )
+        .filter(
+          ({ servicio, nivel }) => !(servicio.includes("Local") && nivel == "I")
+        )
+        .filter(
+          (value, index, self) =>
+            index === self.findIndex((t) => t.concurso === value.concurso)
+        );
+      this.adpsDeEsteMes = ADPqueDebenEvaluarseEsteMes;
+    },
+    enviarCorreosDelMes() {
+      let mes = this.solicitaMes();
+      this.adpsDeEsteMes.forEach(({ indice }, i) => {
+        setTimeout(() => {
+          this.enviaCorreoPorEmailJS(mes, indice);
+        }, i * 1000);
+      });
+      Vue.$toast.success("Correo enviado y registrado en planilla", {
+        queue: true,
+      });
+    },
   },
   computed: {
     ...mapState(["adps"]),
+    mesActual() {
+      const mesActual = new Date().toLocaleDateString().split("/")[1];
+      return mesActual;
+    },
+    anoActual() {
+      const anoActual = new Date().toLocaleDateString().split("/")[2];
+      return anoActual;
+    },
+  },
+  mounted() {
+    this.mes = this.mesActual;
+    this.ano = this.anoActual;
+    this.ADPsAEvaluarseMesEnCurso();
   },
 };
 </script>

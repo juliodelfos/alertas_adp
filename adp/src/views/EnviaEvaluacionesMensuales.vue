@@ -8,7 +8,7 @@
 import EnviaMails from "@/components/eventos/EnviaMails.vue";
 
 export default {
-  name: "Eventos",
+  name: "EvaluacionesMensuales",
   components: {
     EnviaMails,
   },

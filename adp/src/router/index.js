@@ -7,7 +7,8 @@ import Inicio from "@/views/Inicio.vue";
 import Tabla from "@/views/Tabla.vue";
 import Tarjetas from "@/views/Tarjetas.vue";
 import Perfil from "@/views/Perfil.vue";
-import Eventos from "@/views/Eventos.vue";
+import EnviaEvaluacionesMensuales from "@/views/EnviaEvaluacionesMensuales.vue";
+import EnviarCorreosMasivos from "@/views/EnviarCorreosMasivos.vue";
 import RegistroExitoso from "@/views/RegistroExitoso.vue";
 
 //404
@@ -45,9 +46,16 @@ const router = new VueRouter({
       meta: { requiresAuth: true },
     },
     {
-      path: "/evaluaciones",
-      name: "Eventos",
-      component: Eventos,
+      path: "/evaluaciones-mensuales",
+      name: "EnviaEvaluacionesMensuales",
+      component: EnviaEvaluacionesMensuales,
+      props: true,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: "/correos-masivos",
+      name: "EnviarCorreosMasivos",
+      component: EnviarCorreosMasivos,
       props: true,
       meta: { requiresAuth: true },
     },

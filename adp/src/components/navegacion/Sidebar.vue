@@ -35,7 +35,12 @@ export default {
           icon: "fa fa-table",
         },
         {
-          href: { path: "/evaluaciones" },
+          href: { path: "/correos-masivos" },
+          title: "Correos masivos",
+          icon: "fa fa-envelope-square",
+        },
+        {
+          href: { path: "/evaluaciones-mensuales" },
           title: "Evaluaciones mensuales",
           icon: "fa fa-mail-bulk",
         },
