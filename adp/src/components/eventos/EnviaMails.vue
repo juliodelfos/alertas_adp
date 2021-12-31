@@ -125,16 +125,16 @@ export default {
         encargado: this.adps[indice].encargado,
         inicio: `${fechaInicio(this.adps[indice])[2]}/${
           fechaInicio(this.adps[indice])[1]
-        }/${fechaInicio(this.adps[indice])[0]}`,
+        }/${this.ano}`,
         autoeval: `${fechaEval(this.adps[indice])[2]}/${
           fechaEval(this.adps[indice])[1]
-        }/${fechaEval(this.adps[indice])[0]}`,
+        }/${this.ano}`,
         retro: `${fechaRetro(this.adps[indice])[2]}/${
           fechaRetro(this.adps[indice])[1]
-        }/${fechaRetro(this.adps[indice])[0]}`,
+        }/${this.ano}`,
         rex: `${fechaRex(this.adps[indice])[2]}/${
           fechaRex(this.adps[indice])[1]
-        }/${fechaRex(this.adps[indice])[0]}`,
+        }/${this.ano}`,
         mail: this.adps[indice].mail_contraparte_cd,
         mail_encargado: this.adps[indice].encargado_mail,
         // Sólo para pruebas //
@@ -184,7 +184,9 @@ export default {
             mail !== "null"
         )
         .filter(
-          ({ servicio, nivel }) => !(servicio.includes("Local") && nivel == "I")
+          ({ servicio, nivel }) =>
+            !(servicio.includes("Local") && nivel == "I") &&
+            !(servicio == "Servicio Electoral" && nivel == "I")
         )
         .filter(
           (value, index, self) =>
