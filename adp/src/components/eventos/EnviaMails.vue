@@ -210,7 +210,7 @@ export default {
     ...mapState(["adps"]),
     mesActual() {
       const mesActual = new Date().toLocaleDateString().split("/")[1];
-      return mesActual;
+      return `0${mesActual}`;
     },
     anoActual() {
       const anoActual = new Date().toLocaleDateString().split("/")[2];
