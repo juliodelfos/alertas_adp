@@ -295,6 +295,7 @@ export default {
         email_Contraparte_Conv: this.adps[i].mail_contraparte_cd,
         email_Contraparte_Eval: this.adps[i].mail_contraparte_eval,
         email_ADP: this.adps[i].email,
+        mail_encargado: this.adps[i].encargado_mail,
         // Sólo para pruebas //
         // email_Contraparte_Conv: "yersonob@gmail.com",
         // email_Contraparte_Eval: "yersonob@gmail.com",
