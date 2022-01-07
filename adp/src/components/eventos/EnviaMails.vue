@@ -55,6 +55,7 @@ export default {
       concurso: "",
       mes: "",
       ano: "",
+      fechaActual: "",
       destinatarios: [],
       adpsDeEsteMes: [],
       fields: [
@@ -135,7 +136,7 @@ export default {
         rex: `${fechaRex(this.adps[indice])[2]}/${
           fechaRex(this.adps[indice])[1]
         }/${this.ano}`,
-        mail: this.adps[indice].mail_contraparte_cd,
+        mail: this.adps[indice].mail_contraparte_eval,
         mail_encargado: this.adps[indice].encargado_mail,
         // Sólo para pruebas //
         // mail: "yerson.o.b@gmail.com",
@@ -216,10 +217,21 @@ export default {
       const anoActual = new Date().toLocaleDateString().split("/")[2];
       return anoActual;
     },
+    formateaFecha() {
+      const format = (date, locale, options) =>
+        new Intl.DateTimeFormat(locale, options).format(date);
+      const now = new Date();
+      return format(now, "es", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      });
+    },
   },
   mounted() {
     this.mes = this.mesActual;
     this.ano = this.anoActual;
+    this.fechaActual = this.formateaFecha;
     this.ADPsAEvaluarseMesEnCurso();
   },
 };

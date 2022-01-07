@@ -190,6 +190,8 @@
             :estado_adp="adps[this.indice].estado_adp"
             @claveSICDE="claveSICDE(adps[indice].indice)"
             @claveAPP="claveAPP(adps[indice].indice)"
+            @bienvenida="bienvenida(adps[indice].indice)"
+            @bienvenidaRenovado="bienvenidaRenovado(adps[indice].indice)"
             @encuestaCierre="encuestaCierre(adps[indice].indice)"
             @encuestaPercepcion="encuestaPercepcion(adps[indice].indice)"
           />
@@ -235,8 +237,8 @@ export default {
   props: ["indice"],
   methods: {
     // Retorna una ventana de confirmación para el envío del mail
-    cuadroDeConfirmacion(tipo, mail) {
-      return confirm(`¿Enviar ${tipo} al mail ${mail}`);
+    cuadroDeConfirmacion(tipo) {
+      return confirm(`¿Enviar ${tipo}?`);
     },
     // Retorna arreglo de fechas tipo ["01", "23", "2021"]
     formateaFecha(fecha) {
@@ -257,14 +259,16 @@ export default {
         new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString()
       );
     },
+    // Crea clave app
+    creaClaveAPP(texto) {
+      // Retira tildes
+      return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    },
     // Retorna número de concurso
     concursoADP(i) {
       return this.adps[i].concurso;
     },
-    // Retorna valor del correo al que se envió la alerta
-    correoDestinatarioContraparte(i) {
-      return this.adps[i].mail_contraparte_cd;
-    },
+
     // Fechas que van en el texto del correo
     fechaNombramiento(i) {
       return this.formateaFecha(this.adps[i].fecha_nombramiento_renovacion);
@@ -294,8 +298,10 @@ export default {
         cargo_ADP: this.adps[i].cargo,
         email_Contraparte_Conv: this.adps[i].mail_contraparte_cd,
         email_Contraparte_Eval: this.adps[i].mail_contraparte_eval,
-        email_ADP: this.adps[i].email,
+        email_ADP: this.adps[i].mail,
         mail_encargado: this.adps[i].encargado_mail,
+        estado_cd: this.adps[i].estado_cd,
+        encargado: this.adps[i].encargado,
         // Sólo para pruebas //
         // email_Contraparte_Conv: "yersonob@gmail.com",
         // email_Contraparte_Eval: "yersonob@gmail.com",
@@ -327,21 +333,23 @@ export default {
           this.adps[i].nombre_corregido,
           this.adps[i].apellido_corregido
         ),
+        // Variables de app
+        clave_APP: this.creaClaveAPP(
+          this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
+            this.adps[i].apellido_corregido.charAt(0).toLowerCase() +
+            `1234`
+        ),
+        usuario_APP: this.adps[i].rut,
+        // Sólo primer nombre
+        nombre_ADP_corto: this.adps[i].nombre_corregido.split(" ")[0],
       };
     },
     // Registra correo en Planilla Google Sheets
-    async registraAlertaPlanilla(motivo, i) {
+    async registraAlertaPlanilla(motivo, destinatario, i) {
       await axios({
         method: "post",
         url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-        data: [
-          [
-            motivo,
-            this.concursoADP(i),
-            this.fechaYHora(),
-            this.correoDestinatarioContraparte(i),
-          ],
-        ],
+        data: [[motivo, this.concursoADP(i), this.fechaYHora(), destinatario]],
       })
         .then(({ data }) => console.log(data))
         .catch((error) => console.log(error));
@@ -361,20 +369,23 @@ export default {
         );
     },
     // Alerta
-    baseAlertas(tipodeAlerta, nombrePlantilla, nombreEnPlanilla, i) {
+    baseAlertas(
+      tipodeAlerta,
+      nombrePlantilla,
+      nombreEnPlanilla,
+      destinatario,
+      i
+    ) {
       // Se evalúa que se haya iniciado expediente en SICDE
       if (this.adps[i].estado_cd !== "null") {
         // Cuadro de diálogo para confirmar envío de correo
-        const solicitaConfirmacion = this.cuadroDeConfirmacion(
-          tipodeAlerta,
-          this.adps[i].mail_contraparte_cd
-        );
+        const solicitaConfirmacion = this.cuadroDeConfirmacion(tipodeAlerta);
         if (solicitaConfirmacion) {
           // Valores para EmailJS
           const correo = this.enviaCorreoPorEmailJS(nombrePlantilla, i);
           //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
           if (correo) {
-            this.registraAlertaPlanilla(nombreEnPlanilla, i);
+            this.registraAlertaPlanilla(nombreEnPlanilla, destinatario, i);
             Vue.$toast.success("Correo enviado y registrado en planilla");
           } else {
             Vue.$toast.warning("No se registró correo en planilla");
@@ -427,6 +438,7 @@ export default {
         "Alerta 0",
         "alerta0_nombrado",
         "Alerta Cero primero periodo",
+        this.adps[i].mail_contraparte_cd,
         i
       );
     },
@@ -435,20 +447,26 @@ export default {
         "Alerta 0 Renovado",
         "alerta0_renovado",
         "Alerta Cero Renovado",
+        this.adps[i].mail_contraparte_cd,
+
         i
       );
     },
     alertaSesenta(i) {
-      this.baseAlertas("Alerta 60", "alerta60", "Alerta Sesenta", i);
+      this.baseAlertas(
+        "Alerta 60",
+        "alerta60",
+        "Alerta Sesenta",
+        this.adps[i].mail_contraparte_cd,
+        i
+      );
     },
     alertaNoventa(i) {
-      this.baseAlertas("Alerta 90", "alerta90", "Alerta Noventa", i);
-    },
-    autoEvalSemestral(i) {
       this.baseAlertas(
-        "Alerta Evaluación Semestral pendiente",
-        "autoEvalParcial",
-        "Eval parcial pendiente",
+        "Alerta 90",
+        "alerta90",
+        "Alerta Noventa",
+        this.adps[i].mail_contraparte_cd,
         i
       );
     },
@@ -457,6 +475,7 @@ export default {
         "Alerta Evaluación Semestral pendiente",
         "autoEvalParcial",
         "Eval parcial pendiente",
+        this.adps[i].mail,
         i
       );
     },
@@ -465,6 +484,7 @@ export default {
         "Alerta Evaluación Anual pendiente",
         "autoEvalAnual",
         "Eval anual pendiente",
+        this.adps[i].mail,
         i
       );
     },
@@ -473,6 +493,7 @@ export default {
         "Alerta REX Evaluación Anual pendiente",
         "rexEvalAnual",
         "REX Eval anual pendiente",
+        this.adps[i].mail_contraparte_eval,
         i
       );
     },
@@ -481,6 +502,7 @@ export default {
         "Encuesta de percepción",
         "encuestaPercepcion",
         "Encuesta de percepción",
+        this.adps[i].mail_contraparte_cd,
         i
       );
     },
@@ -582,6 +604,7 @@ export default {
           usuario_SICDE: this.adps[i].mail,
           clave_SICDE: clave,
           email_ADP: this.adps[i].mail,
+          mail_encargado: this.adps[i].encargado_mail,
           // email: "desarrolloadp@serviciocivil.cl",
         };
         const userID = "user_j03eIIBx2tfg0roipyWbX";
@@ -607,7 +630,7 @@ export default {
           axios({
             method: "post",
             url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Clave SICDE", concurso, fecha, destinatario]],
+            data: [["Clave SICDE", concurso, fecha, this.adps[i].mail]],
           })
             .then((response) => console.log(response.data))
             .catch((error) => console.log(error));
@@ -622,16 +645,12 @@ export default {
     claveAPP(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = this.cuadroDeConfirmacion(
-        "clave app en formato na1234",
+        "clave app en formato ab1234",
         this.adps[i].mail
       );
 
       if (solicitaConfirmacion) {
-        // Función para remover tildes
-        const removeAccents = (str) =>
-          str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-        const iniciales = removeAccents(
+        const iniciales = this.creaClaveAPP(
           this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
             this.adps[i].apellido_corregido.charAt(0).toLowerCase()
         );
@@ -640,9 +659,10 @@ export default {
 
         // Variables requeridas por EmailJS
         const templateParams = {
-          usuario_APP: this.adps[i].mail,
+          usuario_APP: this.adps[i].rut,
           clave_APP: clave,
           email_ADP: this.adps[i].mail,
+          mail_encargado: this.adps[i].encargado_mail,
         };
         const userID = "user_j03eIIBx2tfg0roipyWbX";
         const templateID = "claveAPP";
@@ -677,6 +697,25 @@ export default {
       } else {
         Vue.$toast.warning("Correo no enviado");
       }
+    },
+
+    bienvenida(i) {
+      this.baseAlertas(
+        "Bienvenida primer periodo",
+        "bienvenida_adp",
+        "Bienvenida primer periodo",
+        this.adps[i].mail,
+        i
+      );
+    },
+    bienvenidaRenovado(i) {
+      this.baseAlertas(
+        "Bienvenida ADP renovado",
+        "bienvenida_adp_renovado",
+        "Bienvenida ADP renovado",
+        this.adps[i].mail,
+        i
+      );
     },
     encuestaCierre(i) {
       const solicitaConfirmacion = prompt(
