@@ -18,7 +18,7 @@
           >
         </p>
         <p>
-          Para el mes {{ this.mes }} del año {{ this.ano }}, deben evaluarse
+          Para el periodo {{ this.formateaFecha }} deben evaluarse
           {{ this.adpsDeEsteMes.length }} ADPs.
         </p>
       </div>
@@ -53,14 +53,18 @@ export default {
   data() {
     return {
       concurso: "",
-      mes: "",
-      ano: "",
-      fechaActual: "",
+      // mes: "",
+      // ano: "",
+      mes_Ano: "",
       destinatarios: [],
       adpsDeEsteMes: [],
       fields: [
         {
           key: "concurso",
+          sortable: true,
+        },
+        {
+          key: "estado_adp",
           sortable: true,
         },
         {
@@ -126,16 +130,16 @@ export default {
         encargado: this.adps[indice].encargado,
         inicio: `${fechaInicio(this.adps[indice])[2]}/${
           fechaInicio(this.adps[indice])[1]
-        }/${this.ano}`,
+        }/${this.anoActual}`,
         autoeval: `${fechaEval(this.adps[indice])[2]}/${
           fechaEval(this.adps[indice])[1]
-        }/${this.ano}`,
+        }/${this.anoActual}`,
         retro: `${fechaRetro(this.adps[indice])[2]}/${
           fechaRetro(this.adps[indice])[1]
-        }/${this.ano}`,
+        }/${this.anoActual}`,
         rex: `${fechaRex(this.adps[indice])[2]}/${
           fechaRex(this.adps[indice])[1]
-        }/${this.ano}`,
+        }/${this.anoActual}`,
         mail: this.adps[indice].mail_contraparte_eval,
         mail_encargado: this.adps[indice].encargado_mail,
         // Sólo para pruebas //
@@ -175,13 +179,16 @@ export default {
     },
     ADPsAEvaluarseMesEnCurso() {
       let ADPqueDebenEvaluarseEsteMes = this.adps
+        // .filter(
+        //   ({ concurso }) => concurso == 5389 || concurso == 5893
+        // );
         .filter(
           ({ eval_anual_inicio, mail, fecha_nombramiento_renovacion }) =>
             eval_anual_inicio.split("T00:00:00.000Z")[0].split("-")[1] ===
-              this.mes &&
+              this.mesActual &&
             fecha_nombramiento_renovacion
               .split("T00:00:00.000Z")[0]
-              .split("-")[0] <= this.ano &&
+              .split("-")[0] <= this.anoActual &&
             mail !== "null"
         )
         .filter(
@@ -190,11 +197,24 @@ export default {
             !(servicio == "Servicio Electoral" && nivel == "I")
         )
         .filter(
+          ({ fecha_nombramiento_renovacion, estado_adp }) =>
+            !(
+              fecha_nombramiento_renovacion
+                .split("T00:00:00.000Z")[0]
+                .split("-")
+                .splice(0, 2)
+                .sort()
+                .join("/") == this.mes_Ano &&
+              estado_adp == "Nombrado (primer periodo)"
+            )
+        )
+        .filter(
           (value, index, self) =>
             index === self.findIndex((t) => t.concurso === value.concurso)
         );
       this.adpsDeEsteMes = ADPqueDebenEvaluarseEsteMes;
     },
+
     enviarCorreosDelMes() {
       let mes = this.solicitaMes();
       this.adpsDeEsteMes.forEach(({ indice }, i) => {
@@ -206,32 +226,65 @@ export default {
         queue: true,
       });
     },
+    format(date, locale, options) {
+      return new Intl.DateTimeFormat(locale, options).format(date);
+    },
   },
   computed: {
     ...mapState(["adps"]),
     mesActual() {
-      const mesActual = new Date().toLocaleDateString().split("/")[1];
-      return `0${mesActual}`;
-    },
-    anoActual() {
-      const anoActual = new Date().toLocaleDateString().split("/")[2];
-      return anoActual;
-    },
-    formateaFecha() {
-      const format = (date, locale, options) =>
-        new Intl.DateTimeFormat(locale, options).format(date);
       const now = new Date();
-      return format(now, "es", {
+      const mes_AnoCompleta = this.format(now, "es", {
         day: "2-digit",
         month: "2-digit",
         year: "numeric",
       });
+      const mes = mes_AnoCompleta.split("/")[1];
+      return mes;
+
+      // const mesActual = new Date().toLocaleDateString().split("/")[1];
+      // return `0${mesActual}`;
+    },
+    anoActual() {
+      const now = new Date();
+      const mes_AnoCompleta = this.format(now, "es", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      });
+      const year = mes_AnoCompleta.split("/")[2];
+      return year;
+      // const anoActual = new Date().toLocaleDateString().split("/")[2];
+      // return anoActual;
+    },
+    formateaFecha() {
+      const now = new Date();
+      const mes_AnoCompleta = this.format(now, "es", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      });
+      const fechaMesAno = mes_AnoCompleta.split("/").splice(1, 2).join("/");
+      return fechaMesAno;
+    },
+    fechaPrueba() {
+      const fechaADP = this.adps[2].fecha_nombramiento_renovacion
+        .split("T00:00:00.000Z")[0]
+        .split("-")
+        .splice(0, 2)
+        .sort()
+        .join("/");
+      // return `${fechaADP[1]}/${fechaADP[0]}`;
+      return fechaADP;
+    },
+    largoArregloDestinatarios() {
+      return this.adpsDeEsteMes.length;
     },
   },
   mounted() {
-    this.mes = this.mesActual;
-    this.ano = this.anoActual;
-    this.fechaActual = this.formateaFecha;
+    // this.mes = this.mesActual;
+    // this.ano = this.anoActual;
+    this.mes_Ano = this.formateaFecha;
     this.ADPsAEvaluarseMesEnCurso();
   },
 };

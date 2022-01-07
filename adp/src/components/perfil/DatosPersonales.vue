@@ -727,6 +727,7 @@ export default {
         const templateParams = {
           nombre_ADP: nombre,
           email: solicitaConfirmacion,
+          mail_encargado: this.adps[i].encargado_mail,
         };
 
         const userID = "user_j03eIIBx2tfg0roipyWbX";
@@ -758,9 +759,12 @@ export default {
             .then(({ data }) => console.log(data))
             .catch((error) => console.log(error));
           Vue.$toast.success("Correo enviado y registrado en planilla");
-          Vue.$toast.info(
-            "Recuerda registrar la alerta en SICDE y también en planilla de desvinculados"
-          );
+          Vue.$toast.open({
+            message:
+              "Recuerda registrar la alerta en SICDE y también en planilla de desvinculados",
+            type: "info",
+            duration: 7000,
+          });
         } else {
           Vue.$toast.warning("No se registró correo en planilla");
         }

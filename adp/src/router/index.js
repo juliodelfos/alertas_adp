@@ -50,7 +50,7 @@ const router = new VueRouter({
       name: "EnviaEvaluacionesMensuales",
       component: EnviaEvaluacionesMensuales,
       props: true,
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: false },
     },
     {
       path: "/correos-masivos",
