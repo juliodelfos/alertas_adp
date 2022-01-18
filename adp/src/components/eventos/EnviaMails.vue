@@ -10,8 +10,8 @@
           en curso.
         </p>
         <p>
-          Cada correo enviado sale con una diferencia de 1 segundo entre ellos,
-          por lo que 60 correos tomaría 1 minuto.
+          Cada correo enviado sale con una diferencia de 2 segundo entre ellos,
+          por lo que 60 correos tomarían 2 minutos.
           <b
             >No cerrar la ventana hasta recibir confirmación de envío de todos
             los correos.</b
@@ -220,7 +220,7 @@ export default {
       this.adpsDeEsteMes.forEach(({ indice }, i) => {
         setTimeout(() => {
           this.enviaCorreoPorEmailJS(mes, indice);
-        }, i * 1000);
+        }, i * 2000);
       });
       Vue.$toast.success("Correo enviado y registrado en planilla", {
         queue: true,

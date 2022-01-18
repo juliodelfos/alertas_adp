@@ -34,11 +34,11 @@ export default {
           title: "Tabla",
           icon: "fa fa-table",
         },
-        {
-          href: { path: "/correos-masivos" },
-          title: "Correos masivos",
-          icon: "fa fa-envelope-square",
-        },
+        // {
+        //   href: { path: "/correos-masivos" },
+        //   title: "Correos masivos",
+        //   icon: "fa fa-envelope-square",
+        // },
         {
           href: { path: "/evaluaciones-mensuales" },
           title: "Evaluaciones mensuales",
