@@ -24,7 +24,7 @@ export default {
       conteiner: "conteiner",
     };
   },
-   metaInfo: {
+  metaInfo: {
     title: "SEA",
     titleTemplate: "%s | Sistema de Envío de Alertas",
     htmlAttrs: {
@@ -42,6 +42,12 @@ export default {
       {
         src: "https://plausible.io/js/plausible.js",
         "data-domain": "sea-adp.netlify.app",
+        defer: true,
+      },
+    ],
+    script: [
+      {
+        src: "https://smtpjs.com/v3/smtp.js",
         defer: true,
       },
     ],
@@ -113,7 +119,6 @@ export default {
 .main {
   grid-area: 1 / 2 / 2 / 3;
 }
-
 
 .sidebarHide {
   display: grid;
