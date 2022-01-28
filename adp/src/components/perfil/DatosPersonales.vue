@@ -215,11 +215,16 @@ import Identificacion from "@/components/perfil/datos_personales/Identificacion.
 import Grafico from "@/components/perfil/datos_personales/Grafico.vue";
 import UltimosCorreos from "@/components/perfil/datos_personales/UltimosCorreos.vue";
 // import { cuerpoClaveAPP } from "@/plantillasMail.js";
-import { enviaClaveAPP } from "@/metodosEnvioMails/claveAPP.js";
 import { enviaAlertaCeroNombrado } from "@/metodosEnvioMails/alertaCeroNombrado.js";
 import { enviaAlertaCeroRenovado } from "@/metodosEnvioMails/alertaCeroRenovado.js";
 import { enviaAlertaSesenta } from "@/metodosEnvioMails/alertaSesenta.js";
 import { enviaAlertaNoventa } from "@/metodosEnvioMails/alertaNoventa.js";
+import { enviaClaveSICDE } from "@/metodosEnvioMails/claveSICDE.js";
+import { enviaClaveAPP } from "@/metodosEnvioMails/claveAPP.js";
+import { enviaBienvenidaNombrado } from "@/metodosEnvioMails/bienvenidaNombrado.js";
+import { enviaBienvenidaRenovado } from "@/metodosEnvioMails/bienvenidaRenovado.js";
+import { enviaEncuestaCierre } from "@/metodosEnvioMails/encuestaCierre.js";
+import { enviaEncuestaPercepcion } from "@/metodosEnvioMails/encuestaPercepcion.js";
 
 export default {
   name: "DatosPersonales",
@@ -466,7 +471,7 @@ export default {
         });
     },
     //#endregion
-    
+
     //#region Alerta con EmailJS
     autoEvalSemestral(i) {
       this.baseAlertas(
@@ -495,15 +500,7 @@ export default {
         i
       );
     },
-    encuestaPercepcion(i) {
-      this.baseAlertas(
-        "Encuesta de percepción",
-        "encuestaPercepcion",
-        "Encuesta de percepción",
-        this.adps[i].mail_contraparte_cd,
-        i
-      );
-    },
+
     // Métodos de Calendario
     calendarAlertaCero(i) {
       this.baseCalendario(
@@ -557,8 +554,7 @@ export default {
     calendarAutoEvalAnual(i) {
       this.baseCalendario(
         "Término plazo autoevaluación anual",
-        "Término plazo autoevaluación",
-        i
+        "Término plazo autoevaluación"
       );
     },
     calendarRetroEvalAnual(i) {
@@ -576,147 +572,10 @@ export default {
       );
     },
 
-    //
-    // Otros mensajes
-    claveSICDE(i) {
-      // Cuadro de diálogo para confirmar envío de correo
-      const solicitaConfirmacion = this.cuadroDeConfirmacion(
-        "clave SICDE en formato na1234",
-        this.adps[i].mail
-      );
-
-      if (solicitaConfirmacion) {
-        // Función para remover tildes
-        const removeAccents = (str) =>
-          str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-
-        const iniciales = removeAccents(
-          this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
-            this.adps[i].apellido_corregido.charAt(0).toLowerCase()
-        );
-
-        const clave = `${iniciales}1234`;
-
-        // Variables requeridas por EmailJS
-        const templateParams = {
-          usuario_SICDE: this.adps[i].mail,
-          clave_SICDE: clave,
-          email_ADP: this.adps[i].mail,
-          mail_encargado: this.adps[i].encargado_mail,
-          // email: "desarrolloadp@serviciocivil.cl",
-        };
-        const userID = "user_j03eIIBx2tfg0roipyWbX";
-        const templateID = "claveSICDE";
-        const serviceID = "desarrolloadp";
-
-        const correo = emailjs
-          .send(serviceID, templateID, templateParams, userID)
-          .then(
-            (result) => console.log(result.text),
-            (error) => console.log(error.text)
-          );
-
-        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
-        if (correo) {
-          const fecha =
-            new Date().toLocaleDateString() +
-            " " +
-            new Date().toLocaleTimeString();
-          const concurso = this.adps[i].concurso;
-          const destinatario = this.adps[i].mail;
-
-          axios({
-            method: "post",
-            url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [["Clave SICDE", concurso, fecha, this.adps[i].mail]],
-          })
-            .then((response) => console.log(response.data))
-            .catch((error) => console.log(error));
-          Vue.$toast.success("Correo enviado y registrado en planilla");
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
-      } else {
-        Vue.$toast.warning("Correo no enviado");
-      }
-    },
-
-    bienvenida(i) {
-      this.baseAlertas(
-        "Bienvenida primer periodo",
-        "bienvenida_adp",
-        "Bienvenida primer periodo",
-        this.adps[i].mail,
-        i
-      );
-    },
-    bienvenidaRenovado(i) {
-      this.baseAlertas(
-        "Bienvenida ADP renovado",
-        "bienvenida_adp_renovado",
-        "Bienvenida ADP renovado",
-        this.adps[i].mail,
-        i
-      );
-    },
-    encuestaCierre(i) {
-      const solicitaConfirmacion = prompt(
-        `¿A qué dirección de correo enviarás esta alerta?`,
-        `Recuerda que debe ser un correo personal`
-      );
-      if (solicitaConfirmacion) {
-        const nombre = this.adps[i].nombre_corregido.split(" ")[0];
-        const templateParams = {
-          nombre_ADP: nombre,
-          email: solicitaConfirmacion,
-          mail_encargado: this.adps[i].encargado_mail,
-        };
-
-        const userID = "user_j03eIIBx2tfg0roipyWbX";
-        const templateID = "cuestionarioCierre";
-        const serviceID = "desarrolloadp";
-
-        const correo = emailjs
-          .send(serviceID, templateID, templateParams, userID)
-          .then(
-            ({ text }) => console.log(text),
-            ({ text }) => console.log(text)
-          );
-
-        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
-        if (correo) {
-          const fecha =
-            new Date().toLocaleDateString() +
-            " " +
-            new Date().toLocaleTimeString();
-          const concurso = this.adps[i].concurso;
-          const mailDestinatario = solicitaConfirmacion;
-          axios({
-            method: "post",
-            url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-            data: [
-              ["Cuestionario de cierre", concurso, fecha, mailDestinatario],
-            ],
-          })
-            .then(({ data }) => console.log(data))
-            .catch((error) => console.log(error));
-          Vue.$toast.success("Correo enviado y registrado en planilla");
-          Vue.$toast.open({
-            message:
-              "Recuerda registrar la alerta en SICDE y también en planilla de desvinculados",
-            type: "info",
-            duration: 7000,
-          });
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
-      } else {
-        Vue.$toast.warning("Correo no enviado");
-      }
-    },
     //#endregion
-    
+
     //#region Alertas con Fidelizador
+    // Convenios
     alertaCero(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = this.cuadroDeConfirmacion(`Alerta 0`);
@@ -763,7 +622,7 @@ export default {
         if (correo) {
           this.registraAlertaPlanilla(
             "Alerta Cero primero periodo",
-            this.adps[i].mail,
+            this.adps[i].mail_contraparte_cd,
             i
           );
           Vue.$toast.success("Correo enviado y registrado en planilla");
@@ -822,7 +681,7 @@ export default {
         if (correo) {
           this.registraAlertaPlanilla(
             "Alerta Cero Renovado",
-            this.adps[i].mail,
+            this.adps[i].mail_contraparte_cd,
             i
           );
           Vue.$toast.success("Correo enviado y registrado en planilla");
@@ -860,7 +719,7 @@ export default {
 
         // Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
         if (correo) {
-          this.registraAlertaPlanilla(`Alerta Sesenta`, this.adps[i].mail, i);
+          this.registraAlertaPlanilla(`Alerta Sesenta`, this.adps[i].mail_contraparte_cd, i);
           Vue.$toast.success("Correo enviado y registrado en planilla");
         } else {
           Vue.$toast.warning("No se registró correo en planilla");
@@ -905,7 +764,34 @@ export default {
 
         // Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
         if (correo) {
-          this.registraAlertaPlanilla(`Alerta Noventa`, this.adps[i].mail, i);
+          this.registraAlertaPlanilla(`Alerta Noventa`, this.adps[i].mail_contraparte_cd, i);
+          Vue.$toast.success("Correo enviado y registrado en planilla");
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
+      } else {
+        Vue.$toast.warning("Correo no enviado");
+      }
+    },
+
+    // Otras alertas
+    claveSICDE(i) {
+      // Cuadro de diálogo pregunta qué clave se enviará
+      const claveNueva = prompt(`¿Qué clave le has asignado a este ADP?`);
+
+      // Si usuario confirma envío de mail
+      if (claveNueva) {
+        // Se envía mail y se almacena en variable
+        const correo = enviaClaveSICDE(
+          this.adps[i].mail,
+          claveNueva,
+          this.adps[i].mail,
+          "Servicio Civil - Credenciales acceso SICDE"
+        );
+
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          this.registraAlertaPlanilla("Clave SICDE", this.adps[i].mail, i);
           Vue.$toast.success("Correo enviado y registrado en planilla");
         } else {
           Vue.$toast.warning("No se registró correo en planilla");
@@ -941,8 +827,8 @@ export default {
           this.adps[i].mail,
           "Servicio Civil - Clave acceso app móvil"
         );
-        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
 
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
         if (correo) {
           this.registraAlertaPlanilla("Clave app", this.adps[i].mail, i);
           Vue.$toast.success("Correo enviado y registrado en planilla");
@@ -953,6 +839,160 @@ export default {
         Vue.$toast.warning("Correo no enviado");
       }
     },
+
+    bienvenida(i) {
+      // Cuadro de diálogo para confirmar envío de correo
+      const solicitaConfirmacion = this.cuadroDeConfirmacion(
+        `Bienvenida nombrado primer periodo`
+      );
+
+      // Si usuario confirma envío de mail
+      if (solicitaConfirmacion) {
+        // Se pasan parámetros, se envía mail y se almacena en variable
+        const correo = enviaBienvenidaNombrado(
+          this.adps[i].nombre_corregido.split(" ")[0],
+          this.adps[i].encargado,
+          this.adps[i].rut,
+          this.creaClaveAPP(
+            this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
+              this.adps[i].apellido_corregido.charAt(0).toLowerCase() +
+              `1234`
+          ),
+          this.adps[i].mail,
+          "Servicio Civil - 👋 Hola {{nombre_ADP_corto}}"
+        );
+
+        // Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          this.registraAlertaPlanilla(
+            `Bienvenida primer periodo`,
+            this.adps[i].mail,
+            i
+          );
+          Vue.$toast.success("Correo enviado y registrado en planilla");
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
+      } else {
+        Vue.$toast.warning("Correo no enviado");
+      }
+    },
+
+    bienvenidaRenovado(i) {
+      // Cuadro de diálogo para confirmar envío de correo
+      const solicitaConfirmacion = this.cuadroDeConfirmacion(
+        `Bienvenida renovado (segundo o tercer periodo)`
+      );
+
+      // Si usuario confirma envío de mail
+      if (solicitaConfirmacion) {
+        // Se pasan parámetros, se envía mail y se almacena en variable
+        const correo = enviaBienvenidaRenovado(
+          this.adps[i].nombre_corregido.split(" ")[0],
+          this.adps[i].cargo,
+          this.adps[i].encargado,
+          this.adps[i].rut,
+          this.creaClaveAPP(
+            this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
+              this.adps[i].apellido_corregido.charAt(0).toLowerCase() +
+              `1234`
+          ),
+          this.adps[i].mail,
+          "Servicio Civil - 👋 Hola {{nombre_ADP_corto}} (de nuevo)"
+        );
+
+        // Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          this.registraAlertaPlanilla(
+            `Bienvenida ADP renovado`,
+            this.adps[i].mail,
+            i
+          );
+          Vue.$toast.success("Correo enviado y registrado en planilla");
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
+      } else {
+        Vue.$toast.warning("Correo no enviado");
+      }
+    },
+
+    encuestaCierre(i) {
+      // Cuadro de diálogo para confirmar envío de correo
+      const solicitaMailPersonal = prompt(
+        `¿A qué dirección de correo enviarás el cuestionario?`,
+        `Recuerda que debe ser un correo personal`
+      );
+
+      // Si usuario confirma envío de mail
+      if (solicitaMailPersonal) {
+        // Se envía mail y se almacena en variable
+        const correo = enviaEncuestaCierre(
+          this.adps[i].nombre_corregido.split(" ")[0],
+          solicitaMailPersonal,
+          "Servicio Civil - Cuestionario de cierre"
+        );
+
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          this.registraAlertaPlanilla(
+            "Cuestionario de cierre",
+            solicitaMailPersonal,
+            i
+          );
+          Vue.$toast.open({
+            message: "Enviado. Click aquí para abrir planilla de registro",
+            type: "success",
+            duration: 7000,
+            pauseOnHover: true,
+            onClick: () => {
+              window.open(
+                "https://docs.google.com/spreadsheets/d/11TB7XSCVJMDTmRbU720JmspHhJj2gKHiYLFcltxciOA/edit#gid=1953257145",
+                "_blank"
+              );
+            },
+          });
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
+      } else {
+        Vue.$toast.warning("Correo no enviado");
+      }
+    },
+
+    encuestaPercepcion(i) {
+      // Cuadro de diálogo para confirmar envío de correo
+      const solicitaConfirmacion = this.cuadroDeConfirmacion(
+        `Encuesta de percepción`
+      );
+
+      // Si usuario confirma envío de mail
+      if (solicitaConfirmacion) {
+        // Se pasan parámetros, se envía mail y se almacena en variable
+        const correo = enviaEncuestaPercepcion(
+          this.adps[i].nombre_corregido,
+          this.adps[i].apellido_corregido,
+          this.adps[i].cargo,
+          this.adps[i].mail_contraparte_cd,
+          "Servicio Civil - Encuesta percepcion suscripción convenio ADP"
+        );
+
+        // Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          this.registraAlertaPlanilla(
+            `Encuesta de percepción`,
+            this.adps[i].mail_contraparte_cd,
+            i
+          );
+          Vue.$toast.success("Correo enviado y registrado en planilla");
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
+      } else {
+        Vue.$toast.warning("Correo no enviado");
+      }
+    },
+
     //#endregion
   },
 
