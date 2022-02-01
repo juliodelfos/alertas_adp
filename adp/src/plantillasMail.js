@@ -2577,6 +2577,7 @@ const cuerpoClaveSICDE = (
 const cuerpoBienvenidaNombrado = (
   nombre_ADP_corto,
   encargado,
+  mail_encargado,
   usuario_APP,
   clave_APP
 ) => `<!-- [if !mso]><!-- --><!--<!
@@ -3292,6 +3293,7 @@ const cuerpoBienvenidaRenovado = (
   nombre_ADP_corto,
   cargo_ADP,
   encargado,
+  mail_encargado,
   usuario_APP,
   clave_APP
 ) => `<!-- [if !mso]><!-- --><!--<!
@@ -5043,6 +5045,1296 @@ const cuerpoEncuestaPercepcion = (
 </div>
 `;
 
+const cuerpoAutoEvalParcialPendiente = (
+  nombre_ADP
+) => `<!-- [if !mso]><!-- --><!--<!
+[endif]--><!-- [if mso]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    <![endif]--><!-- [if lte mso 11]>
+      <style type="text/css">
+        .mj-outlook-group-fix {
+          width: 100% !important;
+        }
+      </style>
+    <![endif]-->
+<div
+  style="
+    display: none;
+    font-size: 1px;
+    color: #ffffff;
+    line-height: 1px;
+    max-height: 0px;
+    max-width: 0px;
+    opacity: 0;
+    overflow: hidden;
+  "
+>
+  Evaluaci&oacute;n parcial pendiente
+</div>
+<div style="background-color: #ffffff">
+  <!-- [if mso | IE]>
+                    <table
+                       align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                    >
+                      <tr>
+                        <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                    <![endif]-->
+  <div style="margin: 0px auto; max-width: 600px">
+    <table
+      style="width: 100%"
+      role="presentation"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      align="center"
+    >
+      <tbody>
+        <tr>
+          <td
+            style="
+              direction: ltr;
+              font-size: 0px;
+              padding: 20px 0;
+              padding-bottom: 0px;
+              text-align: center;
+            "
+          >
+            <!-- [if mso | IE]>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                              
+                      <tr>
+                    
+                          <td
+                             class="" style="vertical-align:top;width:600px;"
+                          >
+                        <![endif]-->
+            <div
+              class="mj-column-per-100 mj-outlook-group-fix"
+              style="
+                font-size: 0px;
+                text-align: left;
+                direction: ltr;
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+              "
+            >
+              <table
+                style="vertical-align: top"
+                role="presentation"
+                border="0"
+                width="100%"
+                cellspacing="0"
+                cellpadding="0"
+              >
+                <tbody>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <table
+                        style="border-collapse: collapse; border-spacing: 0px"
+                        role="presentation"
+                        border="0"
+                        cellspacing="0"
+                        cellpadding="0"
+                      >
+                        <tbody>
+                          <tr>
+                            <td style="width: 150px">
+                              <img
+                                style="
+                                  border: 0;
+                                  display: block;
+                                  outline: none;
+                                  text-decoration: none;
+                                  height: auto;
+                                  width: 100%;
+                                  font-size: 14px;
+                                "
+                                src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Marcas%20SC.png?alt=media&amp;token=b2386672-52e0-4fe3-9213-c19f4cd2268c"
+                                alt="image description"
+                                width="50"
+                                height="auto"
+                              />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                      >
+                        <h1
+                          style="
+                            margin: 0;
+                            font-size: 24px;
+                            line-height: normal;
+                            font-weight: bold;
+                          "
+                        >
+                          Evaluaci&oacute;n parcial pendiente
+                        </h1>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- [if mso | IE]>
+                          </td>
+                        
+                      </tr>
+                    
+                                </table>
+                              <![endif]-->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- [if mso | IE]>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <table
+                       align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                    >
+                      <tr>
+                        <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                    <![endif]-->
+  <div style="margin: 0px auto; max-width: 600px">
+    <table
+      style="width: 100%"
+      role="presentation"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      align="center"
+    >
+      <tbody>
+        <tr>
+          <td
+            style="
+              direction: ltr;
+              font-size: 0px;
+              padding: 20px 0;
+              text-align: center;
+            "
+          >
+            <!-- [if mso | IE]>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                              
+                      <tr>
+                    
+                          <td
+                             class="" style="vertical-align:top;width:600px;"
+                          >
+                        <![endif]-->
+            <div
+              class="mj-column-per-100 mj-outlook-group-fix"
+              style="
+                font-size: 0px;
+                text-align: left;
+                direction: ltr;
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+              "
+            >
+              <table
+                style="vertical-align: top"
+                role="presentation"
+                border="0"
+                width="100%"
+                cellspacing="0"
+                cellpadding="0"
+              >
+                <tbody>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                      >
+                        <p style="margin: 5px 0">Estimada/o ${nombre_ADP},</p>
+                        <p
+                          style="
+                            color: #434245;
+                            font-family: Helvetica, Arial, sans-serif;
+                            font-size: 18px;
+                            font-weight: 400;
+                          "
+                        >
+                          Le recordamos que se encuentra pendiente la carga a la
+                          plataforma SICDE de la evaluaci&oacute;n parcial de su
+                          convenio de desempe&ntilde;o. En caso de dudas sobre
+                          el proceso contamos con un Centro de Ayuda, disponible
+                          a trav&eacute;s del link
+                          <a href="sicde.serviciocivil.cl"
+                            >sicde.serviciocivil.cl</a
+                          >, donde podr&aacute; revisar el paso a paso de la
+                          evaluaci&oacute;n parcial y tambi&eacute;n de otros
+                          procesos.
+                        </p>
+                        <p
+                          style="
+                            color: #434245;
+                            font-family: Helvetica, Arial, sans-serif;
+                            font-size: 18px;
+                            font-weight: 400;
+                          "
+                        >
+                          Si no ha recibido su contrase&ntilde;a, favor revisar
+                          la carpeta spam de su correo electr&oacute;nico si
+                          existen mails provenientes de la cuenta
+                          <a href="mailto:procesosintegrados@dnsc.cl"
+                            >procesosintegrados@dnsc.cl</a
+                          >
+                          o escribir al chat integrado en el ya nombrado Centro
+                          de Ayuda. El chat se encuentra disponible de lunes a
+                          viernes entre 10 a 17 horas.
+                        </p>
+                        <p
+                          style="
+                            color: #434245;
+                            font-family: Helvetica, Arial, sans-serif;
+                            font-size: 18px;
+                            font-weight: 400;
+                          "
+                        >
+                          Le recordamos que se encuentra pendiente la carga a la
+                          <a href="https://pi.serviciocivil.cl/login/index.php"
+                            >plataforma SICDE</a
+                          >
+                          de la evaluaci&oacute;n parcial de su convenio de
+                          desempe&ntilde;o. En caso de dudas sobre el proceso
+                          contamos con un Centro de Ayuda, disponible a
+                          trav&eacute;s del link
+                          <a href="https://sicde.serviciocivil.cl/"
+                            >sicde.serviciocivil.cl</a
+                          >, donde podr&aacute; revisar el paso a paso de la
+                          evaluaci&oacute;n parcial y tambi&eacute;n de otros
+                          procesos.
+                        </p>
+                        <p>
+                          <span
+                            style="
+                              color: #434245;
+                              font-family: Helvetica, Arial, sans-serif;
+                            "
+                            ><span style="font-size: 18px"
+                              >- Equipo Acompa&ntilde;amiento y Desarrollo
+                              ADP</span
+                            ></span
+                          >
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <table
+                        style="border-collapse: separate; line-height: 100%"
+                        role="presentation"
+                        border="0"
+                        cellspacing="0"
+                        cellpadding="0"
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style="
+                                border: none;
+                                border-radius: 30px;
+                                cursor: auto;
+                                mso-padding-alt: 10px 25px;
+                                background: #2e58ff;
+                              "
+                              role="presentation"
+                              align="center"
+                              valign="middle"
+                              bgcolor="#2e58ff"
+                            >
+                              <a
+                                style="
+                                  display: inline-block;
+                                  background: #2e58ff;
+                                  color: #ffffff;
+                                  font-family: Helvetica, Arial, sans-serif;
+                                  font-size: 14px;
+                                  font-weight: bold;
+                                  line-height: 30px;
+                                  margin: 0;
+                                  text-decoration: none;
+                                  text-transform: uppercase;
+                                  padding: 10px 25px;
+                                  mso-padding-alt: 0px;
+                                  border-radius: 30px;
+                                "
+                                href="https://pi.serviciocivil.cl/login/index.php"
+                                target="_blank"
+                                rel="noopener"
+                              >
+                                Ir a SICDE
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                      >
+                        &nbsp;
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      &nbsp;
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+const cuerpoAutoEvalAnualPendiente = (
+  nombre_ADP
+) => `<!-- [if !mso]><!-- --><!--<!
+[endif]--><!-- [if mso]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    <![endif]--><!-- [if lte mso 11]>
+      <style type="text/css">
+        .mj-outlook-group-fix {
+          width: 100% !important;
+        }
+      </style>
+    <![endif]-->
+<div
+  style="
+    display: none;
+    font-size: 1px;
+    color: #ffffff;
+    line-height: 1px;
+    max-height: 0px;
+    max-width: 0px;
+    opacity: 0;
+    overflow: hidden;
+  "
+>
+  Evaluaci&oacute;n anual pendiente
+</div>
+<div style="background-color: #ffffff">
+  <!-- [if mso | IE]>
+                    <table
+                       align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                    >
+                      <tr>
+                        <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                    <![endif]-->
+  <div style="margin: 0px auto; max-width: 600px">
+    <table
+      style="width: 100%"
+      role="presentation"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      align="center"
+    >
+      <tbody>
+        <tr>
+          <td
+            style="
+              direction: ltr;
+              font-size: 0px;
+              padding: 20px 0;
+              padding-bottom: 0px;
+              text-align: center;
+            "
+          >
+            <!-- [if mso | IE]>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                              
+                      <tr>
+                    
+                          <td
+                             class="" style="vertical-align:top;width:600px;"
+                          >
+                        <![endif]-->
+            <div
+              class="mj-column-per-100 mj-outlook-group-fix"
+              style="
+                font-size: 0px;
+                text-align: left;
+                direction: ltr;
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+              "
+            >
+              <table
+                style="vertical-align: top"
+                role="presentation"
+                border="0"
+                width="100%"
+                cellspacing="0"
+                cellpadding="0"
+              >
+                <tbody>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <table
+                        style="border-collapse: collapse; border-spacing: 0px"
+                        role="presentation"
+                        border="0"
+                        cellspacing="0"
+                        cellpadding="0"
+                      >
+                        <tbody>
+                          <tr>
+                            <td style="width: 150px">
+                              <img
+                                style="
+                                  border: 0;
+                                  display: block;
+                                  outline: none;
+                                  text-decoration: none;
+                                  height: auto;
+                                  width: 100%;
+                                  font-size: 14px;
+                                "
+                                src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Marcas%20SC.png?alt=media&amp;token=b2386672-52e0-4fe3-9213-c19f4cd2268c"
+                                alt="image description"
+                                width="50"
+                                height="auto"
+                              />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                      >
+                        <h1
+                          style="
+                            margin: 0;
+                            font-size: 24px;
+                            line-height: normal;
+                            font-weight: bold;
+                          "
+                        >
+                          Evaluaci&oacute;n anual pendiente
+                        </h1>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- [if mso | IE]>
+                          </td>
+                        
+                      </tr>
+                    
+                                </table>
+                              <![endif]-->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- [if mso | IE]>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <table
+                       align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                    >
+                      <tr>
+                        <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                    <![endif]-->
+  <div style="margin: 0px auto; max-width: 600px">
+    <table
+      style="width: 100%"
+      role="presentation"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      align="center"
+    >
+      <tbody>
+        <tr>
+          <td
+            style="
+              direction: ltr;
+              font-size: 0px;
+              padding: 20px 0;
+              text-align: center;
+            "
+          >
+            <!-- [if mso | IE]>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                              
+                      <tr>
+                    
+                          <td
+                             class="" style="vertical-align:top;width:600px;"
+                          >
+                        <![endif]-->
+            <div
+              class="mj-column-per-100 mj-outlook-group-fix"
+              style="
+                font-size: 0px;
+                text-align: left;
+                direction: ltr;
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+              "
+            >
+              <table
+                style="vertical-align: top"
+                role="presentation"
+                border="0"
+                width="100%"
+                cellspacing="0"
+                cellpadding="0"
+              >
+                <tbody>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                      >
+                        <p style="margin: 5px 0">Estimada/o ${nombre_ADP},</p>
+                        <p
+                          style="
+                            color: #434245;
+                            font-family: Helvetica, Arial, sans-serif;
+                            font-size: 18px;
+                            font-weight: 400;
+                          "
+                        >
+                          Le recordamos que se encuentra pendiente la carga a la
+                          plataforma SICDE de la evaluaci&oacute;n anual de su
+                          convenio de desempe&ntilde;o. En caso de dudas sobre
+                          el proceso contamos con un Centro de Ayuda, disponible
+                          a trav&eacute;s del link
+                          <a href="sicde.serviciocivil.cl"
+                            >sicde.serviciocivil.cl</a
+                          >, donde podr&aacute; revisar el paso a paso de la
+                          evaluaci&oacute;n anual y tambi&eacute;n de otros
+                          procesos.
+                        </p>
+                        <p
+                          style="
+                            color: #434245;
+                            font-family: Helvetica, Arial, sans-serif;
+                            font-size: 18px;
+                            font-weight: 400;
+                          "
+                        >
+                          Si no ha recibido su contrase&ntilde;a, favor revisar
+                          la carpeta spam de su correo electr&oacute;nico si
+                          existen mails provenientes de la cuenta
+                          <a href="mailto:procesosintegrados@dnsc.cl"
+                            >procesosintegrados@dnsc.cl</a
+                          >
+                          o escribir al chat integrado en el ya nombrado Centro
+                          de Ayuda. El chat se encuentra disponible de lunes a
+                          viernes entre 10 a 17 horas.
+                        </p>
+                        <p
+                          style="
+                            color: #434245;
+                            font-family: Helvetica, Arial, sans-serif;
+                            font-size: 18px;
+                            font-weight: 400;
+                          "
+                        >
+                          Le recordamos que se encuentra pendiente la carga a la
+                          <a href="https://pi.serviciocivil.cl/login/index.php"
+                            >plataforma SICDE</a
+                          >
+                          de la evaluaci&oacute;n anual de su convenio de
+                          desempe&ntilde;o. En caso de dudas sobre el proceso
+                          contamos con un Centro de Ayuda, disponible a
+                          trav&eacute;s del link
+                          <a href="https://sicde.serviciocivil.cl/"
+                            >sicde.serviciocivil.cl</a
+                          >, donde podr&aacute; revisar el paso a paso de la
+                          evaluaci&oacute;n anual y tambi&eacute;n de otros
+                          procesos.
+                        </p>
+                        <p>
+                          <span
+                            style="
+                              color: #434245;
+                              font-family: Helvetica, Arial, sans-serif;
+                            "
+                            ><span style="font-size: 18px"
+                              >- Equipo Acompa&ntilde;amiento y Desarrollo
+                              ADP</span
+                            ></span
+                          >
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <table
+                        style="border-collapse: separate; line-height: 100%"
+                        role="presentation"
+                        border="0"
+                        cellspacing="0"
+                        cellpadding="0"
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style="
+                                border: none;
+                                border-radius: 30px;
+                                cursor: auto;
+                                mso-padding-alt: 10px 25px;
+                                background: #2e58ff;
+                              "
+                              role="presentation"
+                              align="center"
+                              valign="middle"
+                              bgcolor="#2e58ff"
+                            >
+                              <a
+                                style="
+                                  display: inline-block;
+                                  background: #2e58ff;
+                                  color: #ffffff;
+                                  font-family: Helvetica, Arial, sans-serif;
+                                  font-size: 14px;
+                                  font-weight: bold;
+                                  line-height: 30px;
+                                  margin: 0;
+                                  text-decoration: none;
+                                  text-transform: uppercase;
+                                  padding: 10px 25px;
+                                  mso-padding-alt: 0px;
+                                  border-radius: 30px;
+                                "
+                                href="https://pi.serviciocivil.cl/login/index.php"
+                                target="_blank"
+                                rel="noopener"
+                              >
+                                Ir a SICDE
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                      >
+                        &nbsp;
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      &nbsp;
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+const cuerpoRexEvalAnualPendiente = (
+  nombre_ADP,
+  apellido_ADP
+) => `<!-- [if !mso]><!-- --><!--<!
+[endif]--><!-- [if mso]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    <![endif]--><!-- [if lte mso 11]>
+      <style type="text/css">
+        .mj-outlook-group-fix {
+          width: 100% !important;
+        }
+      </style>
+    <![endif]-->
+<div
+  style="
+    display: none;
+    font-size: 1px;
+    color: #ffffff;
+    line-height: 1px;
+    max-height: 0px;
+    max-width: 0px;
+    opacity: 0;
+    overflow: hidden;
+  "
+>
+  Resoluci&oacute;n de evaluaci&oacute;n anual pendiente
+</div>
+<div style="background-color: #ffffff">
+  <!-- [if mso | IE]>
+                    <table
+                       align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                    >
+                      <tr>
+                        <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                    <![endif]-->
+  <div style="margin: 0px auto; max-width: 600px">
+    <table
+      style="width: 100%"
+      role="presentation"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      align="center"
+    >
+      <tbody>
+        <tr>
+          <td
+            style="
+              direction: ltr;
+              font-size: 0px;
+              padding: 20px 0;
+              padding-bottom: 0px;
+              text-align: center;
+            "
+          >
+            <!-- [if mso | IE]>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                              
+                      <tr>
+                    
+                          <td
+                             class="" style="vertical-align:top;width:600px;"
+                          >
+                        <![endif]-->
+            <div
+              class="mj-column-per-100 mj-outlook-group-fix"
+              style="
+                font-size: 0px;
+                text-align: left;
+                direction: ltr;
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+              "
+            >
+              <table
+                style="vertical-align: top"
+                role="presentation"
+                border="0"
+                width="100%"
+                cellspacing="0"
+                cellpadding="0"
+              >
+                <tbody>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <table
+                        style="border-collapse: collapse; border-spacing: 0px"
+                        role="presentation"
+                        border="0"
+                        cellspacing="0"
+                        cellpadding="0"
+                      >
+                        <tbody>
+                          <tr>
+                            <td style="width: 150px">
+                              <img
+                                style="
+                                  border: 0;
+                                  display: block;
+                                  outline: none;
+                                  text-decoration: none;
+                                  height: auto;
+                                  width: 100%;
+                                  font-size: 14px;
+                                "
+                                src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Marcas%20SC.png?alt=media&amp;token=b2386672-52e0-4fe3-9213-c19f4cd2268c"
+                                alt="image description"
+                                width="50"
+                                height="auto"
+                              />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                      >
+                        <h1
+                          style="
+                            margin: 0;
+                            font-size: 24px;
+                            line-height: normal;
+                            font-weight: bold;
+                          "
+                        >
+                          Resoluci&oacute;n de evaluaci&oacute;n anual pendiente
+                        </h1>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- [if mso | IE]>
+                          </td>
+                        
+                      </tr>
+                    
+                                </table>
+                              <![endif]-->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- [if mso | IE]>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <table
+                       align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                    >
+                      <tr>
+                        <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                    <![endif]-->
+  <div style="margin: 0px auto; max-width: 600px">
+    <table
+      style="width: 100%"
+      role="presentation"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      align="center"
+    >
+      <tbody>
+        <tr>
+          <td
+            style="
+              direction: ltr;
+              font-size: 0px;
+              padding: 20px 0;
+              text-align: center;
+            "
+          >
+            <!-- [if mso | IE]>
+                                <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                              
+                      <tr>
+                    
+                          <td
+                             class="" style="vertical-align:top;width:600px;"
+                          >
+                        <![endif]-->
+            <div
+              class="mj-column-per-100 mj-outlook-group-fix"
+              style="
+                font-size: 0px;
+                text-align: left;
+                direction: ltr;
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+              "
+            >
+              <table
+                style="vertical-align: top"
+                role="presentation"
+                border="0"
+                width="100%"
+                cellspacing="0"
+                cellpadding="0"
+              >
+                <tbody>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                      >
+                        <p
+                          style="
+                            color: #434245;
+                            font-family: Helvetica, Arial, sans-serif;
+                            font-size: 18px;
+                            font-weight: 400;
+                          "
+                        >
+                          Estimada Contraparte,
+                        </p>
+                        <p
+                          style="
+                            color: #434245;
+                            font-family: Helvetica, Arial, sans-serif;
+                            font-size: 18px;
+                            font-weight: 400;
+                          "
+                        >
+                          Junto con saludarle, se informa a Ud. que a la fecha
+                          se encuentra pendiente la carga a SICDE de la
+                          resoluci&oacute;n de la evaluaci&oacute;n anual
+                          correspondiente de ${nombre_ADP} ${apellido_ADP}.
+                        </p>
+                        <p
+                          style="
+                            color: #434245;
+                            font-family: Helvetica, Arial, sans-serif;
+                            font-size: 18px;
+                            font-weight: 400;
+                          "
+                        >
+                          En caso de dudas sobre el proceso contamos con un
+                          Centro de Ayuda, disponible a trav&eacute;s del link
+                          <a
+                            href="https://sicde.serviciocivil.cl"
+                            target="_blank"
+                            rel="noopener"
+                            >sicde.serviciocivil.cl</a
+                          >, donde podr&aacute;s revisar el paso a paso de la
+                          elaboraci&oacute;n del convenio y tambi&eacute;n de
+                          otros procesos. En caso de no encontrar la
+                          informaci&oacute;n requerida puedes conversar con el
+                          equipo de Acompa&ntilde;amiento y Desarrollo a
+                          trav&eacute;s del chat integrado en el mismo sitio
+                          web.
+                          <strong
+                            >El chat se encuentra disponible de lunes a viernes
+                            de entre 10 a 17 horas</strong
+                          >.
+                        </p>
+                        <p>
+                          <span
+                            style="
+                              color: #434245;
+                              font-family: Helvetica, Arial, sans-serif;
+                            "
+                            ><span style="font-size: 18px"
+                              >- Equipo Acompa&ntilde;amiento y Desarrollo
+                              ADP</span
+                            ></span
+                          >
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <table
+                        style="border-collapse: separate; line-height: 100%"
+                        role="presentation"
+                        border="0"
+                        cellspacing="0"
+                        cellpadding="0"
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style="
+                                border: none;
+                                border-radius: 30px;
+                                cursor: auto;
+                                mso-padding-alt: 10px 25px;
+                                background: #2e58ff;
+                              "
+                              role="presentation"
+                              align="center"
+                              valign="middle"
+                              bgcolor="#2e58ff"
+                            >
+                              <a
+                                style="
+                                  display: inline-block;
+                                  background: #2e58ff;
+                                  color: #ffffff;
+                                  font-family: Helvetica, Arial, sans-serif;
+                                  font-size: 14px;
+                                  font-weight: bold;
+                                  line-height: 30px;
+                                  margin: 0;
+                                  text-decoration: none;
+                                  text-transform: uppercase;
+                                  padding: 10px 25px;
+                                  mso-padding-alt: 0px;
+                                  border-radius: 30px;
+                                "
+                                href="https://pi.serviciocivil.cl/login/index.php"
+                                target="_blank"
+                                rel="noopener"
+                              >
+                                Ir a SICDE
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                      >
+                        &nbsp;
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      &nbsp;
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
 export {
   cuerpoClaveAPP,
   cuerpoAlertaCero,
@@ -5053,5 +6345,8 @@ export {
   cuerpoBienvenidaNombrado,
   cuerpoBienvenidaRenovado,
   cuerpoEncuestaCierre,
-  cuerpoEncuestaPercepcion
+  cuerpoEncuestaPercepcion,
+  cuerpoAutoEvalParcialPendiente,
+  cuerpoAutoEvalAnualPendiente,
+  cuerpoRexEvalAnualPendiente,
 };

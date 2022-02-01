@@ -205,7 +205,6 @@
 <script>
 import Vue from "vue";
 import { mapState } from "vuex";
-import emailjs from "emailjs-com";
 import axios from "axios";
 import Convenio from "@/components/perfil/pestanas/Convenio.vue";
 import Semestrales from "@/components/perfil/pestanas/Semestrales.vue";
@@ -214,7 +213,6 @@ import Otras from "@/components/perfil/pestanas/Otras.vue";
 import Identificacion from "@/components/perfil/datos_personales/Identificacion.vue";
 import Grafico from "@/components/perfil/datos_personales/Grafico.vue";
 import UltimosCorreos from "@/components/perfil/datos_personales/UltimosCorreos.vue";
-// import { cuerpoClaveAPP } from "@/plantillasMail.js";
 import { enviaAlertaCeroNombrado } from "@/metodosEnvioMails/alertaCeroNombrado.js";
 import { enviaAlertaCeroRenovado } from "@/metodosEnvioMails/alertaCeroRenovado.js";
 import { enviaAlertaSesenta } from "@/metodosEnvioMails/alertaSesenta.js";
@@ -225,6 +223,9 @@ import { enviaBienvenidaNombrado } from "@/metodosEnvioMails/bienvenidaNombrado.
 import { enviaBienvenidaRenovado } from "@/metodosEnvioMails/bienvenidaRenovado.js";
 import { enviaEncuestaCierre } from "@/metodosEnvioMails/encuestaCierre.js";
 import { enviaEncuestaPercepcion } from "@/metodosEnvioMails/encuestaPercepcion.js";
+import { enviaAutoEvalParcialPendiente } from "@/metodosEnvioMails/autoEvalParcialPendiente.js";
+import { enviaAutoEvalAnualPendiente } from "@/metodosEnvioMails/autoEvalAnualPendiente.js";
+import { enviaRexEvalAnualPendiente } from "@/metodosEnvioMails/rexEvalAnualPendiente.js";
 
 export default {
   name: "DatosPersonales",
@@ -248,7 +249,8 @@ export default {
   },
   props: ["indice"],
   methods: {
-    //#region Bases
+    //#region Métodos largos
+
     // Retorna una ventana de confirmación para el envío del mail
     cuadroDeConfirmacion(tipo) {
       return confirm(`¿Enviar ${tipo}?`);
@@ -265,7 +267,6 @@ export default {
     addFechaToCalendar(motivo, fecha, nombre, apellido) {
       return `<a href="https://calndr.link/d/event/?service=google&start=${fecha} 08:00&title=${motivo} ${nombre} ${apellido}&timezone=America/Santiago">Añadir al Calendario</a>`;
     },
-    // Valores para registro en planilla de Google de Alerta enviadas
     // Retorna fecha y hora actual
     fechaYHora() {
       return (
@@ -277,11 +278,9 @@ export default {
       // Retira tildes
       return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     },
-    // Retorna número de concurso
-    concursoADP(i) {
-      return this.adps[i].concurso;
-    },
+    //#endregion
 
+    //#region Base métodos Calendarios
     // Fechas que van en el texto del correo
     fechaNombramiento(i) {
       return this.formateaFecha(this.adps[i].fecha_nombramiento_renovacion);
@@ -303,137 +302,6 @@ export default {
     },
     fechaComunicacionParaCalendar(i) {
       return this.formateaFechaCalendar(this.adps[i].fecha_comunicacion);
-    },
-    nombreADPcorto(i) {
-      return this.adps[i].nombre_corregido.split(" ")[0];
-    },
-    parametrosEmailJS(i) {
-      return {
-        nombre_ADP: this.adps[i].nombre_corregido,
-        apellido_ADP: this.adps[i].apellido_corregido,
-        cargo_ADP: this.adps[i].cargo,
-        email_Contraparte_Conv: this.adps[i].mail_contraparte_cd,
-        email_Contraparte_Eval: this.adps[i].mail_contraparte_eval,
-        email_ADP: this.adps[i].mail,
-        mail_encargado: this.adps[i].encargado_mail,
-        estado_cd: this.adps[i].estado_cd,
-        encargado: this.adps[i].encargado,
-        // Sólo para pruebas //
-        // email_Contraparte_Conv: "yersonob@gmail.com",
-        // email_Contraparte_Eval: "yersonob@gmail.com",
-        // email_ADP: "yersonob@gmail.com",
-        nombramiento_ADP: `${this.fechaNombramiento(i)[2]}/${
-          this.fechaNombramiento(i)[1]
-        }/${this.fechaNombramiento(i)[0]}`,
-        suscripcion_ADP: `${this.fechaSuscripcion(i)[2]}/${
-          this.fechaSuscripcion(i)[1]
-        }/${this.fechaSuscripcion(i)[0]}`,
-        comunicacion_ADP: `${this.fechaComunicacion(i)[2]}/${
-          this.fechaComunicacion(i)[1]
-        }/${this.fechaComunicacion(i)[0]}`,
-        anadir_nombramiento: this.addFechaToCalendar(
-          "Inicio elaboración convenio",
-          this.fechaNombramientoToCalendar(i),
-          this.adps[i].nombre_corregido,
-          this.adps[i].apellido_corregido
-        ),
-        anadir_suscripcion: this.addFechaToCalendar(
-          "Suscripción convenio",
-          this.fechaSuscripcionParaCalendar(i),
-          this.adps[i].nombre_corregido,
-          this.adps[i].apellido_corregido
-        ),
-        anadir_comunicacion: this.addFechaToCalendar(
-          "Comunicación convenio",
-          this.fechaComunicacionParaCalendar(i),
-          this.adps[i].nombre_corregido,
-          this.adps[i].apellido_corregido
-        ),
-        // Variables de app
-        clave_APP: this.creaClaveAPP(
-          this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
-            this.adps[i].apellido_corregido.charAt(0).toLowerCase() +
-            `1234`
-        ),
-        usuario_APP: this.adps[i].rut,
-        // Sólo primer nombre
-        nombre_ADP_corto: this.adps[i].nombre_corregido.split(" ")[0],
-      };
-    },
-    // Registra correo en Planilla Google Sheets
-    async registraAlertaPlanilla(motivo, destinatario, i) {
-      await axios({
-        method: "post",
-        url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-        data: [[motivo, this.concursoADP(i), this.fechaYHora(), destinatario]],
-      })
-        .then(({ data }) => console.log(data))
-        .catch((error) => console.log(error));
-    },
-    // Envía correo por EmailJS
-    async enviaCorreoPorEmailJS(alerta, i) {
-      await emailjs
-        .send(
-          "fide",
-          alerta,
-          this.parametrosEmailJS(i),
-          "user_j03eIIBx2tfg0roipyWbX"
-        )
-        .then(
-          ({ text }) => console.log(text),
-          ({ text }) => console.log(text)
-        );
-    },
-    async enviarCorreoPorFidelizador(destinatario, asunto, cuerpo) {
-      await Email.send({
-        Host: "relay.fidelizador.com",
-        Username: "sercivil.09e2cc+cl1.fidelizador.com",
-        Password: "28ae46a8af1c2fbaa0bebb45e76e4da9",
-        To: destinatario,
-        From: "desarrolloadp@serviciocivil.cl",
-        Subject: asunto,
-        Body: cuerpo,
-      }).then((message) => console.log(message));
-    },
-    // Alerta
-    baseAlertas(tipodeAlerta, nombreEnPlanilla, destinatario, i) {
-      // Se evalúa que se haya iniciado expediente en SICDE
-      if (this.adps[i].estado_cd !== "null") {
-        // Cuadro de diálogo para confirmar envío de correo
-        const solicitaConfirmacion = this.cuadroDeConfirmacion(tipodeAlerta);
-        // Si consultor confirma envío = true
-        if (solicitaConfirmacion) {
-          // Completa valores de plantilla importada
-          const cuerpoMail = cuerpoClaveAPP(
-            this.nombreADPcorto(i),
-            this.adps[i].encargado,
-            this.adps[i].rut,
-            this.adps[i].encargado_mail,
-            this.creaClaveAPP(
-              this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
-                this.adps[i].apellido_corregido.charAt(0).toLowerCase() +
-                `1234`
-            )
-          );
-          // Valores para EmailJS
-          const correo = this.enviarCorreoPorFidelizador(
-            "yolivares@serviciocivil.cl",
-            "Hola",
-            cuerpoMail
-          );
-          //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
-          if (correo) {
-            this.registraAlertaPlanilla(nombreEnPlanilla, destinatario, i);
-            Vue.$toast.success("Correo enviado y registrado en planilla");
-          } else {
-            Vue.$toast.warning("No se registró correo en planilla");
-          }
-        } else {
-          Vue.$toast.warning("Correo no enviado");
-        }
-      } else {
-        alert("Debes iniciar expediente del concurso en SICDE primero");
-      }
     },
     baseCalendario(tipo, descripcion, i) {
       axios({
@@ -472,36 +340,20 @@ export default {
     },
     //#endregion
 
-    //#region Alerta con EmailJS
-    autoEvalSemestral(i) {
-      this.baseAlertas(
-        "Alerta Evaluación Semestral pendiente",
-        "autoEvalParcial",
-        "Eval parcial pendiente",
-        this.adps[i].mail,
-        i
-      );
-    },
-    autoEvalAnual(i) {
-      this.baseAlertas(
-        "Alerta Evaluación Anual pendiente",
-        "autoEvalAnual",
-        "Eval anual pendiente",
-        this.adps[i].mail,
-        i
-      );
-    },
-    rexEvalAnual(i) {
-      this.baseAlertas(
-        "Alerta REX Evaluación Anual pendiente",
-        "rexEvalAnual",
-        "REX Eval anual pendiente",
-        this.adps[i].mail_contraparte_eval,
-        i
-      );
+    // Base registro envío de correo en Planilla Google Sheets
+    async registraAlertaPlanilla(motivo, destinatario, i) {
+      await axios({
+        method: "post",
+        url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+        data: [
+          [motivo, this.adps[i].concurso, this.fechaYHora(), destinatario],
+        ],
+      })
+        .then(({ data }) => console.log(data))
+        .catch((error) => console.log(error));
     },
 
-    // Métodos de Calendario
+    //#region  Métodos de Calendario
     calendarAlertaCero(i) {
       this.baseCalendario(
         "30 días desde el nombramiento",
@@ -719,7 +571,11 @@ export default {
 
         // Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
         if (correo) {
-          this.registraAlertaPlanilla(`Alerta Sesenta`, this.adps[i].mail_contraparte_cd, i);
+          this.registraAlertaPlanilla(
+            `Alerta Sesenta`,
+            this.adps[i].mail_contraparte_cd,
+            i
+          );
           Vue.$toast.success("Correo enviado y registrado en planilla");
         } else {
           Vue.$toast.warning("No se registró correo en planilla");
@@ -764,7 +620,11 @@ export default {
 
         // Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
         if (correo) {
-          this.registraAlertaPlanilla(`Alerta Noventa`, this.adps[i].mail_contraparte_cd, i);
+          this.registraAlertaPlanilla(
+            `Alerta Noventa`,
+            this.adps[i].mail_contraparte_cd,
+            i
+          );
           Vue.$toast.success("Correo enviado y registrado en planilla");
         } else {
           Vue.$toast.warning("No se registró correo en planilla");
@@ -852,6 +712,7 @@ export default {
         const correo = enviaBienvenidaNombrado(
           this.adps[i].nombre_corregido.split(" ")[0],
           this.adps[i].encargado,
+          this.adps[i].encargado_mail,
           this.adps[i].rut,
           this.creaClaveAPP(
             this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
@@ -859,7 +720,9 @@ export default {
               `1234`
           ),
           this.adps[i].mail,
-          "Servicio Civil - 👋 Hola {{nombre_ADP_corto}}"
+          `Servicio Civil - 👋 Hola ${
+            this.adps[i].nombre_corregido.split(" ")[0]
+          }`
         );
 
         // Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
@@ -891,6 +754,7 @@ export default {
           this.adps[i].nombre_corregido.split(" ")[0],
           this.adps[i].cargo,
           this.adps[i].encargado,
+          this.adps[i].encargado_mail,
           this.adps[i].rut,
           this.creaClaveAPP(
             this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
@@ -898,7 +762,9 @@ export default {
               `1234`
           ),
           this.adps[i].mail,
-          "Servicio Civil - 👋 Hola {{nombre_ADP_corto}} (de nuevo)"
+          `Servicio Civil - 👋 Hola ${
+            this.adps[i].nombre_corregido.split(" ")[0]
+          } (de nuevo)`
         );
 
         // Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
@@ -982,6 +848,100 @@ export default {
           this.registraAlertaPlanilla(
             `Encuesta de percepción`,
             this.adps[i].mail_contraparte_cd,
+            i
+          );
+          Vue.$toast.success("Correo enviado y registrado en planilla");
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
+      } else {
+        Vue.$toast.warning("Correo no enviado");
+      }
+    },
+
+    autoEvalSemestral(i) {
+      // Cuadro de diálogo para confirmar envío de correo
+      const solicitaConfirmacion = this.cuadroDeConfirmacion(
+        `Alerta Evaluación Semestral pendiente`
+      );
+
+      // Si usuario confirma envío de mail
+      if (solicitaConfirmacion) {
+        // Se envía mail y se almacena en variable
+        const correo = enviaAutoEvalParcialPendiente(
+          this.adps[i].nombre_corregido.split(" ")[0],
+          this.adps[i].mail,
+          "Servicio Civil - Evaluación parcial pendiente"
+        );
+
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          this.registraAlertaPlanilla(
+            "Eval parcial pendiente",
+            this.adps[i].mail,
+            i
+          );
+          Vue.$toast.success("Correo enviado y registrado en planilla");
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
+      } else {
+        Vue.$toast.warning("Correo no enviado");
+      }
+    },
+
+    autoEvalAnual(i) {
+      // Cuadro de diálogo para confirmar envío de correo
+      const solicitaConfirmacion = this.cuadroDeConfirmacion(
+        `Alerta Evaluación Anual pendiente`
+      );
+
+      // Si usuario confirma envío de mail
+      if (solicitaConfirmacion) {
+        // Se envía mail y se almacena en variable
+        const correo = enviaAutoEvalAnualPendiente(
+          this.adps[i].nombre_corregido.split(" ")[0],
+          this.adps[i].mail,
+          "Servicio Civil - Evaluación anual pendiente"
+        );
+
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          this.registraAlertaPlanilla(
+            "Eval anual pendiente",
+            this.adps[i].mail,
+            i
+          );
+          Vue.$toast.success("Correo enviado y registrado en planilla");
+        } else {
+          Vue.$toast.warning("No se registró correo en planilla");
+        }
+      } else {
+        Vue.$toast.warning("Correo no enviado");
+      }
+    },
+
+    rexEvalAnual(i) {
+      // Cuadro de diálogo para confirmar envío de correo
+      const solicitaConfirmacion = this.cuadroDeConfirmacion(
+        `Alerta REX Evaluación Anual pendiente`
+      );
+
+      // Si usuario confirma envío de mail
+      if (solicitaConfirmacion) {
+        // Se envía mail y se almacena en variable
+        const correo = enviaRexEvalAnualPendiente(
+          this.adps[i].nombre_corregido.split(" ")[0],
+          this.adps[i].apellido_corregido.split(" ")[0],
+          this.adps[i].mail_contraparte_eval,
+          "Servicio Civil - Carga de resolución de evaluación anual pendiente"
+        );
+
+        //Se registra correo en planilla de Google 'Correos enviados por el sistema de alertas' sólo si correo sale
+        if (correo) {
+          this.registraAlertaPlanilla(
+            "REX Eval anual pendiente",
+            this.adps[i].mail_contraparte_eval,
             i
           );
           Vue.$toast.success("Correo enviado y registrado en planilla");

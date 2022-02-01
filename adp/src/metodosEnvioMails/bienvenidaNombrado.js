@@ -4,6 +4,7 @@ import { enviarCorreoPorFidelizador } from "@/metodosEnvioMails/funcionFidelizad
 const enviaBienvenidaNombrado = (
   nombre_ADP_corto,
   encargado,
+  mail_encargado,
   usuario_APP,
   clave_APP,
   destinatario,
@@ -12,6 +13,7 @@ const enviaBienvenidaNombrado = (
   const cuerpo = cuerpoBienvenidaNombrado(
     nombre_ADP_corto,
     encargado,
+    mail_encargado,
     usuario_APP,
     clave_APP
   );

@@ -3,7 +3,9 @@ import { enviarCorreoPorFidelizador } from "@/metodosEnvioMails/funcionFidelizad
 
 const enviaBienvenidaRenovado = (
   nombre_ADP_corto,
+  cargo_ADP,
   encargado,
+  mail_encargado,
   usuario_APP,
   clave_APP,
   destinatario,
@@ -13,6 +15,7 @@ const enviaBienvenidaRenovado = (
     nombre_ADP_corto,
     cargo_ADP,
     encargado,
+    mail_encargado,
     usuario_APP,
     clave_APP
   );
