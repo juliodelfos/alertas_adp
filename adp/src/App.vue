@@ -24,7 +24,7 @@ export default {
       conteiner: "conteiner",
     };
   },
-   metaInfo: {
+  metaInfo: {
     title: "SEA",
     titleTemplate: "%s | Sistema de Envío de Alertas",
     htmlAttrs: {
@@ -45,6 +45,12 @@ export default {
         defer: true,
       },
     ],
+    script: [
+      {
+        src: "https://smtpjs.com/v3/smtp.js",
+        defer: true,
+      },
+    ],
   },
   methods: {
     ...mapActions(["fetch_Adp", "fetch_EstadoSICDE"]),
@@ -53,24 +59,16 @@ export default {
         .get(
           "https://script.google.com/macros/s/AKfycbxOVp8dMaTZYznfrzAvO4g8Lj_Fo3k6MUGRv806R2VVljJAjnZj9_pbtisUce3OV-PUhA/exec"
         )
-        .then(({ data: { data } }) => {
-          this.fetch_Adp(data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        .then(({ data: { data } }) => this.fetch_Adp(data))
+        .catch((error) => console.log(error));
     },
     estadoSICDE() {
       axios
         .get(
           "https://v1.nocodeapi.com/yerigagarin/uptime/AUpowmIbIGdzFDkI?monitors=789280592"
         )
-        .then(({ data: { stat } }) => {
-          this.fetch_EstadoSICDE(stat);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        .then(({ data: { stat } }) => this.fetch_EstadoSICDE(stat))
+        .catch((error) => console.log(error));
     },
   },
   created() {
@@ -113,7 +111,6 @@ export default {
 .main {
   grid-area: 1 / 2 / 2 / 3;
 }
-
 
 .sidebarHide {
   display: grid;

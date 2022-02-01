@@ -33,7 +33,7 @@
               v-if="estado_adp == 'Nombrado (primer periodo)'"
               ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
-            <span class="badge rounded-pill bg-warning text-dark" v-else @click="$emit('bienvenidaRenovado')"
+            <span class="badge rounded-pill bg-warning text-dark cursor" v-else @click="$emit('bienvenidaRenovado')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
           </td>
