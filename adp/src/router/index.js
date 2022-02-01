@@ -29,42 +29,42 @@ const router = new VueRouter({
       path: "/tabla",
       name: "Tabla",
       component: Tabla,
-      meta: { requiresAuth: false },
+      meta: { requiresAuth: true },
     },
     {
       path: "/tarjetas",
       name: "Tarjetas",
       component: Tarjetas,
       props: true,
-      meta: { requiresAuth: false },
+      meta: { requiresAuth: true },
     },
     {
       path: "/perfil/:indice",
       name: "Perfil",
       component: Perfil,
       props: true,
-      meta: { requiresAuth: false },
+      meta: { requiresAuth: true },
     },
     {
       path: "/evaluaciones-mensuales",
       name: "EnviaEvaluacionesMensuales",
       component: EnviaEvaluacionesMensuales,
       props: true,
-      meta: { requiresAuth: false },
+      meta: { requiresAuth: true },
     },
     {
       path: "/correos-masivos",
       name: "EnviarCorreosMasivos",
       component: EnviarCorreosMasivos,
       props: true,
-      meta: { requiresAuth: false },
+      meta: { requiresAuth: true },
     },
     {
       path: "/exito",
       name: "RegistroExitoso",
       component: RegistroExitoso,
       props: true,
-      meta: { requiresAuth: false },
+      meta: { requiresAuth: true },
     },
     {
       path: "*",
@@ -77,7 +77,14 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
   const isAuthenticated = firebase.auth().currentUser;
-  requiresAuth && !isAuthenticated ? next("Tarjetas") : next();
+  // requiresAuth && !isAuthenticated ? next("Tarjetas") : next();
+  if (requiresAuth && !isAuthenticated) {
+    next("/");
+  } else if (!requiresAuth && isAuthenticated) {
+    next("tarjetas");
+  } else {
+    next();
+  }
 });
 
 export default router;
