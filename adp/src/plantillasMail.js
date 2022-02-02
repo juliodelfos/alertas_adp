@@ -6335,6 +6335,580 @@ const cuerpoRexEvalAnualPendiente = (
 </div>
 `;
 
+const cuerpoEvaluacionesMensuales = (
+  nombre_ADP,
+  apellido_ADP,
+  cargo,
+  mes,
+  inicio,
+  autoeval,
+  retro,
+  rex,
+  encargado
+) => `<!-- [if !mso]><!-- --><!--<!
+[endif]--><!-- [if mso]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    <![endif]--><!-- [if lte mso 11]>
+      <style type="text/css">
+        .mj-outlook-group-fix {
+          width: 100% !important;
+        }
+      </style>
+    <![endif]-->
+<div
+  style="
+    display: none;
+    font-size: 1px;
+    color: #ffffff;
+    line-height: 1px;
+    max-height: 0px;
+    max-width: 0px;
+    opacity: 0;
+    overflow: hidden;
+  "
+  data-darkreader-inline-color=""
+>
+  Inicio elaboraci&oacute;n convenio
+</div>
+<div style="background-color: #ffffff" data-darkreader-inline-bgcolor="">
+  <!-- [if mso | IE]>
+                <table
+                   align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                >
+                  <tr>
+                    <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                <![endif]-->
+  <div style="margin: 0px auto; max-width: 600px">
+    <table
+      style="width: 100%; height: 54.45px"
+      role="presentation"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      align="center"
+    >
+      <tbody>
+        <tr style="height: 54.45px">
+          <td
+            style="
+              direction: ltr;
+              font-size: 0px;
+              padding: 20px 0px 0px;
+              text-align: center;
+              height: 54.45px;
+            "
+          >
+            <!-- [if mso | IE]>
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                          
+                  <tr>
+                
+                      <td
+                         class="" style="vertical-align:top;width:600px;"
+                      >
+                    <![endif]-->
+            <div
+              class="mj-column-per-100 mj-outlook-group-fix"
+              style="
+                font-size: 0px;
+                text-align: left;
+                direction: ltr;
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+              "
+            >
+              <table
+                style="vertical-align: top"
+                role="presentation"
+                border="0"
+                width="100%"
+                cellspacing="0"
+                cellpadding="0"
+              >
+                <tbody>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      <table
+                        style="border-collapse: collapse; border-spacing: 0px"
+                        role="presentation"
+                        border="0"
+                        cellspacing="0"
+                        cellpadding="0"
+                      >
+                        <tbody>
+                          <tr>
+                            <td style="width: 150px">
+                              <img
+                                style="
+                                  border: 0px none;
+                                  outline: currentcolor none medium;
+                                  text-decoration: none;
+                                  height: auto;
+                                  width: 100%;
+                                  font-size: 14px;
+                                  float: left;
+                                "
+                                src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Marcas%20SC.png?alt=media&amp;token=b2386672-52e0-4fe3-9213-c19f4cd2268c"
+                                alt="image description"
+                                width="50"
+                                height="auto"
+                                data-darkreader-inline-border-top=""
+                                data-darkreader-inline-border-right=""
+                                data-darkreader-inline-border-bottom=""
+                                data-darkreader-inline-border-left=""
+                                data-darkreader-inline-outline=""
+                              />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                      "
+                      align="left"
+                    >
+                      &nbsp;
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- [if mso | IE]>
+                      </td>
+                    
+                  </tr>
+                
+                            </table>
+                          <![endif]-->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- [if mso | IE]>
+                    </td>
+                  </tr>
+                </table>
+                
+                <table
+                   align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
+                >
+                  <tr>
+                    <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+                <![endif]-->
+  <div style="margin: 0px auto; max-width: 600px">
+    <table
+      style="width: 100%"
+      role="presentation"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      align="center"
+    >
+      <tbody>
+        <tr>
+          <td
+            style="
+              direction: ltr;
+              font-size: 0px;
+              padding: 20px 0;
+              text-align: center;
+            "
+          >
+            <!-- [if mso | IE]>
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                          
+                  <tr>
+                
+                      <td
+                         class="" style="vertical-align:top;width:600px;"
+                      >
+                    <![endif]-->
+            <div
+              class="mj-column-per-100 mj-outlook-group-fix"
+              style="
+                font-size: 0px;
+                text-align: left;
+                direction: ltr;
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+              "
+            >
+              <table
+                style="vertical-align: top; height: 933px"
+                role="presentation"
+                border="0"
+                width="100%"
+                cellspacing="0"
+                cellpadding="0"
+              >
+                <tbody>
+                  <tr style="height: 857px">
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                        height: 857px;
+                      "
+                      align="left"
+                    >
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                        data-darkreader-inline-color=""
+                      >
+                        <p style="margin: 5px 0">Estimada Contraparte,</p>
+                        <p>
+                          Junto con saludar cordialmente, y en cumplimiento de
+                          las funciones legalmente encomendadas a la
+                          Direcci&oacute;n Nacional del Servicio Civil, queremos
+                          informarle sobre el
+                          <strong>procedimiento para evaluar a </strong
+                          ><strong
+                            >${nombre_ADP} ${apellido_ADP}, ${cargo}, quien
+                            cumple a&ntilde;o de gesti&oacute;n durante el mes
+                            de ${mes}.<br
+                          /></strong>
+                        </p>
+                        <p>
+                          Seg&uacute;n lo dispuesto en la
+                          <a
+                            href="https://www.bcn.cl/leychile/navegar?idNorma=211480&amp;idParte=8649087"
+                            target="_blank"
+                            rel="noopener"
+                            >Ley N&ordm; 19.882</a
+                          >, cada doce meses, contados a partir de su
+                          nombramiento, e<strong
+                            >l directivo p&uacute;blico deber&aacute; entregar
+                            un informe acerca del cumplimiento de su convenio de
+                            desempe&ntilde;o</strong
+                          >. Dicho informe deber&aacute; remitirlo a su superior
+                          jer&aacute;rquico a m&aacute;s tardar al mes siguiente
+                          del vencimiento del t&eacute;rmino antes indicado,
+                          dando cuenta del nivel alcanzado para cada meta
+                          comprometida, los medios de verificaci&oacute;n
+                          respectivos y una evaluaci&oacute;n cualitativa que
+                          explique logros y/o principales desviaciones.
+                        </p>
+                        Seg&uacute;n lo se&ntilde;alado,
+                        <strong
+                          >la autoridad competente deber&aacute; determinar el
+                          grado de cumplimiento del convenio, dentro de treinta
+                          d&iacute;as corridos contados desde la entrega del
+                          informe</strong
+                        >, para luego formalizarlo a trav&eacute;s de la
+                        dictaci&oacute;n del acto administrativo correspondiente
+                        y comunicarlo a esta Direcci&oacute;n Nacional dentro de
+                        los 5 d&iacute;as h&aacute;biles administrativos
+                        siguientes de su total tramitaci&oacute;n.
+                        <br /><br />Del mismo documento deber&aacute; remitir
+                        copia a la unidad de personas y remuneraciones del
+                        ministerio o servicio, con el fin de proceder al
+                        c&aacute;lculo de la remuneraci&oacute;n de la/el
+                        directiva/o
+                      </div>
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                        data-darkreader-inline-color=""
+                      >
+                        &nbsp;
+                      </div>
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                        data-darkreader-inline-color=""
+                      >
+                        En consideraci&oacute;n de la
+                        <strong
+                          >fecha de inicio de la evaluaci&oacute;n
+                          ${inicio}</strong
+                        >, los plazos m&aacute;ximos a considerar para este
+                        proceso son:
+                      </div>
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                        data-darkreader-inline-color=""
+                      >
+                        &nbsp;
+                      </div>
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                        data-darkreader-inline-color=""
+                      >
+                        <table
+                          style="border-collapse: collapse; width: 100%"
+                          border="1"
+                        >
+                          <tbody>
+                            <tr>
+                              <td style="width: 32.7229%; text-align: center">
+                                <span style="font-size: 12pt"
+                                  >Autoevaluaci&oacute;n</span
+                                >
+                              </td>
+                              <td style="width: 32.7229%; text-align: center">
+                                <span style="font-size: 12pt"
+                                  >Retroalimentaci&oacute;n</span
+                                >
+                              </td>
+                              <td style="width: 32.7229%; text-align: center">
+                                <span style="font-size: 12pt"
+                                  >Resoluci&oacute;n</span
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="width: 32.7229%; text-align: center">
+                                <strong>${autoeval}</strong>
+                              </td>
+                              <td style="width: 32.7229%; text-align: center">
+                                <strong>${retro}</strong>
+                              </td>
+                              <td style="width: 32.7229%; text-align: center">
+                                <strong>${rex}</strong>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                        data-darkreader-inline-color=""
+                      >
+                        &nbsp;
+                      </div>
+                      <p>&nbsp;</p>
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                        data-darkreader-inline-color=""
+                      >
+                        &nbsp;
+                      </div>
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                        data-darkreader-inline-color=""
+                      >
+                        Recordamos que los Altos/as Directivos/as
+                        P&uacute;blicos/as cuentan con el convenio suscrito a
+                        trav&eacute;s del SICDE, por lo que
+                        <strong
+                          >deber&aacute;n elaborar su informe de
+                          desempe&ntilde;o anual a trav&eacute;s de dicha
+                          plataforma</strong
+                        >, y posteriormente, su jefatura directa deber&aacute;
+                        realizar la revisi&oacute;n y evaluaci&oacute;n final de
+                        dicho informe y subir el acto administrativo de
+                        aprobaci&oacute;n en el mismo medio.
+                        <br /><br />Finalmente, para apoyar y orientar a las
+                        autoridades y directivos en este proceso, la
+                        Direcci&oacute;n Nacional del Servicio Civil cuenta con
+                        un equipo de profesionales especialistas para estos
+                        efectos, por lo que podr&aacute; contactar directamente
+                        a
+                        <strong
+                          >${encargado}, Consultor/a del &Aacute;rea de
+                          Acompa&ntilde;amiento y Desarrollo ADP al correo
+                          ${mail_encargado} o a trav&eacute;s del chat
+                          disponible en el Centro de Ayuda</strong
+                        >.<br />
+                        <p>Saludos.</p>
+                        <p>- Equipo Acompa&ntilde;amiento y Desarrollo ADP</p>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr style="height: 52px">
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                        height: 52px;
+                      "
+                      align="left"
+                    >
+                      <table
+                        style="border-collapse: separate; line-height: 100%"
+                        role="presentation"
+                        border="0"
+                        cellspacing="0"
+                        cellpadding="0"
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style="
+                                border: none;
+                                border-radius: 30px;
+                                cursor: auto;
+                                mso-padding-alt: 10px 25px;
+                                background: #2e58ff;
+                              "
+                              role="presentation"
+                              align="center"
+                              valign="middle"
+                              bgcolor="#2e58ff"
+                              data-darkreader-inline-bgcolor=""
+                              data-darkreader-inline-border-top=""
+                              data-darkreader-inline-border-right=""
+                              data-darkreader-inline-border-bottom=""
+                              data-darkreader-inline-border-left=""
+                              data-darkreader-inline-bgimage=""
+                            >
+                              <a
+                                style="
+                                  display: inline-block;
+                                  background: #2e58ff;
+                                  color: #ffffff;
+                                  font-family: Helvetica, Arial, sans-serif;
+                                  font-size: 14px;
+                                  font-weight: bold;
+                                  line-height: 30px;
+                                  margin: 0;
+                                  text-decoration: none;
+                                  text-transform: uppercase;
+                                  padding: 10px 25px;
+                                  mso-padding-alt: 0px;
+                                  border-radius: 30px;
+                                "
+                                href="https://sicde.serviciocivil.cl/docs/evaluaciones/"
+                                target="_blank"
+                                rel="noopener"
+                                data-darkreader-inline-bgimage=""
+                                data-darkreader-inline-bgcolor=""
+                                data-darkreader-inline-color=""
+                              >
+                                Ir al Centro de Ayuda SICDE</a
+                              >
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr style="height: 24px">
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                        height: 24px;
+                      "
+                      align="left"
+                    >
+                      <div
+                        style="
+                          font-family: Helvetica, Arial, sans-serif;
+                          font-size: 18px;
+                          font-weight: 400;
+                          line-height: 24px;
+                          text-align: left;
+                          color: #434245;
+                        "
+                        data-darkreader-inline-color=""
+                      >
+                        &nbsp;
+                      </div>
+                    </td>
+                  </tr>
+                  <tr style="height: 0px">
+                    <td
+                      style="
+                        font-size: 0px;
+                        padding: 10px 25px;
+                        word-break: break-word;
+                        height: 0px;
+                      "
+                      align="left"
+                    >
+                      &nbsp;
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
 export {
   cuerpoClaveAPP,
   cuerpoAlertaCero,
@@ -6349,4 +6923,5 @@ export {
   cuerpoAutoEvalParcialPendiente,
   cuerpoAutoEvalAnualPendiente,
   cuerpoRexEvalAnualPendiente,
+  cuerpoEvaluacionesMensuales
 };
