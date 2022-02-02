@@ -6344,7 +6344,8 @@ const cuerpoEvaluacionesMensuales = (
   autoeval,
   retro,
   rex,
-  encargado
+  encargado,
+  mail_encargado
 ) => `<!-- [if !mso]><!-- --><!--<!
 [endif]--><!-- [if mso]>
       <xml>
@@ -6923,5 +6924,5 @@ export {
   cuerpoAutoEvalParcialPendiente,
   cuerpoAutoEvalAnualPendiente,
   cuerpoRexEvalAnualPendiente,
-  cuerpoEvaluacionesMensuales
+  cuerpoEvaluacionesMensuales,
 };

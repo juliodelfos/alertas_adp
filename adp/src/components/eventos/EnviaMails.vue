@@ -10,8 +10,8 @@
           en curso.
         </p>
         <p>
-          Cada correo enviado sale con una diferencia de 2 segundo entre ellos,
-          por lo que 60 correos tomarían 2 minutos.
+          Cada correo enviado sale con una diferencia de 1 segundo entre ellos,
+          por lo que 60 correos tomarían 1 minuto.
           <b
             >No cerrar la ventana hasta recibir confirmación de envío de todos
             los correos.</b
@@ -43,9 +43,9 @@
 
 <script>
 import { mapState } from "vuex";
-import emailjs from "emailjs-com";
 import Vue from "vue";
 import axios from "axios";
+import { enviaEvaluacionMensual } from "@/metodosEnvioMails/evalMensual.js";
 
 export default {
   name: "EnviaMails",
@@ -112,76 +112,8 @@ export default {
     solicitaMes() {
       return prompt(`¿Qué mes corresponde la alerta?`, `Ej. diciembre`);
     },
-    enviaCorreoPorEmailJS(mes, indice) {
-      const formateaFecha = (fecha) =>
-        fecha.split("T00:00:00.000Z")[0].split("-");
-      const fechaInicio = () =>
-        formateaFecha(this.adps[indice].eval_anual_inicio);
-      const fechaEval = () => formateaFecha(this.adps[indice].eval_anual_auto);
-      const fechaRetro = () =>
-        formateaFecha(this.adps[indice].eval_anual_retro);
-      const fechaRex = () => formateaFecha(this.adps[indice].eval_anual_rex);
-
-      let parametros = {
-        nombre_ADP: this.adps[indice].nombre_corregido,
-        apellido_ADP: this.adps[indice].apellido_corregido,
-        mes: mes,
-        cargo: this.adps[indice].cargo,
-        encargado: this.adps[indice].encargado,
-        inicio: `${fechaInicio(this.adps[indice])[2]}/${
-          fechaInicio(this.adps[indice])[1]
-        }/${this.anoActual}`,
-        autoeval: `${fechaEval(this.adps[indice])[2]}/${
-          fechaEval(this.adps[indice])[1]
-        }/${this.anoActual}`,
-        retro: `${fechaRetro(this.adps[indice])[2]}/${
-          fechaRetro(this.adps[indice])[1]
-        }/${this.anoActual}`,
-        rex: `${fechaRex(this.adps[indice])[2]}/${
-          fechaRex(this.adps[indice])[1]
-        }/${this.anoActual}`,
-        mail: this.adps[indice].mail_contraparte_eval,
-        mail_encargado: this.adps[indice].encargado_mail,
-        // Sólo para pruebas //
-        // mail: "yerson.o.b@gmail.com",
-        // mail_encargado: "yers.on.ob@gmail.com",
-      };
-
-      emailjs
-        .send(
-          "desarrolloadp",
-          "evaluacion_mensual",
-          parametros,
-          "user_j03eIIBx2tfg0roipyWbX"
-        )
-        .then(
-          ({ text }) => console.log(text),
-          ({ text }) => console.log(text)
-        );
-
-      axios({
-        method: "post",
-        url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-        data: [
-          [
-            `Alerta evaluación mensual ${mes}`,
-            this.adps[indice].concurso,
-            new Date().toLocaleDateString() +
-              " " +
-              new Date().toLocaleTimeString(),
-            this.adps[indice].mail_contraparte_cd,
-            // "yersonob@gmail.com",
-          ],
-        ],
-      })
-        .then(({ data }) => console.log(data))
-        .catch((error) => console.log(error));
-    },
     ADPsAEvaluarseMesEnCurso() {
       let ADPqueDebenEvaluarseEsteMes = this.adps
-        // .filter(
-        //   ({ concurso }) => concurso == 5389 || concurso == 5893
-        // );
         .filter(
           ({ eval_anual_inicio, mail, fecha_nombramiento_renovacion }) =>
             eval_anual_inicio.split("T00:00:00.000Z")[0].split("-")[1] ===
@@ -215,17 +147,73 @@ export default {
       this.adpsDeEsteMes = ADPqueDebenEvaluarseEsteMes;
     },
 
+    enviaMailPorFidelizador(mes, indice) {
+      const formateaFecha = (fecha) =>
+        fecha.split("T00:00:00.000Z")[0].split("-");
+      const fechaInicio = () =>
+        formateaFecha(this.adps[indice].eval_anual_inicio);
+      const fechaEval = () => formateaFecha(this.adps[indice].eval_anual_auto);
+      const fechaRetro = () =>
+        formateaFecha(this.adps[indice].eval_anual_retro);
+      const fechaRex = () => formateaFecha(this.adps[indice].eval_anual_rex);
+
+      enviaEvaluacionMensual(
+        this.adps[indice].nombre_corregido,
+        this.adps[indice].apellido_corregido,
+        this.adps[indice].cargo,
+        mes,
+        // Fecha inicio
+        `${fechaInicio(this.adps[indice])[2]}/${
+          fechaInicio(this.adps[indice])[1]
+        }/${this.anoActual}`,
+        // Fecha Autoevaluación
+        `${fechaEval(this.adps[indice])[2]}/${
+          fechaEval(this.adps[indice])[1]
+        }/${this.anoActual}`,
+        // Fecha Retroalimentación
+        `${fechaRetro(this.adps[indice])[2]}/${
+          fechaRetro(this.adps[indice])[1]
+        }/${this.anoActual}`,
+        // Fecha Rex
+        `${fechaRex(this.adps[indice])[2]}/${fechaRex(this.adps[indice])[1]}/${
+          this.anoActual
+        }`,
+        this.adps[indice].encargado,
+        this.adps[indice].encargado_mail,
+        this.adps[indice].mail_contraparte_eval,
+        `Servicio Civil - Informa sobre evaluación directiva`
+      );
+
+      axios({
+        method: "post",
+        url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+        data: [
+          [
+            `Alerta evaluación mensual ${mes}`,
+            this.adps[indice].concurso,
+            new Date().toLocaleDateString() +
+              " " +
+              new Date().toLocaleTimeString(),
+            this.adps[indice].mail_contraparte_cd,
+          ],
+        ],
+      })
+        .then(({ data }) => console.log(data))
+        .catch((error) => console.log(error));
+    },
+
     enviarCorreosDelMes() {
       let mes = this.solicitaMes();
       this.adpsDeEsteMes.forEach(({ indice }, i) => {
         setTimeout(() => {
-          this.enviaCorreoPorEmailJS(mes, indice);
+          this.enviaMailPorFidelizador(mes, indice);
         }, i * 2000);
       });
       Vue.$toast.success("Correo enviado y registrado en planilla", {
         queue: true,
       });
     },
+
     format(date, locale, options) {
       return new Intl.DateTimeFormat(locale, options).format(date);
     },
@@ -266,16 +254,6 @@ export default {
       });
       const fechaMesAno = mes_AnoCompleta.split("/").splice(1, 2).join("/");
       return fechaMesAno;
-    },
-    fechaPrueba() {
-      const fechaADP = this.adps[2].fecha_nombramiento_renovacion
-        .split("T00:00:00.000Z")[0]
-        .split("-")
-        .splice(0, 2)
-        .sort()
-        .join("/");
-      // return `${fechaADP[1]}/${fechaADP[0]}`;
-      return fechaADP;
     },
     largoArregloDestinatarios() {
       return this.adpsDeEsteMes.length;
