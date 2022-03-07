@@ -11,7 +11,6 @@ export default new Vuex.Store({
       data: null,
     },
     adps: [],
-    estadoSICDE: "",
     servicios: [
       { value: "", text: "Selecciona un servicio" },
       {
@@ -656,9 +655,6 @@ export default new Vuex.Store({
     FETCH_ADP(state, data) {
       state.adps = data;
     },
-    FETCH_ESTADOSICDE(state, data) {
-      state.estadoSICDE = data;
-    },
     SET_LOGGED_IN(state, value) {
       state.user.loggedIn = value;
     },
@@ -669,9 +665,6 @@ export default new Vuex.Store({
   actions: {
     fetch_Adp({ commit }, data) {
       commit("FETCH_ADP", data);
-    },
-    fetch_EstadoSICDE({ commit }, data) {
-      commit("FETCH_ESTADOSICDE", data);
     },
     fetchUser({ commit }, user) {
       commit("SET_LOGGED_IN", user !== null);

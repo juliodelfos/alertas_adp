@@ -10,6 +10,7 @@ import Perfil from "@/views/Perfil.vue";
 import EnviaEvaluacionesMensuales from "@/views/EnviaEvaluacionesMensuales.vue";
 import EnviarCorreosMasivos from "@/views/EnviarCorreosMasivos.vue";
 import RegistroExitoso from "@/views/RegistroExitoso.vue";
+import AlertasEnviadas from "@/views/AlertasEnviadas.vue";
 
 //404
 import NotFound from "@/views/NotFound.vue";
@@ -70,6 +71,13 @@ const router = new VueRouter({
       path: "*",
       name: "NotFound",
       component: NotFound,
+    },
+    {
+      path: "/alertas-enviadas",
+      name: "AlertasEnviadas",
+      component: AlertasEnviadas,
+      meta: { requiresAuth: true },
+
     },
   ],
 });

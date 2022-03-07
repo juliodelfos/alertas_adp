@@ -1,0 +1,4016 @@
+[
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7896,
+        "fecha": "2021-11-04T18:08:43.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 6136,
+        "fecha": "2021-11-04T18:09:24.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7629,
+        "fecha": "2021-11-04T18:09:36.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 6527,
+        "fecha": "2021-11-04T18:09:50.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 5007,
+        "fecha": "2021-11-04T18:11:50.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Alerta Noventa",
+        "concurso": 7238,
+        "fecha": "2021-11-04T20:02:56.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Alerta Noventa",
+        "concurso": 8126,
+        "fecha": "2021-11-04T20:04:27.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4064,
+        "fecha": "2021-11-11T15:34:51.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4126,
+        "fecha": "2021-11-11T15:35:14.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4270,
+        "fecha": "2021-11-11T15:36:00.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Alerta Cero primer periodo",
+        "concurso": 8032,
+        "fecha": "2021-11-11T15:49:22.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4226,
+        "fecha": "2021-11-11T15:51:15.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 7663,
+        "fecha": "2021-11-11T16:17:45.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7732,
+        "fecha": "2021-11-11T18:04:03.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 6938,
+        "fecha": "2021-11-11T18:07:05.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7497,
+        "fecha": "2021-11-11T18:07:40.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4782,
+        "fecha": "2021-11-12T14:16:55.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 6277,
+        "fecha": "2021-11-12T14:17:12.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Alerta Noventa",
+        "concurso": 7238,
+        "fecha": "2021-11-15T12:18:37.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Alerta Noventa",
+        "concurso": 6535,
+        "fecha": "2021-11-15T12:18:53.000Z",
+        "destinatario": ""
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4132,
+        "fecha": "2021-11-15T18:55:41.000Z",
+        "destinatario": "lilianaecheverria@gmail.com"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 6837,
+        "fecha": "2021-11-15T19:19:42.000Z",
+        "destinatario": "sebastian.gallardo@saludohiggins.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4297,
+        "fecha": "2021-11-15T19:23:52.000Z",
+        "destinatario": "priscilla.guerrero@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4171,
+        "fecha": "2021-11-15T19:25:49.000Z",
+        "destinatario": "nirojash@ine.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primer periodo",
+        "concurso": 8477,
+        "fecha": "2021-11-15T19:26:56.000Z",
+        "destinatario": "nirojash@ine.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primer periodo",
+        "concurso": 8752,
+        "fecha": "2021-11-15T19:27:27.000Z",
+        "destinatario": "nirojash@ine.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primer periodo",
+        "concurso": 7895,
+        "fecha": "2021-11-16T18:54:40.000Z",
+        "destinatario": "rodrigo.tan@redsalud.gob.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4131,
+        "fecha": "2021-11-17T14:30:48.000Z",
+        "destinatario": "M.E.GONZALEZ.PLITT@GMAIL.COM"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 4312,
+        "fecha": "2021-11-17T14:35:02.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 4368,
+        "fecha": "2021-11-17T14:38:51.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4367,
+        "fecha": "2021-11-17T14:41:59.000Z",
+        "destinatario": "tapianavarrete@gmail.com"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 4184,
+        "fecha": "2021-11-17T14:56:23.000Z",
+        "destinatario": "rigoberto.millacura@previsionsocial.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primer periodo",
+        "concurso": 8328,
+        "fecha": "2021-11-17T18:58:34.000Z",
+        "destinatario": "amontiel@tesoreria.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8044,
+        "fecha": "2021-11-17T19:00:22.000Z",
+        "destinatario": "guerrerolor@saludaysen.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 6535,
+        "fecha": "2021-11-19T10:50:31.000Z",
+        "destinatario": "waldo.vergara@educacionpublica.cl"
+    },
+    {
+        "tipo": "Alerta Noventa",
+        "concurso": 7734,
+        "fecha": "2021-11-22T13:04:18.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8200,
+        "fecha": "2021-11-22T13:08:18.000Z",
+        "destinatario": "lmontalva@sml.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8198,
+        "fecha": "2021-11-22T18:13:49.000Z",
+        "destinatario": "rigoberto.millacura@previsionsocial.gob.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 3975,
+        "fecha": "2021-11-23T19:49:14.000Z",
+        "destinatario": "nelcar2804@gmail.com"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7238,
+        "fecha": "2021-11-26T13:04:39.000Z",
+        "destinatario": "karla.ordonez@educacionpublica.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 3874,
+        "fecha": "2021-11-26T13:28:00.000Z",
+        "destinatario": "francia.rivero@redsalud.gob.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4051,
+        "fecha": "2021-11-26T14:01:19.000Z",
+        "destinatario": "manuel.rivera@outlook.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 3853,
+        "fecha": "2021-11-26T14:01:50.000Z",
+        "destinatario": "landerre@gmail.com"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4502,
+        "fecha": "2021-11-26T14:14:11.000Z",
+        "destinatario": "jgalleguilos@sustentabilidad.red"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7734,
+        "fecha": "2021-11-26T18:59:20.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4011,
+        "fecha": "2021-11-29T14:41:39.000Z",
+        "destinatario": "praxedes.duarte@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4342,
+        "fecha": "2021-11-29T14:42:09.000Z",
+        "destinatario": "praxedes.duarte@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero primer periodo",
+        "concurso": 8544,
+        "fecha": "2021-11-29T19:43:17.000Z",
+        "destinatario": "cnunez@senda.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 3929,
+        "fecha": "2021-11-30T13:49:16.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4226,
+        "fecha": "2021-11-30T13:54:47.000Z",
+        "destinatario": "emena@servel.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4141,
+        "fecha": "2021-11-30T14:57:15.000Z",
+        "destinatario": "lbadawy@minvu.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8022,
+        "fecha": "2021-12-01T13:22:06.000Z",
+        "destinatario": "victoria.poblete@barrancas.edupub.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8334,
+        "fecha": "2021-12-01T13:29:57.000Z",
+        "destinatario": "priscilla.guerrero@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 6676,
+        "fecha": "2021-12-01T15:46:22.000Z",
+        "destinatario": "paola.poblete@patrimoniocultural.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4176,
+        "fecha": "2021-12-01T18:15:22.000Z",
+        "destinatario": "emena@servel.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8125,
+        "fecha": "2021-12-01T20:51:06.000Z",
+        "destinatario": "mpoblete@onemi.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7384,
+        "fecha": "2021-12-02T18:50:51.000Z",
+        "destinatario": "carola.oyarzun@redsalud.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8127,
+        "fecha": "2021-12-03T13:47:42.000Z",
+        "destinatario": "patricio.reyes@slepatacama.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4128,
+        "fecha": "2021-12-03T19:38:37.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4040,
+        "fecha": "2021-12-06T13:02:37.000Z",
+        "destinatario": "paguilera@ispch.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4090,
+        "fecha": "2021-12-06T13:03:14.000Z",
+        "destinatario": "marcela.fariasg@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 6838,
+        "fecha": "2021-12-06T13:06:44.000Z",
+        "destinatario": "kaltamirano@ssdr.gob.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 1939,
+        "fecha": "2021-12-06T20:06:47.000Z",
+        "destinatario": "yurigrlica@gmail.com"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8220,
+        "fecha": "2021-12-06T20:09:24.000Z",
+        "destinatario": "aalvarez@dpp.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 5807,
+        "fecha": "2021-12-09T20:10:27.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7151,
+        "fecha": "2021-12-09T20:10:49.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 6838,
+        "fecha": "2021-12-09T20:11:07.000Z",
+        "destinatario": "kaltamirano@ssdr.gob.cl"
+    },
+    {
+        "tipo": "Clave app",
+        "concurso": 4659,
+        "fecha": "2021-12-13T17:09:21.000Z",
+        "destinatario": "elizabeth.aranguiz@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4033,
+        "fecha": "2021-12-14T13:39:04.000Z",
+        "destinatario": "gmunoz@suseso.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 5691,
+        "fecha": "2021-12-14T13:43:15.000Z",
+        "destinatario": "igomez@ssconcepcion.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4311,
+        "fecha": "2021-12-14T13:43:57.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3825,
+        "fecha": "2021-12-14T13:46:21.000Z",
+        "destinatario": "xherrera@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 3843,
+        "fecha": "2021-12-15T13:51:56.000Z",
+        "destinatario": "fdo.millard@gmail.com"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4334,
+        "fecha": "2021-12-20T19:36:33.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8546,
+        "fecha": "2021-12-20T19:45:40.000Z",
+        "destinatario": "hector.burgos@sename.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8200,
+        "fecha": "2021-12-20T19:48:01.000Z",
+        "destinatario": "lmontalva@sml.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 4022,
+        "fecha": "2021-12-21T15:33:09.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 3812,
+        "fecha": "2021-12-21T15:33:27.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8126,
+        "fecha": "2021-12-23T13:13:28.000Z",
+        "destinatario": "cristobal.straub@educacionpublica.cl "
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8574,
+        "fecha": "2021-12-27T13:04:17.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4007,
+        "fecha": "2021-12-27T13:04:26.000Z",
+        "destinatario": "nreyes1962@gmail.com"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4469,
+        "fecha": "2021-12-27T13:05:11.000Z",
+        "destinatario": "or.otarola@gmail.com"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8545,
+        "fecha": "2021-12-27T13:06:09.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8699,
+        "fecha": "2021-12-27T13:08:30.000Z",
+        "destinatario": "hector.burgos@sename.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 3213,
+        "fecha": "2021-12-27T13:23:13.000Z",
+        "destinatario": "fernanda.alvarado@gmail.com"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8127,
+        "fecha": "2021-12-27T13:37:13.000Z",
+        "destinatario": "patricio.reyes@slepatacama.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7897,
+        "fecha": "2021-12-27T13:39:49.000Z",
+        "destinatario": "pablo.inostroza@junaeb.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8173,
+        "fecha": "2021-12-27T13:48:21.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8127,
+        "fecha": "2021-12-30T18:58:03.000Z",
+        "destinatario": "patricio.reyes@slepatacama.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 7895,
+        "fecha": "2021-12-31T14:28:15.000Z",
+        "destinatario": "rodrigo.tan@crsmaipu.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3978,
+        "fecha": "2021-12-31T14:31:31.000Z",
+        "destinatario": "lnavarrete@fonasa.gov.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4322,
+        "fecha": "2021-12-31T14:50:16.000Z",
+        "destinatario": "clafermol@gmail.com"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8125,
+        "fecha": "2021-12-31T15:14:16.000Z",
+        "destinatario": "mpoblete@onemi.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5389,
+        "fecha": "2022-01-03T14:19:49.000Z",
+        "destinatario": "ccortes@economia.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5529,
+        "fecha": "2022-01-03T14:19:50.000Z",
+        "destinatario": "nirojash@ine.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5893,
+        "fecha": "2022-01-03T14:19:51.000Z",
+        "destinatario": "cnunez@senda.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5984,
+        "fecha": "2022-01-03T14:19:52.000Z",
+        "destinatario": "angela.rioseco@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5238,
+        "fecha": "2022-01-03T14:19:53.000Z",
+        "destinatario": "carla.menendez@ssmso.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5689,
+        "fecha": "2022-01-03T14:19:54.000Z",
+        "destinatario": "cchavez@dt.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5617,
+        "fecha": "2022-01-03T14:19:55.000Z",
+        "destinatario": "sramirez@dgac.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5413,
+        "fecha": "2022-01-03T14:19:56.000Z",
+        "destinatario": "patricio.reyes@slepatacama.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5401,
+        "fecha": "2022-01-03T14:19:57.000Z",
+        "destinatario": "mery.olivares@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5427,
+        "fecha": "2022-01-03T14:19:58.000Z",
+        "destinatario": "patricio.reyes@slepatacama.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5303,
+        "fecha": "2022-01-03T14:19:59.000Z",
+        "destinatario": "paola.poblete@patrimoniocultural.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5281,
+        "fecha": "2022-01-03T14:20:00.000Z",
+        "destinatario": "mzepeda@anid.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5113,
+        "fecha": "2022-01-03T14:20:01.000Z",
+        "destinatario": "lnavarrete@fonasa.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5027,
+        "fecha": "2022-01-03T14:20:02.000Z",
+        "destinatario": "jsilva@cochilco.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4953,
+        "fecha": "2022-01-03T14:20:03.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5074,
+        "fecha": "2022-01-03T14:20:04.000Z",
+        "destinatario": "cmeza@sernatur.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4940,
+        "fecha": "2022-01-03T14:20:05.000Z",
+        "destinatario": "clopez@sec.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4975,
+        "fecha": "2022-01-03T14:20:06.000Z",
+        "destinatario": "gisela.berasain@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4983,
+        "fecha": "2022-01-03T14:20:07.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5049,
+        "fecha": "2022-01-03T14:20:08.000Z",
+        "destinatario": "praxedes.duarte@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4976,
+        "fecha": "2022-01-03T14:20:09.000Z",
+        "destinatario": "arturo.vergara@capredena.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4952,
+        "fecha": "2022-01-03T14:20:10.000Z",
+        "destinatario": "tnunez@superdesalud.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4846,
+        "fecha": "2022-01-03T14:20:11.000Z",
+        "destinatario": "amontiel@tesoreria.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4936,
+        "fecha": "2022-01-03T14:20:12.000Z",
+        "destinatario": "paola.poblete@patrimoniocultural.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4726,
+        "fecha": "2022-01-03T14:20:13.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4923,
+        "fecha": "2022-01-03T14:20:14.000Z",
+        "destinatario": "lmontalva@sml.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4933,
+        "fecha": "2022-01-03T14:20:15.000Z",
+        "destinatario": "lmontalva@sml.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4673,
+        "fecha": "2022-01-03T14:20:16.000Z",
+        "destinatario": "lmontalva@sml.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4941,
+        "fecha": "2022-01-03T14:20:17.000Z",
+        "destinatario": "kvillegas@injuv.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4917,
+        "fecha": "2022-01-03T14:20:18.000Z",
+        "destinatario": "orojas@sernapesca.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5030,
+        "fecha": "2022-01-03T14:20:19.000Z",
+        "destinatario": "cchavez@dt.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4911,
+        "fecha": "2022-01-03T14:20:20.000Z",
+        "destinatario": "mdelvalle@minmineria.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4978,
+        "fecha": "2022-01-03T14:20:21.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4922,
+        "fecha": "2022-01-03T14:20:22.000Z",
+        "destinatario": "priscilla.guerrero@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 5054,
+        "fecha": "2022-01-03T14:20:23.000Z",
+        "destinatario": "francia.rivero@redsalud.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4971,
+        "fecha": "2022-01-03T14:20:24.000Z",
+        "destinatario": "gloria.jofre@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4918,
+        "fecha": "2022-01-03T14:20:25.000Z",
+        "destinatario": "pablo.inostroza@junaeb.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4973,
+        "fecha": "2022-01-03T14:20:26.000Z",
+        "destinatario": "francisco.lozanoparra@gmail.com"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4920,
+        "fecha": "2022-01-03T14:20:27.000Z",
+        "destinatario": "pablo.inostroza@junaeb.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4931,
+        "fecha": "2022-01-03T14:20:28.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4872,
+        "fecha": "2022-01-03T14:20:29.000Z",
+        "destinatario": "maximiliano.radonich@araucanianorte.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4932,
+        "fecha": "2022-01-03T14:20:30.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4926,
+        "fecha": "2022-01-03T14:20:31.000Z",
+        "destinatario": "yasmin.sufan@ssbiobio.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4944,
+        "fecha": "2022-01-03T14:20:32.000Z",
+        "destinatario": "igomez@ssconcepcion.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4267,
+        "fecha": "2022-01-03T14:20:33.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3970,
+        "fecha": "2022-01-03T14:20:34.000Z",
+        "destinatario": "cmeza@sernatur.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3932,
+        "fecha": "2022-01-03T14:20:35.000Z",
+        "destinatario": "pamela.escobar@saludoriente.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4083,
+        "fecha": "2022-01-03T14:20:36.000Z",
+        "destinatario": "lbadawy@minvu.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4415,
+        "fecha": "2022-01-03T14:20:37.000Z",
+        "destinatario": "marcela.fariasg@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4153,
+        "fecha": "2022-01-03T14:20:38.000Z",
+        "destinatario": "cmeza@sernatur.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4278,
+        "fecha": "2022-01-03T14:20:39.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4272,
+        "fecha": "2022-01-03T14:20:40.000Z",
+        "destinatario": "clobos@senama.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4472,
+        "fecha": "2022-01-03T14:20:41.000Z",
+        "destinatario": "cnunez@senda.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3972,
+        "fecha": "2022-01-03T14:20:42.000Z",
+        "destinatario": "dmadrid@odepa.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4094,
+        "fecha": "2022-01-03T14:20:43.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3796,
+        "fecha": "2022-01-03T14:20:44.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4038,
+        "fecha": "2022-01-03T14:20:45.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4090,
+        "fecha": "2022-01-03T14:20:46.000Z",
+        "destinatario": "marcela.fariasg@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4127,
+        "fecha": "2022-01-03T14:20:47.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4143,
+        "fecha": "2022-01-03T14:20:48.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3795,
+        "fecha": "2022-01-03T14:20:49.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4188,
+        "fecha": "2022-01-03T14:20:50.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4210,
+        "fecha": "2022-01-03T14:20:51.000Z",
+        "destinatario": "kaltamirano@ssdr.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4118,
+        "fecha": "2022-01-03T14:20:52.000Z",
+        "destinatario": "alejandro.cornejo@cultura.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4351,
+        "fecha": "2022-01-03T14:20:53.000Z",
+        "destinatario": "eelgueta@scj.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4136,
+        "fecha": "2022-01-03T14:20:54.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3855,
+        "fecha": "2022-01-03T14:20:55.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3941,
+        "fecha": "2022-01-03T14:20:56.000Z",
+        "destinatario": "kvillegas@injuv.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4255,
+        "fecha": "2022-01-03T14:20:57.000Z",
+        "destinatario": "hfredes@indap.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4040,
+        "fecha": "2022-01-03T14:20:58.000Z",
+        "destinatario": "paguilera@ispch.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4342,
+        "fecha": "2022-01-03T14:20:59.000Z",
+        "destinatario": "praxedes.duarte@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3931,
+        "fecha": "2022-01-03T14:21:00.000Z",
+        "destinatario": "pamela.escobar@saludoriente.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4163,
+        "fecha": "2022-01-03T14:21:01.000Z",
+        "destinatario": "marta.valenzuela@sag.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4050,
+        "fecha": "2022-01-03T14:21:02.000Z",
+        "destinatario": "carola.oyarzun@redsalud.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4011,
+        "fecha": "2022-01-03T14:21:03.000Z",
+        "destinatario": "praxedes.duarte@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3978,
+        "fecha": "2022-01-03T14:21:04.000Z",
+        "destinatario": "lnavarrete@fonasa.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3754,
+        "fecha": "2022-01-03T14:21:05.000Z",
+        "destinatario": "mmarquez@sea.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3648,
+        "fecha": "2022-01-03T14:21:06.000Z",
+        "destinatario": "cbustamante@minrel.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3682,
+        "fecha": "2022-01-03T14:21:07.000Z",
+        "destinatario": "mariajose.lobos@mineduc.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3788,
+        "fecha": "2022-01-03T14:21:08.000Z",
+        "destinatario": "jmoreno@crsoriente.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3741,
+        "fecha": "2022-01-03T14:21:09.000Z",
+        "destinatario": "cmancilla@fne.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3763,
+        "fecha": "2022-01-03T14:21:10.000Z",
+        "destinatario": "emena@servel.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3516,
+        "fecha": "2022-01-03T14:21:11.000Z",
+        "destinatario": "vretamales@investchile.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3385,
+        "fecha": "2022-01-03T14:21:12.000Z",
+        "destinatario": "xherrera@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 2463,
+        "fecha": "2022-01-03T14:21:13.000Z",
+        "destinatario": "maburto@cne.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3195,
+        "fecha": "2022-01-03T14:21:14.000Z",
+        "destinatario": "fastudillo@ssmaule.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 2767,
+        "fecha": "2022-01-03T14:21:15.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3271,
+        "fecha": "2022-01-03T14:21:16.000Z",
+        "destinatario": "mzepeda@anid.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 2766,
+        "fecha": "2022-01-03T14:21:17.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3021,
+        "fecha": "2022-01-03T14:21:18.000Z",
+        "destinatario": "sramirez@dgac.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 3048,
+        "fecha": "2022-01-03T14:21:19.000Z",
+        "destinatario": "cmeza@sernatur.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 2760,
+        "fecha": "2022-01-03T14:21:20.000Z",
+        "destinatario": "jsilva@cochilco.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 2581,
+        "fecha": "2022-01-03T14:21:21.000Z",
+        "destinatario": "mmarquez@sea.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 2713,
+        "fecha": "2022-01-03T14:21:22.000Z",
+        "destinatario": "teodoro.ribera@sma.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 2058,
+        "fecha": "2022-01-03T14:21:23.000Z",
+        "destinatario": "vosorio@hacienda.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 2793,
+        "fecha": "2022-01-03T14:21:24.000Z",
+        "destinatario": "igomez@ssconcepcion.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual enero",
+        "concurso": 4269,
+        "fecha": "2022-01-03T14:21:25.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Clave app",
+        "concurso": 5121,
+        "fecha": "2022-01-03T15:23:46.000Z",
+        "destinatario": "cpintom@dt.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 3869,
+        "fecha": "2022-01-03T17:42:37.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7828,
+        "fecha": "2022-01-03T17:46:21.000Z",
+        "destinatario": "kaltamirano@ssdr.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7827,
+        "fecha": "2022-01-03T17:46:38.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8045,
+        "fecha": "2022-01-03T17:48:35.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 9030,
+        "fecha": "2022-01-03T17:48:56.000Z",
+        "destinatario": "yasmin.sufan@ssbiobio.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7460,
+        "fecha": "2022-01-03T17:49:16.000Z",
+        "destinatario": "katherine.castillo.a@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 5178,
+        "fecha": "2022-01-03T17:49:41.000Z",
+        "destinatario": "priscilla.guerrero@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4163,
+        "fecha": "2022-01-03T17:51:52.000Z",
+        "destinatario": "marta.valenzuela@sag.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4050,
+        "fecha": "2022-01-03T17:52:11.000Z",
+        "destinatario": "carola.oyarzun@redsalud.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4255,
+        "fecha": "2022-01-03T17:52:31.000Z",
+        "destinatario": "hfredes@indap.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3855,
+        "fecha": "2022-01-03T17:54:54.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4122,
+        "fecha": "2022-01-03T17:55:18.000Z",
+        "destinatario": "marta.valenzuela@sag.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7374,
+        "fecha": "2022-01-03T17:56:16.000Z",
+        "destinatario": "ximena.zapata@minagri.gob.cl"
+    },
+    {
+        "tipo": "Alerta Noventa",
+        "concurso": 7148,
+        "fecha": "2022-01-03T18:05:30.000Z",
+        "destinatario": "ymarambio@inach.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8682,
+        "fecha": "2022-01-03T18:06:51.000Z",
+        "destinatario": "pgraziano@sea.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7838,
+        "fecha": "2022-01-03T18:09:03.000Z",
+        "destinatario": "pgraziano@sea.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8340,
+        "fecha": "2022-01-03T18:11:19.000Z",
+        "destinatario": "ltroncoso@agci.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8832,
+        "fecha": "2022-01-03T18:13:18.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4188,
+        "fecha": "2022-01-03T18:14:19.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4143,
+        "fecha": "2022-01-03T18:14:31.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4127,
+        "fecha": "2022-01-03T18:14:43.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8339,
+        "fecha": "2022-01-03T18:19:29.000Z",
+        "destinatario": "ltroncoso@agci.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4234,
+        "fecha": "2022-01-03T18:21:31.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4299,
+        "fecha": "2022-01-03T18:21:43.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3795,
+        "fecha": "2022-01-03T18:22:00.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3796,
+        "fecha": "2022-01-03T18:22:14.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3797,
+        "fecha": "2022-01-03T18:23:37.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4347,
+        "fecha": "2022-01-03T18:24:57.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4210,
+        "fecha": "2022-01-03T19:12:11.000Z",
+        "destinatario": "monicap.winkler@gmail.com"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4289,
+        "fecha": "2022-01-03T19:20:21.000Z",
+        "destinatario": "marta.valenzuela@sag.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4245,
+        "fecha": "2022-01-03T19:21:13.000Z",
+        "destinatario": "pgraziano@sea.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4061,
+        "fecha": "2022-01-03T19:21:33.000Z",
+        "destinatario": "pgraziano@sea.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 7575,
+        "fecha": "2022-01-03T20:13:00.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 7564,
+        "fecha": "2022-01-03T20:13:29.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 7575,
+        "fecha": "2022-01-03T20:24:53.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 5068,
+        "fecha": "2022-01-04T13:16:54.000Z",
+        "destinatario": "gvonstillfried@cenabast.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3921,
+        "fecha": "2022-01-04T16:27:45.000Z",
+        "destinatario": "ilopez@interior.gov.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8032,
+        "fecha": "2022-01-04T16:35:03.000Z",
+        "destinatario": "emena@servel.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8224,
+        "fecha": "2022-01-04T16:39:06.000Z",
+        "destinatario": "emena@servel.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8257,
+        "fecha": "2022-01-04T17:35:12.000Z",
+        "destinatario": "arturo.vergara@capredena.gob.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4178,
+        "fecha": "2022-01-04T17:41:22.000Z",
+        "destinatario": "rlizana77@gmail.com"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8832,
+        "fecha": "2022-01-05T15:50:05.000Z",
+        "destinatario": "lorena.rios@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4269,
+        "fecha": "2022-01-05T15:59:27.000Z",
+        "destinatario": "andres.carvajal.r@gmail.com"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 7565,
+        "fecha": "2022-01-05T18:39:15.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 3963,
+        "fecha": "2022-01-05T18:41:27.000Z",
+        "destinatario": "kvillegas@injuv.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7574,
+        "fecha": "2022-01-05T18:43:54.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7577,
+        "fecha": "2022-01-05T18:44:35.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7571,
+        "fecha": "2022-01-05T18:45:00.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8823,
+        "fecha": "2022-01-05T18:45:35.000Z",
+        "destinatario": "lmontalva@sml.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8679,
+        "fecha": "2022-01-05T18:46:10.000Z",
+        "destinatario": "xherrera@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7578,
+        "fecha": "2022-01-05T18:46:30.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8885,
+        "fecha": "2022-01-05T18:46:54.000Z",
+        "destinatario": "xherrera@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4136,
+        "fecha": "2022-01-05T18:54:19.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3941,
+        "fecha": "2022-01-05T18:54:48.000Z",
+        "destinatario": "kvillegas@injuv.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8570,
+        "fecha": "2022-01-05T18:56:10.000Z",
+        "destinatario": "golivera@minjusticia.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8198,
+        "fecha": "2022-01-05T18:56:27.000Z",
+        "destinatario": "rigoberto.millacura@previsionsocial.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7583,
+        "fecha": "2022-01-05T18:56:48.000Z",
+        "destinatario": "cgarrido@desarrollosocial.gob.cl"
+    },
+    {
+        "tipo": "Clave SICDE",
+        "concurso": 4920,
+        "fecha": "2022-01-06T13:15:30.000Z",
+        "destinatario": "paula.vidal@junaeb.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4343,
+        "fecha": "2022-01-06T13:30:38.000Z",
+        "destinatario": "pablo.inostroza@junaeb.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 4226,
+        "fecha": "2022-01-06T15:06:48.000Z",
+        "destinatario": "emena@servel.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 6676,
+        "fecha": "2022-01-06T15:15:29.000Z",
+        "destinatario": "paola.poblete@patrimoniocultural.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3021,
+        "fecha": "2022-01-06T20:26:47.000Z",
+        "destinatario": "sramirez@dgac.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4118,
+        "fecha": "2022-01-06T20:36:20.000Z",
+        "destinatario": "alejandro.cornejo@cultura.gob.cl"
+    },
+    {
+        "tipo": "Clave SICDE",
+        "concurso": 7897,
+        "fecha": "2022-01-07T14:01:02.000Z",
+        "destinatario": "jose.alvarez@junaeb.cl"
+    },
+    {
+        "tipo": "Clave app",
+        "concurso": 6837,
+        "fecha": "2022-01-07T16:38:38.000Z",
+        "destinatario": "jaime.gutierrez@saludohiggins.cl"
+    },
+    {
+        "tipo": "Clave app",
+        "concurso": 8032,
+        "fecha": "2022-01-07T19:03:21.000Z",
+        "destinatario": "lkrause@servel.cl"
+    },
+    {
+        "tipo": "Clave SICDE",
+        "concurso": 8032,
+        "fecha": "2022-01-07T19:04:50.000Z",
+        "destinatario": "lkrause@servel.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8199,
+        "fecha": "2022-01-10T14:31:53.000Z",
+        "destinatario": "maximiliano.radonich@araucanianorte.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4038,
+        "fecha": "2022-01-10T14:33:04.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 5178,
+        "fecha": "2022-01-10T14:35:46.000Z",
+        "destinatario": "carolina.rojase@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3416,
+        "fecha": "2022-01-10T19:35:52.000Z",
+        "destinatario": "emena@servel.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8751,
+        "fecha": "2022-01-11T13:04:42.000Z",
+        "destinatario": "beatriz.diaz@fosis.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8220,
+        "fecha": "2022-01-11T13:17:34.000Z",
+        "destinatario": "ltroncoso@dpp.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4324,
+        "fecha": "2022-01-11T14:46:24.000Z",
+        "destinatario": "carla.menendez@ssmso.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 5170,
+        "fecha": "2022-01-11T14:49:58.000Z",
+        "destinatario": "cristian.barra@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8471,
+        "fecha": "2022-01-11T14:50:22.000Z",
+        "destinatario": "clopez@sec.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8472,
+        "fecha": "2022-01-11T14:50:35.000Z",
+        "destinatario": "clopez@sec.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3970,
+        "fecha": "2022-01-11T14:51:00.000Z",
+        "destinatario": "cmeza@sernatur.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4153,
+        "fecha": "2022-01-11T14:51:19.000Z",
+        "destinatario": "cmeza@sernatur.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3048,
+        "fecha": "2022-01-11T14:51:42.000Z",
+        "destinatario": "cmeza@sernatur.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8477,
+        "fecha": "2022-01-11T14:52:10.000Z",
+        "destinatario": "nirojash@ine.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8191,
+        "fecha": "2022-01-11T14:53:11.000Z",
+        "destinatario": "alexis.salgado@mop.gov.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7663,
+        "fecha": "2022-01-11T14:53:40.000Z",
+        "destinatario": " sandra.caceres@mop.gov.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7087,
+        "fecha": "2022-01-11T14:53:56.000Z",
+        "destinatario": "czuleta@siss.gob.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4351,
+        "fecha": "2022-01-11T15:12:18.000Z",
+        "destinatario": "macacere@gmail.com"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 7562,
+        "fecha": "2022-01-11T18:24:38.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8220,
+        "fecha": "2022-01-11T18:28:25.000Z",
+        "destinatario": "samuel.poblete@dpp.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 7574,
+        "fecha": "2022-01-11T18:31:25.000Z",
+        "destinatario": "cflores@mejorninez.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 3967,
+        "fecha": "2022-01-11T19:03:58.000Z",
+        "destinatario": "delvalle.mariapaz@gmail.com"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3980,
+        "fecha": "2022-01-13T14:21:16.000Z",
+        "destinatario": "lnavarrete@fonasa.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3938,
+        "fecha": "2022-01-13T14:21:36.000Z",
+        "destinatario": "kaltamirano@ssdr.gob.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8045,
+        "fecha": "2022-01-13T14:23:39.000Z",
+        "destinatario": "jose.cavieres@saludohiggins.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 2793,
+        "fecha": "2022-01-13T15:49:29.000Z",
+        "destinatario": "renato.medinar@gmail.com"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4094,
+        "fecha": "2022-01-14T15:13:04.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4008,
+        "fecha": "2022-01-14T15:13:14.000Z",
+        "destinatario": "pablo.inostroza@junaeb.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4008,
+        "fecha": "2022-01-14T15:15:34.000Z",
+        "destinatario": "marina.garib@junaeb.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4221,
+        "fecha": "2022-01-14T15:40:10.000Z",
+        "destinatario": "ximena.zapata@minagri.gob.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4415,
+        "fecha": "2022-01-14T16:47:41.000Z",
+        "destinatario": "aliscatalan@yahoo.com"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7570,
+        "fecha": "2022-01-14T18:13:43.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8689,
+        "fecha": "2022-01-14T18:14:13.000Z",
+        "destinatario": "kvillegas@injuv.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7072,
+        "fecha": "2022-01-14T18:18:40.000Z",
+        "destinatario": "llaplagn@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8751,
+        "fecha": "2022-01-14T18:21:30.000Z",
+        "destinatario": "nicolas.olivares@fosis.gob.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8885,
+        "fecha": "2022-01-14T18:23:33.000Z",
+        "destinatario": "jnicolas@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8679,
+        "fecha": "2022-01-14T18:25:57.000Z",
+        "destinatario": "rvidal@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4319,
+        "fecha": "2022-01-17T12:47:44.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4185,
+        "fecha": "2022-01-17T12:51:39.000Z",
+        "destinatario": "lbadawy@minvu.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4089,
+        "fecha": "2022-01-17T12:52:18.000Z",
+        "destinatario": "mlefian@conadi.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 2767,
+        "fecha": "2022-01-17T12:59:02.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8256,
+        "fecha": "2022-01-18T17:52:34.000Z",
+        "destinatario": "hcanessa@defensa.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 9029,
+        "fecha": "2022-01-18T17:54:26.000Z",
+        "destinatario": "clobos@senama.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8327,
+        "fecha": "2022-01-18T17:54:50.000Z",
+        "destinatario": "sramirez@dgac.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7579,
+        "fecha": "2022-01-18T17:55:18.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4366,
+        "fecha": "2022-01-18T17:55:51.000Z",
+        "destinatario": "llaplagn@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4258,
+        "fecha": "2022-01-18T17:56:12.000Z",
+        "destinatario": "cchavez@dt.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 2766,
+        "fecha": "2022-01-18T17:57:04.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3077,
+        "fecha": "2022-01-18T17:57:21.000Z",
+        "destinatario": "maximiliano.radonich@araucanianorte.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8752,
+        "fecha": "2022-01-18T17:58:10.000Z",
+        "destinatario": "nirojash@ine.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 5384,
+        "fecha": "2022-01-18T18:10:14.000Z",
+        "destinatario": "carlos.azola@sma.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4278,
+        "fecha": "2022-01-19T15:06:25.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4267,
+        "fecha": "2022-01-19T15:06:38.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4280,
+        "fecha": "2022-01-19T15:06:52.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4354,
+        "fecha": "2022-01-19T15:07:03.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Clave SICDE",
+        "concurso": 7629,
+        "fecha": "2022-01-19T19:13:50.000Z",
+        "destinatario": "ealarcon@junji.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4460,
+        "fecha": "2022-01-21T15:40:49.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4377,
+        "fecha": "2022-01-21T15:40:59.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4465,
+        "fecha": "2022-01-21T15:41:08.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3931,
+        "fecha": "2022-01-25T13:33:14.000Z",
+        "destinatario": "pamela.escobar@saludoriente.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3972,
+        "fecha": "2022-01-25T13:33:35.000Z",
+        "destinatario": "dmadrid@odepa.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4472,
+        "fecha": "2022-01-25T13:33:55.000Z",
+        "destinatario": "cnunez@senda.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3932,
+        "fecha": "2022-01-25T13:34:15.000Z",
+        "destinatario": "pamela.escobar@saludoriente.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4015,
+        "fecha": "2022-01-25T13:34:40.000Z",
+        "destinatario": "pamela.escobar@saludoriente.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4211,
+        "fecha": "2022-01-25T13:35:15.000Z",
+        "destinatario": "orojas@sernapesca.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4365,
+        "fecha": "2022-01-25T13:35:40.000Z",
+        "destinatario": "hfredes@indap.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4256,
+        "fecha": "2022-01-25T13:36:10.000Z",
+        "destinatario": "hfredes@indap.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3918,
+        "fecha": "2022-01-25T13:37:16.000Z",
+        "destinatario": "orojas@sernapesca.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4424,
+        "fecha": "2022-01-25T13:37:40.000Z",
+        "destinatario": "cnunez@senda.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4360,
+        "fecha": "2022-01-25T13:51:31.000Z",
+        "destinatario": "maburto@cne.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4425,
+        "fecha": "2022-01-25T13:51:56.000Z",
+        "destinatario": "cnunez@senda.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4491,
+        "fecha": "2022-01-25T13:52:26.000Z",
+        "destinatario": "hfredes@indap.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4369,
+        "fecha": "2022-01-25T13:52:53.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3195,
+        "fecha": "2022-01-25T13:57:58.000Z",
+        "destinatario": "fastudillo@ssmaule.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7566,
+        "fecha": "2022-01-25T13:59:46.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7558,
+        "fecha": "2022-01-25T14:00:05.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7561,
+        "fecha": "2022-01-25T14:00:26.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7898,
+        "fecha": "2022-01-25T14:00:43.000Z",
+        "destinatario": "llaplagn@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8334,
+        "fecha": "2022-01-25T14:01:01.000Z",
+        "destinatario": "priscilla.guerrero@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 7460,
+        "fecha": "2022-01-25T16:47:43.000Z",
+        "destinatario": "director.aps@ssantofagasta.cl"
+    },
+    {
+        "tipo": "Alerta Noventa",
+        "concurso": 7148,
+        "fecha": "2022-01-25T19:27:42.000Z",
+        "destinatario": "ymarambio@inach.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7828,
+        "fecha": "2022-01-26T12:34:25.000Z",
+        "destinatario": "kaltamirano@ssdr.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7562,
+        "fecha": "2022-01-26T12:34:59.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 7827,
+        "fecha": "2022-01-26T12:41:00.000Z",
+        "destinatario": "mvelasquez@crsoriente.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8339,
+        "fecha": "2022-01-27T14:32:15.000Z",
+        "destinatario": "eofarrill@agi.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 7384,
+        "fecha": "2022-01-27T14:41:10.000Z",
+        "destinatario": "carola.oyarzun@redsalud.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 4176,
+        "fecha": "2022-01-27T14:41:44.000Z",
+        "destinatario": "emena@servel.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 4165,
+        "fecha": "2022-01-27T14:42:25.000Z",
+        "destinatario": "marta.valenzuela@sag.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4077,
+        "fecha": "2022-01-27T14:48:29.000Z",
+        "destinatario": "maximiliano.radonich@araucanianorte.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4140,
+        "fecha": "2022-01-27T14:49:50.000Z",
+        "destinatario": "lbadawy@minvu.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4345,
+        "fecha": "2022-01-27T14:50:14.000Z",
+        "destinatario": "hfredes@indap.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3271,
+        "fecha": "2022-01-27T14:50:51.000Z",
+        "destinatario": "mzepeda@anid.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7564,
+        "fecha": "2022-01-27T14:51:31.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8474,
+        "fecha": "2022-01-27T14:51:48.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8545,
+        "fecha": "2022-01-27T14:52:06.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7148,
+        "fecha": "2022-01-27T14:52:27.000Z",
+        "destinatario": "ymarambio@inach.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 5237,
+        "fecha": "2022-01-27T15:09:18.000Z",
+        "destinatario": "enanco3@hotmail.com"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4044,
+        "fecha": "2022-01-27T15:09:38.000Z",
+        "destinatario": "oscar.cristi.marfil@gmail.com"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 2058,
+        "fecha": "2022-01-27T15:16:18.000Z",
+        "destinatario": "jcruz@mi.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4298,
+        "fecha": "2022-01-27T15:34:59.000Z",
+        "destinatario": "poblete.erik@gmail.com"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4383,
+        "fecha": "2022-01-27T15:35:19.000Z",
+        "destinatario": "kfabiola75@hotmail.com"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8475,
+        "fecha": "2022-01-28T13:06:03.000Z",
+        "destinatario": "kvillegas@injuv.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8339,
+        "fecha": "2022-01-28T13:06:19.000Z",
+        "destinatario": "ltroncoso@agci.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7573,
+        "fecha": "2022-01-28T13:06:49.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8469,
+        "fecha": "2022-01-28T13:07:06.000Z",
+        "destinatario": "cristina.holuigue@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 4221,
+        "fecha": "2022-01-31T20:17:22.000Z",
+        "destinatario": "ximena.zapata@minagri.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4402,
+        "fecha": "2022-01-31T20:20:40.000Z",
+        "destinatario": "clopez@sec.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3643,
+        "fecha": "2022-01-31T20:20:58.000Z",
+        "destinatario": "priscilla.guerrero@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7567,
+        "fecha": "2022-01-31T20:23:51.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7565,
+        "fecha": "2022-01-31T20:24:08.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 7577,
+        "fecha": "2022-01-31T20:27:04.000Z",
+        "destinatario": "varias@mejorninez.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 7571,
+        "fecha": "2022-01-31T20:27:26.000Z",
+        "destinatario": "jsandes@mejorninez.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 7578,
+        "fecha": "2022-01-31T20:27:50.000Z",
+        "destinatario": "eespinoza@mejorninez.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 7570,
+        "fecha": "2022-01-31T20:28:06.000Z",
+        "destinatario": "crojasbown@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5161,
+        "fecha": "2022-02-01T12:18:37.000Z",
+        "destinatario": "pherrera@sernac.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5831,
+        "fecha": "2022-02-01T12:18:39.000Z",
+        "destinatario": "francisco.rivera.g@redsalud.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4990,
+        "fecha": "2022-02-01T12:18:41.000Z",
+        "destinatario": "pherrera@sernac.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5416,
+        "fecha": "2022-02-01T12:18:44.000Z",
+        "destinatario": "cbustamante@minrel.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5836,
+        "fecha": "2022-02-01T12:18:46.000Z",
+        "destinatario": "cfabres@prochile.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5245,
+        "fecha": "2022-02-01T12:18:48.000Z",
+        "destinatario": "felipe.vallespir@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5567,
+        "fecha": "2022-02-01T12:18:50.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5160,
+        "fecha": "2022-02-01T12:18:52.000Z",
+        "destinatario": "pherrera@sernac.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5687,
+        "fecha": "2022-02-01T12:18:54.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5411,
+        "fecha": "2022-02-01T12:18:56.000Z",
+        "destinatario": "dcanelo@senadis.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5046,
+        "fecha": "2022-02-01T12:18:58.000Z",
+        "destinatario": "amontiel@tesoreria.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5162,
+        "fecha": "2022-02-01T12:19:00.000Z",
+        "destinatario": "pherrera@sernac.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5493,
+        "fecha": "2022-02-01T12:19:02.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5829,
+        "fecha": "2022-02-01T12:19:04.000Z",
+        "destinatario": "felipe.vallespir@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5568,
+        "fecha": "2022-02-01T12:19:06.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5585,
+        "fecha": "2022-02-01T12:19:08.000Z",
+        "destinatario": "waldo.vergara@educacionpublica.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5896,
+        "fecha": "2022-02-01T12:19:10.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5688,
+        "fecha": "2022-02-01T12:19:12.000Z",
+        "destinatario": "kvillegas@injuv.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5266,
+        "fecha": "2022-02-01T12:19:14.000Z",
+        "destinatario": "vasco.barramuno@gendarmeria.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5274,
+        "fecha": "2022-02-01T12:19:16.000Z",
+        "destinatario": "llaplagn@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5472,
+        "fecha": "2022-02-01T12:19:18.000Z",
+        "destinatario": "erica.medina@redsalud.gov.cl "
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5158,
+        "fecha": "2022-02-01T12:19:20.000Z",
+        "destinatario": "angie.craig@redsalud.gov.cl "
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5232,
+        "fecha": "2022-02-01T12:19:22.000Z",
+        "destinatario": "claudio.cardenasm@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5317,
+        "fecha": "2022-02-01T12:19:24.000Z",
+        "destinatario": "pherrera@sernac.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5273,
+        "fecha": "2022-02-01T12:19:26.000Z",
+        "destinatario": "llaplagn@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5736,
+        "fecha": "2022-02-01T12:19:28.000Z",
+        "destinatario": "kvillegas@injuv.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4974,
+        "fecha": "2022-02-01T12:19:30.000Z",
+        "destinatario": "leticia.zamorano@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4957,
+        "fecha": "2022-02-01T12:19:32.000Z",
+        "destinatario": "paguilera@ispch.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5075,
+        "fecha": "2022-02-01T12:19:34.000Z",
+        "destinatario": "carla.menendez@ssmso.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5008,
+        "fecha": "2022-02-01T12:19:36.000Z",
+        "destinatario": "maria.villalobosl@sesuperior.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5053,
+        "fecha": "2022-02-01T12:19:38.000Z",
+        "destinatario": "fastudillo@ssmaule.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5025,
+        "fecha": "2022-02-01T12:19:40.000Z",
+        "destinatario": "orlando.allende@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4958,
+        "fecha": "2022-02-01T12:19:42.000Z",
+        "destinatario": "nirojash@ine.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4518,
+        "fecha": "2022-02-01T12:19:44.000Z",
+        "destinatario": "amontiel@tesoreria.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4954,
+        "fecha": "2022-02-01T12:19:46.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4959,
+        "fecha": "2022-02-01T12:19:48.000Z",
+        "destinatario": "nirojash@ine.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4998,
+        "fecha": "2022-02-01T12:19:50.000Z",
+        "destinatario": "felipe.vallespir@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 5044,
+        "fecha": "2022-02-01T12:19:52.000Z",
+        "destinatario": "emena@servel.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4951,
+        "fecha": "2022-02-01T12:19:54.000Z",
+        "destinatario": "amontiel@tesoreria.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4996,
+        "fecha": "2022-02-01T12:19:56.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4919,
+        "fecha": "2022-02-01T12:19:58.000Z",
+        "destinatario": "pablo.inostroza@junaeb.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4345,
+        "fecha": "2022-02-01T12:20:00.000Z",
+        "destinatario": "hfredes@indap.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3938,
+        "fecha": "2022-02-01T12:20:02.000Z",
+        "destinatario": "kaltamirano@ssdr.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4416,
+        "fecha": "2022-02-01T12:20:04.000Z",
+        "destinatario": "vosorio@hacienda.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4140,
+        "fecha": "2022-02-01T12:20:06.000Z",
+        "destinatario": "lbadawy@minvu.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3980,
+        "fecha": "2022-02-01T12:20:08.000Z",
+        "destinatario": "lnavarrete@fonasa.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4354,
+        "fecha": "2022-02-01T12:20:10.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4465,
+        "fecha": "2022-02-01T12:20:12.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4369,
+        "fecha": "2022-02-01T12:20:14.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4491,
+        "fecha": "2022-02-01T12:20:16.000Z",
+        "destinatario": "hfredes@indap.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4377,
+        "fecha": "2022-02-01T12:20:18.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4388,
+        "fecha": "2022-02-01T12:20:20.000Z",
+        "destinatario": "hector.burgos@sename.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4360,
+        "fecha": "2022-02-01T12:20:22.000Z",
+        "destinatario": "maburto@cne.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4425,
+        "fecha": "2022-02-01T12:20:24.000Z",
+        "destinatario": "cnunez@senda.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4424,
+        "fecha": "2022-02-01T12:20:26.000Z",
+        "destinatario": "cnunez@senda.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4460,
+        "fecha": "2022-02-01T12:20:28.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3918,
+        "fecha": "2022-02-01T12:20:30.000Z",
+        "destinatario": "orojas@sernapesca.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4280,
+        "fecha": "2022-02-01T12:20:32.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4365,
+        "fecha": "2022-02-01T12:20:34.000Z",
+        "destinatario": "hfredes@indap.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3797,
+        "fecha": "2022-02-01T12:20:36.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4256,
+        "fecha": "2022-02-01T12:20:38.000Z",
+        "destinatario": "hfredes@indap.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4089,
+        "fecha": "2022-02-01T12:20:40.000Z",
+        "destinatario": "mlefian@conadi.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3643,
+        "fecha": "2022-02-01T12:20:42.000Z",
+        "destinatario": "priscilla.guerrero@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4185,
+        "fecha": "2022-02-01T12:20:44.000Z",
+        "destinatario": "lbadawy@minvu.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4258,
+        "fecha": "2022-02-01T12:20:46.000Z",
+        "destinatario": "cchavez@dt.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4008,
+        "fecha": "2022-02-01T12:20:48.000Z",
+        "destinatario": "pablo.inostroza@junaeb.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4077,
+        "fecha": "2022-02-01T12:20:50.000Z",
+        "destinatario": "maximiliano.radonich@araucanianorte.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4122,
+        "fecha": "2022-02-01T12:20:52.000Z",
+        "destinatario": "marta.valenzuela@sag.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4324,
+        "fecha": "2022-02-01T12:20:54.000Z",
+        "destinatario": "carla.menendez@ssmso.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4061,
+        "fecha": "2022-02-01T12:20:56.000Z",
+        "destinatario": "pgraziano@sea.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4347,
+        "fecha": "2022-02-01T12:20:58.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4366,
+        "fecha": "2022-02-01T12:21:00.000Z",
+        "destinatario": "llaplagn@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4402,
+        "fecha": "2022-02-01T12:21:02.000Z",
+        "destinatario": "clopez@sec.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4319,
+        "fecha": "2022-02-01T12:21:04.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4211,
+        "fecha": "2022-02-01T12:21:06.000Z",
+        "destinatario": "orojas@sernapesca.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4289,
+        "fecha": "2022-02-01T12:21:08.000Z",
+        "destinatario": "marta.valenzuela@sag.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4245,
+        "fecha": "2022-02-01T12:21:10.000Z",
+        "destinatario": "pgraziano@sea.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 4015,
+        "fecha": "2022-02-01T12:21:12.000Z",
+        "destinatario": "pamela.escobar@saludoriente.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3804,
+        "fecha": "2022-02-01T12:21:14.000Z",
+        "destinatario": "mpoblete@onemi.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3752,
+        "fecha": "2022-02-01T12:21:16.000Z",
+        "destinatario": "felipe.vallespir@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3803,
+        "fecha": "2022-02-01T12:21:18.000Z",
+        "destinatario": "nirojash@ine.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3778,
+        "fecha": "2022-02-01T12:21:20.000Z",
+        "destinatario": "marisol.munozhv@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3758,
+        "fecha": "2022-02-01T12:21:22.000Z",
+        "destinatario": "cmancilla@fne.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3818,
+        "fecha": "2022-02-01T12:21:24.000Z",
+        "destinatario": "akiblisky@spensiones.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3497,
+        "fecha": "2022-02-01T12:21:26.000Z",
+        "destinatario": "paguilera@ispch.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3371,
+        "fecha": "2022-02-01T12:21:28.000Z",
+        "destinatario": "vosorio@hacienda.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3569,
+        "fecha": "2022-02-01T12:21:30.000Z",
+        "destinatario": "achernandez@superir.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3477,
+        "fecha": "2022-02-01T12:21:32.000Z",
+        "destinatario": "felipe.munoz@cchen.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3515,
+        "fecha": "2022-02-01T12:21:34.000Z",
+        "destinatario": "ltroncoso@dpp.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3233,
+        "fecha": "2022-02-01T12:21:36.000Z",
+        "destinatario": "lmontalva@sml.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3458,
+        "fecha": "2022-02-01T12:21:38.000Z",
+        "destinatario": "arturo.vergara@capredena.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3077,
+        "fecha": "2022-02-01T12:21:40.000Z",
+        "destinatario": "maximiliano.radonich@araucanianorte.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 3162,
+        "fecha": "2022-02-01T12:21:42.000Z",
+        "destinatario": "ltroncoso@dpp.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 2761,
+        "fecha": "2022-02-01T12:21:44.000Z",
+        "destinatario": "jsilva@cochilco.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 2677,
+        "fecha": "2022-02-01T12:21:46.000Z",
+        "destinatario": "angie.craig@redsalud.gov.cl "
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 2151,
+        "fecha": "2022-02-01T12:21:48.000Z",
+        "destinatario": "rigoberto.millacura@previsionsocial.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 2681,
+        "fecha": "2022-02-01T12:21:50.000Z",
+        "destinatario": "leticia.zamorano@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 2554,
+        "fecha": "2022-02-01T12:21:52.000Z",
+        "destinatario": "marta.valenzuela@sag.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 2567,
+        "fecha": "2022-02-01T12:21:54.000Z",
+        "destinatario": "marta.valenzuela@sag.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 2652,
+        "fecha": "2022-02-01T12:21:56.000Z",
+        "destinatario": "pgraziano@sea.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual Febrero",
+        "concurso": 2024,
+        "fecha": "2022-02-01T12:21:58.000Z",
+        "destinatario": "clopez@sec.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 9207,
+        "fecha": "2022-02-01T12:25:11.000Z",
+        "destinatario": "kvillegas@injuv.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4388,
+        "fecha": "2022-02-01T12:25:35.000Z",
+        "destinatario": "hector.burgos@sename.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4246,
+        "fecha": "2022-02-01T12:27:15.000Z",
+        "destinatario": "carla.menendez@ssmso.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7582,
+        "fecha": "2022-02-02T14:48:49.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 9098,
+        "fecha": "2022-02-02T14:49:26.000Z",
+        "destinatario": "marcela.fariasg@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8251,
+        "fecha": "2022-02-02T14:49:44.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8473,
+        "fecha": "2022-02-02T14:50:26.000Z",
+        "destinatario": "clopez@sec.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4396,
+        "fecha": "2022-02-02T14:50:47.000Z",
+        "destinatario": "lbadawy@minvu.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4028,
+        "fecha": "2022-02-02T14:51:08.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4418,
+        "fecha": "2022-02-02T14:51:24.000Z",
+        "destinatario": "orlando.allende@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4265,
+        "fecha": "2022-02-02T14:51:38.000Z",
+        "destinatario": "jaime.acosta1@saludarica.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4223,
+        "fecha": "2022-02-02T14:51:56.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4427,
+        "fecha": "2022-02-02T14:52:17.000Z",
+        "destinatario": "nirojash@ine.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4486,
+        "fecha": "2022-02-02T14:52:42.000Z",
+        "destinatario": "mdiazs@minvu.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4029,
+        "fecha": "2022-02-02T14:53:00.000Z",
+        "destinatario": "akiblisky@spensiones.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4108,
+        "fecha": "2022-02-02T14:53:39.000Z",
+        "destinatario": "mlefian@conadi.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4030,
+        "fecha": "2022-02-02T14:53:57.000Z",
+        "destinatario": "akiblisky@spensiones.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3193,
+        "fecha": "2022-02-02T14:54:26.000Z",
+        "destinatario": "rosa.benavente@chilecompra.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7155,
+        "fecha": "2022-02-02T14:55:03.000Z",
+        "destinatario": "enrique.diaz@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4303,
+        "fecha": "2022-02-02T20:01:08.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4268,
+        "fecha": "2022-02-02T20:01:22.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4384,
+        "fecha": "2022-02-02T20:02:50.000Z",
+        "destinatario": "calvayai@gmail.com"
+    },
+    {
+        "tipo": "Clave app",
+        "concurso": 4392,
+        "fecha": "2022-02-03T12:22:37.000Z",
+        "destinatario": "msanchezc@isl.gob.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 9029,
+        "fecha": "2022-02-04T14:44:23.000Z",
+        "destinatario": "casmad@senama.gob.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8823,
+        "fecha": "2022-02-04T14:44:41.000Z",
+        "destinatario": "cbahamonde@sml.gob.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8251,
+        "fecha": "2022-02-04T14:45:54.000Z",
+        "destinatario": "yuri.grlica@ips.gob.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 9098,
+        "fecha": "2022-02-04T14:46:09.000Z",
+        "destinatario": "joseluis.moya@redsalud.gob.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8682,
+        "fecha": "2022-02-04T14:46:54.000Z",
+        "destinatario": "ssanhueza.11@sea.gob.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4972,
+        "fecha": "2022-02-04T14:59:07.000Z",
+        "destinatario": "diegodaneri@hotmail.com"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4050,
+        "fecha": "2022-02-04T18:19:32.000Z",
+        "destinatario": "jaimehurtadobenavente@gmail.com"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8328,
+        "fecha": "2022-02-04T19:27:19.000Z",
+        "destinatario": "amontiel@tesoreria.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4231,
+        "fecha": "2022-02-07T16:13:06.000Z",
+        "destinatario": "nolivosl@isl.gob.cl"
+    },
+    {
+        "tipo": "Clave app",
+        "concurso": 5036,
+        "fecha": "2022-02-07T20:03:53.000Z",
+        "destinatario": "fernando.vega@dipreca.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 7574,
+        "fecha": "2022-02-08T12:58:45.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 7571,
+        "fecha": "2022-02-08T13:01:17.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 3957,
+        "fecha": "2022-02-08T13:03:49.000Z",
+        "destinatario": "kvillegas@injuv.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4530,
+        "fecha": "2022-02-08T13:53:28.000Z",
+        "destinatario": "cmeza@sernatur.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8471,
+        "fecha": "2022-02-08T13:56:03.000Z",
+        "destinatario": "ilillo@sec.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8126,
+        "fecha": "2022-02-08T19:32:55.000Z",
+        "destinatario": "cristobal.straub@educacionpublica.cl "
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 4143,
+        "fecha": "2022-02-08T19:35:51.000Z",
+        "destinatario": "angie.aracena@supereduc.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8472,
+        "fecha": "2022-02-09T14:20:54.000Z",
+        "destinatario": "jpoblete@sec.cl"
+    },
+    {
+        "tipo": "Clave SICDE",
+        "concurso": 3233,
+        "fecha": "2022-02-09T15:57:46.000Z",
+        "destinatario": "jdiaz@sml.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 5170,
+        "fecha": "2022-02-09T19:34:06.000Z",
+        "destinatario": "cristian.barra@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8340,
+        "fecha": "2022-02-10T15:03:28.000Z",
+        "destinatario": "ltroncoso@agci.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 9312,
+        "fecha": "2022-02-10T20:16:28.000Z",
+        "destinatario": "gisela.berasain@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4053,
+        "fecha": "2022-02-14T18:09:49.000Z",
+        "destinatario": "tdelapen@indap.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4112,
+        "fecha": "2022-02-14T18:10:11.000Z",
+        "destinatario": "fernandotorregrosaa@hotmail.com"
+    },
+    {
+        "tipo": "Alerta Noventa",
+        "concurso": 2863,
+        "fecha": "2022-02-14T18:59:07.000Z",
+        "destinatario": "cbustamante@minrel.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 8340,
+        "fecha": "2022-02-15T18:07:10.000Z",
+        "destinatario": "ltroncoso@agci.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8471,
+        "fecha": "2022-02-16T15:34:33.000Z",
+        "destinatario": "clopez@sec.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8199,
+        "fecha": "2022-02-16T15:38:11.000Z",
+        "destinatario": "julio.mendoza@araucanianorte.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 5053,
+        "fecha": "2022-02-16T15:53:43.000Z",
+        "destinatario": "rperales001@gmail.com"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8689,
+        "fecha": "2022-02-16T19:05:07.000Z",
+        "destinatario": "jeguiluz@injuv.gob.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 5170,
+        "fecha": "2022-02-18T14:38:34.000Z",
+        "destinatario": "cristian.barra@mop.gov.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8467,
+        "fecha": "2022-02-18T14:39:06.000Z",
+        "destinatario": "alexis.salgado@mop.gov.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8544,
+        "fecha": "2022-02-18T14:39:26.000Z",
+        "destinatario": "cnunez@senda.gob.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 5401,
+        "fecha": "2022-02-18T14:51:29.000Z",
+        "destinatario": "perezsoteras@hotmail.com"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7572,
+        "fecha": "2022-02-21T15:07:23.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7568,
+        "fecha": "2022-02-21T15:08:45.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3889,
+        "fecha": "2022-02-21T15:10:29.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8574,
+        "fecha": "2022-02-21T15:13:15.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7578,
+        "fecha": "2022-02-21T15:13:34.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7574,
+        "fecha": "2022-02-21T15:15:43.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7577,
+        "fecha": "2022-02-21T15:16:01.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8683,
+        "fecha": "2022-02-21T15:16:22.000Z",
+        "destinatario": "mlefian@conadi.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4273,
+        "fecha": "2022-02-21T16:37:53.000Z",
+        "destinatario": "alexis.salgado@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4293,
+        "fecha": "2022-02-21T16:48:03.000Z",
+        "destinatario": "alexis.salgado@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4294,
+        "fecha": "2022-02-21T16:48:20.000Z",
+        "destinatario": "alexis.salgado@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4394,
+        "fecha": "2022-02-21T16:48:46.000Z",
+        "destinatario": "tnunez@superdesalud.gob.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3204,
+        "fecha": "2022-02-21T16:53:43.000Z",
+        "destinatario": "pherrera@sernac.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 5178,
+        "fecha": "2022-02-21T16:57:01.000Z",
+        "destinatario": "priscilla.guerrero@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 5178,
+        "fecha": "2022-02-21T16:57:33.000Z",
+        "destinatario": "priscilla.guerrero@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8473,
+        "fecha": "2022-02-22T15:28:56.000Z",
+        "destinatario": "dpincheira@sec.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7575,
+        "fecha": "2022-02-23T13:05:16.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 7579,
+        "fecha": "2022-02-23T13:25:16.000Z",
+        "destinatario": "rsepulvedat@mejorninez.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 7582,
+        "fecha": "2022-02-23T13:25:37.000Z",
+        "destinatario": "valvayay@mejorninez.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 9207,
+        "fecha": "2022-02-23T13:25:58.000Z",
+        "destinatario": "yhilaja@injuv.gob.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 7572,
+        "fecha": "2022-02-23T13:26:19.000Z",
+        "destinatario": "clopez@mejorninez.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4261,
+        "fecha": "2022-02-23T13:29:28.000Z",
+        "destinatario": "maurodgv@gmail.com"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8832,
+        "fecha": "2022-02-23T14:52:37.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Clave SICDE",
+        "concurso": 4948,
+        "fecha": "2022-02-23T15:05:12.000Z",
+        "destinatario": "carlos.perez@slepatacama.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3279,
+        "fecha": "2022-02-24T13:50:42.000Z",
+        "destinatario": "mpramirez@uaf.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 2024,
+        "fecha": "2022-02-24T13:52:44.000Z",
+        "destinatario": "dpincheira@sec.cl"
+    },
+    {
+        "tipo": "Alerta Noventa",
+        "concurso": 7731,
+        "fecha": "2022-02-24T14:33:03.000Z",
+        "destinatario": "marina.garib@junaeb.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 5896,
+        "fecha": "2022-02-24T14:37:03.000Z",
+        "destinatario": " johannagribbell@gmail.com"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 8327,
+        "fecha": "2022-02-24T18:32:34.000Z",
+        "destinatario": "jacuna@dgac.gob.cl"
+    },
+    {
+        "tipo": "Alerta Noventa",
+        "concurso": 8256,
+        "fecha": "2022-03-01T12:38:46.000Z",
+        "destinatario": "hcanessa@defensa.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8751,
+        "fecha": "2022-03-01T14:05:42.000Z",
+        "destinatario": "beatriz.diaz@fosis.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 7570,
+        "fecha": "2022-03-01T14:07:49.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 8173,
+        "fecha": "2022-03-01T14:12:43.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Bienvenida primer periodo",
+        "concurso": 7568,
+        "fecha": "2022-03-01T14:16:06.000Z",
+        "destinatario": "null"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 4118,
+        "fecha": "2022-03-01T15:12:26.000Z",
+        "destinatario": "alejandro.cornejo@cultura.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 6274,
+        "fecha": "2022-03-03T12:04:36.000Z",
+        "destinatario": "cristian.larenas@educacionpublica.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5310,
+        "fecha": "2022-03-03T12:04:38.000Z",
+        "destinatario": "katherine.castillo.a@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 6095,
+        "fecha": "2022-03-03T12:04:40.000Z",
+        "destinatario": "jose.novoa@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4988,
+        "fecha": "2022-03-03T12:04:42.000Z",
+        "destinatario": "amontiel@tesoreria.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5685,
+        "fecha": "2022-03-03T12:04:45.000Z",
+        "destinatario": "llaplagn@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5684,
+        "fecha": "2022-03-03T12:04:47.000Z",
+        "destinatario": "llaplagn@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 6133,
+        "fecha": "2022-03-03T12:04:49.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5355,
+        "fecha": "2022-03-03T12:04:51.000Z",
+        "destinatario": "marisol.munozhv@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5586,
+        "fecha": "2022-03-03T12:04:53.000Z",
+        "destinatario": "leonardo.fuentesr@educacionpublica.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5830,
+        "fecha": "2022-03-03T12:04:55.000Z",
+        "destinatario": "claudio.cardenasm@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 6248,
+        "fecha": "2022-03-03T12:04:57.000Z",
+        "destinatario": "marisol.munozhv@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5733,
+        "fecha": "2022-03-03T12:04:59.000Z",
+        "destinatario": "marta.valenzuela@sag.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5621,
+        "fecha": "2022-03-03T12:05:01.000Z",
+        "destinatario": "marta.valenzuela@sag.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5566,
+        "fecha": "2022-03-03T12:05:03.000Z",
+        "destinatario": " sandra.caceres@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5619,
+        "fecha": "2022-03-03T12:05:05.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5811,
+        "fecha": "2022-03-03T12:05:07.000Z",
+        "destinatario": "amontiel@tesoreria.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5626,
+        "fecha": "2022-03-03T12:05:09.000Z",
+        "destinatario": "paola.poblete@patrimoniocultural.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5359,
+        "fecha": "2022-03-03T12:05:11.000Z",
+        "destinatario": "claudio.cardenasm@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5081,
+        "fecha": "2022-03-03T12:05:13.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4963,
+        "fecha": "2022-03-03T12:05:15.000Z",
+        "destinatario": "llaplagn@registrocivil.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5062,
+        "fecha": "2022-03-03T12:05:17.000Z",
+        "destinatario": "leonardo.fuentesr@educacionpublica.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5083,
+        "fecha": "2022-03-03T12:05:19.000Z",
+        "destinatario": "guerrerolor@saludaysen.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4910,
+        "fecha": "2022-03-03T12:05:21.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5117,
+        "fecha": "2022-03-03T12:05:23.000Z",
+        "destinatario": "lmontalva@sml.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4935,
+        "fecha": "2022-03-03T12:05:25.000Z",
+        "destinatario": "dcanelo@senadis.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5066,
+        "fecha": "2022-03-03T12:05:27.000Z",
+        "destinatario": "katherine.castillo.a@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5122,
+        "fecha": "2022-03-03T12:05:29.000Z",
+        "destinatario": "felipe.munoz@cchen.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5078,
+        "fecha": "2022-03-03T12:05:31.000Z",
+        "destinatario": "lmontalva@sml.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4915,
+        "fecha": "2022-03-03T12:05:33.000Z",
+        "destinatario": "fcornejo@aduana.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5060,
+        "fecha": "2022-03-03T12:05:35.000Z",
+        "destinatario": "leonardo.fuentesr@educacionpublica.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5005,
+        "fecha": "2022-03-03T12:05:37.000Z",
+        "destinatario": "fcornejo@aduana.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5110,
+        "fecha": "2022-03-03T12:05:39.000Z",
+        "destinatario": "dcanelo@senadis.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5120,
+        "fecha": "2022-03-03T12:05:41.000Z",
+        "destinatario": "lnavarrete@fonasa.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4982,
+        "fecha": "2022-03-03T12:05:43.000Z",
+        "destinatario": "marta.valenzuela@sag.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5029,
+        "fecha": "2022-03-03T12:05:45.000Z",
+        "destinatario": "felipe.munoz@cchen.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5048,
+        "fecha": "2022-03-03T12:05:47.000Z",
+        "destinatario": "tnunez@superdesalud.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 5045,
+        "fecha": "2022-03-03T12:05:49.000Z",
+        "destinatario": "cpeirano@minrel.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4575,
+        "fecha": "2022-03-03T12:05:51.000Z",
+        "destinatario": "rene.guerra@ips.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 3889,
+        "fecha": "2022-03-03T12:05:53.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4281,
+        "fecha": "2022-03-03T12:05:55.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4394,
+        "fecha": "2022-03-03T12:05:57.000Z",
+        "destinatario": "tnunez@superdesalud.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 3521,
+        "fecha": "2022-03-03T12:05:59.000Z",
+        "destinatario": "padiaz@dipreca.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 3965,
+        "fecha": "2022-03-03T12:06:01.000Z",
+        "destinatario": "dcanelo@senadis.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4182,
+        "fecha": "2022-03-03T12:06:03.000Z",
+        "destinatario": "mlefian@conadi.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4268,
+        "fecha": "2022-03-03T12:06:05.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4030,
+        "fecha": "2022-03-03T12:06:07.000Z",
+        "destinatario": "akiblisky@spensiones.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4303,
+        "fecha": "2022-03-03T12:06:09.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4231,
+        "fecha": "2022-03-03T12:06:11.000Z",
+        "destinatario": "nolivosl@isl.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4327,
+        "fecha": "2022-03-03T12:06:13.000Z",
+        "destinatario": "cnunez@senda.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4096,
+        "fecha": "2022-03-03T12:06:15.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4108,
+        "fecha": "2022-03-03T12:06:17.000Z",
+        "destinatario": "mlefian@conadi.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4273,
+        "fecha": "2022-03-03T12:06:19.000Z",
+        "destinatario": "alexis.salgado@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4029,
+        "fecha": "2022-03-03T12:06:21.000Z",
+        "destinatario": "akiblisky@spensiones.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4395,
+        "fecha": "2022-03-03T12:06:23.000Z",
+        "destinatario": "nirojash@ine.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4028,
+        "fecha": "2022-03-03T12:06:25.000Z",
+        "destinatario": "adp@sence.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4293,
+        "fecha": "2022-03-03T12:06:27.000Z",
+        "destinatario": "alexis.salgado@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4418,
+        "fecha": "2022-03-03T12:06:29.000Z",
+        "destinatario": "orlando.allende@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 3937,
+        "fecha": "2022-03-03T12:06:31.000Z",
+        "destinatario": "francisco.lozanoparra@gmail.com"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4265,
+        "fecha": "2022-03-03T12:06:33.000Z",
+        "destinatario": "jaime.acosta1@saludarica.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4134,
+        "fecha": "2022-03-03T12:06:35.000Z",
+        "destinatario": "maximiliano.radonich@araucanianorte.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4396,
+        "fecha": "2022-03-03T12:06:37.000Z",
+        "destinatario": "lbadawy@minvu.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4223,
+        "fecha": "2022-03-03T12:06:39.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4294,
+        "fecha": "2022-03-03T12:06:41.000Z",
+        "destinatario": "alexis.salgado@mop.gov.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4486,
+        "fecha": "2022-03-03T12:06:43.000Z",
+        "destinatario": "mdiazs@minvu.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4427,
+        "fecha": "2022-03-03T12:06:45.000Z",
+        "destinatario": "nirojash@ine.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4530,
+        "fecha": "2022-03-03T12:06:47.000Z",
+        "destinatario": "cmeza@sernatur.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4246,
+        "fecha": "2022-03-03T12:06:49.000Z",
+        "destinatario": "carla.menendez@ssmso.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4068,
+        "fecha": "2022-03-03T12:06:51.000Z",
+        "destinatario": "ximena.zapata@minagri.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 3920,
+        "fecha": "2022-03-03T12:06:53.000Z",
+        "destinatario": "vcintolesi@mma.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 4071,
+        "fecha": "2022-03-03T12:06:55.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 3828,
+        "fecha": "2022-03-03T12:06:57.000Z",
+        "destinatario": "kpenaloza@parquemet.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 3541,
+        "fecha": "2022-03-03T12:06:59.000Z",
+        "destinatario": "mzepeda@anid.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 3524,
+        "fecha": "2022-03-03T12:07:01.000Z",
+        "destinatario": "vretamales@investchile.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 3193,
+        "fecha": "2022-03-03T12:07:03.000Z",
+        "destinatario": "rosa.benavente@chilecompra.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 3204,
+        "fecha": "2022-03-03T12:07:05.000Z",
+        "destinatario": "pherrera@sernac.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 3279,
+        "fecha": "2022-03-03T12:07:07.000Z",
+        "destinatario": "mpramirez@uaf.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 2644,
+        "fecha": "2022-03-03T12:07:09.000Z",
+        "destinatario": "achernandez@superir.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 2834,
+        "fecha": "2022-03-03T12:07:11.000Z",
+        "destinatario": "francia.rivero@redsalud.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 2410,
+        "fecha": "2022-03-03T12:07:13.000Z",
+        "destinatario": "pgraziano@sea.gob.cl"
+    },
+    {
+        "tipo": "Alerta evaluación mensual marzo",
+        "concurso": 2542,
+        "fecha": "2022-03-03T12:07:15.000Z",
+        "destinatario": "pamela.escobar@saludoriente.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8472,
+        "fecha": "2022-03-03T14:05:09.000Z",
+        "destinatario": "clopez@sec.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 8045,
+        "fecha": "2022-03-03T14:06:21.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 7460,
+        "fecha": "2022-03-03T14:06:56.000Z",
+        "destinatario": "katherine.castillo.a@redsalud.gov.cl"
+    },
+    {
+        "tipo": "Alerta Noventa",
+        "concurso": 7731,
+        "fecha": "2022-03-03T14:18:19.000Z",
+        "destinatario": "marina.garib@junaeb.cl"
+    },
+    {
+        "tipo": "Alerta Noventa",
+        "concurso": 3794,
+        "fecha": "2022-03-03T14:19:08.000Z",
+        "destinatario": "afuentes@sernameg.gob.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 4278,
+        "fecha": "2022-03-03T14:19:39.000Z",
+        "destinatario": "hfosorio@junji.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 3978,
+        "fecha": "2022-03-03T14:30:37.000Z",
+        "destinatario": "lnavarrete@fonasa.gov.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 3855,
+        "fecha": "2022-03-03T14:37:51.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 9261,
+        "fecha": "2022-03-03T15:06:13.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Cero primero periodo",
+        "concurso": 7580,
+        "fecha": "2022-03-03T15:06:28.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3937,
+        "fecha": "2022-03-03T15:13:11.000Z",
+        "destinatario": "francisco.lozanoparra@gmail.com"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 9030,
+        "fecha": "2022-03-03T15:59:03.000Z",
+        "destinatario": "yasmin.sufan@ssbiobio.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 9029,
+        "fecha": "2022-03-07T14:05:45.000Z",
+        "destinatario": "clobos@senama.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4096,
+        "fecha": "2022-03-07T14:18:18.000Z",
+        "destinatario": "jorge.vergara@ind.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7570,
+        "fecha": "2022-03-07T14:20:09.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Encuesta de percepción",
+        "concurso": 7571,
+        "fecha": "2022-03-07T14:20:27.000Z",
+        "destinatario": "cbravo@mejorninez.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 4040,
+        "fecha": "2022-03-07T14:37:05.000Z",
+        "destinatario": "paguilera@ispch.cl"
+    },
+    {
+        "tipo": "Alerta Sesenta",
+        "concurso": 4038,
+        "fecha": "2022-03-07T14:38:47.000Z",
+        "destinatario": "soledad.mendez@minsal.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 4134,
+        "fecha": "2022-03-07T15:02:34.000Z",
+        "destinatario": "maximiliano.radonich@araucanianorte.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3521,
+        "fecha": "2022-03-07T15:03:05.000Z",
+        "destinatario": "padiaz@dipreca.cl"
+    },
+    {
+        "tipo": "Alerta Cero Renovado",
+        "concurso": 3244,
+        "fecha": "2022-03-07T15:03:42.000Z",
+        "destinatario": "erica.medina@redsalud.gov.cl "
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4952,
+        "fecha": "2022-03-07T15:12:48.000Z",
+        "destinatario": "cvergara@blycia.cl"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 3788,
+        "fecha": "2022-03-07T15:13:11.000Z",
+        "destinatario": "claudia.aranci@gmail.com"
+    },
+    {
+        "tipo": "Cuestionario de cierre",
+        "concurso": 4395,
+        "fecha": "2022-03-07T15:13:39.000Z",
+        "destinatario": "miguelalonsoromanini@gmail.com"
+    }
+]

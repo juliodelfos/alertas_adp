@@ -42,7 +42,6 @@
 
 <script>
 import { mapState } from "vuex";
-import emailjs from "emailjs-com";
 import Vue from "vue";
 import axios from "axios";
 export default {
@@ -91,17 +90,17 @@ export default {
     solicitaMes() {
       return prompt(`¿Qué mes corresponde la alerta?`, `Ej. diciembre`);
     },
-    recorreArregloEnviaMail() {
-      let mes = this.solicitaMes();
-      this.destinatarios.forEach(({ indice }, i) => {
-        setTimeout(() => {
-          this.enviaCorreoPorEmailJS(mes, indice);
-        }, i * 1000);
-      });
-      Vue.$toast.success("Correo enviado y registrado en planilla", {
-        queue: true,
-      });
-    },
+    // recorreArregloEnviaMail() {
+    //   let mes = this.solicitaMes();
+    //   this.destinatarios.forEach(({ indice }, i) => {
+    //     setTimeout(() => {
+    //       this.enviaCorreoPorEmailJS(mes, indice);
+    //     }, i * 1000);
+    //   });
+    //   Vue.$toast.success("Correo enviado y registrado en planilla", {
+    //     queue: true,
+    //   });
+    // },
     enviaCorreoPorEmailJS(mes, indice) {
       const formateaFecha = (fecha) =>
         fecha.split("T00:00:00.000Z")[0].split("-");
@@ -148,7 +147,7 @@ export default {
         );
       axios({
         method: "post",
-        url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
+        url: "acá debe ir fidelizador",
         data: [
           [
             `Alerta evaluación mensual ${mes}`,

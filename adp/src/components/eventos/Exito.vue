@@ -34,7 +34,7 @@ export default {
     registraAlertaPlanilla() {
       axios({
         method: "post",
-        url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/RkzZKuszROavKXTk?tabId=registros",
+        url: "acá debe ir registro en base firebase",
         data: [
           [this.adp.concurso, this.adp.mail, this.adp.evento, this.fechaYHora()],
         ],

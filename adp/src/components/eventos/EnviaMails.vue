@@ -44,8 +44,8 @@
 <script>
 import { mapState } from "vuex";
 import Vue from "vue";
-import axios from "axios";
 import { enviaEvaluacionMensual } from "@/metodosEnvioMails/evalMensual.js";
+import { creaDocumentoEnDB } from "@/metodosFirebase/registraAlerta.js";
 
 export default {
   name: "EnviaMails",
@@ -184,22 +184,11 @@ export default {
         `Servicio Civil - Informa sobre evaluación directiva`
       );
 
-      axios({
-        method: "post",
-        url: "https://v1.nocodeapi.com/yerigagarin/google_sheets/esiAfklspbNVHooZ?tabId=Mails",
-        data: [
-          [
-            `Alerta evaluación mensual ${mes}`,
-            this.adps[indice].concurso,
-            new Date().toLocaleDateString() +
-              " " +
-              new Date().toLocaleTimeString(),
-            this.adps[indice].mail_contraparte_cd,
-          ],
-        ],
-      })
-        .then(({ data }) => console.log(data))
-        .catch((error) => console.log(error));
+      creaDocumentoEnDB(
+        `Alerta evaluación mensual ${mes}`,
+        this.adps[indice].concurso,
+        this.adps[indice].mail_contraparte_cd
+      );
     },
 
     enviarCorreosDelMes() {
@@ -207,7 +196,7 @@ export default {
       this.adpsDeEsteMes.forEach(({ indice }, i) => {
         setTimeout(() => {
           this.enviaMailPorFidelizador(mes, indice);
-        }, i * 2000);
+        }, i * 1000);
       });
       Vue.$toast.success("Correo enviado y registrado en planilla", {
         queue: true,

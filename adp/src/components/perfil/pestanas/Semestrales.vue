@@ -14,54 +14,31 @@
             {{ eval_semestral_inicio | formatDate }}
             <div>
               <span
-                class="badge rounded-pill bg-primary text-white cursor"
-                @click="$emit('calendarInicioEvalParcial')"
-                ><b-icon icon="calendar"></b-icon> Añadir a calendario
-              </span>
+                class="badge rounded-pill bg-secondary text-dark"
+                @click="$emit('inicioEvalSemestral')"
+                ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
+              >
             </div>
           </td>
           <td>
             {{ eval_semestral_auto | formatDate }}
             <div>
               <span
-                class="badge rounded-pill bg-primary text-white cursor"
-                @click="$emit('calendarAutoEvalParcial')"
-                ><b-icon icon="calendar"></b-icon> Añadir a calendario
-              </span>
+                class="badge rounded-pill bg-warning text-dark cursor"
+                @click="$emit('autoEvalSemestral')"
+                ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
+              >
             </div>
           </td>
           <td>
             {{ eval_semestral_retro | formatDate }}
             <div>
               <span
-                class="badge rounded-pill bg-primary text-white cursor"
-                @click="$emit('calendarRetroEvalParcial')"
-                ><b-icon icon="calendar"></b-icon> Añadir a calendario
-              </span>
+                class="badge rounded-pill bg-secondary text-dark"
+                @click="$emit('retroEvalSemestral')"
+                ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
+              >
             </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span
-              class="badge rounded-pill bg-secondary text-dark"
-              @click="$emit('inicioEvalSemestral')"
-              ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
-            >
-          </td>
-          <td>
-            <span
-              class="badge rounded-pill bg-warning text-dark cursor"
-              @click="$emit('autoEvalSemestral')"
-              ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
-            >
-          </td>
-          <td>
-            <span
-              class="badge rounded-pill bg-secondary text-dark"
-              @click="$emit('retroEvalSemestral')"
-              ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
-            >
           </td>
         </tr>
       </tbody>

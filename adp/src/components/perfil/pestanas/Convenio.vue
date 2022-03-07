@@ -14,61 +14,38 @@
             {{ fecha_propuesta | formatDate }}
             <div>
               <span
-                class="badge rounded-pill bg-primary text-white cursor"
-                @click="$emit('calendarAlertaCero')"
-                ><b-icon icon="calendar"></b-icon> Añadir a calendario
-              </span>
+                v-if="estado_adp == 'Nombrado (primer periodo)'"
+                class="badge rounded-pill bg-warning text-dark cursor"
+                @click="$emit('alertaCero')"
+                ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
+              >
+              <span
+                v-else
+                class="badge rounded-pill bg-warning text-dark cursor"
+                @click="$emit('alertaCeroRenovado')"
+                ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
+              >
             </div>
           </td>
           <td>
             {{ fecha_suscripcion | formatDate }}
             <div>
               <span
-                class="badge rounded-pill bg-primary text-white cursor"
-                @click="$emit('calendarAlertaSesenta')"
-                ><b-icon icon="calendar"></b-icon> Añadir a calendario
-              </span>
+                class="badge rounded-pill bg-warning text-dark cursor"
+                @click="$emit('alertaSesenta')"
+                ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
+              >
             </div>
           </td>
           <td>
             {{ fecha_comunicacion | formatDate }}
             <div>
               <span
-                class="badge rounded-pill bg-primary text-white cursor"
-                @click="$emit('calendarAlertaNoventa')"
-                ><b-icon icon="calendar"></b-icon> Añadir a calendario
-              </span>
+                class="badge rounded-pill bg-warning text-dark cursor"
+                @click="$emit('alertaNoventa')"
+                ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
+              >
             </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span
-              v-if="estado_adp == 'Nombrado (primer periodo)'"
-              class="badge rounded-pill bg-warning text-dark cursor"
-              @click="$emit('alertaCero')"
-              ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
-            >
-            <span
-              v-else
-              class="badge rounded-pill bg-warning text-dark cursor"
-              @click="$emit('alertaCeroRenovado')"
-              ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
-            >
-          </td>
-          <td>
-            <span
-              class="badge rounded-pill bg-warning text-dark cursor"
-              @click="$emit('alertaSesenta')"
-              ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
-            >
-          </td>
-          <td>
-            <span
-              class="badge rounded-pill bg-warning text-dark cursor"
-              @click="$emit('alertaNoventa')"
-              ><b-icon icon="envelope-fill"></b-icon> Enviar alerta</span
-            >
           </td>
         </tr>
       </tbody>
@@ -77,7 +54,6 @@
 </template>
 
 <script>
-// import emailjs from "emailjs-com";
 export default {
   name: "Convenio",
   props: {

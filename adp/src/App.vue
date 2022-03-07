@@ -53,7 +53,7 @@ export default {
     ],
   },
   methods: {
-    ...mapActions(["fetch_Adp", "fetch_EstadoSICDE"]),
+    ...mapActions(["fetch_Adp"]),
     fetchAdp() {
       axios
         .get(
@@ -62,18 +62,9 @@ export default {
         .then(({ data: { data } }) => this.fetch_Adp(data))
         .catch((error) => console.log(error));
     },
-    estadoSICDE() {
-      axios
-        .get(
-          "https://v1.nocodeapi.com/yerigagarin/uptime/AUpowmIbIGdzFDkI?monitors=789280592"
-        )
-        .then(({ data: { stat } }) => this.fetch_EstadoSICDE(stat))
-        .catch((error) => console.log(error));
-    },
   },
   created() {
     this.fetchAdp();
-    this.estadoSICDE();
   },
 };
 </script>
