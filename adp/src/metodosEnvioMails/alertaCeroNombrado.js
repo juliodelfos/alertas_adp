@@ -1,7 +1,7 @@
 import { cuerpoAlertaCero } from "@/plantillasMail.js";
 import { enviarCorreoPorFidelizador } from "@/metodosEnvioMails/funcionFidelizador.js";
 
-const enviaAlertaCeroNombrado = (
+const enviaAlertaCeroNombrado = async (
   nombre_ADP,
   apellido_ADP,
   cargo_ADP,
@@ -25,8 +25,7 @@ const enviaAlertaCeroNombrado = (
     comunicacion_ADP,
     anadir_comunicacion
   );
-  enviarCorreoPorFidelizador(destinatario, asunto, cuerpo);
-  return true;
+  return await enviarCorreoPorFidelizador(destinatario, asunto, cuerpo);
 };
 
 export { enviaAlertaCeroNombrado };

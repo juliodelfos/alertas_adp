@@ -15,7 +15,7 @@ const creaDocumentoEnDBCierre = (tipo, concurso, destinatario) => {
     })
     .then(() => {
       Vue.$toast.open({
-        message: "Enviado. Click aquí para abrir planilla de registro",
+        message: "Click aquí para abrir planilla de registro",
         type: "success",
         duration: 7000,
         pauseOnHover: true,

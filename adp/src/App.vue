@@ -38,26 +38,13 @@ export default {
         content: "Sistema de Envío de Alertas",
       },
     ],
-    script: [
-      {
-        src: "https://plausible.io/js/plausible.js",
-        "data-domain": "sea-adp.netlify.app",
-        defer: true,
-      },
-    ],
-    script: [
-      {
-        src: "https://smtpjs.com/v3/smtp.js",
-        defer: true,
-      },
-    ],
   },
   methods: {
     ...mapActions(["fetch_Adp"]),
     fetchAdp() {
       axios
         .get(
-          "https://script.google.com/macros/s/AKfycbxOVp8dMaTZYznfrzAvO4g8Lj_Fo3k6MUGRv806R2VVljJAjnZj9_pbtisUce3OV-PUhA/exec"
+          "https://script.google.com/macros/s/AKfycbzQYkEj7P994qPSROwO5l2jalm_MHFwvuNFHlujKNWyVAqHeaxsksCSancSqqjvZqlA/exec"
         )
         .then(({ data: { data } }) => this.fetch_Adp(data))
         .catch((error) => console.log(error));

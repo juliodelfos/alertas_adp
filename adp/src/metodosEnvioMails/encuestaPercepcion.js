@@ -1,7 +1,7 @@
 import { cuerpoEncuestaPercepcion } from "@/plantillasMail.js";
 import { enviarCorreoPorFidelizador } from "@/metodosEnvioMails/funcionFidelizador.js";
 
-const enviaEncuestaPercepcion = (
+const enviaEncuestaPercepcion = async (
   nombre_ADP,
   apellido_ADP,
   cargo_ADP,
@@ -9,8 +9,7 @@ const enviaEncuestaPercepcion = (
   asunto
 ) => {
   const cuerpo = cuerpoEncuestaPercepcion(nombre_ADP, apellido_ADP, cargo_ADP);
-  enviarCorreoPorFidelizador(destinatario, asunto, cuerpo);
-  return true;
+  return await enviarCorreoPorFidelizador(destinatario, asunto, cuerpo);
 };
 
 export { enviaEncuestaPercepcion };

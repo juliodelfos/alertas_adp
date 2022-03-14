@@ -288,7 +288,6 @@ export default {
 
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
-        // Se pasan parámetros, se envía mail y se almacena en variable
         const correo = enviaAlertaCeroNombrado(
           this.adps[i].nombre_corregido,
           this.adps[i].apellido_corregido,
@@ -324,18 +323,19 @@ export default {
           "Servicio Civil - Inicio elaboración de convenio de desempeño"
         );
 
-        // Se registra Firebase sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDB(
-            `Alerta Cero primer periodo`,
-            this.adps[i].concurso,
-            this.adps[i].mail_contraparte_cd
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDB(
+              `Alerta Cero primer periodo`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Alerta no enviada`);
       }
     },
 
@@ -382,16 +382,17 @@ export default {
           "Servicio Civil - Inicio elaboración de convenio de desempeño"
         );
 
-        // Se registra Firebase sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDB(
-            `Alerta Cero Renovado`,
-            this.adps[i].concurso,
-            this.adps[i].mail_contraparte_cd
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDB(
+              `Alerta Cero Renovado`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
         Vue.$toast.warning("Correo no enviado");
       }
@@ -421,16 +422,17 @@ export default {
           "Servicio Civil - Convenio de Desempeño pendiente"
         );
 
-        // Se registra Firebase sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDB(
-            `Alerta Sesenta`,
-            this.adps[i].concurso,
-            this.adps[i].mail_contraparte_cd
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDB(
+              `Alerta Sesenta`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
         Vue.$toast.warning("Correo no enviado");
       }
@@ -469,16 +471,17 @@ export default {
           `⚠️ [Urgente] Servicio Civil - Convenio de desempeño pendiente`
         );
 
-        // Se registra Firebase sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDB(
-            `Alerta Noventa`,
-            this.adps[i].concurso,
-            this.adps[i].mail_contraparte_cd
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDB(
+              `Alerta Noventa`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
         Vue.$toast.warning("Correo no enviado");
       }
@@ -499,16 +502,17 @@ export default {
           "Servicio Civil - Credenciales acceso SICDE"
         );
 
-        // Se registra Firebase sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDB(
-            `Clave SICDE`,
-            this.adps[i].concurso,
-            this.adps[i].mail
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDB(
+              `Clave SICDE`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
         Vue.$toast.warning("Correo no enviado");
       }
@@ -541,16 +545,17 @@ export default {
           "Servicio Civil - Clave acceso app móvil"
         );
 
-        // Se registra Firebase sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDB(
-            `Clave app`,
-            this.adps[i].concurso,
-            this.adps[i].mail
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDB(
+              `Clave app`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
         Vue.$toast.warning("Correo no enviado");
       }
@@ -581,16 +586,17 @@ export default {
           }`
         );
 
-        // Se registra Firebase sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDB(
-            `Bienvenida primer periodo`,
-            this.adps[i].concurso,
-            this.adps[i].mail
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDB(
+              `Bienvenida primer periodo`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
         Vue.$toast.warning("Correo no enviado");
       }
@@ -622,16 +628,17 @@ export default {
           } (de nuevo)`
         );
 
-        // Se registra Firebase sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDB(
-            `Bienvenida ADP renovado`,
-            this.adps[i].concurso,
-            this.adps[i].mail
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDB(
+              `Bienvenida ADP renovado`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
         Vue.$toast.warning("Correo no enviado");
       }
@@ -653,16 +660,17 @@ export default {
           "Servicio Civil - Cuestionario de cierre"
         );
 
-        //Se registra correo en Firestore sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDBCierre(
-            `Cuestionario de cierre`,
-            this.adps[i].concurso,
-            solicitaMailPersonal
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDBCierre(
+              `Cuestionario de cierre`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
         Vue.$toast.warning("Correo no enviado");
       }
@@ -685,16 +693,17 @@ export default {
           "Servicio Civil - Encuesta percepcion suscripción convenio ADP"
         );
 
-        // Se registra Firebase sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDB(
-            `Encuesta de percepción`,
-            this.adps[i].concurso,
-            this.adps[i].mail_contraparte_cd
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDB(
+              `Encuesta de percepción`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
         Vue.$toast.warning("Correo no enviado");
       }
@@ -715,16 +724,17 @@ export default {
           "Servicio Civil - Evaluación parcial pendiente"
         );
 
-        // Se registra Firebase sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDB(
-            `Eval parcial pendiente`,
-            this.adps[i].concurso,
-            this.adps[i].mail
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDB(
+              `Eval parcial pendiente`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
         Vue.$toast.warning("Correo no enviado");
       }
@@ -745,16 +755,17 @@ export default {
           "Servicio Civil - Evaluación anual pendiente"
         );
 
-        // Se registra Firebase sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDB(
-            `Eval anual pendiente`,
-            this.adps[i].concurso,
-            this.adps[i].mail
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDB(
+              `Eval anual pendiente`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
         Vue.$toast.warning("Correo no enviado");
       }
@@ -776,16 +787,17 @@ export default {
           "Servicio Civil - Carga de resolución de evaluación anual pendiente"
         );
 
-        // Se registra Firebase sólo si correo sale
-        if (correo) {
-          creaDocumentoEnDB(
-            `REX Eval anual pendiente`,
-            this.adps[i].concurso,
-            this.adps[i].mail
-          );
-        } else {
-          Vue.$toast.warning("No se registró correo en planilla");
-        }
+        correo
+          .then(() => {
+            creaDocumentoEnDB(
+              `REX Eval anual pendiente`,
+              this.adps[i].concurso,
+              this.adps[i].mail_contraparte_cd
+            );
+          })
+          .catch(() => {
+            Vue.$toast.warning(`Error al intentar enviar el correo`);
+          });
       } else {
         Vue.$toast.warning("Correo no enviado");
       }

@@ -13,7 +13,7 @@ const creaDocumentoEnDB = (tipo, concurso, destinatario) => {
       fecha: fechaYHora(),
       destinatario: destinatario,
     })
-    .then(() => Vue.$toast.success("Correo enviado y registrado en planilla"))
+    .then(() => Vue.$toast.success("Correo registrado en planilla"))
     .catch((error) =>
       Vue.$toast.warning("No se registró correo en planilla por: " + error)
     );

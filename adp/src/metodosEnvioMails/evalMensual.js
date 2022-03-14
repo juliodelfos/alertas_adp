@@ -1,7 +1,7 @@
 import { cuerpoEvaluacionesMensuales } from "@/plantillasMail.js";
 import { enviarCorreoPorFidelizador } from "@/metodosEnvioMails/funcionFidelizador.js";
 
-const enviaEvaluacionMensual = (
+const enviaEvaluacionMensual = async (
   nombre_ADP,
   apellido_ADP,
   cargo,
@@ -27,8 +27,7 @@ const enviaEvaluacionMensual = (
     encargado,
     mail_encargado
   );
-  enviarCorreoPorFidelizador(destinatario, asunto, cuerpo);
-  return true;
+  return await enviarCorreoPorFidelizador(destinatario, asunto, cuerpo);
 };
 
 export { enviaEvaluacionMensual };

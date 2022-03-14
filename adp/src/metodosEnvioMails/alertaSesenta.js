@@ -1,7 +1,7 @@
 import { cuerpoAlertaSesenta } from "@/plantillasMail.js";
 import { enviarCorreoPorFidelizador } from "@/metodosEnvioMails/funcionFidelizador.js";
 
-const enviaAlertaSesenta = (
+const enviaAlertaSesenta = async (
   nombre_ADP,
   apellido_ADP,
   estado_cd,
@@ -17,8 +17,7 @@ const enviaAlertaSesenta = (
     suscripcion_ADP,
     anadir_suscripcion,
   );
-  enviarCorreoPorFidelizador(destinatario, asunto, cuerpo);
-  return true;
+  return await enviarCorreoPorFidelizador(destinatario, asunto, cuerpo);
 };
 
 export { enviaAlertaSesenta };
