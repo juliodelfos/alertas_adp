@@ -52,6 +52,9 @@ export default {
   },
   created() {
     this.fetchAdp();
+    // let cargaSMTPjs = document.createElement("script");
+    // cargaSMTPjs.setAttribute("src", "https://smtpjs.com/v3/smtp.js");
+    // document.head.appendChild(cargaSMTPjs);
   },
 };
 </script>

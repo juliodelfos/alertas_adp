@@ -282,13 +282,13 @@ export default {
 
     //#region Alertas con Fidelizador
     // Convenios
-    alertaCero(i) {
+    async alertaCero(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = this.cuadroDeConfirmacion(`Alerta 0`);
 
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
-        const correo = enviaAlertaCeroNombrado(
+        let correo = await enviaAlertaCeroNombrado(
           this.adps[i].nombre_corregido,
           this.adps[i].apellido_corregido,
           this.adps[i].cargo,
@@ -323,23 +323,22 @@ export default {
           "Servicio Civil - Inicio elaboración de convenio de desempeño"
         );
 
-        correo
-          .then(() => {
-            creaDocumentoEnDB(
-              `Alerta Cero primer periodo`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Alerta Cero primer periodo`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning(`Alerta no enviada`);
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 
-    alertaCeroRenovado(i) {
+    async alertaCeroRenovado(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion =
         this.cuadroDeConfirmacion(`Alerta 0 Renovado`);
@@ -347,7 +346,7 @@ export default {
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
         // Se pasan parámetros, se envía mail y se almacena en variable
-        const correo = enviaAlertaCeroRenovado(
+        const correo = await enviaAlertaCeroRenovado(
           this.adps[i].nombre_corregido,
           this.adps[i].apellido_corregido,
           this.adps[i].cargo,
@@ -382,30 +381,29 @@ export default {
           "Servicio Civil - Inicio elaboración de convenio de desempeño"
         );
 
-        correo
-          .then(() => {
-            creaDocumentoEnDB(
-              `Alerta Cero Renovado`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Alerta Cero Renovado`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 
-    alertaSesenta(i) {
+    async alertaSesenta(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = this.cuadroDeConfirmacion(`Alerta 60`);
 
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
         // Se pasan parámetros, se envía mail y se almacena en variable
-        const correo = enviaAlertaSesenta(
+        const correo = await enviaAlertaSesenta(
           this.adps[i].nombre_corregido,
           this.adps[i].apellido_corregido,
           this.adps[i].estado_cd,
@@ -422,30 +420,29 @@ export default {
           "Servicio Civil - Convenio de Desempeño pendiente"
         );
 
-        correo
-          .then(() => {
-            creaDocumentoEnDB(
-              `Alerta Sesenta`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Alerta Sesenta`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 
-    alertaNoventa(i) {
+    async alertaNoventa(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = this.cuadroDeConfirmacion(`Alerta 90`);
 
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
         // Se pasan parámetros, se envía mail y se almacena en variable
-        const correo = enviaAlertaNoventa(
+        const correo = await enviaAlertaNoventa(
           this.adps[i].nombre_corregido,
           this.adps[i].apellido_corregido,
           this.adps[i].estado_cd,
@@ -471,54 +468,52 @@ export default {
           `⚠️ [Urgente] Servicio Civil - Convenio de desempeño pendiente`
         );
 
-        correo
-          .then(() => {
-            creaDocumentoEnDB(
-              `Alerta Noventa`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Alerta Noventa`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 
     // Otras alertas
-    claveSICDE(i) {
+    async claveSICDE(i) {
       // Cuadro de diálogo pregunta qué clave se enviará
       const claveNueva = prompt(`¿Qué clave le has asignado a este ADP?`);
 
       // Si usuario confirma envío de mail
       if (claveNueva) {
         // Se envía mail y se almacena en variable
-        const correo = enviaClaveSICDE(
+        const correo = await enviaClaveSICDE(
           this.adps[i].mail,
           claveNueva,
           this.adps[i].mail,
           "Servicio Civil - Credenciales acceso SICDE"
         );
 
-        correo
-          .then(() => {
-            creaDocumentoEnDB(
-              `Clave SICDE`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Clave SICDE`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 
-    claveAPP(i) {
+    async claveAPP(i) {
       // Crea clave en formato na1234
       const iniciales = this.creaClaveAPP(
         this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
@@ -534,7 +529,7 @@ export default {
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
         // Se envía mail y se almacena en variable
-        const correo = enviaClaveAPP(
+        const correo = await enviaClaveAPP(
           this.adps[i].rut,
           this.creaClaveAPP(
             this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
@@ -545,23 +540,22 @@ export default {
           "Servicio Civil - Clave acceso app móvil"
         );
 
-        correo
-          .then(() => {
-            creaDocumentoEnDB(
-              `Clave app`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Clave app`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 
-    bienvenida(i) {
+    async bienvenida(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = this.cuadroDeConfirmacion(
         `Bienvenida nombrado primer periodo`
@@ -570,7 +564,7 @@ export default {
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
         // Se pasan parámetros, se envía mail y se almacena en variable
-        const correo = enviaBienvenidaNombrado(
+        const correo = await enviaBienvenidaNombrado(
           this.adps[i].nombre_corregido.split(" ")[0],
           this.adps[i].encargado,
           this.adps[i].encargado_mail,
@@ -586,23 +580,22 @@ export default {
           }`
         );
 
-        correo
-          .then(() => {
-            creaDocumentoEnDB(
-              `Bienvenida primer periodo`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Bienvenida primer periodo`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 
-    bienvenidaRenovado(i) {
+    async bienvenidaRenovado(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = this.cuadroDeConfirmacion(
         `Bienvenida renovado (segundo o tercer periodo)`
@@ -611,7 +604,7 @@ export default {
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
         // Se pasan parámetros, se envía mail y se almacena en variable
-        const correo = enviaBienvenidaRenovado(
+        const correo = await enviaBienvenidaRenovado(
           this.adps[i].nombre_corregido.split(" ")[0],
           this.adps[i].cargo,
           this.adps[i].encargado,
@@ -628,23 +621,22 @@ export default {
           } (de nuevo)`
         );
 
-        correo
-          .then(() => {
-            creaDocumentoEnDB(
-              `Bienvenida ADP renovado`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Bienvenida ADP renovado`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 
-    encuestaCierre(i) {
+    async encuestaCierre(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaMailPersonal = prompt(
         `¿A qué dirección de correo enviarás el cuestionario?`,
@@ -654,29 +646,28 @@ export default {
       // Si usuario confirma envío de mail
       if (solicitaMailPersonal) {
         // Se envía mail y se almacena en variable
-        const correo = enviaEncuestaCierre(
+        const correo = await enviaEncuestaCierre(
           this.adps[i].nombre_corregido.split(" ")[0],
           solicitaMailPersonal,
           "Servicio Civil - Cuestionario de cierre"
         );
 
-        correo
-          .then(() => {
-            creaDocumentoEnDBCierre(
-              `Cuestionario de cierre`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDBCierre(
+            `Cuestionario de cierre`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 
-    encuestaPercepcion(i) {
+    async encuestaPercepcion(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = this.cuadroDeConfirmacion(
         `Encuesta de percepción`
@@ -685,7 +676,7 @@ export default {
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
         // Se pasan parámetros, se envía mail y se almacena en variable
-        const correo = enviaEncuestaPercepcion(
+        const correo = await enviaEncuestaPercepcion(
           this.adps[i].nombre_corregido,
           this.adps[i].apellido_corregido,
           this.adps[i].cargo,
@@ -693,23 +684,22 @@ export default {
           "Servicio Civil - Encuesta percepcion suscripción convenio ADP"
         );
 
-        correo
-          .then(() => {
-            creaDocumentoEnDB(
-              `Encuesta de percepción`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Encuesta de percepción`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 
-    autoEvalSemestral(i) {
+    async autoEvalSemestral(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = this.cuadroDeConfirmacion(
         `Alerta Evaluación Semestral pendiente`
@@ -718,29 +708,28 @@ export default {
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
         // Se envía mail y se almacena en variable
-        const correo = enviaAutoEvalParcialPendiente(
+        const correo = await enviaAutoEvalParcialPendiente(
           this.adps[i].nombre_corregido.split(" ")[0],
           this.adps[i].mail,
           "Servicio Civil - Evaluación parcial pendiente"
         );
 
-        correo
-          .then(() => {
-            creaDocumentoEnDB(
-              `Eval parcial pendiente`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Eval parcial pendiente`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 
-    autoEvalAnual(i) {
+    async autoEvalAnual(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = this.cuadroDeConfirmacion(
         `Alerta Evaluación Anual pendiente`
@@ -749,29 +738,27 @@ export default {
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
         // Se envía mail y se almacena en variable
-        const correo = enviaAutoEvalAnualPendiente(
+        const correo = await enviaAutoEvalAnualPendiente(
           this.adps[i].nombre_corregido.split(" ")[0],
           this.adps[i].mail,
           "Servicio Civil - Evaluación anual pendiente"
         );
-
-        correo
-          .then(() => {
-            creaDocumentoEnDB(
-              `Eval anual pendiente`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Eval anual pendiente`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 
-    rexEvalAnual(i) {
+    async rexEvalAnual(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = this.cuadroDeConfirmacion(
         `Alerta REX Evaluación Anual pendiente`
@@ -780,26 +767,25 @@ export default {
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
         // Se envía mail y se almacena en variable
-        const correo = enviaRexEvalAnualPendiente(
+        const correo = await enviaRexEvalAnualPendiente(
           this.adps[i].nombre_corregido.split(" ")[0],
           this.adps[i].apellido_corregido.split(" ")[0],
           this.adps[i].mail_contraparte_eval,
           "Servicio Civil - Carga de resolución de evaluación anual pendiente"
         );
 
-        correo
-          .then(() => {
-            creaDocumentoEnDB(
-              `REX Eval anual pendiente`,
-              this.adps[i].concurso,
-              this.adps[i].mail_contraparte_cd
-            );
-          })
-          .catch(() => {
-            Vue.$toast.warning(`Error al intentar enviar el correo`);
-          });
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `REX Eval anual pendiente`,
+            this.adps[i].concurso,
+            this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
       } else {
-        Vue.$toast.warning("Correo no enviado");
+        Vue.$toast.warning(`Envío de alerta cancelado`);
       }
     },
 

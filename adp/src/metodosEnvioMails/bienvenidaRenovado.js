@@ -1,7 +1,7 @@
 import { cuerpoBienvenidaRenovado } from "@/plantillasMail.js";
 import { enviarCorreoPorFidelizador } from "@/metodosEnvioMails/funcionFidelizador.js";
 
-const enviaBienvenidaRenovado = async (
+const enviaBienvenidaRenovado = (
   nombre_ADP_corto,
   cargo_ADP,
   encargado,
@@ -19,7 +19,7 @@ const enviaBienvenidaRenovado = async (
     usuario_APP,
     clave_APP
   );
-  return await enviarCorreoPorFidelizador(destinatario, asunto, cuerpo);
+  return enviarCorreoPorFidelizador(destinatario, asunto, cuerpo);
 };
 
 export { enviaBienvenidaRenovado };
