@@ -70,7 +70,7 @@ export default {
     },
   },
   mounted() {
-    this.leeAlertas();
+    // this.leeAlertas();
   },
 };
 </script>

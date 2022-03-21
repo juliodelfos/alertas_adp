@@ -10,8 +10,6 @@
           en curso.
         </p>
         <p>
-          Cada correo enviado sale con una diferencia de 1 segundo entre ellos,
-          por lo que 60 correos tomarían 1 minuto.
           <b
             >No cerrar la ventana hasta recibir confirmación de envío de todos
             los correos.</b
@@ -19,8 +17,53 @@
         </p>
         <p>
           Para el periodo {{ this.formateaFecha }} deben evaluarse
-          {{ this.adpsDeEsteMes.length }} ADPs.
+          {{ largoArregloDestinatarios }} ADPs.
         </p>
+
+        <div v-show="correosEnviados != 0">
+          <h3 class="fs-5">Enviando</h3>
+          <b-progress :max="largoArregloDestinatarios" show-value animated>
+            <b-progress-bar :value="correosEnviados">
+              <span>
+                <strong
+                  >{{ correosEnviados }} /
+                  {{ largoArregloDestinatarios }}</strong
+                ></span
+              ></b-progress-bar
+            >
+          </b-progress>
+        </div>
+
+        <div id="reenvios">
+          <p v-show="mailsFallidos.length !== 0" class="pb-1">
+            Los correos a los siguientes concursos no se enviaron de manera
+            correcta:
+          </p>
+          <ul
+            v-for="(
+              { nombre_corregido, apellido_corregido, concurso }, i
+            ) in mailsFallidos"
+            :key="i"
+          >
+            <li>
+              {{ nombre_corregido }} {{ apellido_corregido }} - {{ concurso }}
+            </li>
+          </ul>
+
+          <div v-show="correosReenviados != 0">
+            <h3 class="fs-5">Enviando</h3>
+            <b-progress :max="largoArregloCorreosAReenviar" show-value animated>
+              <b-progress-bar :value="correosReenviados">
+                <span>
+                  <strong
+                    >{{ correosReenviados }} /
+                    {{ largoArregloCorreosAReenviar }}</strong
+                  ></span
+                ></b-progress-bar
+              >
+            </b-progress>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -32,9 +75,20 @@
         :items="adpsDeEsteMes"
         :fields="fields"
       ></b-table>
-      <div class="text-center" v-show="adpsDeEsteMes.length > 0">
-        <b-button variant="danger" class="mx-1" @click="enviarCorreosDelMes"
+      <div class="text-center">
+        <b-button
+          variant="danger"
+          class="mx-1"
+          @click="enviarCorreosDelMes"
+          v-show="largoArregloDestinatarios > 0"
           >Enviar</b-button
+        >
+        <b-button
+          variant="danger"
+          class="mx-1"
+          @click="reintentarEnvio"
+          v-show="mailsFallidos.length > 0"
+          >Reenviar correos fallidos</b-button
         >
       </div>
     </div>
@@ -44,12 +98,11 @@
 <script>
 import { mapState } from "vuex";
 import Vue from "vue";
+import firebase from "firebase";
 import { enviaEvaluacionMensual } from "@/metodosEnvioMails/evalMensual.js";
-import { creaDocumentoEnDB } from "@/metodosFirebase/registraAlerta.js";
 
 export default {
-  name: "EnviaMails",
-
+  name: "EvaluacionMensual",
   data() {
     return {
       concurso: "",
@@ -57,6 +110,8 @@ export default {
       // ano: "",
       mes_Ano: "",
       destinatarios: [],
+      correosEnviados: 0,
+      correosReenviados: 0,
       adpsDeEsteMes: [],
       fields: [
         {
@@ -106,12 +161,38 @@ export default {
           label: "Correo Contraparte",
         },
       ],
+      mailsFallidos: [],
+      primerIntento: false,
+      segundoIntento: false,
     };
   },
   methods: {
     solicitaMes() {
-      return prompt(`¿Qué mes corresponde la alerta?`, `Ej. diciembre`);
+      return prompt(`¿Qué mes corresponde la alerta?`, `Ej. abril`);
     },
+
+    fechaYHora() {
+      return (
+        new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString()
+      );
+    },
+
+    registraDBFirebase(tipo, concurso, destinatario) {
+      const db = firebase.firestore();
+      db.collection("alertasEnviadas")
+        .add({
+          tipo: tipo,
+          concurso: concurso,
+          fecha: this.fechaYHora(),
+          destinatario: destinatario,
+        })
+        .then(() => console.log("Correo registrado en planilla"))
+        .catch((error) =>
+          Vue.$toast.error("No se registró correo en planilla por: " + error)
+        );
+    },
+
+    // Evalúa Alertas a Enviar
     ADPsAEvaluarseMesEnCurso() {
       let ADPqueDebenEvaluarseEsteMes = this.adps
         .filter(
@@ -147,60 +228,121 @@ export default {
       this.adpsDeEsteMes = ADPqueDebenEvaluarseEsteMes;
     },
 
-    enviaMailPorFidelizador(mes, indice) {
-      const formateaFecha = (fecha) =>
-        fecha.split("T00:00:00.000Z")[0].split("-");
-      const fechaInicio = () =>
-        formateaFecha(this.adps[indice].eval_anual_inicio);
-      const fechaEval = () => formateaFecha(this.adps[indice].eval_anual_auto);
-      const fechaRetro = () =>
-        formateaFecha(this.adps[indice].eval_anual_retro);
-      const fechaRex = () => formateaFecha(this.adps[indice].eval_anual_rex);
+    async enviarCorreosDelMes() {
+      // Recoge mes
+      let mes = this.solicitaMes().toLocaleLowerCase();
+      // Con entries() obtengo el index de cada objeto del array
+      // porque con for... of no trae el index como forEach
+      for (const [i, adp] of this.adpsDeEsteMes.entries()) {
+        // Calculas las fechas
+        const formateaFecha = (fecha) =>
+          fecha.split("T00:00:00.000Z")[0].split("-");
+        const fechaInicio = () =>
+          formateaFecha(this.adpsDeEsteMes[i].eval_anual_inicio);
+        const fechaEval = () =>
+          formateaFecha(this.adpsDeEsteMes[i].eval_anual_auto);
+        const fechaRetro = () =>
+          formateaFecha(this.adpsDeEsteMes[i].eval_anual_retro);
+        const fechaRex = () =>
+          formateaFecha(this.adpsDeEsteMes[i].eval_anual_rex);
 
-      enviaEvaluacionMensual(
-        this.adps[indice].nombre_corregido,
-        this.adps[indice].apellido_corregido,
-        this.adps[indice].cargo,
-        mes,
-        // Fecha inicio
-        `${fechaInicio(this.adps[indice])[2]}/${
-          fechaInicio(this.adps[indice])[1]
-        }/${this.anoActual}`,
-        // Fecha Autoevaluación
-        `${fechaEval(this.adps[indice])[2]}/${
-          fechaEval(this.adps[indice])[1]
-        }/${this.anoActual}`,
-        // Fecha Retroalimentación
-        `${fechaRetro(this.adps[indice])[2]}/${
-          fechaRetro(this.adps[indice])[1]
-        }/${this.anoActual}`,
-        // Fecha Rex
-        `${fechaRex(this.adps[indice])[2]}/${fechaRex(this.adps[indice])[1]}/${
-          this.anoActual
-        }`,
-        this.adps[indice].encargado,
-        this.adps[indice].encargado_mail,
-        this.adps[indice].mail_contraparte_eval,
-        `Servicio Civil - Informa sobre evaluación directiva`
-      );
+        // Envías las alertas
+        const correo = await enviaEvaluacionMensual(
+          adp.nombre_corregido,
+          adp.apellido_corregido,
+          adp.cargo,
+          mes,
+          // Fecha inicio
+          `${fechaInicio()[2]}/${fechaInicio()[1]}/${this.anoActual}`,
+          // Fecha Autoevaluación
+          `${fechaEval()[2]}/${fechaEval()[1]}/${this.anoActual}`,
+          // Fecha Retroalimentación
+          `${fechaRetro()[2]}/${fechaRetro()[1]}/${this.anoActual}`,
+          // Fecha Rex
+          `${fechaRex()[2]}/${fechaRex()[1]}/${this.anoActual}`,
+          adp.encargado,
+          adp.encargado_mail,
+          adp.mail,
+          `Servicio Civil - Informa sobre evaluación directiva`
+        );
 
-      creaDocumentoEnDB(
-        `Alerta evaluación mensual ${mes}`,
-        this.adps[indice].concurso,
-        this.adps[indice].mail_contraparte_cd
-      );
+        if (correo == "OK") {
+          this.correosEnviados++;
+          this.registraDBFirebase(
+            `Alerta evaluación mensual ${mes}`,
+            this.adpsDeEsteMes[i].concurso,
+            this.adpsDeEsteMes[i].mail_contraparte_cd
+          );
+        } else {
+          this.mailsFallidos.push(this.adpsDeEsteMes[i]);
+          Vue.$toast.error(
+            `No se pudo enviar la alerta del concurso ${this.adpsDeEsteMes[i].concurso}`
+          );
+        }
+      }
+      this.primerIntento = true;
+      this.primerIntento
+        ? Vue.$toast.success("Correos enviados y registrados en planilla")
+        : Vue.$toast.error("Revisar correos no enviados");
     },
 
-    enviarCorreosDelMes() {
-      let mes = this.solicitaMes();
-      this.adpsDeEsteMes.forEach(({ indice }, i) => {
-        setTimeout(() => {
-          this.enviaMailPorFidelizador(mes, indice);
-        }, i * 1000);
-      });
-      Vue.$toast.success("Correo enviado y registrado en planilla", {
-        queue: true,
-      });
+    async reintentarEnvio() {
+      // Recoge mes
+      let mes = this.solicitaMes().toLocaleLowerCase();
+      // Con entries() obtengo el index de cada objeto del array
+      // porque con for... of no trae el index como forEach
+      for (const [i, adp] of this.mailsFallidos.entries()) {
+        // Calculas las fechas
+        const formateaFecha = (fecha) =>
+          fecha.split("T00:00:00.000Z")[0].split("-");
+        const fechaInicio = () =>
+          formateaFecha(this.mailsFallidos[i].eval_anual_inicio);
+        const fechaEval = () =>
+          formateaFecha(this.mailsFallidos[i].eval_anual_auto);
+        const fechaRetro = () =>
+          formateaFecha(this.mailsFallidos[i].eval_anual_retro);
+        const fechaRex = () =>
+          formateaFecha(this.mailsFallidos[i].eval_anual_rex);
+
+        // Envías las alertas
+        const correo = await enviaEvaluacionMensual(
+          adp.nombre_corregido,
+          adp.apellido_corregido,
+          adp.cargo,
+          mes,
+          // Fecha inicio
+          `${fechaInicio()[2]}/${fechaInicio()[1]}/${this.anoActual}`,
+          // Fecha Autoevaluación
+          `${fechaEval()[2]}/${fechaEval()[1]}/${this.anoActual}`,
+          // Fecha Retroalimentación
+          `${fechaRetro()[2]}/${fechaRetro()[1]}/${this.anoActual}`,
+          // Fecha Rex
+          `${fechaRex()[2]}/${fechaRex()[1]}/${this.anoActual}`,
+          adp.encargado,
+          adp.encargado_mail,
+          adp.mail,
+          `Servicio Civil - Informa sobre evaluación directiva`
+        );
+
+        if (correo == "OK") {
+          this.correosReenviados++;
+          this.registraDBFirebase(
+            `Alerta evaluación mensual ${mes}`,
+            this.mailsFallidos[i].concurso,
+            this.mailsFallidos[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.error(
+            `No se pudo enviar la alerta del concurso ${this.mailsFallidos[i].concurso}`
+          );
+        }
+      }
+      this.segundoIntento = true;
+      this.segundoIntento
+        ? Vue.$toast.success("Correos enviados y registrados en planilla")
+        : Vue.$toast.error(
+            "Enviar alertas fallidas desde la vista de envío masivos de todos los correos"
+          );
     },
 
     format(date, locale, options) {
@@ -247,6 +389,9 @@ export default {
     largoArregloDestinatarios() {
       return this.adpsDeEsteMes.length;
     },
+    largoArregloCorreosAReenviar() {
+      return this.mailsFallidos.length;
+    },
   },
   mounted() {
     // this.mes = this.mesActual;
@@ -256,6 +401,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>

@@ -53,7 +53,7 @@ export default {
     },
   },
   mounted() {
-    this.leeAlertas();
+    // this.leeAlertas();
   },
   props: {
     concurso: { type: Number, required: true },
