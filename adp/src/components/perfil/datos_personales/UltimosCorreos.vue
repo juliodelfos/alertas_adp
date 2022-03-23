@@ -3,63 +3,50 @@
     <b-table
       striped
       hover
-      :items="filtraPorConcurso"
-      v-if="filtraPorConcurso.length > 0"
+      :items="alertas"
       small
+      v-show="alertas.length > 0"
     ></b-table>
-    <b-table striped hover :items="sinRegistros" v-else small></b-table>
   </section>
 </template>
 
 <script>
-// import axios from "axios";
 import firebase from "firebase";
 
 export default {
   name: "UltimosCorreos",
   data() {
     return {
-      items: [],
-      sinRegistros: [
-        { Tipo: "S/R", Concurso: "S/R", Fecha: "S/R", Destinatario: "S/R" },
-      ],
+      alertas: [],
     };
   },
   methods: {
-    leeAlertas() {
+    async leeAlertas() {
       const db = firebase.firestore();
-      db.collection("alertasEnviadas")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            this.items.push({
-              tipo: doc.data().tipo,
-              concurso: doc.data().concurso,
-              fecha: doc.data().fecha,
-              destinatario: doc.data().destinatario,
-            });
-          });
-          return alertas;
-        })
-        .catch((error) => {
-          console.log("Error getting documents: ", error);
-        });
-    },
-  },
-  computed: {
-    filtraPorConcurso() {
-      const numeroConcurso = this.concurso;
-      return this.items.filter((c) => c.concurso == numeroConcurso);
+      try {
+        const alertas = await db
+          .collection("alertasADPs")
+          .where("concurso", "==", this.concurso).get();
+
+        if (!alertas.empty) {
+          const snapshot = alertas.docs[0];
+          const data = snapshot.data().alertas;
+          this.alertas = data;
+        } else {
+          console.log("No hay alertas registradas");
+        }
+
+        return alertas;
+      } catch (error) {
+        console.log("Error getting documents: ", error);
+      }
     },
   },
   mounted() {
-    // this.leeAlertas();
+    this.leeAlertas();
   },
   props: {
     concurso: { type: Number, required: true },
   },
 };
 </script>
-
-<style scoped>
-</style>

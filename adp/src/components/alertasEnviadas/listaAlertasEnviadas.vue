@@ -1,5 +1,11 @@
 <template>
   <b-container class="my-4">
+    <b-button
+      size="sm"
+      variant="outline-primary"
+      @click="leeAlertas"
+      >Cargar correos</b-button
+    >
     <grid
       :cols="cols"
       :rows="alertas"
@@ -23,7 +29,7 @@ export default {
   data() {
     return {
       alertas: [],
-      cols: ["Tipo", "Concurso", "Fecha", "Destinatario"],
+      cols: ["Concurso", "Alertas"],
       language: {
         search: {
           placeholder: "🔍 Buscar...",
@@ -49,24 +55,24 @@ export default {
     };
   },
   methods: {
-    leeAlertas() {
+    async leeAlertas() {
       const db = firebase.firestore();
-      db.collection("alertasEnviadas")
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            this.alertas.push({
-              tipo: doc.data().tipo,
-              concurso: doc.data().concurso,
-              fecha: doc.data().fecha,
-              destinatario: doc.data().destinatario,
+      try {
+        const alertas = await db
+          .collection("alertasADPs")
+          .get()
+          .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              this.alertas.push({
+                concurso: doc.data().concurso,
+                alertas: doc.data().alertas[0],
+              });
             });
+            return alertas;
           });
-          return alertas;
-        })
-        .catch((error) => {
-          console.log("Error getting documents: ", error);
-        });
+      } catch (error) {
+        console.log("Error getting documents: ", error);
+      }
     },
   },
   mounted() {

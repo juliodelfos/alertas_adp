@@ -173,7 +173,6 @@
       </b-tabs>
     </b-row>
   </div>
-  <!-- </div> -->
 </template>
 
 <script>
@@ -285,7 +284,6 @@ export default {
     async alertaCero(i) {
       // Cuadro de diálogo para confirmar envío de correo
       const solicitaConfirmacion = this.cuadroDeConfirmacion(`Alerta 0`);
-
       // Si usuario confirma envío de mail
       if (solicitaConfirmacion) {
         let correo = await enviaAlertaCeroNombrado(
@@ -327,7 +325,8 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDB(
             `Alerta Cero primer periodo`,
-            this.adps[i].concurso,
+            // Es importante que vaya como string
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
@@ -385,7 +384,7 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDB(
             `Alerta Cero Renovado`,
-            this.adps[i].concurso,
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
@@ -424,7 +423,7 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDB(
             `Alerta Sesenta`,
-            this.adps[i].concurso,
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
@@ -472,7 +471,7 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDB(
             `Alerta Noventa`,
-            this.adps[i].concurso,
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
@@ -502,7 +501,7 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDB(
             `Clave SICDE`,
-            this.adps[i].concurso,
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
@@ -544,7 +543,7 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDB(
             `Clave app`,
-            this.adps[i].concurso,
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
@@ -584,7 +583,7 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDB(
             `Bienvenida primer periodo`,
-            this.adps[i].concurso,
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
@@ -625,7 +624,7 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDB(
             `Bienvenida ADP renovado`,
-            this.adps[i].concurso,
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
@@ -656,7 +655,7 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDBCierre(
             `Cuestionario de cierre`,
-            this.adps[i].concurso,
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
@@ -688,7 +687,7 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDB(
             `Encuesta de percepción`,
-            this.adps[i].concurso,
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
@@ -718,7 +717,7 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDB(
             `Eval parcial pendiente`,
-            this.adps[i].concurso,
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
@@ -747,7 +746,7 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDB(
             `Eval anual pendiente`,
-            this.adps[i].concurso,
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
@@ -778,7 +777,7 @@ export default {
           Vue.$toast.success(`Alerta enviada con éxito`);
           creaDocumentoEnDB(
             `REX Eval anual pendiente`,
-            this.adps[i].concurso,
+            `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
           );
         } else {
