@@ -26,6 +26,7 @@ const creaDocumentoEnDB = (tipo, concurso, destinatario) => {
       db.collection("alertasADPs")
         .doc(concurso.toString())
         .set({
+          concurso: +concurso,
           alertas: [
             {
               tipo: tipo,
