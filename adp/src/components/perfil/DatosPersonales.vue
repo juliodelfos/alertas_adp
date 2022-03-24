@@ -581,11 +581,11 @@ export default {
 
         if (correo == "OK") {
           Vue.$toast.success(`Alerta enviada con éxito`);
-          // creaDocumentoEnDB(
-          //   `Bienvenida primer periodo`,
-          //   `${this.adps[i].concurso}`,
-          //   this.adps[i].mail_contraparte_cd
-          // );
+          creaDocumentoEnDB(
+            `Bienvenida primer periodo`,
+            `${this.adps[i].concurso}`,
+            this.adps[i].mail_contraparte_cd
+          );
         } else {
           Vue.$toast.warning(`Error al intentar enviar el correo`);
         }
