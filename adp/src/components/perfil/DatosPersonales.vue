@@ -164,6 +164,7 @@
             :estado_adp="adps[this.indice].estado_adp"
             @claveSICDE="claveSICDE(adps[indice].indice)"
             @claveAPP="claveAPP(adps[indice].indice)"
+            @bienvenidaDirector="bienvenidaDirector(adps[indice].indice)"
             @bienvenida="bienvenida(adps[indice].indice)"
             @bienvenidaRenovado="bienvenidaRenovado(adps[indice].indice)"
             @encuestaCierre="encuestaCierre(adps[indice].indice)"
@@ -191,6 +192,7 @@ import { enviaAlertaSesenta } from "@/metodosEnvioMails/alertaSesenta.js";
 import { enviaAlertaNoventa } from "@/metodosEnvioMails/alertaNoventa.js";
 import { enviaClaveSICDE } from "@/metodosEnvioMails/claveSICDE.js";
 import { enviaClaveAPP } from "@/metodosEnvioMails/claveAPP.js";
+import { enviaBienvenidaDirector } from "@/metodosEnvioMails/bienvenidaDirector.js";
 import { enviaBienvenidaNombrado } from "@/metodosEnvioMails/bienvenidaNombrado.js";
 import { enviaBienvenidaRenovado } from "@/metodosEnvioMails/bienvenidaRenovado.js";
 import { enviaEncuestaCierre } from "@/metodosEnvioMails/encuestaCierre.js";
@@ -502,7 +504,7 @@ export default {
           creaDocumentoEnDB(
             `Clave SICDE`,
             `${this.adps[i].concurso}`,
-            this.adps[i].mail_contraparte_cd
+            this.adps[i].mail
           );
         } else {
           Vue.$toast.warning(`Error al intentar enviar el correo`);
@@ -544,7 +546,40 @@ export default {
           creaDocumentoEnDB(
             `Clave app`,
             `${this.adps[i].concurso}`,
-            this.adps[i].mail_contraparte_cd
+            this.adps[i].mail
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
+      } else {
+        Vue.$toast.warning(`Envío de alerta cancelado`);
+      }
+    },
+
+    async bienvenidaDirector(i) {
+      // Cuadro de diálogo para confirmar envío de correo
+      const solicitaMailPersonal = prompt(
+        `¿A qué dirección de correo enviarás la bienvenida?`,
+        `Recuerda que debe ser un correo personal`
+      );
+
+      // Si usuario confirma envío de mail
+      if (solicitaMailPersonal) {
+        // Se pasan parámetros, se envía mail y se almacena en variable
+        const correo = await enviaBienvenidaDirector(
+          this.adps[i].nombre_corregido.split(" ")[0],
+          this.adps[i].encargado,
+          this.adps[i].encargado_mail,
+          solicitaMailPersonal,
+          `Servicio Civil - Bienvenida Director Felipe Melo`
+        );
+
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Bienvenida Director`,
+            `${this.adps[i].concurso}`,
+            solicitaMailPersonal
           );
         } else {
           Vue.$toast.warning(`Error al intentar enviar el correo`);
@@ -566,13 +601,13 @@ export default {
         const correo = await enviaBienvenidaNombrado(
           this.adps[i].nombre_corregido.split(" ")[0],
           this.adps[i].encargado,
-          this.adps[i].encargado_mail,
-          // this.adps[i].rut,
-          // this.creaClaveAPP(
-          //   this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
-          //     this.adps[i].apellido_corregido.charAt(0).toLowerCase() +
-          //     `1234`
-          // ),
+          // this.adps[i].encargado_mail,
+          this.adps[i].rut,
+          this.creaClaveAPP(
+            this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
+              this.adps[i].apellido_corregido.charAt(0).toLowerCase() +
+              `1234`
+          ),
           this.adps[i].mail,
           `Servicio Civil - 👋 Hola ${
             this.adps[i].nombre_corregido.split(" ")[0]
@@ -584,7 +619,7 @@ export default {
           creaDocumentoEnDB(
             `Bienvenida primer periodo`,
             `${this.adps[i].concurso}`,
-            this.adps[i].mail_contraparte_cd
+            this.adps[i].mail
           );
         } else {
           Vue.$toast.warning(`Error al intentar enviar el correo`);
@@ -625,7 +660,7 @@ export default {
           creaDocumentoEnDB(
             `Bienvenida ADP renovado`,
             `${this.adps[i].concurso}`,
-            this.adps[i].mail_contraparte_cd
+            this.adps[i].mail
           );
         } else {
           Vue.$toast.warning(`Error al intentar enviar el correo`);
@@ -656,7 +691,7 @@ export default {
           creaDocumentoEnDBCierre(
             `Cuestionario de cierre`,
             `${this.adps[i].concurso}`,
-            this.adps[i].mail_contraparte_cd
+            solicitaMailPersonal
           );
         } else {
           Vue.$toast.warning(`Error al intentar enviar el correo`);

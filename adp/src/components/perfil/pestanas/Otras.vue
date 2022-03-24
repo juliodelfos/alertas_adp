@@ -5,6 +5,7 @@
         <tr>
           <th scope="col">Clave SICDE</th>
           <th scope="col">Clave APP</th>
+          <th scope="col">Bienvenida Director</th>
           <th scope="col">Bienvenida</th>
           <th scope="col">Encuesta de cierre</th>
           <th scope="col">Encuesta percepción</th>
@@ -24,6 +25,13 @@
               class="badge rounded-pill bg-warning text-dark cursor"
               @click="$emit('claveAPP')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar clave</span
+            >
+          </td>
+          <td>
+            <span
+              class="badge rounded-pill bg-warning text-dark cursor"
+              @click="$emit('bienvenidaDirector')"
+              ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
           </td>
           <td>
