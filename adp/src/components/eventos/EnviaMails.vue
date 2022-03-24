@@ -22,7 +22,7 @@
 
         <div v-show="correosEnviados != 0">
           <h3 class="fs-5">Enviando</h3>
-          <b-progress :max="largoArregloDestinatarios" show-value animated>
+          <b-progress :max="largoArregloDestinatarios" show-value>
             <b-progress-bar :value="correosEnviados">
               <span>
                 <strong
@@ -52,7 +52,7 @@
 
           <div v-show="correosReenviados != 0">
             <h3 class="fs-5">Enviando</h3>
-            <b-progress :max="largoArregloCorreosAReenviar" show-value animated>
+            <b-progress :max="largoArregloCorreosAReenviar" show-value>
               <b-progress-bar :value="correosReenviados">
                 <span>
                   <strong
@@ -112,7 +112,90 @@ export default {
       destinatarios: [],
       correosEnviados: 0,
       correosReenviados: 0,
-      adpsDeEsteMes: [],
+      adpsDeEsteMes: [
+        {
+          concurso: 1939,
+          ministerio: "Ministerio de Hacienda",
+          servicio: "Unidad de Análisis Financiero",
+          region: "Región Metropolitana de Santiago",
+          nombre: "PAMELA",
+          apellido: "VERA",
+          mail: "yersonob@gmail.com",
+          cargo: "Director/a",
+          nivel: "I",
+          fecha_nombramiento: "2013-01-12T00:00:00.000Z",
+          rut: "12844093-4",
+          estado_adp: "Nombrado (primer periodo)",
+          sub_estado_concurso: "M",
+          sexo: "Elaboración Servicio",
+          estado_cd: "",
+          alerta0: "null",
+          encargado: "Andrea Belén Quezada",
+          indice: 1043,
+          nombre_corregido: "Pamela",
+          apellido_corregido: "Vera",
+          alerta_cero: "No",
+          mail_contraparte_cd: "yersonob@gmail.com",
+          mail_contraparte_eval: "yersonob@gmail.com",
+          fecha_nombramiento_renovacion: "2013-01-12T00:00:00.000Z",
+          fecha_propuesta: "2013-02-11T00:00:00.000Z",
+          fecha_suscripcion: "2013-03-13T00:00:00.000Z",
+          fecha_comunicacion: "2013-05-17T00:00:00.000Z",
+          eval_semestral_inicio: "No aplica",
+          eval_semestral_auto: "No aplica",
+          eval_semestral_retro: "No aplica",
+          eval_anual_inicio: "2023-01-12T00:00:00.000Z",
+          eval_anual_auto: "2023-02-12T00:00:00.000Z",
+          eval_anual_retro: "2023-03-14T00:00:00.000Z",
+          eval_anual_rex: "2023-03-21T00:00:00.000Z",
+          porcentaje_dias_cargo: 306.6666666666667,
+          porcentaje_dias_anogestion: 19.45205479452055,
+          encargado_mail: "aquezada@serviciocivil.cl",
+          encargado_foto:
+            "https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/equipo%2FQuezada%20Andrea.jpg?alt=media&token=78fcff37-08d3-491a-b7a5-1f06abc4de70",
+        },
+        {
+          concurso: 2058,
+          ministerio: "Ministerio de Hacienda",
+          servicio: "Unidad de Análisis Financiero",
+          region: "Región Metropolitana de Santiago",
+          nombre: "JAVIER ANDRÉS",
+          apellido: "CRUZ TAMBURRINO",
+          mail: "yersonob@gmail.com",
+          cargo: "Director/a",
+          nivel: "I",
+          fecha_nombramiento: "2013-01-11T00:00:00.000Z",
+          rut: "12844093-3",
+          estado_adp: "Renovado (tercer periodo)",
+          sub_estado_concurso: "Desvinculado",
+          sexo: "M",
+          estado_cd: "Suscrito",
+          alerta0: "null",
+          encargado: "Andrea Belén Quezada",
+          indice: 1042,
+          nombre_corregido: "Javier Andrés",
+          apellido_corregido: "Cruz Tamburrino",
+          alerta_cero: "No",
+          mail_contraparte_cd: "yersonob@gmail.com",
+          mail_contraparte_eval: "yerson.o.b@gmail.com",
+          fecha_nombramiento_renovacion: "2019-01-13T00:00:00.000Z",
+          fecha_propuesta: "2019-02-12T00:00:00.000Z",
+          fecha_suscripcion: "2019-03-14T00:00:00.000Z",
+          fecha_comunicacion: "2019-05-17T00:00:00.000Z",
+          eval_semestral_inicio: "No aplica",
+          eval_semestral_auto: "No aplica",
+          eval_semestral_retro: "No aplica",
+          eval_anual_inicio: "2023-01-13T00:00:00.000Z",
+          eval_anual_auto: "2023-02-13T00:00:00.000Z",
+          eval_anual_retro: "2023-03-15T00:00:00.000Z",
+          eval_anual_rex: "2023-03-22T00:00:00.000Z",
+          porcentaje_dias_cargo: 106.38686131386861,
+          porcentaje_dias_anogestion: 19.17808219178082,
+          encargado_mail: "aquezada@serviciocivil.cl",
+          encargado_foto:
+            "https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/equipo%2FQuezada%20Andrea.jpg?alt=media&token=78fcff37-08d3-491a-b7a5-1f06abc4de70",
+        },
+      ],
       fields: [
         {
           key: "concurso",
@@ -179,54 +262,94 @@ export default {
 
     registraDBFirebase(tipo, concurso, destinatario) {
       const db = firebase.firestore();
-      db.collection("alertasEnviadas")
-        .add({
-          tipo: tipo,
-          concurso: concurso,
-          fecha: this.fechaYHora(),
-          destinatario: destinatario,
-        })
-        .then(() => console.log("Correo registrado en planilla"))
-        .catch((error) =>
-          Vue.$toast.error("No se registró correo en planilla por: " + error)
-        );
+      // Busco si existe el documento cuyo ID es el número de concurso
+      const docRef = db.collection("alertasADPs").doc(concurso);
+
+      docRef.get().then((doc) => {
+        if (doc.exists) {
+          // Se añade objeto a array de alertas del documento
+          docRef.update({
+            alertas: firebase.firestore.FieldValue.arrayUnion({
+              tipo: tipo,
+              destinatario: destinatario,
+              fecha: this.fechaYHora(),
+            }),
+          });
+          console.log("Alerta registrada en base de datos");
+        } else {
+          // En caso de que no exista el documento, se crea como array de objetos
+          db.collection("alertasADPs")
+            .doc(concurso.toString())
+            .set({
+              concurso: +concurso,
+              alertas: [
+                {
+                  tipo: tipo,
+                  destinatario: destinatario,
+                  fecha: this.fechaYHora(),
+                },
+              ],
+            })
+            .then(() => console.log(`Alerta registrada en base de datos`))
+            .catch((error) =>
+              Vue.$toast.warning(
+                `No se registró correo en planilla por: ${error}`
+              )
+            );
+        }
+      });
     },
 
+    // registraDBFirebase(tipo, concurso, destinatario) {
+    //   const db = firebase.firestore();
+    //   db.collection("alertasEnviadas")
+    //     .add({
+    //       tipo: tipo,
+    //       concurso: concurso,
+    //       fecha: this.fechaYHora(),
+    //       destinatario: destinatario,
+    //     })
+    //     .then(() => console.log("Correo registrado en planilla"))
+    //     .catch((error) =>
+    //       Vue.$toast.error("No se registró correo en planilla por: " + error)
+    //     );
+    // },
+
     // Evalúa Alertas a Enviar
-    ADPsAEvaluarseMesEnCurso() {
-      let ADPqueDebenEvaluarseEsteMes = this.adps
-        .filter(
-          ({ eval_anual_inicio, mail, fecha_nombramiento_renovacion }) =>
-            eval_anual_inicio.split("T00:00:00.000Z")[0].split("-")[1] ===
-              this.mesActual &&
-            fecha_nombramiento_renovacion
-              .split("T00:00:00.000Z")[0]
-              .split("-")[0] <= this.anoActual &&
-            mail !== "null"
-        )
-        .filter(
-          ({ servicio, nivel }) =>
-            !(servicio.includes("Local") && nivel == "I") &&
-            !(servicio == "Servicio Electoral" && nivel == "I")
-        )
-        .filter(
-          ({ fecha_nombramiento_renovacion, estado_adp }) =>
-            !(
-              fecha_nombramiento_renovacion
-                .split("T00:00:00.000Z")[0]
-                .split("-")
-                .splice(0, 2)
-                .sort()
-                .join("/") == this.mes_Ano &&
-              estado_adp == "Nombrado (primer periodo)"
-            )
-        )
-        .filter(
-          (value, index, self) =>
-            index === self.findIndex((t) => t.concurso === value.concurso)
-        );
-      this.adpsDeEsteMes = ADPqueDebenEvaluarseEsteMes;
-    },
+    // ADPsAEvaluarseMesEnCurso() {
+    //   let ADPqueDebenEvaluarseEsteMes = this.adps
+    //     .filter(
+    //       ({ eval_anual_inicio, mail, fecha_nombramiento_renovacion }) =>
+    //         eval_anual_inicio.split("T00:00:00.000Z")[0].split("-")[1] ===
+    //           this.mesActual &&
+    //         fecha_nombramiento_renovacion
+    //           .split("T00:00:00.000Z")[0]
+    //           .split("-")[0] <= this.anoActual &&
+    //         mail !== "null"
+    //     )
+    //     .filter(
+    //       ({ servicio, nivel }) =>
+    //         !(servicio.includes("Local") && nivel == "I") &&
+    //         !(servicio == "Servicio Electoral" && nivel == "I")
+    //     )
+    //     .filter(
+    //       ({ fecha_nombramiento_renovacion, estado_adp }) =>
+    //         !(
+    //           fecha_nombramiento_renovacion
+    //             .split("T00:00:00.000Z")[0]
+    //             .split("-")
+    //             .splice(0, 2)
+    //             .sort()
+    //             .join("/") == this.mes_Ano &&
+    //           estado_adp == "Nombrado (primer periodo)"
+    //         )
+    //     )
+    //     .filter(
+    //       (value, index, self) =>
+    //         index === self.findIndex((t) => t.concurso === value.concurso)
+    //     );
+    //   this.adpsDeEsteMes = ADPqueDebenEvaluarseEsteMes;
+    // },
 
     async enviarCorreosDelMes() {
       // Recoge mes
@@ -270,7 +393,7 @@ export default {
           this.correosEnviados++;
           this.registraDBFirebase(
             `Alerta evaluación mensual ${mes}`,
-            this.adpsDeEsteMes[i].concurso,
+            `${this.adpsDeEsteMes[i].concurso}`,
             this.adpsDeEsteMes[i].mail_contraparte_cd
           );
         } else {
@@ -328,7 +451,7 @@ export default {
           this.correosReenviados++;
           this.registraDBFirebase(
             `Alerta evaluación mensual ${mes}`,
-            this.mailsFallidos[i].concurso,
+            `${this.mailsFallidos[i].concurso}`,
             this.mailsFallidos[i].mail_contraparte_cd
           );
         } else {
@@ -397,7 +520,7 @@ export default {
     // this.mes = this.mesActual;
     // this.ano = this.anoActual;
     this.mes_Ano = this.formateaFecha;
-    this.ADPsAEvaluarseMesEnCurso();
+    // this.ADPsAEvaluarseMesEnCurso();
   },
 };
 </script>

@@ -567,12 +567,12 @@ export default {
           this.adps[i].nombre_corregido.split(" ")[0],
           this.adps[i].encargado,
           this.adps[i].encargado_mail,
-          this.adps[i].rut,
-          this.creaClaveAPP(
-            this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
-              this.adps[i].apellido_corregido.charAt(0).toLowerCase() +
-              `1234`
-          ),
+          // this.adps[i].rut,
+          // this.creaClaveAPP(
+          //   this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
+          //     this.adps[i].apellido_corregido.charAt(0).toLowerCase() +
+          //     `1234`
+          // ),
           this.adps[i].mail,
           `Servicio Civil - 👋 Hola ${
             this.adps[i].nombre_corregido.split(" ")[0]
@@ -581,11 +581,11 @@ export default {
 
         if (correo == "OK") {
           Vue.$toast.success(`Alerta enviada con éxito`);
-          creaDocumentoEnDB(
-            `Bienvenida primer periodo`,
-            `${this.adps[i].concurso}`,
-            this.adps[i].mail_contraparte_cd
-          );
+          // creaDocumentoEnDB(
+          //   `Bienvenida primer periodo`,
+          //   `${this.adps[i].concurso}`,
+          //   this.adps[i].mail_contraparte_cd
+          // );
         } else {
           Vue.$toast.warning(`Error al intentar enviar el correo`);
         }

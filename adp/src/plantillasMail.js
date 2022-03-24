@@ -2578,715 +2578,1447 @@ const cuerpoBienvenidaNombrado = (
   nombre_ADP_corto,
   encargado,
   mail_encargado,
-  usuario_APP,
-  clave_APP
-) => `<!-- [if !mso]><!-- --><!--<!
-[endif]--><!-- [if mso]>
-      <xml>
-        <o:OfficeDocumentSettings>
-          <o:AllowPNG />
-          <o:PixelsPerInch>96</o:PixelsPerInch>
-        </o:OfficeDocumentSettings>
-      </xml>
-    <![endif]--><!-- [if lte mso 11]>
-      <style type="text/css">
-        .mj-outlook-group-fix {
+  // usuario_APP,
+  // clave_APP
+) => `<!DOCTYPE html>
+
+<html
+  lang="es"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!--[if mso
+      ]><xml
+        ><o:OfficeDocumentSettings
+          ><o:PixelsPerInch>96</o:PixelsPerInch
+          ><o:AllowPNG /></o:OfficeDocumentSettings></xml
+    ><![endif]-->
+    <!--[if !mso]><!-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!--<![endif]-->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      th.column {
+        padding: 0;
+      }
+
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: inherit !important;
+      }
+
+      #MessageViewBody a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      p {
+        line-height: inherit;
+      }
+
+      @media (max-width: 620px) {
+        .row-content {
           width: 100% !important;
         }
-      </style>
-    <![endif]-->
-<div
-  style="
-    display: none;
-    font-size: 1px;
-    color: #ffffff;
-    line-height: 1px;
-    max-height: 0px;
-    max-width: 0px;
-    opacity: 0;
-    overflow: hidden;
-  "
-  data-darkreader-inline-color=""
->
-  Saludo de bienvenida
-</div>
-<div style="background-color: #ffffff" data-darkreader-inline-bgcolor="">
-  <!-- [if mso | IE]>
-                <table
-                   align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
-                >
-                  <tr>
-                    <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
-                <![endif]-->
-  <div style="margin: 0px auto; max-width: 600px">
+
+        .image_block img.big {
+          width: auto !important;
+        }
+
+        .stack .column {
+          width: 100%;
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      background-color: #f6f9fe;
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
+    "
+  >
     <table
-      style="width: 100%; height: 54.45px"
-      role="presentation"
       border="0"
-      cellspacing="0"
       cellpadding="0"
-      align="center"
-    >
-      <tbody>
-        <tr style="height: 54.45px">
-          <td
-            style="
-              direction: ltr;
-              font-size: 0px;
-              padding: 20px 0px 0px;
-              text-align: center;
-              height: 54.45px;
-            "
-          >
-            <!-- [if mso | IE]>
-                            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                          
-                  <tr>
-                
-                      <td
-                         class="" style="vertical-align:top;width:600px;"
-                      >
-                    <![endif]-->
-            <div
-              class="mj-column-per-100 mj-outlook-group-fix"
-              style="
-                font-size: 0px;
-                text-align: left;
-                direction: ltr;
-                display: inline-block;
-                vertical-align: top;
-                width: 100%;
-              "
-            >
-              <table
-                style="vertical-align: top"
-                role="presentation"
-                border="0"
-                width="100%"
-                cellspacing="0"
-                cellpadding="0"
-              >
-                <tbody>
-                  <tr>
-                    <td
-                      style="
-                        font-size: 0px;
-                        padding: 10px 25px;
-                        word-break: break-word;
-                      "
-                      align="left"
-                    >
-                      <table
-                        style="border-collapse: collapse; border-spacing: 0px"
-                        role="presentation"
-                        border="0"
-                        cellspacing="0"
-                        cellpadding="0"
-                      >
-                        <tbody>
-                          <tr>
-                            <td style="width: 150px">
-                              <img
-                                style="
-                                  border: 0px none;
-                                  outline: currentcolor none medium;
-                                  text-decoration: none;
-                                  height: auto;
-                                  width: 100%;
-                                  font-size: 14px;
-                                  float: left;
-                                "
-                                src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Marcas%20SC.png?alt=media&amp;token=b2386672-52e0-4fe3-9213-c19f4cd2268c"
-                                alt="image description"
-                                width="50"
-                                height="auto"
-                                data-darkreader-inline-border-top=""
-                                data-darkreader-inline-border-right=""
-                                data-darkreader-inline-border-bottom=""
-                                data-darkreader-inline-border-left=""
-                                data-darkreader-inline-outline=""
-                              />
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td
-                      style="
-                        font-size: 0px;
-                        padding: 10px 25px;
-                        word-break: break-word;
-                      "
-                      align="left"
-                    >
-                      &nbsp;
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <!-- [if mso | IE]>
-                      </td>
-                    
-                  </tr>
-                
-                            </table>
-                          <![endif]-->
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <!-- [if mso | IE]>
-                    </td>
-                  </tr>
-                </table>
-                
-                <table
-                   align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600"
-                >
-                  <tr>
-                    <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
-                <![endif]-->
-  <div style="margin: 0px auto; max-width: 600px">
-    <table
-      style="width: 100%"
+      cellspacing="0"
+      class="nl-container"
       role="presentation"
-      border="0"
-      cellspacing="0"
-      cellpadding="0"
-      align="center"
+      style="
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        background-color: #f6f9fe;
+      "
+      width="100%"
     >
       <tbody>
         <tr>
-          <td
-            style="
-              direction: ltr;
-              font-size: 0px;
-              padding: 20px 0;
-              text-align: center;
-            "
-          >
-            <!-- [if mso | IE]>
-                            <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                          
-                  <tr>
-                
-                      <td
-                         class="" style="vertical-align:top;width:600px;"
-                      >
-                    <![endif]-->
-            <div
-              class="mj-column-per-100 mj-outlook-group-fix"
-              style="
-                font-size: 0px;
-                text-align: left;
-                direction: ltr;
-                display: inline-block;
-                vertical-align: top;
-                width: 100%;
-              "
+          <td>
+            <table
+              align="center"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              class="row row-1"
+              role="presentation"
+              style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+              width="100%"
             >
-              <table
-                style="vertical-align: top; height: 933px"
-                role="presentation"
-                border="0"
-                width="100%"
-                cellspacing="0"
-                cellpadding="0"
-              >
-                <tbody>
-                  <tr style="height: 857px">
-                    <td
+              <tbody>
+                <tr>
+                  <td>
+                    <table
+                      align="center"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      class="row-content stack"
+                      role="presentation"
                       style="
-                        font-size: 0px;
-                        padding: 10px 25px;
-                        word-break: break-word;
-                        height: 857px;
+                        mso-table-lspace: 0pt;
+                        mso-table-rspace: 0pt;
+                        color: #000000;
                       "
-                      align="left"
+                      width="600"
                     >
-                      <div
-                        style="
-                          font-family: Helvetica, Arial, sans-serif;
-                          font-size: 18px;
-                          font-weight: 400;
-                          line-height: 24px;
-                          text-align: left;
-                          color: #434245;
-                        "
-                        data-darkreader-inline-color=""
-                      >
-                        <p style="margin: 5px 0">
-                          Estimado ${nombre_ADP_corto},
-                        </p>
-                        <p>
-                          <span
+                      <tbody>
+                        <tr>
+                          <th
+                            class="column"
                             style="
-                              color: #434245;
-                              font-family: Helvetica, Arial, sans-serif;
+                              mso-table-lspace: 0pt;
+                              mso-table-rspace: 0pt;
+                              font-weight: 400;
+                              text-align: left;
+                              vertical-align: top;
+                              padding-top: 20px;
+                              padding-bottom: 0px;
+                              border-top: 0px;
+                              border-right: 0px;
+                              border-bottom: 0px;
+                              border-left: 0px;
                             "
-                            ><span style="font-size: 18px"
-                              >Junto con saludar cordialmente, y en el marco de
-                              su nombramiento a trav&eacute;s del Sistema de
-                              Alta Direcci&oacute;n P&uacute;blica, le damos la
-                              m&aacute;s cordial bienvenida a su cargo.</span
-                            ></span
+                            width="100%"
                           >
-                        </p>
-                        <p>
-                          <span
-                            style="
-                              color: #434245;
-                              font-family: Helvetica, Arial, sans-serif;
-                            "
-                            ><span style="font-size: 18px"
-                              >El Servicio Civil cuenta con un equipo
-                              especializado en materia de convenios de
-                              desempe&ntilde;o, donde podr&aacute; asesorarse en
-                              las distintas dudas que se le presente durante su
-                              gesti&oacute;n.
-                              <strong
-                                >Su consultor/a asignado es ${encargado}, cuyo
-                                correo electr&oacute;nico es
-                                ${mail_encargado}</strong
-                              >.</span
-                            ></span
-                          >
-                        </p>
-                        <p>
-                          <span
-                            style="
-                              color: #434245;
-                              font-family: Helvetica, Arial, sans-serif;
-                            "
-                            ><span style="font-size: 18px"
-                              >Como parte de su proceso de inducci&oacute;n,
-                              hemos desarrollado una serie de herramientas con
-                              el fin de apoyar su gesti&oacute;n:</span
-                            ></span
-                          >
-                        </p>
-                        <ul>
-                          <li>
-                            <span
-                              style="
-                                color: #434245;
-                                font-family: Helvetica, Arial, sans-serif;
-                              "
-                              ><strong
-                                ><a
-                                  href="https://sicde.serviciocivil.cl"
-                                  target="_blank"
-                                  rel="noopener"
-                                  >Centro de Ayuda SICDE</a
-                                ></strong
-                              >: Sitio web que contiene
-                              <strong
-                                >toda la informaci&oacute;n relacionada a la
-                                elaboraci&oacute;n y evaluaci&oacute;n del
-                                convenio de desempe&ntilde;o</strong
-                              >. Adem&aacute;s, podr&aacute; encontrar
-                              documentos, accesos directos y un chat en
-                              vivo.</span
-                            >
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <span
-                              style="
-                                color: #434245;
-                                font-family: Helvetica, Arial, sans-serif;
-                              "
-                              ><span style="font-size: 18px"
-                                ><strong>Chat en vivo</strong>: Herramienta que
-                                permite<strong>
-                                  conversar en vivo con los consultores</strong
-                                >
-                                de convenio de desempe&ntilde;o del Servicio
-                                Civil.
-                                <strong
-                                  >Disponible en el Centro de Ayuda, en SICDE y
-                                  tambi&eacute;n a trav&eacute;s de este
-                                  <a
-                                    href="https://go.crisp.chat/chat/embed/?website_id=9e29edc0-b863-4764-920d-6061916680a2"
-                                    target="_blank"
-                                    rel="noopener"
-                                    >link</a
-                                  >, de lunes a viernes entre 10:00 y 17:00
-                                  horas</strong
-                                >. Le invitamos a privilegiar este canal de
-                                conversaci&oacute;n.</span
-                              ></span
-                            >
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <span
-                              style="
-                                color: #434245;
-                                font-family: Helvetica, Arial, sans-serif;
-                              "
-                              ><span
-                                style="
-                                  color: #434245;
-                                  font-family: Helvetica, Arial, sans-serif;
-                                "
-                                ><span style="font-size: 18px"
-                                  ><a
-                                    href="https://sites.google.com/serviciocivil.cl/programa-desarrollo-adp/inicio"
-                                    target="_blank"
-                                    rel="noopener"
-                                    ><strong
-                                      >Material de Inducci&oacute;n</strong
-                                    ></a
-                                  >: Sitio web con<strong>
-                                    toda la programaci&oacute;n de los
-                                    talleres</strong
-                                  >
-                                  y jornadas dise&ntilde;adas especialmente para
-                                  ADP. Actualmente el programa 2022 se encuentra
-                                  en construcci&oacute;n.<br /></span></span
-                            ></span>
-                          </li>
-                        </ul>
-                        <ul>
-                          <li>
-                            <span
-                              style="
-                                color: #434245;
-                                font-family: Helvetica, Arial, sans-serif;
-                              "
-                              ><span
-                                style="
-                                  color: #434245;
-                                  font-family: Helvetica, Arial, sans-serif;
-                                "
-                                ><span style="font-size: 18px"
-                                  ><strong>App Servicio Civil</strong>:
-                                  Aplicaci&oacute;n m&oacute;vil que
-                                  <strong
-                                    >conecta a todos los ADP del
-                                    pa&iacute;s</strong
-                                  >. Cuenta con cursos, noticias, documentos y
-                                  directorio. Para unirse debe descargar la
-                                  aplicaci&oacute;n haciendo clic
-                                  <a
-                                    href="http://app.serviciocivil.cl/"
-                                    target="_blank"
-                                    rel="noopener"
-                                    >aqu&iacute;</a
-                                  >&nbsp;o buscando "Servicio Civil" en la
-                                  tienda de aplicaciones de su tel&eacute;fono
-                                  m&oacute;vil.
-                                  <strong
-                                    >Para ingresar use las siguientes
-                                    credenciales: Usuario: ${usuario_APP} (rut
-                                    sin puntos y con guion) y clave:
-                                    ${clave_APP}</strong
-                                  >.</span
-                                ></span
-                              ></span
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <div
-                        style="
-                          font-family: Helvetica, Arial, sans-serif;
-                          font-size: 18px;
-                          font-weight: 400;
-                          line-height: 24px;
-                          text-align: left;
-                          color: #434245;
-                        "
-                        data-darkreader-inline-color=""
-                      >
-                        Esperamos que todas estas herramientas sean un apoyo
-                        efectivo en la labor que realiza en su Servicio y en la
-                        construcci&oacute;n de un Estado que asume con
-                        convicci&oacute;n un rol protag&oacute;nico en el
-                        desarrollo, progreso y bienestar de la
-                        ciudadan&iacute;a.
-                      </div>
-                      <div
-                        style="
-                          font-family: Helvetica, Arial, sans-serif;
-                          font-size: 18px;
-                          font-weight: 400;
-                          line-height: 24px;
-                          text-align: left;
-                          color: #434245;
-                        "
-                        data-darkreader-inline-color=""
-                      >
-                        <div
-                          style="
-                            font-family: Helvetica, Arial, sans-serif;
-                            font-size: 18px;
-                            font-weight: 400;
-                            line-height: 24px;
-                            text-align: left;
-                            color: #434245;
-                          "
-                          data-darkreader-inline-color=""
-                        >
-                          <span
-                            style="
-                              color: #434245;
-                              font-family: Helvetica, Arial, sans-serif;
-                            "
-                            ><span style="font-size: 18px">&nbsp;</span></span
-                          >
-                        </div>
-                        <div
-                          style="
-                            font-family: Helvetica, Arial, sans-serif;
-                            font-size: 18px;
-                            font-weight: 400;
-                            line-height: 24px;
-                            text-align: left;
-                            color: #434245;
-                          "
-                          data-darkreader-inline-color=""
-                        >
-                          <span
-                            style="
-                              color: #434245;
-                              font-family: Helvetica, Arial, sans-serif;
-                            "
-                            ><span style="font-size: 18px"
-                              >Si requiere alguna orientaci&oacute;n en la que
-                              Servicio Civil pueda apoyarlo, no dude en
-                              contactarnos a trav&eacute;s de los canales ya
-                              mencionados.</span
-                            ></span
-                          >
-                        </div>
-                        <div
-                          style="
-                            font-family: Helvetica, Arial, sans-serif;
-                            font-size: 18px;
-                            font-weight: 400;
-                            line-height: 24px;
-                            text-align: left;
-                            color: #434245;
-                          "
-                          data-darkreader-inline-color=""
-                        >
-                          &nbsp;
-                        </div>
-                        <div
-                          style="
-                            font-family: Helvetica, Arial, sans-serif;
-                            font-size: 18px;
-                            font-weight: 400;
-                            line-height: 24px;
-                            text-align: left;
-                            color: #434245;
-                          "
-                          data-darkreader-inline-color=""
-                        >
-                          <span
-                            style="
-                              color: #434245;
-                              font-family: Helvetica, Arial, sans-serif;
-                            "
-                            ><span style="font-size: 18px"
-                              >Finalmente,&nbsp;</span
-                            ></span
-                          ><span
-                            style="
-                              color: #434245;
-                              font-family: Helvetica, Arial, sans-serif;
-                              font-size: 18px;
-                            "
-                            >lo invitamos cordialmente a
-                            <strong
-                              >responder el siguiente Cuestionario de Entrada
-                              que busca conocer su experiencia en el cargo hasta
-                              el momento</strong
-                            >. No le tomar&aacute; m&aacute;s de 3
-                            minutos.</span
-                          >
-                        </div>
-                        <div
-                          style="
-                            font-family: Helvetica, Arial, sans-serif;
-                            font-size: 18px;
-                            font-weight: 400;
-                            line-height: 24px;
-                            text-align: left;
-                            color: #434245;
-                          "
-                          data-darkreader-inline-color=""
-                        >
-                          <span
-                            style="
-                              color: #434245;
-                              font-family: Helvetica, Arial, sans-serif;
-                            "
-                            ><span style="font-size: 18px">&nbsp;</span></span
-                          >
-                        </div>
-                        <div
-                          style="
-                            font-family: Helvetica, Arial, sans-serif;
-                            font-size: 18px;
-                            font-weight: 400;
-                            line-height: 24px;
-                            text-align: left;
-                            color: #434245;
-                          "
-                          data-darkreader-inline-color=""
-                        >
-                          <span
-                            style="
-                              color: #434245;
-                              font-family: Helvetica, Arial, sans-serif;
-                            "
-                            ><span style="font-size: 18px"
-                              >- Equipo Acompa&ntilde;amiento y Desarrollo
-                              ADP</span
-                            ></span
-                          >
-                        </div>
-                        <div
-                          style="
-                            font-family: Helvetica, Arial, sans-serif;
-                            font-size: 18px;
-                            font-weight: 400;
-                            line-height: 24px;
-                            text-align: left;
-                            color: #434245;
-                          "
-                          data-darkreader-inline-color=""
-                        >
-                          &nbsp;
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr style="height: 52px">
-                    <td
-                      style="
-                        font-size: 0px;
-                        padding: 10px 25px;
-                        word-break: break-word;
-                        height: 52px;
-                      "
-                      align="left"
-                    >
-                      <table
-                        style="border-collapse: separate; line-height: 100%"
-                        role="presentation"
-                        border="0"
-                        cellspacing="0"
-                        cellpadding="0"
-                      >
-                        <tbody>
-                          <tr>
-                            <td
-                              style="
-                                border: none;
-                                border-radius: 30px;
-                                cursor: auto;
-                                mso-padding-alt: 10px 25px;
-                                background: #2e58ff;
-                              "
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              class="image_block"
                               role="presentation"
-                              align="center"
-                              valign="middle"
-                              bgcolor="#2e58ff"
-                              data-darkreader-inline-bgcolor=""
-                              data-darkreader-inline-border-top=""
-                              data-darkreader-inline-border-right=""
-                              data-darkreader-inline-border-bottom=""
-                              data-darkreader-inline-border-left=""
-                              data-darkreader-inline-bgimage=""
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                              width="100%"
                             >
-                              <a
-                                style="
-                                  display: inline-block;
-                                  background: #2e58ff;
-                                  color: #ffffff;
-                                  font-family: Helvetica, Arial, sans-serif;
-                                  font-size: 14px;
-                                  font-weight: bold;
-                                  line-height: 30px;
-                                  margin: 0;
-                                  text-decoration: none;
-                                  text-transform: uppercase;
-                                  padding: 10px 25px;
-                                  mso-padding-alt: 0px;
-                                  border-radius: 30px;
-                                "
-                                href="https://docs.google.com/forms/d/e/1FAIpQLSezCidBN-u35-zrp7p-nHKETBHdeoAvdyst22eNylo6ndFNnA/viewform"
-                                target="_blank"
-                                rel="noopener"
-                                data-darkreader-inline-bgimage=""
-                                data-darkreader-inline-bgcolor=""
-                                data-darkreader-inline-color=""
-                              >
-                                Responder Cuestionario de Entrada</a
-                              >
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr style="height: 24px">
-                    <td
+                              <tr>
+                                <td
+                                  style="
+                                    width: 100%;
+                                    padding-right: 0px;
+                                    padding-left: 0px;
+                                  "
+                                >
+                                  <div align="center" style="line-height: 10px">
+                                    <img
+                                      class="big"
+                                      src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Mailings%2Fheader-bienvenida.png?alt=media&token=5c977f9c-23f7-4aa3-9b01-a3445df0e148"
+                                      style="
+                                        display: block;
+                                        height: auto;
+                                        border: 0;
+                                        width: 600px;
+                                        max-width: 100%;
+                                      "
+                                      width="600"
+                                    />
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              align="center"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              class="row row-2"
+              role="presentation"
+              style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+              width="100%"
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <table
+                      align="center"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      class="row-content stack"
+                      role="presentation"
                       style="
-                        font-size: 0px;
-                        padding: 10px 25px;
-                        word-break: break-word;
-                        height: 24px;
+                        mso-table-lspace: 0pt;
+                        mso-table-rspace: 0pt;
+                        background-color: #ffffff;
+                        color: #000000;
                       "
-                      align="left"
+                      width="600"
                     >
-                      <div
-                        style="
-                          font-family: Helvetica, Arial, sans-serif;
-                          font-size: 18px;
-                          font-weight: 400;
-                          line-height: 24px;
-                          text-align: left;
-                          color: #434245;
-                        "
-                        data-darkreader-inline-color=""
-                      >
-                        &nbsp;
-                      </div>
-                    </td>
-                  </tr>
-                  <tr style="height: 0px">
-                    <td
+                      <tbody>
+                        <tr>
+                          <th
+                            class="column"
+                            style="
+                              mso-table-lspace: 0pt;
+                              mso-table-rspace: 0pt;
+                              font-weight: 400;
+                              text-align: left;
+                              vertical-align: top;
+                              padding-left: 20px;
+                              padding-right: 20px;
+                              padding-top: 20px;
+                              padding-bottom: 10px;
+                              border-top: 0px;
+                              border-right: 0px;
+                              border-bottom: 0px;
+                              border-left: 0px;
+                            "
+                            width="100%"
+                          >
+                            <table
+                              border="0"
+                              cellpadding="10"
+                              cellspacing="0"
+                              class="heading_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td>
+                                  <h1
+                                    style="
+                                      margin: 0;
+                                      color: #0f69c4;
+                                      font-size: 26px;
+                                      font-family: Arial, 'Helvetica Neue',
+                                        Helvetica, sans-serif;
+                                      line-height: 120%;
+                                      text-align: left;
+                                      direction: ltr;
+                                      font-weight: normal;
+                                      letter-spacing: normal;
+                                      margin-top: 0;
+                                      margin-bottom: 0;
+                                    "
+                                  >
+                                    Bienvenido/a al<br />Sistema de Alta
+                                    Dirección Pública
+                                  </h1>
+                                </td>
+                              </tr>
+                            </table>
+                            <table
+                              border="0"
+                              cellpadding="10"
+                              cellspacing="0"
+                              class="text_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                                word-break: break-word;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td>
+                                  <div style="font-family: sans-serif">
+                                    <div
+                                      style="
+                                        font-size: 14px;
+                                        mso-line-height-alt: 21px;
+                                        color: #393d47;
+                                        line-height: 1.5;
+                                        font-family: Arial, Helvetica Neue,
+                                          Helvetica, sans-serif;
+                                      "
+                                    >
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 24px;
+                                        "
+                                      >
+                                        <span
+                                          style="
+                                            color: #373737;
+                                            font-size: 16px;
+                                          "
+                                          >Estimado/a ${nombre_ADP_corto}:</span
+                                        >
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 21px;
+                                        "
+                                      >
+                                         
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 24px;
+                                        "
+                                      >
+                                        <span style="font-size: 16px"
+                                          >Saludos cordiales. Soy Felipe Melo,
+                                          Director del Servicio Civil y con
+                                          mucho orgullo
+                                          <strong
+                                            >le doy la bienvenida al Sistema de
+                                            Alta Dirección Pública. </strong
+                                          ></span
+                                        >
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 21px;
+                                        "
+                                      >
+                                         
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 24px;
+                                        "
+                                      >
+                                        <span style="font-size: 16px"
+                                          >Este año ha asumido un profundo e
+                                          importante compromiso para servir al
+                                          país. Formará parte de un grupo de
+                                          profesionales dedicados a liderar los
+                                          desafíos estratégicos de Chile, para
+                                          superar brechas y multiplicar buenas
+                                          prácticas, mediante procesos de
+                                          transformación e innovación.</span
+                                        >
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 21px;
+                                        "
+                                      >
+                                         
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 24px;
+                                        "
+                                      >
+                                        <span style="font-size: 16px"
+                                          >El sello ADP es indeleble y lo/la
+                                          guiará en la gestión de los desafíos
+                                          que se ha propuesto Chile. Exige los
+                                          más altos estándares de la función
+                                          pública desde la ética, la probidad,
+                                          el profesionalismo y las relaciones
+                                          humanas.</span
+                                        >
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 21px;
+                                        "
+                                      >
+                                         
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 24px;
+                                        "
+                                      >
+                                        <span style="font-size: 16px"
+                                          >El Servicio Civil comprende la
+                                          magnitud de este desafío profesional y
+                                          personal. Es por ese motivo que el
+                                          Área de Acompañamiento y Desarrollo
+                                          ADP del Servicio Civil cuenta con los
+                                          profesionales, materiales y
+                                          herramientas necesarias para
+                                          <strong
+                                            >facilitar su gestión diaria,
+                                            fortalecer sus habilidades
+                                            directivas y crear una red de
+                                            colaboración con otros/as
+                                            ADP.</strong
+                                          ></span
+                                        >
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 21px;
+                                        "
+                                      >
+                                         
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 24px;
+                                        "
+                                      >
+                                        <span style="font-size: 16px"
+                                          >Dado lo anterior,
+                                          <strong>${encargado}</strong>
+                                          fue asignado/a como su Consultor/a de
+                                          Acompañamiento y Desarrollo del
+                                          Servicio Civil durante todo su ciclo
+                                          de desarrollo laboral como Alto/a
+                                          Directivo/a Público/a. </span
+                                        >
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 21px;
+                                        "
+                                      >
+                                         
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 24px;
+                                        "
+                                      >
+                                        <span style="font-size: 16px"
+                                          >Le recordamos que podrá encontrar más
+                                          información sobre el Sistema de Alta
+                                          Dirección Pública, y del equipo de
+                                          consultores del Área de Acompañamiento
+                                          y Desarrollo del Servicio Civil, a
+                                          través del chat.</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                            <table
+                              border="0"
+                              cellpadding="10"
+                              cellspacing="0"
+                              class="button_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td>
+                                  <div align="center">
+                                    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://bit.ly/chat-serviciocivil" style="height:60px;width:155px;v-text-anchor:middle;" arcsize="59%" strokeweight="1.5pt" strokecolor="#0F69C4" fill="false"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#0f69c4; font-family:Arial, sans-serif; font-size:18px"><!
+                                    [endif]--><a
+                                      href="https://bit.ly/chat-serviciocivil"
+                                      style="
+                                        text-decoration: none;
+                                        display: inline-block;
+                                        color: #0f69c4;
+                                        background-color: transparent;
+                                        border-radius: 35px;
+                                        width: auto;
+                                        border-top: 2px solid #0f69c4;
+                                        border-right: 2px solid #0f69c4;
+                                        border-bottom: 2px solid #0f69c4;
+                                        border-left: 2px solid #0f69c4;
+                                        padding-top: 10px;
+                                        padding-bottom: 10px;
+                                        font-family: Arial, Helvetica Neue,
+                                          Helvetica, sans-serif;
+                                        text-align: center;
+                                        mso-border-alt: none;
+                                        word-break: keep-all;
+                                      "
+                                      target="_blank"
+                                      ><span
+                                        style="
+                                          padding-left: 30px;
+                                          padding-right: 30px;
+                                          font-size: 18px;
+                                          display: inline-block;
+                                          letter-spacing: normal;
+                                        "
+                                        ><span
+                                          style="
+                                            font-size: 16px;
+                                            line-height: 2;
+                                            word-break: break-word;
+                                            mso-line-height-alt: 32px;
+                                          "
+                                          ><span
+                                            data-mce-style="font-size: 18px; line-height: 36px;"
+                                            style="
+                                              font-size: 18px;
+                                              line-height: 36px;
+                                            "
+                                            ><span
+                                              data-mce-style="line-height: 24px;"
+                                              style="line-height: 24px"
+                                              >Iniciar chat</span
+                                            ></span
+                                          ></span
+                                        ></span
+                                      ></a
+                                    >
+                                    <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              align="center"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              class="row row-3"
+              role="presentation"
+              style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+              width="100%"
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <table
+                      align="center"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      class="row-content stack"
+                      role="presentation"
                       style="
-                        font-size: 0px;
-                        padding: 10px 25px;
-                        word-break: break-word;
-                        height: 0px;
+                        mso-table-lspace: 0pt;
+                        mso-table-rspace: 0pt;
+                        background-color: #0f69c4;
+                        color: #000000;
                       "
-                      align="left"
+                      width="600"
                     >
-                      &nbsp;
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                      <tbody>
+                        <tr>
+                          <th
+                            class="column"
+                            style="
+                              mso-table-lspace: 0pt;
+                              mso-table-rspace: 0pt;
+                              font-weight: 400;
+                              text-align: left;
+                              vertical-align: top;
+                              padding-left: 20px;
+                              padding-right: 20px;
+                              padding-top: 20px;
+                              padding-bottom: 20px;
+                              border-top: 0px;
+                              border-right: 0px;
+                              border-bottom: 0px;
+                              border-left: 0px;
+                            "
+                            width="100%"
+                          >
+                            <table
+                              border="0"
+                              cellpadding="10"
+                              cellspacing="0"
+                              class="text_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                                word-break: break-word;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td>
+                                  <div style="font-family: sans-serif">
+                                    <div
+                                      style="
+                                        font-size: 14px;
+                                        mso-line-height-alt: 21px;
+                                        color: #ffffff;
+                                        line-height: 1.5;
+                                        font-family: Arial, Helvetica Neue,
+                                          Helvetica, sans-serif;
+                                      "
+                                    >
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 30px;
+                                        "
+                                      >
+                                        <span
+                                          style="
+                                            color: #ffffff;
+                                            font-size: 20px;
+                                          "
+                                          >Para tener una comunicación
+                                          institucional directa le solicitamos
+                                          que actualice sus datos de contacto,
+                                          respondiendo este correo con copia a
+                                          <a
+                                            href="mailto:${mail_encargado}"
+                                            style="color: #ffffff"
+                                            >${mail_encargado}</a
+                                          > con los siguientes campos:</span
+                                        >
+                                      </p>
+                                      <ol style="font-size: 16px">
+                                        <li aria-level="1">
+                                          <span
+                                            style="
+                                              color: #ffffff;
+                                              font-size: 16px;
+                                            "
+                                            >Correo electrónico
+                                            institucional:</span
+                                          >
+                                        </li>
+                                        <li aria-level="1">
+                                          <span
+                                            style="
+                                              color: #ffffff;
+                                              font-size: 16px;
+                                            "
+                                            >Teléfono de contacto
+                                            Institucional:</span
+                                          >
+                                        </li>
+                                      </ol>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              align="center"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              class="row row-4"
+              role="presentation"
+              style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+              width="100%"
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <table
+                      align="center"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      class="row-content stack"
+                      role="presentation"
+                      style="
+                        mso-table-lspace: 0pt;
+                        mso-table-rspace: 0pt;
+                        background-color: #ffffff;
+                        color: #000000;
+                      "
+                      width="600"
+                    >
+                      <tbody>
+                        <tr>
+                          <th
+                            class="column"
+                            style="
+                              mso-table-lspace: 0pt;
+                              mso-table-rspace: 0pt;
+                              font-weight: 400;
+                              text-align: left;
+                              vertical-align: top;
+                              padding-left: 20px;
+                              padding-right: 20px;
+                              padding-top: 20px;
+                              padding-bottom: 20px;
+                              border-top: 0px;
+                              border-right: 0px;
+                              border-bottom: 0px;
+                              border-left: 0px;
+                            "
+                            width="100%"
+                          >
+                            <table
+                              border="0"
+                              cellpadding="10"
+                              cellspacing="0"
+                              class="text_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                                word-break: break-word;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td>
+                                  <div style="font-family: sans-serif">
+                                    <div
+                                      style="
+                                        font-size: 14px;
+                                        mso-line-height-alt: 21px;
+                                        color: #393d47;
+                                        line-height: 1.5;
+                                        font-family: Arial, Helvetica Neue,
+                                          Helvetica, sans-serif;
+                                      "
+                                    >
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 30px;
+                                        "
+                                      >
+                                        <span style="font-size: 20px"
+                                          >El país tiene grandes esperanzas
+                                          puestas en usted y en todos quienes
+                                          asumen la función pública.</span
+                                        >
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 21px;
+                                        "
+                                      >
+                                         
+                                      </p>
+                                      <p style="margin: 0; font-size: 16px">
+                                        <strong
+                                          ><span style="font-size: 16px"
+                                            >¡Muchas gracias por querer hacer de
+                                            Chile un mejor país! </span
+                                          ></strong
+                                        >
+                                      </p>
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 16px;
+                                          mso-line-height-alt: 24px;
+                                        "
+                                      >
+                                        <span style="font-size: 16px"
+                                          >Atentamente, </span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                            <table
+                              border="0"
+                              cellpadding="10"
+                              cellspacing="0"
+                              class="text_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                                word-break: break-word;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td>
+                                  <div style="font-family: sans-serif">
+                                    <div
+                                      style="
+                                        font-size: 14px;
+                                        mso-line-height-alt: 21px;
+                                        color: #7a7a7a;
+                                        line-height: 1.5;
+                                        font-family: Arial, Helvetica Neue,
+                                          Helvetica, sans-serif;
+                                      "
+                                    >
+                                      <p style="margin: 0; font-size: 16px">
+                                        —
+                                      </p>
+                                      <p style="margin: 0; font-size: 16px">
+                                        Felipe Melo Rivara<br />Director
+                                        Nacional del Servicio Civil<br />Presidente
+                                        del Consejo de Alta Dirección Pública
+                                      </p>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              align="center"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              class="row row-10"
+              role="presentation"
+              style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+              width="100%"
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <table
+                      align="center"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      class="row-content stack"
+                      role="presentation"
+                      style="
+                        mso-table-lspace: 0pt;
+                        mso-table-rspace: 0pt;
+                        background-color: #e85656;
+                        color: #000000;
+                      "
+                      width="600"
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            class="column"
+                            style="
+                              mso-table-lspace: 0pt;
+                              mso-table-rspace: 0pt;
+                              font-weight: 400;
+                              text-align: left;
+                              vertical-align: top;
+                              padding-left: 20px;
+                              padding-right: 20px;
+                              padding-top: 20px;
+                              padding-bottom: 30px;
+                              border-top: 0px;
+                              border-right: 0px;
+                              border-bottom: 0px;
+                              border-left: 0px;
+                            "
+                            width="100%"
+                          >
+                            <table
+                              border="0"
+                              cellpadding="10"
+                              cellspacing="0"
+                              class="text_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                                word-break: break-word;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td>
+                                  <div style="font-family: Arial, sans-serif">
+                                    <div
+                                      style="
+                                        font-size: 14px;
+                                        font-family: Arial, 'Helvetica Neue',
+                                          Helvetica, sans-serif;
+                                        mso-line-height-alt: 16.8px;
+                                        color: #393d47;
+                                        line-height: 1.2;
+                                      "
+                                    >
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 14px;
+                                          text-align: center;
+                                        "
+                                      >
+                                        <strong
+                                          ><span
+                                            style="
+                                              color: #ffffff;
+                                              font-size: 22px;
+                                            "
+                                            >Contacte a nuestro equipo de
+                                            consultores</span
+                                          ></strong
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              class="image_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td
+                                  style="
+                                    width: 100%;
+                                    padding-right: 0px;
+                                    padding-left: 0px;
+                                  "
+                                >
+                                  <div align="center" style="line-height: 10px">
+                                    <img
+                                      alt="foto de los consultores"
+                                      src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Mailings%2Fconsultores-chat-2.png?alt=media&token=48427366-cdf9-46da-ae2f-1e1e838bbf2b"
+                                      style="
+                                        display: block;
+                                        height: auto;
+                                        border: 0;
+                                        width: 196px;
+                                        max-width: 100%;
+                                      "
+                                      title="foto de los consultores"
+                                      width="196"
+                                    />
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                            <table
+                              border="0"
+                              cellpadding="10"
+                              cellspacing="0"
+                              class="text_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                                word-break: break-word;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td>
+                                  <div style="font-family: sans-serif">
+                                    <div
+                                      style="
+                                        font-size: 14px;
+                                        mso-line-height-alt: 21px;
+                                        color: #393d47;
+                                        line-height: 1.5;
+                                        font-family: Arial, Helvetica Neue,
+                                          Helvetica, sans-serif;
+                                      "
+                                    >
+                                      <p
+                                        style="
+                                          margin: 0;
+                                          font-size: 14px;
+                                          text-align: center;
+                                          mso-line-height-alt: 24px;
+                                        "
+                                      >
+                                        <span
+                                          style="
+                                            color: #ffffff;
+                                            font-size: 16px;
+                                          "
+                                          >Ante cualquier pregunta o comentario,
+                                          no dude en contactar al equipo de
+                                          consultores del Área de Acompañamiento
+                                          y Desarrollo del Servicio Civil.</span
+                                        >
+                                      </p>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                            <table
+                              border="0"
+                              cellpadding="10"
+                              cellspacing="0"
+                              class="divider_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td>
+                                  <div align="center">
+                                    <table
+                                      border="0"
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      role="presentation"
+                                      style="
+                                        mso-table-lspace: 0pt;
+                                        mso-table-rspace: 0pt;
+                                      "
+                                      width="100%"
+                                    >
+                                      <tr>
+                                        <td
+                                          class="divider_inner"
+                                          style="
+                                            font-size: 1px;
+                                            line-height: 1px;
+                                            border-top: 0px solid #bbbbbb;
+                                          "
+                                        >
+                                          <span> </span>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                            <table
+                              border="0"
+                              cellpadding="10"
+                              cellspacing="0"
+                              class="button_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td>
+                                  <div align="center">
+                                    <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://bit.ly/chat-serviciocivil" style="height:60px;width:159px;v-text-anchor:middle;" arcsize="50%" strokeweight="1.5pt" strokecolor="#F8F8F8" fill="false"><w:anchorlock/><v:textbox inset="0px,0px,0px,0px"><center style="color:#ffffff; font-family:Arial, sans-serif; font-size:18px"><!
+                                    [endif]--><a
+                                      href="https://bit.ly/chat-serviciocivil"
+                                      style="
+                                        text-decoration: none;
+                                        display: inline-block;
+                                        color: #ffffff;
+                                        background-color: transparent;
+                                        border-radius: 30px;
+                                        width: auto;
+                                        border-top: 2px solid #f8f8f8;
+                                        border-right: 2px solid #f8f8f8;
+                                        border-bottom: 2px solid #f8f8f8;
+                                        border-left: 2px solid #f8f8f8;
+                                        padding-top: 10px;
+                                        padding-bottom: 10px;
+                                        font-family: Arial, Helvetica Neue,
+                                          Helvetica, sans-serif;
+                                        text-align: center;
+                                        mso-border-alt: none;
+                                        word-break: keep-all;
+                                      "
+                                      target="_blank"
+                                      ><span
+                                        style="
+                                          padding-left: 30px;
+                                          padding-right: 30px;
+                                          font-size: 18px;
+                                          display: inline-block;
+                                          letter-spacing: normal;
+                                        "
+                                        ><span
+                                          style="
+                                            font-size: 16px;
+                                            line-height: 2;
+                                            word-break: break-word;
+                                            mso-line-height-alt: 32px;
+                                          "
+                                          ><span
+                                            data-mce-style="font-size: 18px; line-height: 36px;"
+                                            style="
+                                              font-size: 18px;
+                                              line-height: 36px;
+                                            "
+                                            >Iniciar Chat</span
+                                          ></span
+                                        ></span
+                                      ></a
+                                    >
+                                    <!--[if mso]></center></v:textbox></v:roundrect><![endif]-->
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table
+              align="center"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              class="row row-5"
+              role="presentation"
+              style="mso-table-lspace: 0pt; mso-table-rspace: 0pt"
+              width="100%"
+            >
+              <tbody>
+                <tr>
+                  <td>
+                    <table
+                      align="center"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      class="row-content stack"
+                      role="presentation"
+                      style="
+                        mso-table-lspace: 0pt;
+                        mso-table-rspace: 0pt;
+                        color: #000000;
+                      "
+                      width="600"
+                    >
+                      <tbody>
+                        <tr>
+                          <th
+                            class="column"
+                            style="
+                              mso-table-lspace: 0pt;
+                              mso-table-rspace: 0pt;
+                              font-weight: 400;
+                              text-align: left;
+                              vertical-align: top;
+                              padding-top: 45px;
+                              padding-bottom: 5px;
+                              border-top: 0px;
+                              border-right: 0px;
+                              border-bottom: 0px;
+                              border-left: 0px;
+                            "
+                            width="100%"
+                          >
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              class="image_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td
+                                  style="
+                                    width: 100%;
+                                    padding-right: 0px;
+                                    padding-left: 0px;
+                                  "
+                                >
+                                  <div align="center" style="line-height: 10px">
+                                    <img
+                                      src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Mailings%2Fservicio-civil-adp-logo.png?alt=media&token=99723262-7b10-465d-aadf-2b6f2de8d671"
+                                      style="
+                                        display: block;
+                                        height: auto;
+                                        border: 0;
+                                        width: 240px;
+                                        max-width: 100%;
+                                      "
+                                      width="240"
+                                    />
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              class="html_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td>
+                                  <div
+                                    align="center"
+                                    style="
+                                      font-family: Arial, Helvetica Neue,
+                                        Helvetica, sans-serif;
+                                    "
+                                  >
+                                    <div style="height: 40px"> </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              class="social_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td
+                                  style="
+                                    text-align: center;
+                                    padding-right: 0px;
+                                    padding-left: 0px;
+                                  "
+                                >
+                                  <table
+                                    align="center"
+                                    border="0"
+                                    cellpadding="0"
+                                    cellspacing="0"
+                                    class="social-table"
+                                    role="presentation"
+                                    style="
+                                      mso-table-lspace: 0pt;
+                                      mso-table-rspace: 0pt;
+                                    "
+                                    width="210px"
+                                  >
+                                    <tr>
+                                      <td style="padding: 0 5px 0 5px">
+                                        <a
+                                          href="https://www.facebook.com/ServCivil/"
+                                          target="_blank"
+                                          ><img
+                                            alt="Facebook"
+                                            height="32"
+                                            src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Mailings%2Ffacebook2x.png?alt=media&token=1acace56-7e5e-4c4f-92e8-8ce7aa723a4c"
+                                            style="
+                                              display: block;
+                                              height: auto;
+                                              border: 0;
+                                            "
+                                            title="Facebook"
+                                            width="32"
+                                        /></a>
+                                      </td>
+                                      <td style="padding: 0 5px 0 5px">
+                                        <a
+                                          href="https://www.instagram.com/serviciocivilcl/?hl=es"
+                                          target="_blank"
+                                          ><img
+                                            alt="Instagram"
+                                            height="32"
+                                            src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Mailings%2Finstagram2x.png?alt=media&token=c6b5dca9-2c92-4d57-b256-1ee4ec3861c9"
+                                            style="
+                                              display: block;
+                                              height: auto;
+                                              border: 0;
+                                            "
+                                            title="Instagram"
+                                            width="32"
+                                        /></a>
+                                      </td>
+                                      <td style="padding: 0 5px 0 5px">
+                                        <a
+                                          href="https://twitter.com/ServicioCivilCL"
+                                          target="_blank"
+                                          ><img
+                                            alt="Twitter"
+                                            height="32"
+                                            src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Mailings%2Ftwitter2x.png?alt=media&token=4ab41b69-4c58-4c8d-b3b3-fbea8d26d03a"
+                                            style="
+                                              display: block;
+                                              height: auto;
+                                              border: 0;
+                                            "
+                                            title="Twitter"
+                                            width="32"
+                                        /></a>
+                                      </td>
+                                      <td style="padding: 0 5px 0 5px">
+                                        <a
+                                          href="https://www.youtube.com/channel/UCeEggIqFXTOJVIOm_sLhKSw"
+                                          target="_blank"
+                                          ><img
+                                            alt="YouTube"
+                                            height="32"
+                                            src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Mailings%2Fyoutube2x.png?alt=media&token=1d218e3b-bd97-499a-8f3a-f9c8fa163f10"
+                                            style="
+                                              display: block;
+                                              height: auto;
+                                              border: 0;
+                                            "
+                                            title="YouTube"
+                                            width="32"
+                                        /></a>
+                                      </td>
+                                      <td style="padding: 0 5px 0 5px">
+                                        <a
+                                          href="https://www.linkedin.com/company/alta-direccion-publica/?originalSubdomain=cl"
+                                          target="_blank"
+                                          ><img
+                                            alt="LinkedIn"
+                                            height="32"
+                                            src="https://firebasestorage.googleapis.com/v0/b/dnsc-ccaf2.appspot.com/o/Mailings%2Flinkedin2x.png?alt=media&token=d2905665-0f85-46d4-9264-3e7ca4308cb1"
+                                            style="
+                                              display: block;
+                                              height: auto;
+                                              border: 0;
+                                            "
+                                            title="LinkedIn"
+                                            width="32"
+                                        /></a>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              class="html_block"
+                              role="presentation"
+                              style="
+                                mso-table-lspace: 0pt;
+                                mso-table-rspace: 0pt;
+                              "
+                              width="100%"
+                            >
+                              <tr>
+                                <td>
+                                  <div
+                                    align="center"
+                                    style="
+                                      font-family: Arial, Helvetica Neue,
+                                        Helvetica, sans-serif;
+                                    "
+                                  >
+                                    <div style="height-top: 20px"> </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </td>
         </tr>
       </tbody>
     </table>
-  </div>
-</div>
+    <!-- End -->
+  </body>
+</html>
 `;
 
 const cuerpoBienvenidaRenovado = (

@@ -12,6 +12,7 @@
 
 <script>
 import firebase from "firebase";
+import Vue from "vue";
 
 export default {
   name: "UltimosCorreos",
@@ -23,23 +24,23 @@ export default {
   methods: {
     async leeAlertas() {
       const db = firebase.firestore();
-      try {
-        const alertas = await db
-          .collection("alertasADPs")
-          .where("concurso", "==", this.concurso).get();
+      const alertas = db.collection("alertasADPs").doc(this.concursoToText);
 
-        if (!alertas.empty) {
-          const snapshot = alertas.docs[0];
-          const data = snapshot.data().alertas;
-          this.alertas = data;
-        } else {
-          console.log("No hay alertas registradas");
-        }
-
-        return alertas;
-      } catch (error) {
-        console.log("Error getting documents: ", error);
-      }
+      alertas
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            this.alertas = doc.data().alertas;
+          } else {
+            Vue.$toast.info(`ADP sin alertas registradas`);
+          }
+        })
+        .catch((error) => Vue.$toast.warning(`No se pudieron leer las alertas porque: ${error}`));
+    },
+  },
+  computed: {
+    concursoToText() {
+      return `${this.concurso}`;
     },
   },
   mounted() {
