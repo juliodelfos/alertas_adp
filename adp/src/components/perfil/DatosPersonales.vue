@@ -640,19 +640,11 @@ export default {
         // Se pasan parámetros, se envía mail y se almacena en variable
         const correo = await enviaBienvenidaRenovado(
           this.adps[i].nombre_corregido.split(" ")[0],
-          this.adps[i].cargo,
           this.adps[i].encargado,
-          this.adps[i].encargado_mail,
-          this.adps[i].rut,
-          this.creaClaveAPP(
-            this.adps[i].nombre_corregido.charAt(0).toLowerCase() +
-              this.adps[i].apellido_corregido.charAt(0).toLowerCase() +
-              `1234`
-          ),
           this.adps[i].mail,
           `Servicio Civil - 👋 Hola ${
             this.adps[i].nombre_corregido.split(" ")[0]
-          } (de nuevo)`
+          }`
         );
 
         if (correo == "OK") {

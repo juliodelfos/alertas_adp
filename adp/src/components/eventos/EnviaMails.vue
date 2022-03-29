@@ -217,24 +217,13 @@ export default {
       });
     },
 
-    // registraDBFirebase(tipo, concurso, destinatario) {
-    //   const db = firebase.firestore();
-    //   db.collection("alertasEnviadas")
-    //     .add({
-    //       tipo: tipo,
-    //       concurso: concurso,
-    //       fecha: this.fechaYHora(),
-    //       destinatario: destinatario,
-    //     })
-    //     .then(() => console.log("Correo registrado en planilla"))
-    //     .catch((error) =>
-    //       Vue.$toast.error("No se registró correo en planilla por: " + error)
-    //     );
-    // },
-
     // Evalúa Alertas a Enviar
     ADPsAEvaluarseMesEnCurso() {
       let ADPqueDebenEvaluarseEsteMes = this.adps
+        /* Mes de nombramiento debe coincidir con el actual
+      El correo no puede estar nulo (se evitan nombramientor recientes)
+      Año de decha de nombramiento debe ser menor o igual al año actual (porque renovados igual se incluyen)
+      */
         .filter(
           ({ eval_anual_inicio, mail, fecha_nombramiento_renovacion }) =>
             eval_anual_inicio.split("T00:00:00.000Z")[0].split("-")[1] ===
@@ -244,13 +233,24 @@ export default {
               .split("-")[0] <= this.anoActual &&
             mail !== "null"
         )
+        /* No puede ser un Director Ejecutivo
+        Tampoco SERVEL
+      */
         .filter(
           ({ servicio, nivel }) =>
             !(servicio.includes("Local") && nivel == "I") &&
             !(servicio == "Servicio Electoral" && nivel == "I")
         )
+        /* 
+        Fecha de nombramiento o renovación no puede ser igual al mismo tiempo al mes y año actual
+        Tampoco debe estar desvinculado
+      */
         .filter(
-          ({ fecha_nombramiento_renovacion, estado_adp }) =>
+          ({
+            fecha_nombramiento_renovacion,
+            estado_adp,
+            sub_estado_concurso,
+          }) =>
             !(
               fecha_nombramiento_renovacion
                 .split("T00:00:00.000Z")[0]
@@ -259,8 +259,11 @@ export default {
                 .sort()
                 .join("/") == this.mes_Ano &&
               estado_adp == "Nombrado (primer periodo)"
-            )
+            ) && sub_estado_concurso !== "Desvinculado"
         )
+        /* 
+Evita que hayan concursos repetidos (problema desde la base)
+      */
         .filter(
           (value, index, self) =>
             index === self.findIndex((t) => t.concurso === value.concurso)
