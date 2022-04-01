@@ -305,7 +305,7 @@ Evita que hayan concursos repetidos (problema desde la base)
           `${fechaRex()[2]}/${fechaRex()[1]}/${this.anoActual}`,
           adp.encargado,
           adp.encargado_mail,
-          adp.mail,
+          adp.mail_contraparte_eval,
           `Servicio Civil - Informa sobre evaluación directiva`
         );
 
@@ -314,7 +314,7 @@ Evita que hayan concursos repetidos (problema desde la base)
           this.registraDBFirebase(
             `Alerta evaluación mensual ${mes}`,
             `${this.adpsDeEsteMes[i].concurso}`,
-            this.adpsDeEsteMes[i].mail_contraparte_cd
+            this.adpsDeEsteMes[i].mail_contraparte_eval
           );
         } else {
           this.mailsFallidos.push(this.adpsDeEsteMes[i]);
@@ -363,7 +363,7 @@ Evita que hayan concursos repetidos (problema desde la base)
           `${fechaRex()[2]}/${fechaRex()[1]}/${this.anoActual}`,
           adp.encargado,
           adp.encargado_mail,
-          adp.mail,
+          adp.mail_contraparte_eval,
           `Servicio Civil - Informa sobre evaluación directiva`
         );
 
@@ -372,7 +372,7 @@ Evita que hayan concursos repetidos (problema desde la base)
           this.registraDBFirebase(
             `Alerta evaluación mensual ${mes}`,
             `${this.mailsFallidos[i].concurso}`,
-            this.mailsFallidos[i].mail_contraparte_cd
+            this.mailsFallidos[i].mail_contraparte_eval
           );
         } else {
           Vue.$toast.error(

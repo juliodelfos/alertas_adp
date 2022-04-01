@@ -169,6 +169,7 @@
             @bienvenidaRenovado="bienvenidaRenovado(adps[indice].indice)"
             @encuestaCierre="encuestaCierre(adps[indice].indice)"
             @encuestaPercepcion="encuestaPercepcion(adps[indice].indice)"
+            @evaluacionMensual="evaluacionMensual(adps[indice].indice)"
           />
         </b-tab>
       </b-tabs>
@@ -202,6 +203,7 @@ import { enviaAutoEvalAnualPendiente } from "@/metodosEnvioMails/autoEvalAnualPe
 import { enviaRexEvalAnualPendiente } from "@/metodosEnvioMails/rexEvalAnualPendiente.js";
 import { creaDocumentoEnDB } from "@/metodosFirebase/registraAlerta.js";
 import { creaDocumentoEnDBCierre } from "@/metodosFirebase/registraAlertaCierre.js";
+import { enviaEvaluacionMensual } from "@/metodosEnvioMails/evalMensual.js";
 
 export default {
   name: "DatosPersonales",
@@ -266,6 +268,19 @@ export default {
     },
     fechaComunicacion(i) {
       return this.formateaFecha(this.adps[i].fecha_comunicacion);
+    },
+    // Evaluación mensual
+    fechaInicio(i) {
+      return this.formateaFecha(this.adps[i].eval_anual_inicio);
+    },
+    fechaEval(i) {
+      return this.formateaFecha(this.adps[i].eval_anual_auto);
+    },
+    fechaRetro(i) {
+      return this.formateaFecha(this.adps[i].eval_anual_retro);
+    },
+    fechaRex(i) {
+      return this.formateaFecha(this.adps[i].eval_anual_rex);
     },
     // Fechas que permiten añadir evento a Calendar
     fechaNombramientoToCalendar(i) {
@@ -716,6 +731,56 @@ export default {
             `Encuesta de percepción`,
             `${this.adps[i].concurso}`,
             this.adps[i].mail_contraparte_cd
+          );
+        } else {
+          Vue.$toast.warning(`Error al intentar enviar el correo`);
+        }
+      } else {
+        Vue.$toast.warning(`Envío de alerta cancelado`);
+      }
+    },
+
+    async evaluacionMensual(i) {
+      // Cuadro de diálogo para confirmar envío de correo
+      const mes = prompt(`¿Qué mes corresponde la alerta?`, `Ej. abril`);
+      const minuscula = (mes) => mes.toLowerCase();
+
+      // Si usuario confirma envío de mail
+      if (mes) {
+        // Se pasan parámetros, se envía mail y se almacena en variable
+        const correo = await enviaEvaluacionMensual(
+          this.adps[i].nombre_corregido,
+          this.adps[i].apellido_corregido,
+          this.adps[i].cargo,
+          minuscula(mes),
+          // Fecha inicio
+          `${this.fechaInicio(i)[2]}/${this.fechaInicio(i)[1]}/${
+            this.fechaInicio(i)[0]
+          }`,
+          // Fecha Autoevaluación
+          `${this.fechaEval(i)[2]}/${this.fechaEval(i)[1]}/${
+            this.fechaEval(i)[0]
+          }`,
+          // Fecha Retroalimentación
+          `${this.fechaRetro(i)[2]}/${this.fechaRetro(i)[1]}/${
+            this.fechaRetro(i)[0]
+          }`,
+          // Fecha Rex
+          `${this.fechaRex(i)[2]}/${this.fechaRex(i)[1]}/${
+            this.fechaRex(i)[0]
+          }`,
+          this.adps[i].encargado,
+          this.adps[i].encargado_mail,
+          this.adps[i].mail_contraparte_eval,
+          `Servicio Civil - Informa sobre evaluación directiva`
+        );
+
+        if (correo == "OK") {
+          Vue.$toast.success(`Alerta enviada con éxito`);
+          creaDocumentoEnDB(
+            `Alerta evaluación mensual ${mes}`,
+            `${this.adps[i].concurso}`,
+            this.adps[i].mail_contraparte_eval
           );
         } else {
           Vue.$toast.warning(`Error al intentar enviar el correo`);

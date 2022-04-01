@@ -9,6 +9,7 @@
           <th scope="col">Bienvenida</th>
           <th scope="col">Encuesta de cierre</th>
           <th scope="col">Encuesta percepción</th>
+          <th scope="col">Evaluación mensual</th>
         </tr>
       </thead>
       <tbody>
@@ -53,6 +54,11 @@
           </td>
           <td>
             <span class="badge rounded-pill bg-warning text-dark cursor"  @click="$emit('encuestaPercepcion')"
+              ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
+            >
+          </td>
+          <td>
+            <span class="badge rounded-pill bg-warning text-dark cursor"  @click="$emit('evaluacionMensual')"
               ><b-icon icon="envelope-fill"></b-icon> Enviar correo</span
             >
           </td>
