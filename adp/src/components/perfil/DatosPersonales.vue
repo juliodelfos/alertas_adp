@@ -71,6 +71,10 @@
                 adps[this.indice].servicio ==
                   'Servicio Local de Educación Barrancas' ||
                 adps[this.indice].servicio ==
+                  'Servicio Local de Educación Pública Aysén'||
+                       adps[this.indice].servicio ==
+                  'Servicio Local de Educación Pública Maule Costa'||
+                adps[this.indice].servicio ==
                   'Servicio Local de Educación Andalién Sur' ||
                 adps[this.indice].servicio ==
                   'Servicio Local de Educación Atacama' ||

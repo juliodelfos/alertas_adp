@@ -38,6 +38,14 @@ export default new Vuex.Store({
         text: "Servicio Local de Educación Atacama",
       },
       {
+        value: "Servicio Local de Educación Pública Aysén",
+        text: "Servicio Local de Educación Costa Maule",
+      },
+      {
+        value: "Servicio Local de Educación Pública Aysén",
+        text: "Servicio Local de Educación Aysén",
+      },
+      {
         value: "Servicio Local de Educación Barrancas",
         text: "Servicio Local de Educación Barrancas",
       },
